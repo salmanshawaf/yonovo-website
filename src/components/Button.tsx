@@ -12,7 +12,7 @@ const sizeClasses = {
 };
 
 const variantClasses = {
-  primary: "bg-primary text-white hover:bg-primary/90",
+  primary: "bg-primary text-white hover:bg-primary/90 shadow-inner-sm",
   secondary: "bg-white text-primary border border-primary hover:bg-surface",
 };
 
@@ -25,7 +25,7 @@ export default function Button({
 }: ButtonProps) {
   return (
     <button
-      className={`rounded-full font-medium transition-colors cursor-pointer ${variantClasses[variant]} ${sizeClasses[size]} ${className}`}
+      className={`rounded-md font-medium transition-all duration-200 cursor-pointer ${variantClasses[variant]} ${sizeClasses[size]} ${className}`}
       {...props}
     >
       {children}
