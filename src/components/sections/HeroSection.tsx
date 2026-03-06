@@ -20,7 +20,7 @@ export default function HeroSection() {
           <div className="relative mx-auto grid w-full items-center gap-6 px-4 lg:grid-cols-2">
             {/* Left — Text Content */}
             <div className="flex flex-col gap-6">
-              <h1 className="font-medium text-[42px] text-foreground leading-[2.9rem] tracking-tight lg:text-[4.4rem] lg:leading-[5.2rem] lg:tracking-normal">
+              <h1 className="font-medium text-[42px] text-foreground leading-[2.9rem] tracking-tight lg:text-[4.7rem] lg:leading-[5.2rem] lg:tracking-normal">
                 AI agents for magical customer experiences
               </h1>
               <p className="text-[16px] text-muted md:text-xl lg:w-[90%]">

@@ -24,3 +24,13 @@ body {
   color: var(--color-primary);
   font-family: var(--font-sans);
 }
+
+@keyframes shake {
+  0% { transform: translate3d(0, 0, 0) scale(1); }
+  15% { transform: translate3d(-2px, 1px, 0) scale(0.99); }
+  30% { transform: translate3d(3px, -1px, 0) scale(1.005); }
+  45% { transform: translate3d(-1px, 2px, 0) scale(0.995); }
+  60% { transform: translate3d(2px, 0, 0) scale(1.002); }
+  75% { transform: translate3d(-1px, -1px, 0) scale(0.998); }
+  100% { transform: translate3d(0, 0, 0) scale(1); }
+}
