@@ -2,28 +2,28 @@ import SectionBadge from "@/components/SectionBadge";
 
 const highlights = [
   {
-    title: "Purpose-built for LLMs",
+    title: "Set up in minutes",
     description:
-      "Language models with reasoning capabilities for effective responses to complex queries.",
+      "Connect your QuickBooks or Xero account and start collecting on overdue invoices immediately.",
     colSpan: "",
   },
   {
-    title: "Designed for simplicity",
+    title: "Built to save you hours",
     description:
-      "Create, manage, and deploy AI Agents easily, even without technical skills.",
+      "Automate every follow-up by email, text, and phone so your team stops chasing payments manually.",
     colSpan: "",
   },
   {
-    title: "Engineered for security",
+    title: "Protects your relationships",
     description:
-      "Enjoy peace of mind with robust encryption and strict compliance standards.",
+      "Every message adapts to the customer's history so follow-ups stay firm without ever feeling aggressive.",
     colSpan: "md:col-span-2 lg:col-span-1",
   },
 ];
 
 export default function HighlightsSection() {
   return (
-    <section className="w-full py-12 md:py-15 bg-surface">
+    <section className="w-full pt-4 md:pt-6 pb-12 md:pb-15 bg-white">
       <div className="mx-auto max-w-(--container-max-width) px-6">
         <div className="flex flex-col gap-4 py-12">
           {/* Header */}
@@ -31,12 +31,11 @@ export default function HighlightsSection() {
             <SectionBadge label="Highlights" />
             <div className="flex flex-col gap-4 md:flex-row md:items-end md:gap-10">
               <h2 className="font-medium text-4xl text-foreground tracking-tight lg:text-[3.5rem] lg:leading-[1.1]">
-                The complete platform for AI support agents
+                The complete platform for accounts receivable
               </h2>
               <p className="max-w-[600px] text-lg text-muted">
-                Chatbase is designed for building AI support agents that solve
-                your customers&apos; hardest problems while improving business
-                outcomes.
+                Yonovo is designed for finance teams that want to collect faster
+                without adding headcount or damaging customer relationships.
               </p>
             </div>
           </div>

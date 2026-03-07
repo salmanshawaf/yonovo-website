@@ -128,8 +128,22 @@ function DropdownItem({ icon, title, description }: { icon: React.ReactNode; tit
 export default function Navbar() {
   const [openDropdown, setOpenDropdown] = useState<string | null>(null);
   const [isVisible, setIsVisible] = useState(false);
+  const [navMode, setNavMode] = useState<"dark" | "light">("dark");
   const timeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   const navLinksRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const video = document.getElementById("hero-video");
+      if (video) {
+        const videoBottom = video.offsetTop + video.offsetHeight;
+        setNavMode(window.scrollY > videoBottom ? "light" : "dark");
+      }
+    };
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    handleScroll();
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   const handleMouseEnter = useCallback((label: string) => {
     if (timeoutRef.current) clearTimeout(timeoutRef.current);
@@ -151,17 +165,17 @@ export default function Navbar() {
   }, []);
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-white">
+    <nav className={`fixed top-0 left-0 right-0 z-50 backdrop-blur-xl transition-all duration-300 ${navMode === "light" ? "bg-white/70 shadow-sm border-b border-white/20" : "bg-transparent"}`}>
       <div className="relative mx-auto flex h-16 w-full max-w-(--container-max-width) items-center justify-between px-6 py-3">
         {/* Left — Logo */}
         <div className="flex flex-1 items-center">
           <Link href="/" className="inline-block">
             <Image
-              src="/yonovo-logo.png"
+              src={navMode === "light" ? "/yonovo-logo.png" : "/yonovo-logo-white.png"}
               alt="Yonovo"
-              width={120}
-              height={19}
-              className="h-5 w-auto"
+              width={96}
+              height={15}
+              className="h-4 w-auto"
               priority
             />
           </Link>
@@ -179,7 +193,7 @@ export default function Navbar() {
               >
                 {link.hasDropdown ? (
                   <button
-                    className="inline-flex h-9 items-center justify-center rounded-md px-4 py-2 text-sm font-medium text-foreground transition-colors hover:text-muted"
+                    className={`inline-flex h-9 items-center justify-center rounded-md px-4 py-2 text-sm font-medium transition-colors ${navMode === "light" ? "text-gray-900 hover:text-gray-600" : "text-white hover:text-white/70"}`}
                   >
                     {link.label}
                     <svg
@@ -195,7 +209,7 @@ export default function Navbar() {
                 ) : (
                   <Link
                     href={link.href || "#"}
-                    className="inline-flex h-9 items-center justify-center rounded-md px-4 py-2 text-sm font-medium text-foreground transition-colors hover:text-muted"
+                    className={`inline-flex h-9 items-center justify-center rounded-md px-4 py-2 text-sm font-medium transition-colors ${navMode === "light" ? "text-gray-900 hover:text-gray-600" : "text-white hover:text-white/70"}`}
                   >
                     {link.label}
                   </Link>
@@ -282,11 +296,11 @@ export default function Navbar() {
         <div className="hidden flex-1 items-center justify-end gap-4 lg:flex">
           <Link
             href="#login"
-            className="text-sm font-medium text-foreground hover:text-muted transition-colors"
+            className={`text-sm font-medium transition-colors ${navMode === "light" ? "text-gray-900 hover:text-gray-600" : "text-white hover:text-white/70"}`}
           >
             Login
           </Link>
-<Button size="sm" className="!bg-[#203a7f] hover:!bg-[#1a2f66]">Start Free</Button>
+<Button size="sm" className="!bg-[#5aef76] hover:!bg-[#4DE068] !text-[#111827]">Start Free</Button>
         </div>
       </div>
     </nav>

@@ -5,29 +5,29 @@ import SectionBadge from "@/components/SectionBadge";
 
 const steps = [
   {
-    title: "Build & deploy your agent",
+    title: "Connect your accounting software",
     description:
-      "Train an agent on your business data, configure the actions it can take, then deploy it for your customers.",
+      "Link your QuickBooks or Xero account, import your invoices and customers, then let Yonovo take it from there.",
   },
   {
-    title: "Agent solves your customers\u2019 problems",
+    title: "Yonovo collects on every invoice",
     description:
-      "Your AI agent handles customer inquiries 24/7, providing instant and accurate responses.",
+      "Your overdue invoices get followed up automatically by email, text, and AI phone call at exactly the right time.",
   },
   {
-    title: "Refine & optimize",
+    title: "Fine tune and customize",
     description:
-      "Review conversations, identify gaps, and continuously improve your agent\u2019s performance.",
+      "Adjust messaging tone, escalation timing, and contact preferences to match how each customer relationship works.",
   },
   {
-    title: "Route complex issues to a human",
+    title: "Route exceptions to your team",
     description:
-      "Seamlessly hand off conversations to your support team when human expertise is needed.",
+      "When a customer disputes a charge or needs special attention, Yonovo flags it so your team can step in.",
   },
   {
-    title: "Review analytics & insights",
+    title: "Track collections and performance",
     description:
-      "Track resolution rates, customer satisfaction, and other key metrics to measure impact.",
+      "See recovery rates, average days to pay, and time saved across your entire receivables portfolio.",
   },
 ];
 
@@ -43,12 +43,11 @@ export default function HowItWorksSection() {
             <SectionBadge label="How it works" />
             <div className="flex flex-col gap-4 md:flex-row md:items-end md:gap-10">
               <h2 className="font-medium text-4xl text-foreground tracking-tight lg:text-[3.5rem] lg:leading-[1.1]">
-                An end-to-end solution for conversational AI
+                From overdue to paid in five steps
               </h2>
               <p className="max-w-[600px] text-lg text-muted">
-                With Chatbase, your customers can effortlessly find answers,
-                resolve issues, and take meaningful actions through seamless and
-                engaging AI-driven conversations.
+                Yonovo takes over the entire collections process so your team
+                can focus on running the business, not chasing payments.
               </p>
             </div>
           </div>
