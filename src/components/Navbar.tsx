@@ -151,7 +151,7 @@ export default function Navbar() {
   }, []);
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md">
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-white">
       <div className="relative mx-auto flex h-16 w-full max-w-(--container-max-width) items-center justify-between px-6 py-3">
         {/* Left — Logo */}
         <div className="flex flex-1 items-center">
@@ -281,12 +281,12 @@ export default function Navbar() {
         {/* Right — Auth */}
         <div className="hidden flex-1 items-center justify-end gap-4 lg:flex">
           <Link
-            href="#signin"
+            href="#login"
             className="text-sm font-medium text-foreground hover:text-muted transition-colors"
           >
-            Sign in
+            Login
           </Link>
-          <Button size="sm">Try for Free</Button>
+<Button size="sm" className="!bg-[#203a7f] hover:!bg-[#1a2f66]">Start Free</Button>
         </div>
       </div>
     </nav>
