@@ -135,9 +135,21 @@ export default function Navbar() {
   useEffect(() => {
     const handleScroll = () => {
       const video = document.getElementById("hero-video");
-      if (video) {
+      const explore = document.getElementById("explore");
+      const scrollY = window.scrollY;
+
+      if (video && explore) {
         const videoBottom = video.offsetTop + video.offsetHeight;
-        setNavMode(window.scrollY > videoBottom ? "light" : "dark");
+        const exploreTop = explore.offsetTop;
+        const exploreBottom = exploreTop + explore.offsetHeight;
+
+        if (scrollY <= videoBottom) {
+          setNavMode("dark");
+        } else if (scrollY > exploreTop - 64 && scrollY < exploreBottom - 64) {
+          setNavMode("dark");
+        } else {
+          setNavMode("light");
+        }
       }
     };
     window.addEventListener("scroll", handleScroll, { passive: true });

@@ -2,40 +2,25 @@ import SectionBadge from "@/components/SectionBadge";
 
 const testimonials = [
   {
-    company: "OpenAI",
+    company: "TDG Inc.",
     quote:
-      "Chatbase is a strong signal of how customer support will evolve. It is an early adopter of the agentic approach, which will become increasingly effective, trusted, and prominent.",
-    name: "Marc Manara",
-    title: "Head of Startups",
-    colSpanLg: "col-span-6",
-    colSpanMd: "col-span-2",
+      "We used to spend hours every week chasing overdue invoices manually. Since switching to Yonovo, our manual follow ups dropped by 80% and we\u2019re collecting faster than ever. The AI handles the routine stuff so our team can focus on the accounts that actually need a human touch.",
+    name: "Mohammad Alshalabi",
+    title: "Director of Finance",
   },
   {
-    company: "Sage",
+    company: "Troyes",
     quote:
-      "The chatbots are user-friendly, easy to customize, and have been effectively serving our customers for nearly two years.",
-    name: "Ann Donie",
-    title: "Product Owner",
-    colSpanLg: "col-span-3",
-    colSpanMd: "col-span-1",
+      "What impressed us most was how quickly we were up and running. We connected QuickBooks, set our preferences, and Yonovo was collecting on our behalf within the same day. Our customer relationships haven\u2019t suffered at all, if anything the follow ups are more consistent and professional than before.",
+    name: "Apple Smith",
+    title: "Accounts Receivable Manager",
   },
   {
-    company: "Chuck E. Cheese",
+    company: "Lawazim",
     quote:
-      "Chatbase gave us a powerful, flexible way to launch our AI chatbot without the complexity we saw in other platforms. Guests report strong satisfaction, and the system has been easy for our team to maintain. The customization options let us match our brand voice, and the platform continues to scale with us.",
-    name: "Mark Kupferman",
-    title: "CMO",
-    colSpanLg: "col-span-6",
-    colSpanMd: "col-span-2",
-  },
-  {
-    company: "Synergym",
-    quote:
-      "Chatbase is an excellent AI chat solution for businesses. Onboarding is fast, and training the bot is easy even with a lot of information. For our end users, the experience is smooth, the answers are accurate, and it significantly reduces friction. It\u2019s been a practical, scalable tool that we highly recommend.",
-    name: "Jes\u00fas Franco",
-    title: "CTO",
-    colSpanLg: "col-span-6",
-    colSpanMd: "col-span-2",
+      "As a wholesale distributor, our customer relationships are everything. We were nervous about automating collections but Yonovo\u2019s approach is professional and respectful. Customers have actually commented that our follow ups feel more organized now. We\u2019re collecting faster without a single complaint.",
+    name: "Faris Shawaf",
+    title: "CFO",
   },
 ];
 
@@ -70,7 +55,7 @@ function TestimonialCard({
   );
 }
 
-function StatsCard() {
+function StatsCard({ stat, description }: { stat: string; description: string }) {
   return (
     <div className="flex h-full flex-col rounded-2xl border border-border bg-background">
       <div className="w-full overflow-hidden rounded-t-2xl">
@@ -78,9 +63,9 @@ function StatsCard() {
       </div>
       <div className="flex flex-col justify-center p-8">
         <div className="font-medium text-[3.25rem] text-foreground leading-[3.75rem]">
-          10,000+
+          {stat}
         </div>
-        <div className="text-muted text-xl">businesses trust Chatbase</div>
+        <div className="text-muted text-xl">{description}</div>
       </div>
     </div>
   );
@@ -98,8 +83,7 @@ export default function TestimonialsSection() {
               What people say
             </h2>
             <p className="text-center text-base text-secondary tracking-tight md:text-2xl">
-              With over <span className="font-bold">10,000</span> clients
-              served, here&apos;s what they have to say
+              See why finance teams are making the switch
             </p>
           </div>
 
@@ -111,16 +95,16 @@ export default function TestimonialsSection() {
                 <TestimonialCard {...testimonials[0]} />
               </div>
               <div className="h-full col-span-3">
-                <TestimonialCard {...testimonials[1]} />
+                <StatsCard stat="75%" description="reduction in manual tasks" />
               </div>
               <div className="h-full col-span-3">
-                <StatsCard />
+                <StatsCard stat="15 Days" description="average reduction in DSO" />
+              </div>
+              <div className="h-full col-span-6">
+                <TestimonialCard {...testimonials[1]} />
               </div>
               <div className="h-full col-span-6">
                 <TestimonialCard {...testimonials[2]} />
-              </div>
-              <div className="h-full col-span-6">
-                <TestimonialCard {...testimonials[3]} />
               </div>
             </div>
 
@@ -130,26 +114,26 @@ export default function TestimonialsSection() {
                 <TestimonialCard {...testimonials[0]} />
               </div>
               <div className="h-full col-span-1">
-                <TestimonialCard {...testimonials[1]} />
+                <StatsCard stat="75%" description="reduction in manual tasks" />
               </div>
               <div className="h-full col-span-1">
-                <StatsCard />
+                <StatsCard stat="15 Days" description="average reduction in DSO" />
               </div>
               <div className="h-full col-span-2">
+                <TestimonialCard {...testimonials[1]} />
+              </div>
+              <div className="h-full col-span-3">
                 <TestimonialCard {...testimonials[2]} />
-              </div>
-              <div className="h-full col-span-2">
-                <TestimonialCard {...testimonials[3]} />
               </div>
             </div>
 
             {/* Mobile: stacked */}
             <div className="flex flex-col gap-4 md:hidden">
               <TestimonialCard {...testimonials[0]} />
+              <StatsCard stat="75%" description="reduction in manual tasks" />
+              <StatsCard stat="15 Days" description="average reduction in DSO" />
               <TestimonialCard {...testimonials[1]} />
-              <StatsCard />
               <TestimonialCard {...testimonials[2]} />
-              <TestimonialCard {...testimonials[3]} />
             </div>
           </div>
         </div>

@@ -5,9 +5,9 @@ import SectionBadge from "@/components/SectionBadge";
 
 const benefits = [
   {
-    title: "Personalized answers",
+    title: "Personalized follow ups",
     description:
-      "Your agent knows the logged in user and can retrieve their information to provide personalized answers.",
+      "Every message is shaped by the customer\u2019s payment history, relationship length, and past interactions so no two follow ups are the same.",
     icon: (
       <svg className="h-auto w-7" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24">
         <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" />
@@ -16,12 +16,12 @@ const benefits = [
         <circle cx="9" cy="7" r="4" />
       </svg>
     ),
-    activeColor: "text-pink-500",
+    activeColor: "text-[#e13f3f]",
   },
   {
-    title: "Instant actions",
+    title: "Always on collections",
     description:
-      "Your agent can perform actions using your APIs or one of our pre-built actions like booking appointments, creating tickets, and more.",
+      "Every invoice is tracked and followed up on automatically so no account gets forgotten, no matter how busy your team gets.",
     icon: (
       <svg className="h-auto w-7" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24">
         <line x1="10" x2="14" y1="2" y2="2" />
@@ -29,23 +29,23 @@ const benefits = [
         <circle cx="12" cy="14" r="8" />
       </svg>
     ),
-    activeColor: "text-pink-500",
+    activeColor: "text-[#e13f3f]",
   },
   {
     title: "Empathetic & on-brand",
     description:
-      "Configure your agent\u2019s tone of voice and personality to match your brand and communicate with empathy.",
+      "Every message goes out in your company\u2019s voice and tone so customers feel like they\u2019re hearing from your team, not a robot.",
     icon: (
       <svg className="h-auto w-7" fill="none" stroke="currentColor" strokeWidth={2.5} strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 32 33">
         <path d="M13.872 28.5H8.003C6.53 28.5 5.336 27.306 5.336 25.833c0-2.945 2.388-5.333 5.333-5.333h1.62M21.336 9.833a5.333 5.333 0 1 1-10.667 0 5.333 5.333 0 0 1 10.667 0ZM22.669 28.926c-.533 0-5.333-2.593-5.333-6.222 0-1.815 1.6-3.111 3.2-3.111.786 0 1.6.259 2.133 1.037.534-.778 1.334-1.049 2.134-1.037 1.6.023 3.2 1.296 3.2 3.111 0 3.67-4.8 6.222-5.334 6.222Z" />
       </svg>
     ),
-    activeColor: "text-pink-500",
+    activeColor: "text-[#e13f3f]",
   },
   {
     title: "Smart escalations",
     description:
-      "Automatically route complex issues to your human support team with full conversation context.",
+      "When a customer disputes a charge or stops responding, Yonovo collects the key details and provides a full summary to your team for review.",
     icon: (
       <svg className="h-auto w-7" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24">
         <path d="M16 3h5v5" />
@@ -54,19 +54,19 @@ const benefits = [
         <path d="m15 9 6-6" />
       </svg>
     ),
-    activeColor: "text-pink-500",
+    activeColor: "text-[#e13f3f]",
   },
   {
-    title: "Observability",
+    title: "Full observability",
     description:
-      "Monitor every conversation in real-time, track key metrics, and gain actionable insights into your agent\u2019s performance.",
+      "See every decision Yonovo makes, every message it sends, and every customer response with full visibility into each step of the process.",
     icon: (
       <svg className="h-auto w-7" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24">
         <path d="M2.062 12.348a1 1 0 0 1 0-.696 10.75 10.75 0 0 1 19.876 0 1 1 0 0 1 0 .696 10.75 10.75 0 0 1-19.876 0" />
         <circle cx="12" cy="12" r="3" />
       </svg>
     ),
-    activeColor: "text-pink-500",
+    activeColor: "text-[#e13f3f]",
   },
 ];
 
@@ -81,11 +81,11 @@ export default function BenefitsSection() {
           <div className="flex w-full flex-col items-start gap-4">
             <SectionBadge label="Benefits" />
             <div className="flex flex-col gap-4 md:flex-row md:items-end md:justify-between md:gap-10">
-              <h2 className="font-medium text-4xl text-foreground tracking-tight lg:text-[3.5rem] lg:leading-[1.1]">
-                Works like the best customer service agents
+              <h2 className="font-medium text-4xl text-foreground tracking-tight lg:text-5xl">
+                Works like a world class AR specialist
               </h2>
               <p className="max-w-[600px] text-lg text-muted">
-                Chatbase is designed to work with your existing tools and
+                Yonovo is designed to work with your existing tools and
                 workflows.
               </p>
             </div>
@@ -95,7 +95,7 @@ export default function BenefitsSection() {
           <div className="grid gap-6 md:grid-cols-2">
             {/* Left — Video Placeholder */}
             <div className="hidden md:block">
-              <div className="relative my-4 aspect-[0.939] w-full">
+              <div className="relative my-12 aspect-[0.939] w-full">
                 <div className="absolute inset-0 flex aspect-[0.939] w-full items-center justify-center">
                   <div className="aspect-[0.939] w-full rounded-2xl p-3" style={{ opacity: 1 }}>
                     <div className="group relative aspect-[0.939] w-full overflow-hidden rounded-3xl">

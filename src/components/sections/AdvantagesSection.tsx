@@ -5,29 +5,29 @@ import SectionBadge from "@/components/SectionBadge";
 
 const advantages = [
   {
-    title: "Works across channels",
+    title: "Actually does the work",
     description:
-      "Easily integrate your AI Agent with various platforms like Slack, WhatsApp, Messenger, and web widgets, ensuring seamless functionality across all.",
+      "Traditional AR software gives you dashboards. Yonovo gives you results. Complete workflows executed across email, SMS, and voice without manual effort.",
   },
   {
-    title: "Secure by default",
+    title: "Works across industries",
     description:
-      "Your AI Agent ensures the utmost safety by refusing sensitive or unauthorized requests, keeping your data protected at all times.",
+      "Manufacturing, wholesale, distribution, or professional services. Yonovo adapts to match your customer types and communication styles.",
   },
   {
     title: "Enterprise quality guardrails",
     description:
-      "AI-powered guardrails prevent misinformation and off-topic responses, maintaining professionalism and trust in every interaction.",
+      "Every message stays within professional boundaries. Nothing aggressive, legally risky, or inappropriate gets sent regardless of how overdue an invoice is.",
   },
   {
-    title: "Handles unclear requests",
+    title: "Handles the edge cases",
     description:
-      "Your AI Agent adapts to modern conversational styles, making interactions feel natural and relatable, no matter the user\u2019s tone or slang.",
+      "Disputes, partial payments, and unusual situations are flagged and routed to your team with full context so nothing gets mishandled.",
   },
   {
-    title: "Enhance multilingual support",
+    title: "Fits into your existing process",
     description:
-      "Engage users globally with seamless language detection and translation, providing real-time assistance in over 80+ languages.",
+      "No need to change how your team works or learn a new system. Yonovo plugs in and handles the follow ups your team doesn\u2019t have time for.",
   },
 ];
 
@@ -45,15 +45,15 @@ export default function AdvantagesSection() {
           {/* Header — centered */}
           <div className="flex flex-col items-center gap-4">
             <SectionBadge label="Advantages" />
-            <h2 className="text-center font-medium text-3xl text-foreground tracking-tight md:text-[4.5rem] md:leading-[1.05]">
-              Unlock the power of
+            <h2 className="text-center font-medium text-3xl text-foreground tracking-tight md:text-5xl lg:text-6xl">
+              Not your typical
               <br />
-              AI-driven Agents
+              AR software
             </h2>
           </div>
 
           {/* Desktop Carousel */}
-          <div className="hidden py-12 md:block">
+          <div className="hidden py-8 md:block">
             <div className="relative overflow-hidden">
               <div
                 className="flex transition-transform duration-500 ease-in-out"

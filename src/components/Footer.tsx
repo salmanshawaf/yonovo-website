@@ -27,7 +27,7 @@ const companyLinks = [
 
 export default function Footer() {
   return (
-    <footer className="bg-primary text-white">
+    <footer className="text-white" style={{ backgroundColor: "#203a7f" }}>
       <div className="mx-auto max-w-(--container-max-width) px-6 pt-28 pb-12">
         {/* Main layout */}
         <div className="flex flex-col gap-12 md:flex-row md:justify-between">
@@ -35,9 +35,9 @@ export default function Footer() {
           <div className="flex flex-col items-center gap-8 md:items-start">
             {/* Logo + copyright */}
             <div className="flex flex-col items-center gap-4 md:items-start">
-              <div className="text-xl font-bold tracking-tight">Chatbase</div>
+              <img src="/yonovo-logo-white.png" alt="Yonovo" className="h-4 w-auto" />
               <p className="text-center font-medium text-zinc-400 leading-5 md:text-left">
-                &copy; {new Date().getFullYear()} Chatbase, Inc.
+                &copy; 2026 Yonovo, Inc.
               </p>
             </div>
 
@@ -56,24 +56,6 @@ export default function Footer() {
                   </svg>
                 </button>
               </a>
-              {/* Instagram */}
-              <a href="#" className="contents">
-                <button className="flex h-11 items-center justify-center rounded-md border border-zinc-800 p-3 text-white transition-all duration-200 hover:bg-zinc-800/90 md:col-span-1" aria-label="Instagram">
-                  <svg className="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
-                    <rect width="20" height="20" x="2" y="2" rx="5" ry="5" />
-                    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
-                    <line x1="17.5" x2="17.51" y1="6.5" y2="6.5" />
-                  </svg>
-                </button>
-              </a>
-              {/* X / Twitter */}
-              <a href="#" className="contents">
-                <button className="flex h-11 items-center justify-center rounded-md border border-zinc-800 p-3 text-white transition-all duration-200 hover:bg-zinc-800/90 md:col-span-1" aria-label="Twitter">
-                  <svg className="h-5 w-5" viewBox="0 0 24 24" fill="currentColor">
-                    <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
-                  </svg>
-                </button>
-              </a>
               {/* YouTube */}
               <a href="#" className="contents">
                 <button className="flex h-11 items-center justify-center rounded-md border border-zinc-800 p-3 text-white transition-all duration-200 hover:bg-zinc-800/90 md:col-span-1" aria-label="YouTube">
@@ -84,15 +66,6 @@ export default function Footer() {
               </a>
             </div>
 
-            {/* Compliance badges — desktop only */}
-            <div className="hidden flex-row gap-4 md:flex">
-              <div className="flex aspect-square w-[80px] items-center justify-center rounded-full border border-zinc-700 bg-zinc-900">
-                <span className="text-xs font-medium text-zinc-400">SOC 2</span>
-              </div>
-              <div className="flex aspect-square w-[80px] items-center justify-center rounded-full border border-zinc-700 bg-zinc-900">
-                <span className="text-xs font-medium text-zinc-400">GDPR</span>
-              </div>
-            </div>
           </div>
 
           {/* Right columns — Links (desktop only) */}

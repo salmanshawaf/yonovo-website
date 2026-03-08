@@ -2,21 +2,21 @@ import SectionBadge from "@/components/SectionBadge";
 
 const highlights = [
   {
-    title: "Set up in minutes",
+    title: "Built for quick setup",
     description:
-      "Connect your QuickBooks or Xero account and start collecting on overdue invoices immediately.",
+      "From signup to your first automated follow up in minutes, not weeks or months.",
     colSpan: "",
   },
   {
-    title: "Built to save you hours",
+    title: "Designed for simplicity",
     description:
-      "Automate every follow-up by email, text, and phone so your team stops chasing payments manually.",
+      "Your entire collections process on autopilot so your team never has to chase a payment again.",
     colSpan: "",
   },
   {
-    title: "Protects your relationships",
+    title: "Engineered for human oversight",
     description:
-      "Every message adapts to the customer's history so follow-ups stay firm without ever feeling aggressive.",
+      "Full control to review every message before it sends or step back and let it all run hands free.",
     colSpan: "md:col-span-2 lg:col-span-1",
   },
 ];

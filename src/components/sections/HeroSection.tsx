@@ -46,14 +46,14 @@ export default function HeroSection() {
                     Book Demo
                   </a>
                 </div>
-                <div className="flex items-center gap-2 text-[13px] text-white/60">
+                <div className="flex items-center gap-2 text-[13px] text-[#203a7f]">
                   <svg className="h-4 w-4" fill="none" stroke="currentColor" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 16 17">
                     <path d="M14.66 6.5H1.33M14.66 6.5c0 .28 0 .59 0 .94V9.5M14.66 6.5c-.01-.9-.06-1.44-.29-1.88a2.67 2.67 0 0 0-1.16-1.16C12.63 3.17 11.89 3.17 10.39 3.17H5.59c-1.49 0-2.24 0-2.81.29a2.67 2.67 0 0 0-1.16 1.16c-.22.44-.28.98-.29 1.88M1.33 6.5c0 .28 0 .59 0 .94v2.13c0 1.49 0 2.24.29 2.81.26.5.67.91 1.17 1.17.57.29 1.31.29 2.81.29h2.51M5.99 9.17H3.99" />
                     <path d="M11.25 14.58l1.41-1.41m0 0l1.42-1.42m-1.42 1.42l-1.41-1.42m1.41 1.42l1.42 1.42" />
                   </svg>
                   No card required
                 </div>
-                <div className="mt-1 flex items-center gap-3">
+                <div className="mt-1 flex items-center gap-3 hidden">
                   <span className="text-[13px] text-white/50">Works with</span>
                   <Image src="/logos/quickbooks.png" alt="QuickBooks" width={120} height={29} className="h-6 w-auto brightness-0 invert opacity-60" />
                   <Image src="/logos/xero.png" alt="Xero" width={29} height={29} className="h-6 w-auto brightness-0 invert opacity-60" />

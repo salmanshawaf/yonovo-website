@@ -5,29 +5,29 @@ import SectionBadge from "@/components/SectionBadge";
 
 const steps = [
   {
-    title: "Connect your accounting software",
+    title: "Connect your books",
     description:
-      "Link your QuickBooks or Xero account, import your invoices and customers, then let Yonovo take it from there.",
+      "Link your accounting software and Yonovo automatically imports your invoices, customers, and aging data on your behalf.",
   },
   {
-    title: "Yonovo collects on every invoice",
+    title: "Set your rules or let AI decide",
     description:
-      "Your overdue invoices get followed up automatically by email, text, and AI phone call at exactly the right time.",
+      "Define your own follow up workflows or let Yonovo analyze your customers and recommend the best collection strategy for you to approve.",
   },
   {
-    title: "Fine tune and customize",
+    title: "Yonovo learns and improves",
     description:
-      "Adjust messaging tone, escalation timing, and contact preferences to match how each customer relationship works.",
+      "The AI identifies what\u2019s working, spots unresponsive customers, and adapts its approach over time with your approval.",
   },
   {
-    title: "Route exceptions to your team",
+    title: "Escalate what needs a human",
     description:
-      "When a customer disputes a charge or needs special attention, Yonovo flags it so your team can step in.",
+      "80% of collections are handled automatically. When a customer disputes a charge or needs a real conversation, your team gets flagged instantly.",
   },
   {
-    title: "Track collections and performance",
+    title: "Review your results",
     description:
-      "See recovery rates, average days to pay, and time saved across your entire receivables portfolio.",
+      "Monitor recovery rates, DSO, at risk invoices, and time saved so you always know where your receivables stand.",
   },
 ];
 
@@ -75,7 +75,7 @@ export default function HowItWorksSection() {
                       <span
                         className={`font-medium text-lg shrink-0 transition-colors duration-300 ${
                           isActive
-                            ? "bg-gradient-to-r from-gradient-from to-gradient-via bg-clip-text text-transparent"
+                            ? "text-[#e13f3f]"
                             : "text-muted"
                         }`}
                       >

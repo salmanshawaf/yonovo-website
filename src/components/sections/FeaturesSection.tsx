@@ -2,75 +2,75 @@ import SectionBadge from "@/components/SectionBadge";
 
 const topFeatures = [
   {
-    title: "Sync with real-time data",
+    title: "Reach customers on every channel",
     description:
-      "Connect your agent to systems like order management tools, CRMs, and more to seamlessly access data ranging from order details to active subscriptions and beyond.",
+      "Follow up on overdue invoices by email, SMS, and AI powered voice calls automatically. Each channel escalates based on your rules so no invoice gets forgotten.",
     imageRatio: "aspect-[1216/696]",
   },
   {
-    title: "Take actions on your systems",
+    title: "Smart workflows that run for you",
     description:
-      "Configure actions that your agent can perform within your systems or through one of our integrations, like updating a customer\u2019s subscription or changing their address.",
+      "Build collection sequences with escalation rules, timing delays, and channel preferences or let the AI recommend the best approach based on your customer data.",
     imageRatio: "aspect-[1216/696]",
   },
 ];
 
 const bottomFeatures = [
   {
-    title: "Compare AI models",
+    title: "AI voice calls",
     description:
-      "Experiment with various models and configurations to make sure you have the best setup for your use case.",
+      "Automatically call overdue customers with a natural sounding AI agent that logs every conversation.",
     imageRatio: "aspect-[794/696]",
   },
   {
-    title: "Smart escalation",
+    title: "Customer intelligence",
     description:
-      "Give your agent instructions in natural language on when to escalate queries to a human agents.",
+      "Complete customer profiles with payment history and relationship context for every follow up.",
     imageRatio: "aspect-[794/696]",
   },
   {
-    title: "Advanced reporting",
+    title: "Escalation rules",
     description:
-      "Gain insights and optimize agent performance with detailed analytics.",
+      "Define when an invoice moves from friendly reminder to firm follow up to human handoff.",
     imageRatio: "aspect-[794/696]",
   },
 ];
 
 const integrations = [
-  "Make", "Zendesk", "Notion", "Slack", "Stripe", "Salesforce",
+  "QuickBooks", "Xero", "NetSuite", "Sage", "FreshBooks",
 ];
 
 const integrations2 = [
-  "Cal.com", "Calendly", "WhatsApp", "Zapier", "Messenger",
+  "Salesforce", "HubSpot", "Microsoft Dynamics", "SAP",
 ];
 
 const bottomItems = [
   {
-    title: "API",
+    title: "Always learning",
     description:
-      "APIs, client libraries, and components to deeply integrate support into your product.",
-    icon: (
-      <svg className="h-5 w-5 shrink-0 text-muted" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24">
-        <path d="m18 16 4-4-4-4" /><path d="m6 8-4 4 4 4" /><path d="m14.5 4-5 16" />
-      </svg>
-    ),
-  },
-  {
-    title: "Whitelabel",
-    description: "Remove any Chatbase branding from the chat widget.",
-    icon: (
-      <svg className="h-5 w-5 shrink-0 text-muted" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24">
-        <path d="M12 20h-1a2 2 0 0 1-2-2 2 2 0 0 1-2 2H6" /><path d="M13 8h7a2 2 0 0 1 2 2v4a2 2 0 0 1-2 2h-7" /><path d="M5 16H4a2 2 0 0 1-2-2v-4a2 2 0 0 1 2-2h1" /><path d="M6 4h1a2 2 0 0 1 2 2 2 2 0 0 1 2-2h1" /><path d="M9 6v12" />
-      </svg>
-    ),
-  },
-  {
-    title: "Always improving",
-    description:
-      "Syncs with your systems and learns from previous interactions.",
+      "Adapts follow up strategies based on what\u2019s working across your customer base.",
     icon: (
       <svg className="h-5 w-5 shrink-0 text-muted" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24">
         <path d="M16 7h6v6" /><path d="m22 7-8.5 8.5-5-5L2 17" />
+      </svg>
+    ),
+  },
+  {
+    title: "Sends from your email",
+    description: "Every message goes out from your domain so customers see a name they trust.",
+    icon: (
+      <svg className="h-5 w-5 shrink-0 text-muted" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24">
+        <rect width="20" height="16" x="2" y="4" rx="2" /><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
+      </svg>
+    ),
+  },
+  {
+    title: "Built for scale",
+    description:
+      "Whether you have 50 invoices or 5,000, the system runs the same.",
+    icon: (
+      <svg className="h-5 w-5 shrink-0 text-muted" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24">
+        <path d="M21 12a9 9 0 1 1-9-9c2.52 0 4.93 1 6.74 2.74L21 8" /><path d="M21 3v5h-5" />
       </svg>
     ),
   },
@@ -126,11 +126,11 @@ export default function FeaturesSection() {
           <div className="flex flex-col items-start gap-4">
             <SectionBadge label="Features" />
             <h2 className="font-medium text-4xl text-foreground tracking-tight lg:text-[3.5rem] lg:leading-[1.1]">
-              Build the perfect customer-facing AI agent
+              Everything you need to collect smarter
             </h2>
-            <p className="text-lg text-muted">
-              Chatbase gives you all the tools you need to train your perfect AI
-              agent and connect it to your systems.
+            <p className="max-w-[720px] text-lg text-muted">
+              Yonovo gives you all the tools your finance team needs to automate
+              collections, protect relationships, and recover revenue faster.
             </p>
           </div>
 
@@ -158,8 +158,8 @@ export default function FeaturesSection() {
                     Works with your tools
                   </h3>
                   <p className="max-w-[400px] text-[14px] text-secondary leading-[22px] tracking-[-0.02em]">
-                    Integrate diverse data sources to enrich your agent&apos;s
-                    knowledge and capabilities.
+                    Connect your existing accounting and business software to sync
+                    invoices, customers, and payment data in real time.
                   </p>
                 </div>
                 <div className="relative flex max-h-[180px] max-w-[60%] flex-col gap-3 overflow-hidden">
@@ -186,8 +186,8 @@ export default function FeaturesSection() {
                   Works with your tools
                 </h3>
                 <p className="max-w-[400px] text-[14px] text-secondary leading-[22px] tracking-[-0.02em] mt-2">
-                  Integrate diverse data sources to enrich your agent&apos;s
-                  knowledge and capabilities.
+                  Connect your existing accounting and business software to sync
+                  invoices, customers, and payment data in real time.
                 </p>
               </div>
             </div>
