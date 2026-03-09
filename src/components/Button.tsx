@@ -1,7 +1,7 @@
 import { ButtonHTMLAttributes } from "react";
 
 type ButtonProps = {
-  variant?: "primary" | "secondary";
+  variant?: "primary" | "secondary" | "brand" | "ghost-light" | "ghost-dark";
   size?: "sm" | "md" | "lg";
 } & ButtonHTMLAttributes<HTMLButtonElement>;
 
@@ -14,6 +14,9 @@ const sizeClasses = {
 const variantClasses = {
   primary: "bg-primary text-white hover:bg-primary/90 shadow-inner-sm",
   secondary: "bg-white text-primary border border-primary hover:bg-surface",
+  brand: "bg-brand-green text-brand-green-text hover:bg-brand-green-hover shadow-[0_0_20px_rgba(90,239,118,0.3)]",
+  "ghost-light": "bg-transparent text-white border border-white/30 hover:bg-white/10",
+  "ghost-dark": "bg-transparent text-foreground border border-zinc-200 hover:bg-zinc-100",
 };
 
 export default function Button({

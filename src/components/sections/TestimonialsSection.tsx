@@ -59,7 +59,7 @@ function StatsCard({ stat, description }: { stat: string; description: string })
   return (
     <div className="flex h-full flex-col rounded-2xl border border-border bg-background">
       <div className="w-full overflow-hidden rounded-t-2xl">
-        <div className="h-[167px] w-full bg-gradient-to-br from-amber-200 via-pink-200 to-rose-200" />
+        <div className="h-[167px] w-full bg-gradient-to-br from-brand-blue/40 via-brand-blue/70 to-brand-blue" />
       </div>
       <div className="flex flex-col justify-center p-8">
         <div className="font-medium text-[3.25rem] text-foreground leading-[3.75rem]">

@@ -16,7 +16,7 @@ const benefits = [
         <circle cx="9" cy="7" r="4" />
       </svg>
     ),
-    activeColor: "text-[#e13f3f]",
+    activeColor: "text-brand-red",
   },
   {
     title: "Always on collections",
@@ -29,7 +29,7 @@ const benefits = [
         <circle cx="12" cy="14" r="8" />
       </svg>
     ),
-    activeColor: "text-[#e13f3f]",
+    activeColor: "text-brand-red",
   },
   {
     title: "Empathetic & on-brand",
@@ -40,7 +40,7 @@ const benefits = [
         <path d="M13.872 28.5H8.003C6.53 28.5 5.336 27.306 5.336 25.833c0-2.945 2.388-5.333 5.333-5.333h1.62M21.336 9.833a5.333 5.333 0 1 1-10.667 0 5.333 5.333 0 0 1 10.667 0ZM22.669 28.926c-.533 0-5.333-2.593-5.333-6.222 0-1.815 1.6-3.111 3.2-3.111.786 0 1.6.259 2.133 1.037.534-.778 1.334-1.049 2.134-1.037 1.6.023 3.2 1.296 3.2 3.111 0 3.67-4.8 6.222-5.334 6.222Z" />
       </svg>
     ),
-    activeColor: "text-[#e13f3f]",
+    activeColor: "text-brand-red",
   },
   {
     title: "Smart escalations",
@@ -54,7 +54,7 @@ const benefits = [
         <path d="m15 9 6-6" />
       </svg>
     ),
-    activeColor: "text-[#e13f3f]",
+    activeColor: "text-brand-red",
   },
   {
     title: "Full observability",
@@ -66,7 +66,7 @@ const benefits = [
         <circle cx="12" cy="12" r="3" />
       </svg>
     ),
-    activeColor: "text-[#e13f3f]",
+    activeColor: "text-brand-red",
   },
 ];
 

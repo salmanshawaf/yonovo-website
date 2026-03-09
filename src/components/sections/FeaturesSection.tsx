@@ -37,11 +37,18 @@ const bottomFeatures = [
 ];
 
 const integrations = [
-  "QuickBooks", "Xero", "NetSuite", "Sage", "FreshBooks",
+  { name: "QuickBooks", logo: "/logos/quickbooks-icon.png" },
+  { name: "Xero", logo: "/logos/xero-icon.png" },
+  { name: "Sage", logo: "/logos/sage-icon.svg" },
+  { name: "FreshBooks", logo: "/logos/freshbooks-icon.png" },
+  { name: "NetSuite", logo: "/logos/netsuite-icon.svg" },
 ];
 
 const integrations2 = [
-  "Salesforce", "HubSpot", "Microsoft Dynamics", "SAP",
+  { name: "Salesforce", logo: "/logos/salesforce-icon.webp" },
+  { name: "HubSpot", logo: "/logos/hubspot-icon.png" },
+  { name: "SAP", logo: "/logos/sap-icon.webp" },
+  { name: "WhatsApp", logo: "/logos/whatsapp-icon.png", iconClassName: "h-7 w-7 object-contain" },
 ];
 
 const bottomItems = [
@@ -50,7 +57,7 @@ const bottomItems = [
     description:
       "Adapts follow up strategies based on what\u2019s working across your customer base.",
     icon: (
-      <svg className="h-5 w-5 shrink-0 text-muted" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24">
+      <svg className="h-5 w-5 shrink-0 text-brand-red" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24">
         <path d="M16 7h6v6" /><path d="m22 7-8.5 8.5-5-5L2 17" />
       </svg>
     ),
@@ -59,7 +66,7 @@ const bottomItems = [
     title: "Sends from your email",
     description: "Every message goes out from your domain so customers see a name they trust.",
     icon: (
-      <svg className="h-5 w-5 shrink-0 text-muted" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24">
+      <svg className="h-5 w-5 shrink-0 text-brand-red" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24">
         <rect width="20" height="16" x="2" y="4" rx="2" /><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
       </svg>
     ),
@@ -69,7 +76,7 @@ const bottomItems = [
     description:
       "Whether you have 50 invoices or 5,000, the system runs the same.",
     icon: (
-      <svg className="h-5 w-5 shrink-0 text-muted" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24">
+      <svg className="h-5 w-5 shrink-0 text-brand-red" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24">
         <path d="M21 12a9 9 0 1 1-9-9c2.52 0 4.93 1 6.74 2.74L21 8" /><path d="M21 3v5h-5" />
       </svg>
     ),
@@ -106,11 +113,11 @@ function FeatureCard({
   );
 }
 
-function IntegrationPill({ name }: { name: string }) {
+function IntegrationPill({ name, logo, iconClassName }: { name: string; logo: string; iconClassName?: string }) {
   return (
     <div className="inline-flex h-10 shrink-0 items-center gap-2 rounded-full bg-surface p-1">
       <div className="flex h-8 w-8 items-center justify-center rounded-full border border-border bg-background">
-        <span className="text-xs font-medium text-muted">{name[0]}</span>
+        <img src={logo} alt={name} className={iconClassName || "h-5 w-5 object-contain"} />
       </div>
       <div className="pr-2 font-medium text-sm text-foreground">{name}</div>
     </div>
@@ -164,13 +171,13 @@ export default function FeaturesSection() {
                 </div>
                 <div className="relative flex max-h-[180px] max-w-[60%] flex-col gap-3 overflow-hidden">
                   <div className="flex gap-3">
-                    {integrations.map((name) => (
-                      <IntegrationPill key={name} name={name} />
+                    {integrations.map((item) => (
+                      <IntegrationPill key={item.name} {...item} />
                     ))}
                   </div>
                   <div className="ml-8 flex gap-3">
-                    {integrations2.map((name) => (
-                      <IntegrationPill key={name} name={name} />
+                    {integrations2.map((item) => (
+                      <IntegrationPill key={item.name} {...item} />
                     ))}
                   </div>
                 </div>
@@ -178,8 +185,8 @@ export default function FeaturesSection() {
               {/* Mobile */}
               <div className="md:hidden p-6">
                 <div className="flex flex-wrap gap-3 mb-6">
-                  {[...integrations, ...integrations2].map((name) => (
-                    <IntegrationPill key={name} name={name} />
+                  {[...integrations, ...integrations2].map((item) => (
+                    <IntegrationPill key={item.name} {...item} />
                   ))}
                 </div>
                 <h3 className="font-medium text-lg text-foreground leading-[21.78px] tracking-[-0.02em]">

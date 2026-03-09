@@ -2,16 +2,16 @@ import Button from "@/components/Button";
 
 export default function CTASection() {
   return (
-    <section className="w-full bg-gradient-to-b from-surface from-60% to-[#0c2756] to-60%">
+    <section className="w-full bg-gradient-to-b from-surface from-60% to-brand-navy to-60%">
       <div className="mx-auto max-w-[1600px] px-6">
         <div className="relative flex w-full flex-col items-center justify-center gap-6 overflow-hidden border-t border-border bg-white px-6 py-12 pb-30 md:gap-8 md:rounded-3xl md:border md:p-15 lg:p-25">
           {/* Gradient blob left */}
           <div className="pointer-events-none absolute bottom-0 left-0 h-auto w-[40%] md:h-[40%] md:w-auto lg:h-[50%]">
-            <div className="h-[350px] w-[350px] rounded-full bg-[#203a7f] opacity-70 blur-3xl" />
+            <div className="h-[350px] w-[350px] rounded-full bg-brand-blue opacity-70 blur-3xl" />
           </div>
           {/* Gradient blob right */}
           <div className="pointer-events-none absolute right-0 bottom-0 h-auto w-[40%] md:h-[40%] md:w-auto lg:h-[50%]">
-            <div className="h-[350px] w-[350px] rounded-full bg-[#203a7f] opacity-70 blur-3xl" />
+            <div className="h-[350px] w-[350px] rounded-full bg-brand-blue opacity-70 blur-3xl" />
           </div>
 
           {/* Text content */}
@@ -28,15 +28,12 @@ export default function CTASection() {
           {/* CTA button + no credit card */}
           <div className="flex w-full flex-col items-center justify-center gap-6 md:gap-4">
             <div className="flex flex-row items-center gap-6">
-              <Button size="md" className="h-14 px-[46px] text-lg font-medium !bg-[#5aef76] hover:!bg-[#4DE068] !text-[#111827] shadow-[0_0_20px_rgba(90,239,118,0.3)]">
+              <Button variant="brand" size="md" className="h-14 px-[46px] text-lg font-medium">
                 Start Free
               </Button>
-              <a
-                href="#demo"
-                className="inline-flex h-14 items-center justify-center rounded-md border border-zinc-200 bg-transparent px-6 py-2.5 text-base font-medium text-foreground transition-colors hover:bg-zinc-100"
-              >
+              <Button variant="ghost-dark" size="md" className="h-14">
                 Book Demo
-              </a>
+              </Button>
             </div>
             <div className="flex items-center gap-2 text-muted text-sm">
               <svg

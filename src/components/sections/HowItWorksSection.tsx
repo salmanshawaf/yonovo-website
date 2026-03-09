@@ -75,7 +75,7 @@ export default function HowItWorksSection() {
                       <span
                         className={`font-medium text-lg shrink-0 transition-colors duration-300 ${
                           isActive
-                            ? "text-[#e13f3f]"
+                            ? "text-brand-red"
                             : "text-muted"
                         }`}
                       >

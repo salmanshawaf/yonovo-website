@@ -107,7 +107,7 @@ const quickLinks = [
 const navLinks = [
   { label: "Solutions", hasDropdown: true },
   { label: "Resources", hasDropdown: true },
-  { label: "Enterprise", href: "#enterprise", hasDropdown: false },
+  { label: "Case\u00A0Studies", href: "#case-studies", hasDropdown: false },
   { label: "Pricing", href: "#pricing", hasDropdown: false },
 ];
 
@@ -312,7 +312,7 @@ export default function Navbar() {
           >
             Login
           </Link>
-<Button size="sm" className="!bg-[#5aef76] hover:!bg-[#4DE068] !text-[#111827]">Start Free</Button>
+<Button variant="brand" size="sm">Start Free</Button>
         </div>
       </div>
     </nav>

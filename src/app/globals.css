@@ -1,21 +1,33 @@
 @import "tailwindcss";
 
 @theme inline {
+  /* ── Brand Colors ── */
+  --color-brand-green: #5aef76;
+  --color-brand-green-hover: #4DE068;
+  --color-brand-green-text: #111827;
+  --color-brand-navy: #0c2756;
+  --color-brand-blue: #203a7f;
+  --color-brand-red: #e13f3f; /* badge dots, active indicators, feature icons */
+
+  /* ── Neutral Palette ── */
   --color-primary: #000000;
   --color-secondary: #52525B;
   --color-muted: #71717A;
   --color-background: #FFFFFF;
   --color-surface: #F5F5F5;
-  --color-accent-pink: #FF6B9D;
-  --color-accent-orange: #FF8A4C;
-  --color-accent-yellow: #FFD84C;
-  --color-gradient-from: #FB923C;
-  --color-gradient-via: #F472B6;
-  --color-gradient-to: #E879F9;
   --color-foreground: #171717;
   --color-border: #E5E7EB;
   --color-dark: #0A0A0A;
+
+  /* ── Gradient (Explore section) ── */
+  --color-gradient-from: #FB923C;
+  --color-gradient-via: #F472B6;
+  --color-gradient-to: #E879F9;
+
+  /* ── Font ── */
   --font-sans: var(--font-inter);
+
+  /* ── Layout ── */
   --container-max-width: 1280px;
 }
 
@@ -24,6 +36,52 @@ body {
   color: var(--color-primary);
   font-family: var(--font-sans);
 }
+
+/* ── Typography Scale ── */
+
+@utility heading-display {
+  font-size: 38px;
+  line-height: 1.2;
+  font-weight: 500;
+  letter-spacing: -0.02em;
+}
+
+@utility heading-section {
+  font-size: 2.25rem;
+  line-height: 1.1;
+  font-weight: 500;
+  letter-spacing: -0.025em;
+}
+
+@utility heading-card {
+  font-size: 1.25rem;
+  line-height: 1.4;
+  font-weight: 600;
+}
+
+@utility heading-card-sm {
+  font-size: 1.125rem;
+  line-height: 1.35;
+  font-weight: 500;
+  letter-spacing: -0.02em;
+}
+
+@utility body-lg {
+  font-size: 1.125rem;
+  line-height: 1.6;
+}
+
+@utility body-base {
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+@utility body-sm {
+  font-size: 0.875rem;
+  line-height: 1.57;
+}
+
+/* ── Animations ── */
 
 @keyframes shake {
   0% { transform: translate3d(0, 0, 0) scale(1); }

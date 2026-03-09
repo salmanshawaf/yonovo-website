@@ -93,14 +93,14 @@ export default function ExploreSection() {
   }, [activeTab, displayedTab]);
 
   return (
-    <section id="explore" className="w-full py-12 md:py-15" style={{ backgroundColor: "#203a7f" }}>
+    <section id="explore" className="w-full py-12 md:py-15 bg-brand-blue">
       <div className="mx-auto max-w-(--container-max-width) px-6">
         <div className="flex flex-col gap-4">
           {/* Header */}
           <div className="flex flex-col items-start gap-4">
             {/* Dark variant badge */}
             <div className="inline-flex items-center rounded-full px-4 py-1.5 font-medium text-sm border border-white/30 text-white">
-              <div className="mr-2 size-2 rounded-full bg-[#e13f3f]" />
+              <div className="mr-2 size-2 rounded-full bg-brand-red" />
               Explore
             </div>
             <h2 className="font-medium text-4xl text-white tracking-tight lg:text-[3.5rem] lg:leading-[1.1]">
@@ -147,7 +147,7 @@ export default function ExploreSection() {
             style={{ animation: shakeKey > 0 ? "shake 0.5s ease-in-out" : "none" }}
           >
             {/* Gradient background */}
-            <div className="absolute inset-0 overflow-hidden rounded-2xl bg-gradient-to-br from-[#FB923C] via-[#F472B6] to-[#E879F9]">
+            <div className="absolute inset-0 overflow-hidden rounded-2xl bg-gradient-to-br from-gradient-from via-gradient-via to-gradient-to">
               {/* Radial overlay */}
               <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.1)_0%,rgba(255,255,255,0)_100%)]" />
               {/* Vertical stripes */}
