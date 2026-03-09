@@ -27,7 +27,7 @@ const companyLinks = [
 
 export default function Footer() {
   return (
-    <footer className="text-white" style={{ backgroundColor: "#203a7f" }}>
+    <footer className="text-white" style={{ backgroundColor: "#0c2756" }}>
       <div className="mx-auto max-w-(--container-max-width) px-6 pt-28 pb-12">
         {/* Main layout */}
         <div className="flex flex-col gap-12 md:flex-row md:justify-between">

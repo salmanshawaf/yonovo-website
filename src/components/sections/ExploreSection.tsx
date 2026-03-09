@@ -99,8 +99,8 @@ export default function ExploreSection() {
           {/* Header */}
           <div className="flex flex-col items-start gap-4">
             {/* Dark variant badge */}
-            <div className="inline-flex items-center rounded-full px-4 py-1.5 font-medium text-sm border border-zinc-700 text-white">
-              <div className="mr-2 size-2 rounded-full bg-gradient-to-r from-gradient-from via-gradient-via to-gradient-to" />
+            <div className="inline-flex items-center rounded-full px-4 py-1.5 font-medium text-sm border border-white/30 text-white">
+              <div className="mr-2 size-2 rounded-full bg-[#e13f3f]" />
               Explore
             </div>
             <h2 className="font-medium text-4xl text-white tracking-tight lg:text-[3.5rem] lg:leading-[1.1]">

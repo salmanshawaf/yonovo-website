@@ -2,7 +2,7 @@ import Button from "@/components/Button";
 
 export default function CTASection() {
   return (
-    <section className="w-full bg-gradient-to-b from-surface from-60% to-[#203a7f] to-60%">
+    <section className="w-full bg-gradient-to-b from-surface from-60% to-[#0c2756] to-60%">
       <div className="mx-auto max-w-[1600px] px-6">
         <div className="relative flex w-full flex-col items-center justify-center gap-6 overflow-hidden border-t border-border bg-white px-6 py-12 pb-30 md:gap-8 md:rounded-3xl md:border md:p-15 lg:p-25">
           {/* Gradient blob left */}
