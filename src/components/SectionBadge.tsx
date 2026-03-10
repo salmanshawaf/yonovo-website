@@ -1,5 +1,5 @@
 export default function SectionBadge({ label, variant = "light" }: { label: string; variant?: "light" | "dark" }) {
-  const baseClasses = "inline-flex items-center rounded-full px-4 py-1.5 font-medium text-sm";
+  const baseClasses = "inline-flex w-fit items-center rounded-full px-4 py-1.5 font-medium text-sm";
   const variantClasses = variant === "dark"
     ? "border border-white/30 text-white"
     : "border border-border bg-background text-foreground";

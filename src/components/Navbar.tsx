@@ -5,24 +5,24 @@ import Link from "next/link";
 import Image from "next/image";
 import Button from "./Button";
 
-const useCases = [
+const integrations = [
   {
     icon: (
-      <svg className="h-5 w-5" fill="none" stroke="currentColor" strokeWidth={1.5} viewBox="0 0 24 24">
-        <path strokeLinecap="round" strokeLinejoin="round" d="M20.25 8.511c.884.284 1.5 1.128 1.5 2.097v4.286c0 1.136-.847 2.1-1.98 2.193-.34.027-.68.052-1.02.072v3.091l-3-3c-1.354 0-2.694-.055-4.02-.163a2.115 2.115 0 01-.825-.242m9.345-8.334a2.126 2.126 0 00-.476-.095 48.64 48.64 0 00-8.048 0c-1.131.094-1.976 1.057-1.976 2.192v4.286c0 .837.46 1.58 1.155 1.951m9.345-8.334V6.637c0-1.621-1.152-3.026-2.76-3.235A48.455 48.455 0 0011.25 3c-2.115 0-4.198.137-6.24.402-1.608.209-2.76 1.614-2.76 3.235v6.226c0 1.621 1.152 3.026 2.76 3.235.577.075 1.157.14 1.74.194V21l4.155-4.155" />
+      <svg className="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5}>
+        <path strokeLinecap="round" strokeLinejoin="round" d="M12 21v-8.25M15.75 21v-8.25M8.25 21v-8.25M3 9l9-6 9 6m-1.5 12V10.332A48.36 48.36 0 0012 9.75c-2.551 0-5.056.2-7.5.582V21M3 21h18M12 6.75h.008v.008H12V6.75z" />
       </svg>
     ),
-    title: "Customer Support Agent",
-    description: "Instant answers, lower volume, fewer escalations",
+    title: "QuickBooks",
+    description: "Connect Yonovo to QuickBooks",
   },
   {
     icon: (
-      <svg className="h-5 w-5" fill="none" stroke="currentColor" strokeWidth={1.5} viewBox="0 0 24 24">
-        <path strokeLinecap="round" strokeLinejoin="round" d="M12 6v12m-3-2.818l.879.659c1.171.879 3.07.879 4.242 0 1.172-.879 1.172-2.303 0-3.182C13.536 12.219 12.768 12 12 12c-.725 0-1.45-.22-2.003-.659-1.106-.879-1.106-2.303 0-3.182s2.9-.879 4.006 0l.415.33M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+      <svg className="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5}>
+        <path strokeLinecap="round" strokeLinejoin="round" d="M13.19 8.688a4.5 4.5 0 011.242 7.244l-4.5 4.5a4.5 4.5 0 01-6.364-6.364l1.757-1.757m13.35-.622l1.757-1.757a4.5 4.5 0 00-6.364-6.364l-4.5 4.5a4.5 4.5 0 001.242 7.244" />
       </svg>
     ),
-    title: "Sales Agent",
-    description: "Qualify leads, answer questions, and book meetings",
+    title: "Xero",
+    description: "Connect Yonovo to Xero",
   },
 ];
 
@@ -30,38 +30,56 @@ const industries = [
   {
     icon: (
       <svg className="h-5 w-5" fill="none" stroke="currentColor" strokeWidth={1.5} viewBox="0 0 24 24">
-        <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 10.5V6a3.75 3.75 0 10-7.5 0v4.5m11.356-1.993l1.263 12c.07.665-.45 1.243-1.119 1.243H4.25a1.125 1.125 0 01-1.12-1.243l1.264-12A1.125 1.125 0 015.513 7.5h12.974c.576 0 1.059.435 1.119 1.007zM8.625 10.5a.375.375 0 11-.75 0 .375.375 0 01.75 0zm7.5 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z" />
+        <path strokeLinecap="round" strokeLinejoin="round" d="M8.25 18.75a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m3 0h6m-9 0H3.375a1.125 1.125 0 01-1.125-1.125V14.25m17.25 4.5a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m3 0h1.125c.621 0 1.129-.504 1.09-1.124a17.902 17.902 0 00-3.213-9.193 2.056 2.056 0 00-1.58-.86H14.25M16.5 18.75h-2.25m0-11.177v-.958c0-.568-.422-1.048-.987-1.106a48.554 48.554 0 00-10.026 0 1.106 1.106 0 00-.987 1.106v7.635m12-6.677v6.677m0 4.5v-4.5m0 0h-12" />
       </svg>
     ),
-    title: "Ecommerce & Retail",
-    description: "Product questions, shipping, and returns",
+    title: "Wholesale & Distribution",
+    description: "Reduce DSO and protect buyer relationships",
+    href: "/industries/wholesale-distribution",
   },
   {
     icon: (
       <svg className="h-5 w-5" fill="none" stroke="currentColor" strokeWidth={1.5} viewBox="0 0 24 24">
-        <path strokeLinecap="round" strokeLinejoin="round" d="M4.26 10.147a60.436 60.436 0 00-.491 6.347A48.627 48.627 0 0112 20.904a48.627 48.627 0 018.232-4.41 60.46 60.46 0 00-.491-6.347m-15.482 0a50.57 50.57 0 00-2.658-.813A59.905 59.905 0 0112 3.493a59.902 59.902 0 0110.399 5.84c-.896.248-1.783.52-2.658.814m-15.482 0A50.697 50.697 0 0112 13.489a50.702 50.702 0 017.74-3.342M6.75 15a.75.75 0 100-1.5.75.75 0 000 1.5zm0 0v-3.675A55.378 55.378 0 0112 8.443m-7.007 11.55A5.981 5.981 0 006.75 15.75v-1.5" />
+        <path strokeLinecap="round" strokeLinejoin="round" d="M11.42 15.17L17.25 21A2.652 2.652 0 0021 17.25l-5.877-5.877M11.42 15.17l2.496-3.03c.317-.384.74-.626 1.208-.766M11.42 15.17l-4.655 5.653a2.548 2.548 0 11-3.586-3.586l6.837-5.63m5.108-.233c.55-.164 1.163-.188 1.743-.14a4.5 4.5 0 004.486-6.336l-3.276 3.277a3.004 3.004 0 01-2.25-2.25l3.276-3.276a4.5 4.5 0 00-6.336 4.486c.049.58.025 1.193-.14 1.743" />
       </svg>
     ),
-    title: "Education & Training",
-    description: "Admissions, enrolment, and student questions",
+    title: "Manufacturing",
+    description: "Shorten payment cycles, protect partnerships",
+    href: "/industries/manufacturing",
   },
   {
     icon: (
       <svg className="h-5 w-5" fill="none" stroke="currentColor" strokeWidth={1.5} viewBox="0 0 24 24">
-        <path strokeLinecap="round" strokeLinejoin="round" d="M10.5 6h9.75M10.5 6a1.5 1.5 0 11-3 0m3 0a1.5 1.5 0 10-3 0M3.75 6H7.5m3 12h9.75m-9.75 0a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m-3.75 0H7.5m9-6h3.75m-3.75 0a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m-9.75 0h9.75" />
+        <path strokeLinecap="round" strokeLinejoin="round" d="M20.25 14.15v4.25c0 1.094-.787 2.036-1.872 2.18-2.087.277-4.216.42-6.378.42s-4.291-.143-6.378-.42c-1.085-.144-1.872-1.086-1.872-2.18v-4.25m16.5 0a2.18 2.18 0 00.75-1.661V8.706c0-1.081-.768-2.015-1.837-2.175a48.114 48.114 0 00-3.413-.387m4.5 8.006c-.194.165-.42.295-.673.38A23.978 23.978 0 0112 15.75c-2.648 0-5.195-.429-7.577-1.22a2.016 2.016 0 01-.673-.38m0 0A2.18 2.18 0 013 12.489V8.706c0-1.081.768-2.015 1.837-2.175a48.111 48.111 0 013.413-.387m7.5 0V5.25A2.25 2.25 0 0013.5 3h-3a2.25 2.25 0 00-2.25 2.25v.894m7.5 0a48.667 48.667 0 00-7.5 0" />
       </svg>
     ),
-    title: "Fitness & Wellness",
-    description: "Bookings, cancelations, and member support",
+    title: "Professional Services",
+    description: "Get paid faster without risking client referrals",
+    href: "/industries/professional-services",
   },
   {
     icon: (
       <svg className="h-5 w-5" fill="none" stroke="currentColor" strokeWidth={1.5} viewBox="0 0 24 24">
-        <path strokeLinecap="round" strokeLinejoin="round" d="M12 21a9.004 9.004 0 008.716-6.747M12 21a9.004 9.004 0 01-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 017.843 4.582M12 3a8.997 8.997 0 00-7.843 4.582m15.686 0A11.953 11.953 0 0112 10.5c-2.998 0-5.74-1.1-7.843-2.918m15.686 0A8.959 8.959 0 0121 12c0 .778-.099 1.533-.284 2.253m0 0A17.919 17.919 0 0112 16.5c-3.162 0-6.133-.815-8.716-2.247m0 0A9.015 9.015 0 013 12c0-1.605.42-3.113 1.157-4.418" />
+        <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 21h19.5m-18-18v18m10.5-18v18m6-13.5V21M6.75 6.75h.75m-.75 3h.75m-.75 3h.75m3-6h.75m-.75 3h.75m-.75 3h.75M6.75 21v-3.375c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21M3 3h12m-.75 4.5H21m-3.75 3h.008v.008h-.008v-.008zm0 3h.008v.008h-.008v-.008zm0 3h.008v.008h-.008v-.008z" />
       </svg>
     ),
-    title: "Travel & Hospitality",
-    description: "Bookings, disruptions, and refunds",
+    title: "Property Management",
+    description: "Collect rent on time and retain tenants",
+    href: "/industries/property-management",
+  },
+  {
+    icon: (
+      <svg className="h-5 w-5" fill="none" stroke="currentColor" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24">
+        <path d="M17.596 12.768a2 2 0 1 0 2.829-2.829l-1.768-1.767a2 2 0 0 0 2.828-2.829l-2.828-2.828a2 2 0 0 0-2.829 2.828l-1.767-1.768a2 2 0 1 0-2.829 2.829z" />
+        <path d="m2.5 21.5 1.4-1.4" />
+        <path d="m20.1 3.9 1.4-1.4" />
+        <path d="M5.343 21.485a2 2 0 1 0 2.829-2.828l1.767 1.768a2 2 0 1 0 2.829-2.829l-6.364-6.364a2 2 0 1 0-2.829 2.829l1.768 1.767a2 2 0 0 0-2.828 2.829z" />
+        <path d="m9.6 14.4 4.8-4.8" />
+      </svg>
+    ),
+    title: "Gyms & Fitness",
+    description: "Recover failed payments, keep members",
+    href: "/industries/gyms-fitness",
   },
 ];
 
@@ -111,9 +129,9 @@ const navLinks = [
   { label: "Pricing", href: "#pricing", hasDropdown: false },
 ];
 
-function DropdownItem({ icon, title, description }: { icon: React.ReactNode; title: string; description: string }) {
+function DropdownItem({ icon, title, description, href }: { icon: React.ReactNode; title: string; description: string; href?: string }) {
   return (
-    <a href="#" className="flex items-start gap-3 rounded-lg p-3 transition-colors hover:bg-surface">
+    <a href={href ?? "#"} className="flex items-start gap-3 rounded-lg p-3 transition-colors hover:bg-surface">
       <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg border border-border text-foreground">
         {icon}
       </div>
@@ -125,10 +143,10 @@ function DropdownItem({ icon, title, description }: { icon: React.ReactNode; tit
   );
 }
 
-export default function Navbar() {
+export default function Navbar({ defaultMode = "dark" }: { defaultMode?: "dark" | "light" } = {}) {
   const [openDropdown, setOpenDropdown] = useState<string | null>(null);
   const [isVisible, setIsVisible] = useState(false);
-  const [navMode, setNavMode] = useState<"dark" | "light">("dark");
+  const [navMode, setNavMode] = useState<"dark" | "light">(defaultMode);
   const timeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   const navLinksRef = useRef<HTMLDivElement>(null);
 
@@ -150,6 +168,8 @@ export default function Navbar() {
         } else {
           setNavMode("light");
         }
+      } else {
+        setNavMode(defaultMode);
       }
     };
     window.addEventListener("scroll", handleScroll, { passive: true });
@@ -177,7 +197,7 @@ export default function Navbar() {
   }, []);
 
   return (
-    <nav className={`fixed top-0 left-0 right-0 z-50 backdrop-blur-xl transition-all duration-300 ${navMode === "light" ? "bg-white/70 shadow-sm border-b border-white/20" : "bg-transparent"}`}>
+    <nav className={`fixed top-0 left-0 right-0 z-50 border-b backdrop-blur-xl transition-all duration-300 ${navMode === "light" ? "border-border bg-white/70" : "border-transparent bg-transparent"}`}>
       <div className="relative mx-auto flex h-16 w-full max-w-(--container-max-width) items-center justify-between px-6 py-3">
         {/* Left — Logo */}
         <div className="flex flex-1 items-center">
@@ -251,9 +271,9 @@ export default function Navbar() {
               }`}
             >
               <div className="px-5 py-4">
-                <p className="mb-3 text-xs font-semibold tracking-widest text-muted uppercase">By use-case</p>
+                <p className="mb-3 text-xs font-semibold tracking-widest text-muted uppercase">By integration</p>
                 <div className="flex flex-col">
-                  {useCases.map((item) => (
+                  {integrations.map((item) => (
                     <DropdownItem key={item.title} {...item} />
                   ))}
                 </div>

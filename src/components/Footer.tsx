@@ -15,6 +15,14 @@ const resourceLinks = [
   { label: "Changelog", href: "#" },
 ];
 
+const industryLinks = [
+  { label: "Wholesale & Distribution", href: "/industries/wholesale-distribution" },
+  { label: "Manufacturing", href: "/industries/manufacturing" },
+  { label: "Professional Services", href: "/industries/professional-services" },
+  { label: "Property Management", href: "/industries/property-management" },
+  { label: "Gyms & Fitness", href: "/industries/gyms-fitness" },
+];
+
 const companyLinks = [
   { label: "Careers", href: "#" },
   { label: "Privacy policy", href: "#" },
@@ -89,6 +97,20 @@ export default function Footer() {
                 RESOURCES
               </h6>
               {resourceLinks.map((link) => (
+                <a
+                  key={link.label}
+                  href={link.href}
+                  className="font-medium text-sm text-zinc-400 transition-colors duration-200 ease-in-out hover:text-white"
+                >
+                  {link.label}
+                </a>
+              ))}
+            </div>
+            <div className="flex flex-col gap-4">
+              <h6 className="font-semibold text-sm text-zinc-50 capitalize tracking-widest">
+                AR AUTOMATION FOR
+              </h6>
+              {industryLinks.map((link) => (
                 <a
                   key={link.label}
                   href={link.href}
