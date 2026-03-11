@@ -1,6 +1,6 @@
 const productLinks = [
   { label: "Customer Service", href: "#" },
-  { label: "Pricing", href: "#" },
+  { label: "Pricing", href: "/pricing" },
   { label: "Security", href: "#" },
   { label: "Chatbase Experts", href: "#" },
   { label: "Hire an Expert", href: "#" },

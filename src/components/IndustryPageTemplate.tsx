@@ -151,10 +151,10 @@ export default function IndustryPageTemplate({ data }: { data: IndustryData }) {
 
             {/* Social Proof */}
             <div className="flex w-full flex-col items-center gap-0">
-              <p className="font-medium text-base text-muted">
+              <p className="font-medium text-base text-zinc-500">
                 Trusted by finance teams who hate chasing payments
               </p>
-              <div className="w-full -mt-8">
+              <div className="w-full -mt-5">
                 <div className="flex items-center justify-center gap-10">
                   {logos.map((logo) => (
                     <Image
