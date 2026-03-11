@@ -125,7 +125,7 @@ const quickLinks = [
 const navLinks = [
   { label: "Solutions", hasDropdown: true },
   { label: "Resources", hasDropdown: true },
-  { label: "Case\u00A0Studies", href: "#case-studies", hasDropdown: false },
+  { label: "Case\u00A0Studies", href: "/case-studies", hasDropdown: false },
   { label: "Pricing", href: "#pricing", hasDropdown: false },
 ];
 

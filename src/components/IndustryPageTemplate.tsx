@@ -45,7 +45,7 @@ function SolutionIcon({ name, size = 32, className = "" }: { name: string; size?
 
 function ProblemCard({ title, description }: { title: string; description: string }) {
   return (
-    <div className="flex flex-row gap-5 rounded-3xl border border-border bg-white p-6 transition-all duration-300 hover:border-secondary/40 md:px-8 md:py-6">
+    <div className="flex flex-row gap-5 rounded-3xl border border-border bg-white p-6 md:px-8 md:py-6">
       <div className="h-8 w-1 shrink-0 rounded-full bg-brand-red" />
       <div className="flex flex-col gap-2">
         <span className="font-medium text-xl text-foreground tracking-tight md:text-2xl">{title}</span>
