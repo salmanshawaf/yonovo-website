@@ -12,6 +12,30 @@ export const metadata: Metadata = {
   description: "See how real teams use Yonovo to automate collections, reduce DSO, and improve cash flow.",
 };
 
+const relatedArticles = [
+  {
+    slug: "how-to-create-an-invoice",
+    tag: "Invoicing",
+    title: "How to Create an Invoice: Templates and Best Practices for 2026",
+    description:
+      "Learn how to create invoices that get paid faster. Discover templates for B2B, recurring, and project billing, plus the common errors causing 61% of late payments.",
+  },
+  {
+    slug: "average-collection-period",
+    tag: "Metrics",
+    title: "Average Collection Period: Formula, Benchmarks, and Improvement Strategies",
+    description:
+      "Learn how to calculate average collection period correctly, avoid common formula mistakes, benchmark against your industry, and use proven tactics to collect faster.",
+  },
+  {
+    slug: "ar-aging-reports",
+    tag: "Reports",
+    title: "AR Aging Reports: How to Read and Optimize Your Receivables",
+    description:
+      "AR aging reports reveal which invoices are slipping toward uncollectible status. This guide shows how to read them properly, avoid common blind spots, and take action.",
+  },
+];
+
 export default function CaseStudiesPage() {
   const studies = Object.values(caseStudies);
 
@@ -20,10 +44,10 @@ export default function CaseStudiesPage() {
       <Navbar defaultMode="light" />
       <main className="pt-16 min-h-screen">
         {/* ── Hero ── */}
-        <section className="w-full -mt-16 pt-28 md:pt-32 pb-10 md:pb-12 bg-surface">
+        <section className="w-full -mt-16 pt-28 md:pt-32 pb-10 md:pb-12 bg-background">
           <div className="mx-auto max-w-(--container-max-width) px-6">
             <div className="mx-auto flex flex-col items-start gap-4 md:items-center">
-              <SectionBadge label="Customer Stories" />
+              <SectionBadge label="Case Studies" />
               <h1 className="text-balance font-medium text-[42px] text-foreground leading-[1.1] tracking-tight md:text-center md:text-[70px]">
                 Why companies choose Yonovo
               </h1>
@@ -37,15 +61,57 @@ export default function CaseStudiesPage() {
         {/* ── Card Grid ── */}
         <section className="w-full bg-background py-12 md:py-20">
           <div className="mx-auto max-w-(--container-max-width) px-6">
-            <div className="mx-auto grid max-w-5xl grid-cols-1 gap-10 md:grid-cols-2 md:gap-12">
+            <div className="grid grid-cols-1 gap-8 md:grid-cols-2 md:gap-10">
               {studies.map((study) => (
                 <Link key={study.slug} href={`/case-studies/${study.slug}`}>
                   <CaseStudyCard
                     companyName={study.card.companyName}
                     logo={study.card.logo}
+                    industry={study.card.industry}
                     title={study.card.title}
-                    stats={study.results.stats.slice(0, 3)}
+                    stats={study.hero.stats.slice(0, 3)}
                   />
+                </Link>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* ── Related Articles ── */}
+        <section className="w-full bg-background py-12 md:py-20">
+          <div className="mx-auto max-w-(--container-max-width) px-6">
+            <h2 className="heading-section text-foreground mb-10">
+              Related articles
+            </h2>
+            <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+              {relatedArticles.map((article) => (
+                <Link
+                  key={article.slug}
+                  href={`/blog/${article.slug}`}
+                  className="group flex flex-col overflow-hidden rounded-2xl border border-border transition-all duration-300 hover:shadow-lg hover:border-border/60"
+                >
+                  {/* Thumbnail placeholder */}
+                  <div className="aspect-[16/10] w-full bg-[#1a2332] p-5">
+                    <div className="flex h-full w-full items-center justify-center rounded-lg border border-white/10 bg-[#0f1a26]">
+                      <svg className="h-12 w-12 text-white/20" fill="none" stroke="currentColor" strokeWidth={1} viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 14.25v-2.625a3.375 3.375 0 00-3.375-3.375h-1.5A1.125 1.125 0 0113.5 7.125v-1.5a3.375 3.375 0 00-3.375-3.375H8.25m0 12.75h7.5m-7.5 3H12M10.5 2.25H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 00-9-9z" />
+                      </svg>
+                    </div>
+                  </div>
+
+                  {/* Content */}
+                  <div className="flex flex-1 flex-col gap-3 p-5">
+                    <span className="inline-flex w-fit items-center rounded-md bg-surface px-2.5 py-1 text-xs font-medium text-secondary">
+                      {article.tag}
+                    </span>
+                    <h3 className="heading-card text-foreground line-clamp-2">
+                      {article.title}
+                    </h3>
+                    <div className="h-px w-full bg-border" />
+                    <p className="body-sm text-muted line-clamp-3">
+                      {article.description}
+                    </p>
+                  </div>
                 </Link>
               ))}
             </div>

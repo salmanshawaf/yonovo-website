@@ -7,11 +7,13 @@ import type { CaseStudyStat } from "@/data/caseStudies";
 export default function CaseStudyCard({
   companyName,
   logo,
+  industry,
   title,
   stats,
 }: {
   companyName: string;
   logo: { src: string; width: number; height: number };
+  industry: string;
   title: string;
   stats: CaseStudyStat[];
 }) {
@@ -24,19 +26,19 @@ export default function CaseStudyCard({
       onMouseLeave={() => setHovered(false)}
     >
       {/* Logo sticker — overlapping top-left */}
-      <div className="absolute top-0 left-0 z-10 flex items-center justify-center rounded-xl bg-white shadow-lg border border-border w-[120px] h-[56px] md:w-[140px] md:h-[64px]">
+      <div className="absolute top-0 left-0 z-10 flex items-center justify-center rounded-xl bg-white shadow-lg border border-border w-[180px] h-[84px] md:w-[210px] md:h-[96px]">
         <Image
           src={logo.src}
           alt={companyName}
           width={logo.width}
           height={logo.height}
-          className="w-[80px] md:w-[96px] h-auto object-contain"
+          className="w-[120px] md:w-[144px] h-auto object-contain"
         />
       </div>
 
       {/* Card */}
       <div
-        className={`group flex flex-col justify-between overflow-hidden rounded-2xl p-6 pt-10 md:p-8 md:pt-12 min-h-[320px] md:min-h-[400px] transition-all duration-500 ease-out ${
+        className={`group flex flex-col justify-between overflow-hidden rounded-2xl p-6 pt-10 md:p-8 md:pt-12 min-h-[400px] md:min-h-[560px] transition-all duration-500 ease-out ${
           hovered
             ? "scale-[1.02] shadow-2xl shadow-brand-blue/20 border border-white/15"
             : "scale-100 border border-transparent"
@@ -53,10 +55,15 @@ export default function CaseStudyCard({
 
         {/* Badge + Title + Stats — bottom */}
         <div className="flex flex-col gap-3">
-          <span className="inline-flex w-fit items-center rounded-full bg-white/90 px-3 py-1 text-xs font-medium text-foreground">
-            Case Study
-          </span>
-          <h3 className="font-medium text-xl text-white leading-snug tracking-tight md:text-2xl lg:text-[1.75rem]">
+          <div className="flex items-center gap-2">
+            <span className="inline-flex w-fit items-center rounded-full bg-white/90 px-3 py-1 text-xs font-medium text-foreground">
+              Case Study
+            </span>
+            <span className="inline-flex w-fit items-center rounded-full border border-white/30 px-3 py-1 text-xs font-medium text-white">
+              {industry}
+            </span>
+          </div>
+          <h3 className="heading-section text-white text-balance">
             {title}
           </h3>
 
