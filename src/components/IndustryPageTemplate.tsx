@@ -5,8 +5,8 @@ import type { IndustryData } from "@/data/industries";
 import FAQAccordion from "@/components/FAQAccordion";
 
 const logos = [
-  { name: "Troyes", src: "/logos/troyes.png", width: 130, className: "h-8 lg:h-[41px]" },
-  { name: "TDG Inc", src: "/logos/tdg-inc.svg", width: 200, className: "h-8 lg:h-[41px]" },
+  { name: "Troyes", src: "/logos/troyes.png", width: 130, className: "h-[37px] lg:h-[47px]" },
+  { name: "TDG Inc", src: "/logos/tdg-inc.svg", width: 200, className: "h-[95px] lg:h-[120px]" },
 ];
 
 /* ── Icons ── */
@@ -154,7 +154,7 @@ export default function IndustryPageTemplate({ data }: { data: IndustryData }) {
               <p className="font-medium text-base text-muted">
                 Trusted by finance teams who hate chasing payments
               </p>
-              <div className="w-full mt-6">
+              <div className="w-full -mt-8">
                 <div className="flex items-center justify-center gap-10">
                   {logos.map((logo) => (
                     <Image
