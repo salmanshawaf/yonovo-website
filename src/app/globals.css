@@ -1,5 +1,9 @@
 @import "tailwindcss";
 
+html {
+  scroll-behavior: smooth;
+}
+
 @theme inline {
   /* ── Brand Colors ── */
   --color-brand-green: #5aef76;

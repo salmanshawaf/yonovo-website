@@ -46,7 +46,7 @@ export default function CaseStudyCard({
         style={{
           background: hovered
             ? "linear-gradient(135deg, #0c2756 0%, #0c2756 35%, #203a7f 60%, #e13f3f 100%)"
-            : "linear-gradient(135deg, #0c2756 0%, #0c2756 60%, #203a7f 85%, #8b2525 100%)",
+            : "linear-gradient(135deg, #0c2756 0%, #0c2756 60%, #203a7f 85%, #e13f3f 100%)",
           transition: "all 500ms cubic-bezier(0.4, 0, 0.2, 1)",
         }}
       >

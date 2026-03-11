@@ -9,6 +9,7 @@ export type CaseStudyBlock =
 
 export type CaseStudySection = {
   id: string;
+  tocLabel?: string;
   heading: string;
   content: CaseStudyBlock[];
 };
@@ -32,6 +33,18 @@ export type CaseStudyData = {
     stats: CaseStudyStat[];
   };
   sections: CaseStudySection[];
+  profile: {
+    industry: string;
+    offices: string;
+    integration: string;
+    employees?: string;
+    about?: string;
+  };
+  contact: {
+    name: string;
+    title: string;
+    photo: string;
+  };
   cta: {
     headline: string;
     description: string;
@@ -49,24 +62,37 @@ export const caseStudies: Record<string, CaseStudyData> = {
     card: {
       industry: "Wholesale & Distribution",
       companyName: "TDG Inc.",
-      logo: { src: "/logos/tdg-inc.png", width: 200, height: 83 },
+      logo: { src: "/logos/tdg-inc.svg", width: 200, height: 83 },
       title:
         "How TDG Inc. reduced manual follow-ups by 80% and started collecting faster with Yonovo",
       summary:
         "TDG Inc. was spending hours every week chasing overdue invoices manually. Since switching to Yonovo, their manual follow-ups dropped by 80% and they are collecting faster than ever.",
     },
     hero: {
-      date: "January 15th, 2026",
-      readTime: "5 min read",
+      date: "March 11, 2026",
+      readTime: "3 min read",
       stats: [
         { value: "80%", label: "drop in manual follow-ups" },
         { value: "15 Days", label: "reduction in DSO" },
         { value: "32%", label: "faster payment collection" },
       ],
     },
+    profile: {
+      industry: "Wholesale & Distribution",
+      offices: "Toronto",
+      integration: "QuickBooks",
+      employees: "SMB",
+      about: "TDG is a wholesale supplier of houseware, kitchenware, glassware, and mobile accessories. Dedicated to providing exceptional services to local businesses across Canada.",
+    },
+    contact: {
+      name: "Mohammad Alshalabi",
+      title: "Director of Finance",
+      photo: "/photos/mohammad-alshalabi.jpg",
+    },
     sections: [
       {
-        id: "the-challenge",
+        id: "challenge",
+        tocLabel: "Challenge",
         heading: "The challenge: hours lost to manual invoice chasing",
         content: [
           {
@@ -90,7 +116,8 @@ export const caseStudies: Record<string, CaseStudyData> = {
         ],
       },
       {
-        id: "the-solution",
+        id: "solution",
+        tocLabel: "Solution",
         heading: "The solution: AI-powered collections that handle the routine",
         content: [
           {
@@ -114,8 +141,9 @@ export const caseStudies: Record<string, CaseStudyData> = {
         ],
       },
       {
-        id: "the-impact",
-        heading: "The impact: measurable results in the first quarter",
+        id: "results",
+        tocLabel: "Results",
+        heading: "The results: measurable impact in the first quarter",
         content: [
           {
             type: "quote",
@@ -135,6 +163,7 @@ export const caseStudies: Record<string, CaseStudyData> = {
       },
       {
         id: "why-yonovo",
+        tocLabel: "Why Yonovo",
         heading: "Why Yonovo: software and partnership",
         content: [
           {
@@ -168,116 +197,141 @@ export const caseStudies: Record<string, CaseStudyData> = {
   troyes: {
     slug: "troyes",
     meta: {
-      title: "Troyes | Yonovo Case Study",
+      title: "Troyes Canada | Yonovo Case Study",
       description:
-        "How Troyes got up and running with automated collections in a single day and improved follow-up consistency with Yonovo.",
+        "How Troyes Canada went from zero collections process to a fully automated system, saving 25+ hours per month with Yonovo.",
     },
     card: {
       industry: "Wholesale & Distribution",
-      companyName: "Troyes",
+      companyName: "Troyes Canada",
       logo: { src: "/logos/troyes.png", width: 130, height: 41 },
-      title: "How Troyes automated collections in a single day with Yonovo",
+      title: "How Troyes Canada built a collections system from scratch and saved 25+ hours a month",
       summary:
-        "Troyes connected QuickBooks, set their preferences, and Yonovo was collecting on their behalf within the same day. Their follow-ups are now more consistent and professional than ever before.",
+        "Troyes Canada had no formal collections process. Invoices were tracked in spreadsheets, follow-ups happened when someone remembered, and overdue payments piled up. With Yonovo, they went from no system at all to fully automated collections in a single day.",
     },
     hero: {
-      date: "February 3rd, 2026",
-      readTime: "4 min read",
+      date: "February 3, 2026",
+      readTime: "3 min read",
       stats: [
-        { value: "1 Day", label: "from setup to first collection" },
-        { value: "100%", label: "follow-up consistency" },
-        { value: "20 hrs", label: "saved per month" },
+        { value: "25+ hrs", label: "saved per month" },
+        { value: "1 Day", label: "from zero to fully automated" },
+        { value: "45%", label: "faster payment turnaround" },
       ],
+    },
+    profile: {
+      industry: "Wholesale & Distribution",
+      offices: "Toronto",
+      integration: "QuickBooks",
+      employees: "SMB",
+      about: "Troyes Canada is a wholesale supplier of medical supplies and health care products, serving retailers and businesses across Canada.",
+    },
+    contact: {
+      name: "Apple Smith",
+      title: "Accounts Receivable Manager",
+      photo: "/photos/apple-smith.jpg",
     },
     sections: [
       {
-        id: "the-challenge",
-        heading:
-          "The challenge: inconsistent follow-ups slipping through the cracks",
+        id: "challenge",
+        tocLabel: "Challenge",
+        heading: "The challenge: no system, no process, no visibility",
         content: [
           {
             type: "paragraph",
-            text: "Troyes is a professional services company that relied on their team to manually track and follow up on outstanding invoices. Without a system in place, reminders were inconsistent and payments were frequently delayed.",
+            text: "Troyes Canada is a wholesale distributor supplying medical supplies and health care products to retailers across Canada. As the business grew, so did the number of outstanding invoices. But there was no system in place to manage them.",
           },
           {
             type: "paragraph",
-            text: "No standardized follow-up process meant invoices were often forgotten or followed up too late. The team worried that automated messages would feel impersonal and damage the client relationships they had worked hard to build.",
+            text: "Follow-ups happened informally. Someone on the team would remember to check a spreadsheet, send an email, or make a phone call. But there was no schedule, no tracking, and no way to know which invoices were overdue until it was too late.",
           },
           {
             type: "quote",
-            text: "We knew we needed to automate, but we were nervous about losing that personal touch. Our clients expect a certain level of professionalism and we couldn't risk that.",
+            text: "We didn't really have a collections process. It was all manual. Someone would remember to follow up, or they wouldn't. We had no idea how much money was sitting out there overdue.",
             author: "Apple Smith",
-            role: "Accounts Receivable Manager, Troyes",
+            role: "Accounts Receivable Manager, Troyes Canada",
           },
           {
             type: "paragraph",
-            text: "Tracking which invoices needed attention required constant manual effort across spreadsheets. The team was spending more time managing their process than actually collecting.",
+            text: "The result was predictable. Cash flow suffered, payments came in late, and the team spent hours every week doing work that felt repetitive and unproductive. They needed a system, but building one from scratch felt overwhelming.",
           },
         ],
       },
       {
-        id: "the-solution",
-        heading: "The solution: up and running in a single day",
+        id: "solution",
+        tocLabel: "Solution",
+        heading: "The solution: from zero to automated in one day",
         content: [
           {
             type: "quote",
-            text: "What impressed us most was how quickly we were up and running. We connected QuickBooks, set our preferences, and Yonovo was collecting on our behalf within the same day.",
+            text: "We connected QuickBooks in the morning and Yonovo was already sending follow-ups by the afternoon. We went from having nothing to having a full system in a single day.",
             author: "Apple Smith",
-            role: "Accounts Receivable Manager, Troyes",
+            role: "Accounts Receivable Manager, Troyes Canada",
           },
           {
             type: "paragraph",
-            text: "Troyes connected their QuickBooks account, configured their preferences, and Yonovo started collecting on their behalf immediately. The seamless integration pulled in all outstanding invoices automatically.",
+            text: "Troyes connected their QuickBooks account, and Yonovo pulled in every outstanding invoice automatically. The platform set up follow-up schedules based on payment terms and began reaching out to customers on Troyes' behalf immediately.",
           },
           {
             type: "paragraph",
-            text: "Professional, customizable message templates maintained Troyes' brand voice in every follow-up. Automated scheduling ensured every invoice received timely, consistent follow-ups without any manual effort from the team.",
+            text: "Every message was professional and on-brand. Yonovo handled the timing, the tone, and the escalation. For a team that had never had a collections process, it felt like hiring an entire department overnight.",
+          },
+          {
+            type: "paragraph",
+            text: "There was no migration, no training period, and no disruption. The team kept working the way they always had. The only difference was that invoices were now being followed up on consistently, every single time.",
           },
         ],
       },
       {
-        id: "the-impact",
-        heading: "The impact: professional collections from day one",
+        id: "results",
+        tocLabel: "Results",
+        heading: "The results: time back and faster payments",
         content: [
           {
             type: "quote",
-            text: "Our customer relationships haven't suffered at all. If anything, the follow-ups are more consistent and professional than before.",
+            text: "The biggest win is the time. We used to spend hours every week chasing payments manually. Now we barely think about it. Yonovo just handles it.",
             author: "Apple Smith",
-            role: "Accounts Receivable Manager, Troyes",
+            role: "Accounts Receivable Manager, Troyes Canada",
           },
           {
             type: "paragraph",
-            text: "Troyes transformed their collections process overnight. Follow-up consistency went from sporadic to 100%. The team saved 20 hours per month that had been spent on manual tracking and outreach.",
+            text: "Within the first month, Troyes saved over 25 hours that had been spent on manual follow-ups, spreadsheet tracking, and phone calls. That time went back into growing the business, managing inventory, and serving customers.",
           },
           {
             type: "paragraph",
-            text: "Most importantly, they received zero customer complaints about the automated communications. The messages felt personal, professional, and on-brand, exactly what the team had been worried about losing.",
+            text: "Payment turnaround improved by 45%. Customers who previously took 60+ days to pay were now paying within 30 to 40 days, thanks to consistent, timely reminders. The team finally had visibility into their entire receivables pipeline for the first time.",
+          },
+          {
+            type: "paragraph",
+            text: "Most importantly, not a single customer complained about the automated outreach. The messages felt natural and professional, maintaining the relationships Troyes had built over the years.",
           },
         ],
       },
       {
         id: "why-yonovo",
-        heading: "Why Yonovo: simplicity and trust",
+        tocLabel: "Why Yonovo",
+        heading: "Why Yonovo: the system they never had",
         content: [
           {
-            type: "paragraph",
-            text: "For Troyes, the decision came down to simplicity. They needed a tool that worked with their existing setup, not one that required a complete overhaul. Yonovo delivered exactly that.",
+            type: "quote",
+            text: "Before Yonovo, we had nothing. Now we have a system that works better than anything we could have built ourselves. It is the easiest decision we have made for the business.",
+            author: "Apple Smith",
+            role: "Accounts Receivable Manager, Troyes Canada",
           },
           {
             type: "paragraph",
-            text: "For teams that are hesitant about automation, Troyes' experience proves that you can automate collections without sacrificing the personal touch that matters to your clients.",
+            text: "For Troyes, Yonovo was not about replacing an existing tool. It was about building something that never existed. The platform gave them structure, consistency, and visibility into their collections for the first time.",
           },
           {
             type: "paragraph",
-            text: "Book a demo to see how Yonovo can help your team collect faster while keeping every client relationship intact.",
+            text: "For small wholesale teams that have been getting by without a formal collections process, Troyes' story shows what becomes possible when you put a system in place. Not months from now, but today.",
           },
         ],
       },
     ],
     cta: {
-      headline: "Ready to automate your collections?",
+      headline: "Ready to build your collections process?",
       description:
-        "Get up and running with Yonovo in less than a day, just like Troyes.",
+        "Go from zero to fully automated collections in a single day, just like Troyes Canada.",
     },
   },
 };

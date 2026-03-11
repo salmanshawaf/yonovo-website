@@ -3,7 +3,7 @@ import Button from "@/components/Button";
 
 const logos = [
   { name: "Troyes", src: "/logos/troyes.png", width: 130, className: "h-8 lg:h-[41px]" },
-  { name: "TDG Inc", src: "/logos/tdg-inc.png", width: 200, className: "h-[67px] lg:h-[83px]" },
+  { name: "TDG Inc", src: "/logos/tdg-inc.svg", width: 200, className: "h-8 lg:h-[41px]" },
 ];
 
 export default function HeroSection() {
@@ -23,7 +23,7 @@ export default function HeroSection() {
         }}
       />
       <div className="mx-auto max-w-(--container-max-width) px-6">
-        <div className="relative flex w-full flex-col gap-8 overflow-hidden">
+        <div className="relative flex w-full flex-col gap-12 overflow-hidden">
           {/* Hero Grid */}
           <div className="relative mx-auto grid w-full items-center gap-6 px-4 lg:grid-cols-2">
             {/* Left — Text Content */}
@@ -76,7 +76,7 @@ export default function HeroSection() {
             <p className="font-medium text-base text-zinc-500">
               Trusted by finance teams who hate chasing payments
             </p>
-            <div className="w-full -mt-1">
+            <div className="w-full mt-6">
               <div className="flex items-center justify-center gap-10">
                 {logos.map((logo) => (
                   <Image

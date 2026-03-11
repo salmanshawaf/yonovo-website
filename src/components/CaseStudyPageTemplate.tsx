@@ -1,5 +1,6 @@
 "use client";
 
+import { useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import Button from "@/components/Button";
@@ -18,7 +19,10 @@ function QuoteBlock({
   role: string;
 }) {
   return (
-    <blockquote className="rounded-2xl bg-brand-navy p-8 md:p-10 my-2">
+    <blockquote
+      className="rounded-2xl p-8 md:p-10 my-2"
+      style={{ background: "linear-gradient(135deg, #0c2756 0%, #203a7f 50%, #e13f3f 100%)" }}
+    >
       <p className="font-semibold text-white text-base leading-relaxed md:text-lg">
         &ldquo;{text}&rdquo;
       </p>
@@ -36,6 +40,28 @@ export default function CaseStudyPageTemplate({
 }: {
   data: CaseStudyData;
 }) {
+  const [activeSection, setActiveSection] = useState<string>("");
+
+  useEffect(() => {
+    const ids = data.sections.map((s) => s.id);
+    const elements = ids.map((id) => document.getElementById(id)).filter(Boolean) as HTMLElement[];
+    if (elements.length === 0) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        for (const entry of entries) {
+          if (entry.isIntersecting) {
+            setActiveSection(entry.target.id);
+          }
+        }
+      },
+      { rootMargin: "-20% 0px -60% 0px", threshold: 0 }
+    );
+
+    elements.forEach((el) => observer.observe(el));
+    return () => observer.disconnect();
+  }, [data.sections]);
+
   return (
     <>
       {/* ── Hero ── */}
@@ -44,6 +70,7 @@ export default function CaseStudyPageTemplate({
           {/* Back link */}
           <Link
             href="/case-studies"
+            aria-label="Go back to case studies"
             className="inline-flex items-center gap-2 text-sm text-secondary hover:text-foreground transition-colors mb-10"
           >
             <svg
@@ -62,8 +89,9 @@ export default function CaseStudyPageTemplate({
             Back to Case Studies
           </Link>
 
+          {/* Two-column: Title + Logo */}
           <div className="flex flex-col gap-10 lg:flex-row lg:items-start lg:gap-16">
-            {/* Left — Title + stats */}
+            {/* Left — Title + summary */}
             <div className="flex flex-1 flex-col gap-6">
               <p className="text-sm text-secondary">
                 {data.hero.date} &bull; {data.hero.readTime}
@@ -71,37 +99,62 @@ export default function CaseStudyPageTemplate({
               <h1 className="font-medium text-[36px] text-foreground leading-[1.15] tracking-tight md:text-[52px]">
                 {data.card.title}
               </h1>
+              <p className="text-base text-secondary leading-relaxed md:text-lg lg:w-[90%]">
+                {data.card.summary}
+              </p>
 
-              {/* Stats block */}
-              <div className="grid grid-cols-3 divide-x divide-border rounded-2xl border border-border bg-white p-6 md:p-8">
-                {data.hero.stats.map((stat) => (
-                  <div key={stat.label} className="flex flex-col gap-1 px-4 first:pl-0 last:pr-0">
-                    <span className="font-medium text-2xl text-foreground tracking-tight md:text-3xl">
-                      {stat.value}
-                    </span>
-                    <span className="text-xs text-muted leading-tight md:text-sm">
-                      {stat.label}
-                    </span>
-                  </div>
-                ))}
-              </div>
             </div>
 
-            {/* Right — Company logo card */}
-            <div
-              className="flex items-center justify-center rounded-2xl w-full lg:w-[480px] h-[320px] md:h-[420px] shrink-0"
-              style={{
-                background:
-                  "linear-gradient(135deg, #0c2756 0%, #0c2756 40%, #203a7f 65%, #8b2525 100%)",
-              }}
-            >
-              <Image
-                src={data.card.logo.src}
-                alt={data.card.companyName}
-                width={data.card.logo.width}
-                height={data.card.logo.height}
-                className="h-12 md:h-16 w-auto object-contain brightness-0 invert"
-              />
+            {/* Right — Company hero card */}
+            <div className="w-full lg:w-[540px] shrink-0">
+              <div className="relative mr-8">
+                {/* Logo area — offset left so profile pic extends to container edge */}
+                <div className="flex items-center justify-center rounded-2xl bg-white border border-border w-full h-[340px] md:h-[420px]">
+                  <Image
+                    src={data.card.logo.src}
+                    alt={data.card.companyName}
+                    width={data.card.logo.width}
+                    height={data.card.logo.height}
+                    className="w-[59%] h-auto object-contain"
+                  />
+                </div>
+                {/* Contact photo — sticker overlapping bottom-right edge */}
+                {data.contact && (
+                  <div className="absolute -bottom-8 -right-8 flex flex-col items-center">
+                    <Image
+                      src={data.contact.photo}
+                      alt={data.contact.name}
+                      width={96}
+                      height={96}
+                      className="h-28 w-28 rounded-lg object-cover shadow-lg border-2 border-white"
+                    />
+                  </div>
+                )}
+              </div>
+              {/* Name + title below */}
+              {data.contact && (
+                <div className="mt-12 text-right">
+                  <p className="font-medium text-sm text-foreground">{data.contact.name}</p>
+                  <p className="text-xs text-secondary">{data.contact.title}</p>
+                </div>
+              )}
+            </div>
+          </div>
+
+          {/* Full-width Results Stats Bar */}
+          <div className="mt-4 flex flex-col gap-3">
+            <p className="text-xs font-semibold tracking-widest text-secondary uppercase">Results</p>
+            <div className="rounded-2xl bg-surface p-8 md:p-10 grid grid-cols-1 gap-8 sm:grid-cols-3 sm:gap-0 sm:divide-x sm:divide-border">
+              {data.hero.stats.map((stat) => (
+                <div key={stat.label} className="flex flex-col gap-2 sm:px-8 first:sm:pl-0 last:sm:pr-0">
+                  <span className="font-medium text-5xl text-foreground tracking-tight md:text-6xl">
+                    {stat.value}
+                  </span>
+                  <span className="text-base text-secondary leading-snug md:text-lg">
+                    {stat.label}
+                  </span>
+                </div>
+              ))}
             </div>
           </div>
         </div>
@@ -113,19 +166,56 @@ export default function CaseStudyPageTemplate({
           <div className="flex flex-col gap-12 lg:flex-row lg:gap-16">
             {/* Left sidebar — sticky */}
             <aside className="w-full shrink-0 lg:w-[320px] lg:sticky lg:top-24 lg:self-start">
+              {/* Company profile card */}
+              {data.profile && (
+                <>
+                  <div className="rounded-2xl border border-border bg-white p-6 flex flex-col gap-4">
+                      <div className="flex flex-col gap-1">
+                        <span className="text-xs font-semibold text-secondary">Industry</span>
+                        <span className="text-sm text-foreground">{data.profile.industry}</span>
+                      </div>
+                      {data.profile.employees && (
+                        <div className="flex flex-col gap-1">
+                          <span className="text-xs font-semibold text-secondary">Company size</span>
+                          <span className="text-sm text-foreground">{data.profile.employees}</span>
+                        </div>
+                      )}
+                      <div className="flex flex-col gap-1">
+                        <span className="text-xs font-semibold text-secondary">Offices</span>
+                        <span className="text-sm text-foreground">{data.profile.offices}</span>
+                      </div>
+                      <div className="flex flex-col gap-1">
+                        <span className="text-xs font-semibold text-secondary">Integrated with Yonovo</span>
+                        <span className="text-sm text-foreground">{data.profile.integration}</span>
+                      </div>
+                      {data.profile.about && (
+                        <div className="flex flex-col gap-1">
+                          <span className="text-xs font-semibold text-secondary">About the company</span>
+                          <span className="text-sm text-secondary leading-relaxed">{data.profile.about}</span>
+                        </div>
+                      )}
+                  </div>
+                  <div className="my-6 h-px w-full bg-border" />
+                </>
+              )}
+
               {/* Table of contents */}
               <div className="flex flex-col gap-4">
                 <p className="text-xs font-semibold tracking-widest text-secondary uppercase">
                   Table of Contents
                 </p>
-                <nav className="flex flex-col gap-3">
+                <nav className="flex flex-col gap-1">
                   {data.sections.map((section) => (
                     <a
                       key={section.id}
                       href={`#${section.id}`}
-                      className="text-sm font-medium text-foreground leading-snug hover:text-brand-blue transition-colors"
+                      className={`block border-l-[3px] py-2 pl-4 text-sm leading-snug transition-colors ${
+                        activeSection === section.id
+                          ? "border-brand-blue text-brand-blue font-medium"
+                          : "border-transparent text-secondary hover:text-foreground"
+                      }`}
                     >
-                      {section.heading}
+                      {section.tocLabel || section.heading}
                     </a>
                   ))}
                 </nav>
@@ -138,22 +228,17 @@ export default function CaseStudyPageTemplate({
               <div className="flex items-center gap-3">
                 <span className="text-sm text-secondary">Share with others</span>
                 <div className="flex items-center gap-2">
-                  {/* Facebook */}
-                  <button className="flex h-10 w-10 items-center justify-center rounded-full border border-border text-secondary hover:text-foreground hover:border-foreground transition-colors">
-                    <svg className="h-4 w-4" fill="currentColor" viewBox="0 0 24 24">
-                      <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
-                    </svg>
-                  </button>
-                  {/* X */}
-                  <button className="flex h-10 w-10 items-center justify-center rounded-full border border-border text-secondary hover:text-foreground hover:border-foreground transition-colors">
-                    <svg className="h-4 w-4" fill="currentColor" viewBox="0 0 24 24">
-                      <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
-                    </svg>
-                  </button>
                   {/* LinkedIn */}
-                  <button className="flex h-10 w-10 items-center justify-center rounded-full border border-border text-secondary hover:text-foreground hover:border-foreground transition-colors">
+                  <button aria-label="Share on LinkedIn" className="flex h-10 w-10 items-center justify-center rounded-full border border-border text-secondary hover:text-foreground hover:border-foreground transition-colors">
                     <svg className="h-4 w-4" fill="currentColor" viewBox="0 0 24 24">
                       <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+                    </svg>
+                  </button>
+                  {/* Email */}
+                  <button aria-label="Share via email" className="flex h-10 w-10 items-center justify-center rounded-full border border-border text-secondary hover:text-foreground hover:border-foreground transition-colors">
+                    <svg className="h-4 w-4" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24">
+                      <rect x="2" y="4" width="20" height="16" rx="2" />
+                      <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
                     </svg>
                   </button>
                 </div>
@@ -162,40 +247,6 @@ export default function CaseStudyPageTemplate({
               {/* Divider */}
               <div className="my-6 h-px w-full bg-border" />
 
-              {/* Sidebar CTA card */}
-              <div
-                className="flex flex-col gap-5 rounded-2xl p-8"
-                style={{
-                  background:
-                    "linear-gradient(135deg, #0c2756 0%, #203a7f 50%, #8b2525 100%)",
-                }}
-              >
-                <p className="font-medium text-xl text-white leading-snug tracking-tight">
-                  Ready to elevate your AR workflow?
-                </p>
-                <Link href="/contact">
-                  <Button
-                    variant="primary"
-                    size="md"
-                    className="w-full justify-center bg-foreground text-white hover:bg-foreground/90 flex items-center gap-2"
-                  >
-                    Get started
-                    <svg
-                      className="h-4 w-4"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth={2}
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"
-                      />
-                    </svg>
-                  </Button>
-                </Link>
-              </div>
             </aside>
 
             {/* Right — Article content */}
@@ -243,7 +294,7 @@ export default function CaseStudyPageTemplate({
       </section>
 
       {/* ── CTA ── */}
-      <section className="w-full bg-gradient-to-b from-background from-60% to-brand-navy to-60%">
+      <section className="w-full bg-gradient-to-b from-surface from-60% to-brand-navy to-60%">
         <div className="mx-auto max-w-[1600px] px-6">
           <div className="relative flex w-full flex-col items-center justify-center gap-6 overflow-hidden border-t border-border bg-white px-6 py-12 pb-30 md:gap-8 md:rounded-3xl md:border md:p-15 lg:p-25">
             <div className="pointer-events-none absolute bottom-0 left-0 h-auto w-[40%] md:h-[40%] md:w-auto lg:h-[50%]">
