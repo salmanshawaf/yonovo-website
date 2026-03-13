@@ -13,6 +13,8 @@ export default function HeroSection() {
       className="relative w-full -mt-16 pt-28 md:pt-32 pb-10 md:pb-12"
       style={{ background: "white url('/hero-gradient-bg.webp') center top / 100% 90% no-repeat" }}
     >
+      {/* Dark area marker — covers the visually dark portion of the gradient (ends near video bottom) */}
+      <div data-navbar-dark className="pointer-events-none absolute inset-x-0 top-0 h-[76%]" aria-hidden="true" />
       {/* Noise texture overlay */}
       <div
         className="pointer-events-none absolute inset-0 z-[1] opacity-[0.035] mix-blend-overlay"

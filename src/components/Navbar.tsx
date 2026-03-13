@@ -14,6 +14,7 @@ const integrations = [
     ),
     title: "QuickBooks",
     description: "Connect Yonovo to QuickBooks",
+    href: "/solutions/quickbooks",
   },
   {
     icon: (
@@ -23,6 +24,7 @@ const integrations = [
     ),
     title: "Xero",
     description: "Connect Yonovo to Xero",
+    href: "/solutions/xero",
   },
 ];
 
@@ -91,7 +93,7 @@ const quickLinks = [
       </svg>
     ),
     title: "Guide",
-    description: "Find out everything on how to use chatbase",
+    description: "Find out everything on how to use Yonovo",
   },
   {
     icon: (
@@ -100,16 +102,7 @@ const quickLinks = [
       </svg>
     ),
     title: "Blog",
-    description: "Product updates, tips, and insights from Chatbase",
-  },
-  {
-    icon: (
-      <svg className="h-5 w-5" fill="none" stroke="currentColor" strokeWidth={1.5} viewBox="0 0 24 24">
-        <path strokeLinecap="round" strokeLinejoin="round" d="M17.25 6.75L22.5 12l-5.25 5.25m-10.5 0L1.5 12l5.25-5.25m7.5-3l-4.5 16.5" />
-      </svg>
-    ),
-    title: "Docs",
-    description: "API documentation and developer guides",
+    description: "Product updates, tips, and insights from Yonovo",
   },
   {
     icon: (
@@ -151,29 +144,37 @@ export default function Navbar({ defaultMode = "dark" }: { defaultMode?: "dark" 
   const navLinksRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    const handleScroll = () => {
-      const video = document.getElementById("hero-video");
-      const explore = document.getElementById("explore");
-      const scrollY = window.scrollY;
+    const NAV_HEIGHT = 64;
+    let darkSections: HTMLElement[] = [];
+    let ticking = false;
 
-      if (video && explore) {
-        const videoBottom = video.offsetTop + video.offsetHeight;
-        const exploreTop = explore.offsetTop;
-        const exploreBottom = exploreTop + explore.offsetHeight;
+    const updateSections = () => {
+      darkSections = Array.from(document.querySelectorAll<HTMLElement>("[data-navbar-dark]"));
+    };
 
-        if (scrollY <= videoBottom) {
-          setNavMode("dark");
-        } else if (scrollY > exploreTop - 64 && scrollY < exploreBottom - 64) {
-          setNavMode("dark");
-        } else {
-          setNavMode("light");
+    const check = () => {
+      let inDark = false;
+      for (const section of darkSections) {
+        const rect = section.getBoundingClientRect();
+        if (rect.top < NAV_HEIGHT && rect.bottom > NAV_HEIGHT) {
+          inDark = true;
+          break;
         }
-      } else {
-        setNavMode(defaultMode);
+      }
+      setNavMode(inDark ? "dark" : "light");
+      ticking = false;
+    };
+
+    const handleScroll = () => {
+      if (!ticking) {
+        requestAnimationFrame(check);
+        ticking = true;
       }
     };
+
+    updateSections();
+    check();
     window.addEventListener("scroll", handleScroll, { passive: true });
-    handleScroll();
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
@@ -197,7 +198,7 @@ export default function Navbar({ defaultMode = "dark" }: { defaultMode?: "dark" 
   }, []);
 
   return (
-    <nav className={`fixed top-0 left-0 right-0 z-50 border-b backdrop-blur-xl transition-all duration-300 ${navMode === "light" ? "border-border bg-white/70" : "border-transparent bg-transparent"}`}>
+    <nav className={`fixed top-0 left-0 right-0 z-50 border-b backdrop-blur-xl transition-colors duration-150 ${navMode === "light" ? "border-border bg-white/70" : "border-transparent bg-transparent"}`}>
       <div className="relative mx-auto flex h-16 w-full max-w-(--container-max-width) items-center justify-between px-6 py-3">
         {/* Left — Logo */}
         <div className="flex flex-1 items-center">
@@ -306,13 +307,13 @@ export default function Navbar({ defaultMode = "dark" }: { defaultMode?: "dark" 
                 <p className="mb-3 text-xs font-semibold tracking-widest text-muted uppercase">Recent update</p>
                 <div className="flex flex-col gap-3">
                   <div className="overflow-hidden rounded-xl border border-border">
-                    <div className="aspect-[16/10] w-full bg-gradient-to-br from-amber-100 via-pink-100 to-purple-200" />
+                    <Image src="/images/daily-briefing.png" alt="Daily briefings" width={400} height={250} className="aspect-[16/10] w-full object-contain bg-white p-2" />
                     <div className="p-3">
                       <h4 className="text-sm font-semibold text-foreground">
-                        Nested Suggested Messages are now available
+                        Daily briefings are now available
                       </h4>
                       <p className="mt-1 text-sm text-muted line-clamp-2">
-                        Nested suggested messages are now available in the chat bubble, making options cleaner and helping customers get to the right...
+                        Get a weekly summary of collections activity, follow ups sent, and cash recovered, delivered straight to your inbox.
                       </p>
                     </div>
                   </div>
@@ -327,7 +328,7 @@ export default function Navbar({ defaultMode = "dark" }: { defaultMode?: "dark" 
         {/* Right — Auth */}
         <div className="hidden flex-1 items-center justify-end gap-4 lg:flex">
           <Link
-            href="#login"
+            href="https://app.yonovo.ai/"
             className={`text-sm font-medium transition-colors ${navMode === "light" ? "text-gray-900 hover:text-gray-600" : "text-white hover:text-white/70"}`}
           >
             Login

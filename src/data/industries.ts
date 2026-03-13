@@ -225,7 +225,7 @@ export const industries: Record<string, IndustryData> = {
     },
     hero: {
       badge: "Wholesale & Distribution",
-      headline: "Get paid on time, protect every account",
+      headline: "Collect faster, keep every account",
       description:
         "Yonovo automates your accounts receivable with personalized follow ups across email, SMS, and voice. Built for the long payment cycles and high-value relationships of wholesale distribution.",
       cta: "Start Free",
@@ -398,7 +398,7 @@ export const industries: Record<string, IndustryData> = {
     },
     hero: {
       badge: "Manufacturing",
-      headline: "Collect on time, keep production moving",
+      headline: "Get paid, protect your contracts",
       description:
         "Yonovo automates your accounts receivable with personalized follow ups across email, SMS, and voice. Built for the extended payment cycles and high-value contracts of manufacturing.",
       cta: "Start Free",

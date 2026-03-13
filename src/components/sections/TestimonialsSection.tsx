@@ -1,3 +1,4 @@
+import Link from "next/link";
 import SectionBadge from "@/components/SectionBadge";
 
 const testimonials = [
@@ -7,6 +8,7 @@ const testimonials = [
       "We used to spend hours every week chasing overdue invoices manually. Since switching to Yonovo, our manual follow ups dropped by 80% and we\u2019re collecting faster than ever. The AI handles the routine stuff so our team can focus on the accounts that actually need a human touch.",
     name: "Mohammad Alshalabi",
     title: "Director of Finance",
+    caseStudySlug: "tdg-inc",
   },
   {
     company: "Troyes",
@@ -14,6 +16,7 @@ const testimonials = [
       "What impressed us most was how quickly we were up and running. We connected QuickBooks, set our preferences, and Yonovo was collecting on our behalf within the same day. Our customer relationships haven\u2019t suffered at all, if anything the follow ups are more consistent and professional than before.",
     name: "Apple Smith",
     title: "Accounts Receivable Manager",
+    caseStudySlug: "troyes",
   },
   {
     company: "Lawazim",
@@ -29,11 +32,13 @@ function TestimonialCard({
   quote,
   name,
   title,
+  caseStudySlug,
 }: {
   company: string;
   quote: string;
   name: string;
   title: string;
+  caseStudySlug?: string;
 }) {
   return (
     <div className="flex h-full flex-col rounded-2xl border border-border bg-background">
@@ -45,11 +50,32 @@ function TestimonialCard({
           &ldquo;{quote}&rdquo;
         </p>
       </div>
-      <div className="mt-auto p-8 pt-0">
+      <div className="mt-auto flex items-end justify-between p-8 pt-0">
         <div className="flex flex-col gap-1">
           <div className="font-bold text-foreground">{name}</div>
           <div className="text-muted">{title}</div>
         </div>
+        {caseStudySlug && (
+          <Link
+            href={`/case-studies/${caseStudySlug}`}
+            className="group flex items-center gap-1.5 text-sm font-medium text-brand-blue transition-colors hover:text-brand-blue/80"
+          >
+            Read case study
+            <svg
+              width={14}
+              height={14}
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth={2}
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              className="transition-transform group-hover:translate-x-0.5"
+            >
+              <path d="M5 12h14M12 5l7 7-7 7" />
+            </svg>
+          </Link>
+        )}
       </div>
     </div>
   );

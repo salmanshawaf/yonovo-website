@@ -3,6 +3,7 @@ import SectionBadge from "@/components/SectionBadge";
 import Button from "@/components/Button";
 import type { IndustryData } from "@/data/industries";
 import FAQAccordion from "@/components/FAQAccordion";
+import TestimonialsSection from "@/components/sections/TestimonialsSection";
 
 const logos = [
   { name: "Troyes", src: "/logos/troyes.png", width: 130, className: "h-[37px] lg:h-[47px]" },
@@ -55,52 +56,6 @@ function ProblemCard({ title, description }: { title: string; description: strin
   );
 }
 
-function TestimonialCard({
-  company,
-  name,
-  title,
-  quote,
-}: {
-  company: string;
-  name: string;
-  title: string;
-  quote: string;
-}) {
-  return (
-    <div className="flex h-full flex-col rounded-2xl border border-border bg-background">
-      <div className="grow p-8">
-        <div className="mb-5">
-          <span className="text-lg font-bold text-foreground">{company}</span>
-        </div>
-        <p className="text-[1.2rem] text-foreground leading-7">
-          &ldquo;{quote}&rdquo;
-        </p>
-      </div>
-      <div className="mt-auto p-8 pt-0">
-        <div className="flex flex-col gap-1">
-          <div className="font-bold text-foreground">{name}</div>
-          <div className="text-muted">{title}</div>
-        </div>
-      </div>
-    </div>
-  );
-}
-
-function StatsCard({ stat, description }: { stat: string; description: string }) {
-  return (
-    <div className="flex h-full flex-col rounded-2xl border border-border bg-background">
-      <div className="w-full overflow-hidden rounded-t-2xl">
-        <div className="h-[167px] w-full bg-gradient-to-br from-brand-blue/40 via-brand-blue/70 to-brand-blue" />
-      </div>
-      <div className="flex flex-col justify-center p-8">
-        <div className="font-medium text-[3.25rem] text-foreground leading-[3.75rem]">
-          {stat}
-        </div>
-        <div className="text-muted text-xl">{description}</div>
-      </div>
-    </div>
-  );
-}
 
 /* ── Template ── */
 
@@ -143,8 +98,15 @@ export default function IndustryPageTemplate({ data }: { data: IndustryData }) {
 
               {/* Right — Dashboard Preview */}
               <div className="w-full px-0 md:px-15">
-                <div className="relative aspect-[0.8] w-full overflow-hidden rounded-2xl bg-surface">
-                  <div className="absolute inset-0 h-full w-full" />
+                <div className="relative aspect-[0.8] w-full overflow-hidden rounded-2xl">
+                  <video
+                    src="/industry-hero-video.mov"
+                    autoPlay
+                    loop
+                    muted
+                    playsInline
+                    className="absolute inset-0 h-full w-full object-cover object-top"
+                  />
                 </div>
               </div>
             </div>
@@ -298,72 +260,7 @@ export default function IndustryPageTemplate({ data }: { data: IndustryData }) {
       </section>
 
       {/* ── Testimonials ── */}
-      <section className="w-full py-12 md:py-15 bg-surface">
-        <div className="mx-auto max-w-(--container-max-width) px-6">
-          <div className="flex flex-col gap-8 md:gap-16">
-            {/* Header */}
-            <div className="flex flex-col items-start gap-4 md:gap-6 lg:items-center">
-              <SectionBadge label="Testimonials" />
-              <h2 className="max-w-[850px] text-balance font-medium text-4xl text-foreground tracking-tight md:text-[4.5rem] md:leading-[1.05] lg:text-center">
-                What people say
-              </h2>
-              <p className="text-center text-base text-secondary tracking-tight md:text-2xl">
-                See why finance teams are making the switch
-              </p>
-            </div>
-
-            {/* Cards */}
-            <div>
-              {/* Desktop lg: 12-column grid */}
-              <div className="hidden grid-cols-12 gap-6 lg:grid">
-                <div className="h-full col-span-6">
-                  <TestimonialCard company="TDG Inc." quote="We used to spend hours every week chasing overdue invoices manually. Since switching to Yonovo, our manual follow ups dropped by 80% and we're collecting faster than ever. The AI handles the routine stuff so our team can focus on the accounts that actually need a human touch." name="Mohammad Alshalabi" title="Director of Finance" />
-                </div>
-                <div className="h-full col-span-3">
-                  <StatsCard stat="75%" description="reduction in manual tasks" />
-                </div>
-                <div className="h-full col-span-3">
-                  <StatsCard stat="15 Days" description="average reduction in DSO" />
-                </div>
-                <div className="h-full col-span-6">
-                  <TestimonialCard company="Troyes" quote="What impressed us most was how quickly we were up and running. We connected QuickBooks, set our preferences, and Yonovo was collecting on our behalf within the same day. Our customer relationships haven't suffered at all, if anything the follow ups are more consistent and professional than before." name="Apple Smith" title="Accounts Receivable Manager" />
-                </div>
-                <div className="h-full col-span-6">
-                  <TestimonialCard company="Lawazim" quote="As a wholesale distributor, our customer relationships are everything. We were nervous about automating collections but Yonovo's approach is professional and respectful. Customers have actually commented that our follow ups feel more organized now. We're collecting faster without a single complaint." name="Faris Shawaf" title="CFO" />
-                </div>
-              </div>
-
-              {/* Tablet md: 3-column grid */}
-              <div className="hidden grid-cols-3 gap-6 md:grid lg:hidden">
-                <div className="h-full col-span-2">
-                  <TestimonialCard company="TDG Inc." quote="We used to spend hours every week chasing overdue invoices manually. Since switching to Yonovo, our manual follow ups dropped by 80% and we're collecting faster than ever. The AI handles the routine stuff so our team can focus on the accounts that actually need a human touch." name="Mohammad Alshalabi" title="Director of Finance" />
-                </div>
-                <div className="h-full col-span-1">
-                  <StatsCard stat="75%" description="reduction in manual tasks" />
-                </div>
-                <div className="h-full col-span-1">
-                  <StatsCard stat="15 Days" description="average reduction in DSO" />
-                </div>
-                <div className="h-full col-span-2">
-                  <TestimonialCard company="Troyes" quote="What impressed us most was how quickly we were up and running. We connected QuickBooks, set our preferences, and Yonovo was collecting on our behalf within the same day. Our customer relationships haven't suffered at all, if anything the follow ups are more consistent and professional than before." name="Apple Smith" title="Accounts Receivable Manager" />
-                </div>
-                <div className="h-full col-span-3">
-                  <TestimonialCard company="Lawazim" quote="As a wholesale distributor, our customer relationships are everything. We were nervous about automating collections but Yonovo's approach is professional and respectful. Customers have actually commented that our follow ups feel more organized now. We're collecting faster without a single complaint." name="Faris Shawaf" title="CFO" />
-                </div>
-              </div>
-
-              {/* Mobile: stacked */}
-              <div className="flex flex-col gap-4 md:hidden">
-                <TestimonialCard company="TDG Inc." quote="We used to spend hours every week chasing overdue invoices manually. Since switching to Yonovo, our manual follow ups dropped by 80% and we're collecting faster than ever. The AI handles the routine stuff so our team can focus on the accounts that actually need a human touch." name="Mohammad Alshalabi" title="Director of Finance" />
-                <StatsCard stat="75%" description="reduction in manual tasks" />
-                <StatsCard stat="15 Days" description="average reduction in DSO" />
-                <TestimonialCard company="Troyes" quote="What impressed us most was how quickly we were up and running. We connected QuickBooks, set our preferences, and Yonovo was collecting on our behalf within the same day. Our customer relationships haven't suffered at all, if anything the follow ups are more consistent and professional than before." name="Apple Smith" title="Accounts Receivable Manager" />
-                <TestimonialCard company="Lawazim" quote="As a wholesale distributor, our customer relationships are everything. We were nervous about automating collections but Yonovo's approach is professional and respectful. Customers have actually commented that our follow ups feel more organized now. We're collecting faster without a single complaint." name="Faris Shawaf" title="CFO" />
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+      <TestimonialsSection />
 
       {/* ── FAQs ── */}
       {data.faqs.length > 0 && (

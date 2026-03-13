@@ -38,7 +38,7 @@ const bottomFeatures = [
 
 const integrations = [
   { name: "QuickBooks", logo: "/logos/quickbooks-icon.png" },
-  { name: "Xero", logo: "/logos/xero-icon.png" },
+  { name: "Xero", logo: "/logos/xero.png" },
   { name: "Sage", logo: "/logos/sage-icon.svg" },
   { name: "FreshBooks", logo: "/logos/freshbooks-icon.png" },
   { name: "NetSuite", logo: "/logos/netsuite-icon.svg" },

@@ -93,7 +93,7 @@ export default function ExploreSection() {
   }, [activeTab, displayedTab]);
 
   return (
-    <section id="explore" className="w-full py-12 md:py-15 bg-brand-blue">
+    <section id="explore" data-navbar-dark className="w-full py-12 md:py-15 bg-brand-blue">
       <div className="mx-auto max-w-(--container-max-width) px-6">
         <div className="flex flex-col gap-4">
           {/* Header */}
