@@ -7,7 +7,7 @@ const resourceLinks = [
   { label: "Pricing", href: "/pricing" },
   { label: "Contact us", href: "#" },
   { label: "Guide", href: "#" },
-  { label: "Blog", href: "#" },
+  { label: "Blog", href: "/blog" },
   { label: "Changelog", href: "#" },
 ];
 

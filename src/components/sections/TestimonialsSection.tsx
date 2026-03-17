@@ -1,9 +1,11 @@
+import Image from "next/image";
 import Link from "next/link";
 import SectionBadge from "@/components/SectionBadge";
 
 const testimonials = [
   {
     company: "TDG Inc.",
+    logo: { src: "/logos/tdg-inc.svg", width: 200, height: 200, xl: true, offset: "-ml-[18px]" },
     quote:
       "We used to spend hours every week chasing overdue invoices manually. Since switching to Yonovo, our manual follow ups dropped by 80% and we\u2019re collecting faster than ever. The AI handles the routine stuff so our team can focus on the accounts that actually need a human touch.",
     name: "Mohammad Alshalabi",
@@ -12,6 +14,7 @@ const testimonials = [
   },
   {
     company: "Troyes",
+    logo: { src: "/logos/troyes.png", width: 130, height: 41, large: true },
     quote:
       "What impressed us most was how quickly we were up and running. We connected QuickBooks, set our preferences, and Yonovo was collecting on our behalf within the same day. Our customer relationships haven\u2019t suffered at all, if anything the follow ups are more consistent and professional than before.",
     name: "Apple Smith",
@@ -20,8 +23,9 @@ const testimonials = [
   },
   {
     company: "Lawazim",
+    logo: { src: "/logos/lawazim.svg", width: 120, height: 40, small: true },
     quote:
-      "As a wholesale distributor, our customer relationships are everything. We were nervous about automating collections but Yonovo\u2019s approach is professional and respectful. Customers have actually commented that our follow ups feel more organized now. We\u2019re collecting faster without a single complaint.",
+      "As a wholesale distributor, our customer relationships are everything. We were nervous about automating collections but Yonovo\u2019s approach is professional and respectful. Customers have commented that our follow ups feel more organized. We\u2019re collecting faster without a single complaint.",
     name: "Faris Shawaf",
     title: "CFO",
   },
@@ -29,22 +33,31 @@ const testimonials = [
 
 function TestimonialCard({
   company,
+  logo,
   quote,
   name,
   title,
   caseStudySlug,
 }: {
   company: string;
+  logo: { src: string; width: number; height: number; small?: boolean; large?: boolean; xl?: boolean; offset?: string };
   quote: string;
   name: string;
   title: string;
   caseStudySlug?: string;
 }) {
+  const logoHeight = logo.xl ? "h-[108px]" : logo.small ? "h-[12px]" : logo.large ? "h-8" : "h-9";
   return (
     <div className="flex h-full flex-col rounded-2xl border border-border bg-background">
       <div className="grow p-8">
-        <div className="mb-5">
-          <span className="text-lg font-bold text-foreground">{company}</span>
+        <div className="mb-5 flex h-9 items-center">
+          <Image
+            src={logo.src}
+            alt={company}
+            width={logo.width}
+            height={logo.height}
+            className={`w-auto object-contain object-left grayscale opacity-60 ${logoHeight} ${logo.offset || ""}`}
+          />
         </div>
         <p className="text-[1.2rem] text-foreground leading-7">
           &ldquo;{quote}&rdquo;

@@ -1,4 +1,5 @@
 @import "tailwindcss";
+@plugin "@tailwindcss/typography";
 
 html {
   scroll-behavior: smooth;
@@ -83,6 +84,12 @@ body {
 @utility body-sm {
   font-size: 0.875rem;
   line-height: 1.57;
+}
+
+/* ── Blog prose overrides ── */
+
+.prose .anchor-link {
+  display: none;
 }
 
 /* ── Animations ── */

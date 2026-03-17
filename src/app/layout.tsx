@@ -8,6 +8,7 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://yonovo.ai"),
   title: "Yonovo",
   description: "Yonovo — modern solutions for your business",
 };

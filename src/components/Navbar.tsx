@@ -103,6 +103,7 @@ const quickLinks = [
     ),
     title: "Blog",
     description: "Product updates, tips, and insights from Yonovo",
+    href: "/blog",
   },
   {
     icon: (
