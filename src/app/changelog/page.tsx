@@ -38,7 +38,7 @@ export default async function ChangelogPage() {
         <div className="mx-auto w-full max-w-5xl px-4 md:px-20">
           {/* Header */}
           <div className="pt-12 md:pt-16">
-            <h1 className="heading-display text-foreground">
+            <h1 className="text-balance font-medium text-4xl text-foreground leading-tight tracking-tight md:text-[54px]">
               Changelog
             </h1>
           </div>
