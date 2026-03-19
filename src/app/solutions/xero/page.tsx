@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import Navbar from "@/components/Navbar";
+import NavbarWrapper from "@/components/NavbarWrapper";
 import Footer from "@/components/Footer";
 import XeroPage from "@/components/XeroPage";
 
@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 export default function Page() {
   return (
     <>
-      <Navbar defaultMode="dark" />
+      <NavbarWrapper defaultMode="dark" />
       <main className="pt-16 min-h-screen">
         <XeroPage />
       </main>

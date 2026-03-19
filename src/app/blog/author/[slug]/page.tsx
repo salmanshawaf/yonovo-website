@@ -2,7 +2,7 @@ import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
-import Navbar from "@/components/Navbar";
+import NavbarWrapper from "@/components/NavbarWrapper";
 import Footer from "@/components/Footer";
 import BlogPostCard from "@/components/blog/BlogPostCard";
 import Breadcrumbs from "@/components/blog/Breadcrumbs";
@@ -59,7 +59,7 @@ export default async function AuthorPage({ params }: Props) {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(personJsonLd) }}
       />
 
-      <Navbar defaultMode="light" />
+      <NavbarWrapper defaultMode="light" />
 
       <main className="min-h-screen pt-16">
         <div className="mx-auto max-w-(--container-max-width) px-6 pt-12 pb-16">

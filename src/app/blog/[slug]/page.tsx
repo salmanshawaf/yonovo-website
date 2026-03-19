@@ -7,7 +7,7 @@ import remarkGfm from "remark-gfm";
 import rehypeSlug from "rehype-slug";
 import rehypeAutolinkHeadings from "rehype-autolink-headings";
 
-import Navbar from "@/components/Navbar";
+import NavbarWrapper from "@/components/NavbarWrapper";
 import Footer from "@/components/Footer";
 import Breadcrumbs from "@/components/blog/Breadcrumbs";
 import TldrBlock from "@/components/blog/TldrBlock";
@@ -85,7 +85,7 @@ export default async function BlogPostPage({ params }: Props) {
         />
       ))}
 
-      <Navbar defaultMode="light" />
+      <NavbarWrapper defaultMode="light" />
 
       <main className="min-h-screen pt-16">
         {/* Header section */}

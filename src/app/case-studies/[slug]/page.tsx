@@ -1,6 +1,6 @@
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
-import Navbar from "@/components/Navbar";
+import NavbarWrapper from "@/components/NavbarWrapper";
 import Footer from "@/components/Footer";
 import CaseStudyPageTemplate from "@/components/CaseStudyPageTemplate";
 import { caseStudies } from "@/data/caseStudies";
@@ -28,7 +28,7 @@ export default async function CaseStudyPage({ params }: Props) {
 
   return (
     <>
-      <Navbar defaultMode="light" />
+      <NavbarWrapper defaultMode="light" />
       <main className="pt-16 min-h-screen">
         <CaseStudyPageTemplate data={data} />
       </main>

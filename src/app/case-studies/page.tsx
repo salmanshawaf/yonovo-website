@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import Navbar from "@/components/Navbar";
+import NavbarWrapper from "@/components/NavbarWrapper";
 import Footer from "@/components/Footer";
 import SectionBadge from "@/components/SectionBadge";
 import Button from "@/components/Button";
@@ -41,7 +41,7 @@ export default function CaseStudiesPage() {
 
   return (
     <>
-      <Navbar defaultMode="light" />
+      <NavbarWrapper defaultMode="light" />
       <main className="pt-16 min-h-screen">
         {/* ── Hero ── */}
         <section className="w-full -mt-16 pt-28 md:pt-32 pb-10 md:pb-12 bg-background">

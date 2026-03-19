@@ -1,6 +1,6 @@
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
-import Navbar from "@/components/Navbar";
+import NavbarWrapper from "@/components/NavbarWrapper";
 import Footer from "@/components/Footer";
 import IndustryPageTemplate from "@/components/IndustryPageTemplate";
 import { industries } from "@/data/industries";
@@ -28,7 +28,7 @@ export default async function IndustryPage({ params }: Props) {
 
   return (
     <>
-      <Navbar defaultMode="light" />
+      <NavbarWrapper defaultMode="light" />
       <main className="pt-16 min-h-screen">
         <IndustryPageTemplate data={data} />
       </main>

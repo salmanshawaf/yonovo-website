@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import Navbar from "@/components/Navbar";
+import NavbarWrapper from "@/components/NavbarWrapper";
 import Footer from "@/components/Footer";
 import PricingPage from "@/components/PricingPage";
 
@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 export default function Page() {
   return (
     <>
-      <Navbar defaultMode="light" />
+      <NavbarWrapper defaultMode="light" />
       <PricingPage />
       <Footer />
     </>

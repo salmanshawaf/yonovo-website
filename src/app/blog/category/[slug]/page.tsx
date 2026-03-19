@@ -1,7 +1,7 @@
 import { Suspense } from "react";
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
-import Navbar from "@/components/Navbar";
+import NavbarWrapper from "@/components/NavbarWrapper";
 import Footer from "@/components/Footer";
 import BlogListingClient from "@/components/blog/BlogListingClient";
 import { getAllPosts, postToMeta, BLOG_CATEGORIES } from "@/lib/blog";
@@ -29,7 +29,7 @@ export default async function CategoryPage({ params }: Props) {
 
   return (
     <>
-      <Navbar defaultMode="light" />
+      <NavbarWrapper defaultMode="light" />
 
       <main className="min-h-screen pt-16 bg-background">
         <div className="relative mx-auto w-full max-w-(--container-max-width) px-6 py-8 lg:py-12">
