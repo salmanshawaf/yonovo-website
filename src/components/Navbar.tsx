@@ -113,6 +113,7 @@ const quickLinks = [
     ),
     title: "Changelog",
     description: "Stay up to date with the latest updates and features",
+    href: "/changelog",
   },
 ];
 
@@ -137,7 +138,14 @@ function DropdownItem({ icon, title, description, href }: { icon: React.ReactNod
   );
 }
 
-export default function Navbar({ defaultMode = "dark" }: { defaultMode?: "dark" | "light" } = {}) {
+type LatestChangelog = {
+  title: string;
+  description: string;
+  heroImage: string;
+  slug: string;
+};
+
+export default function Navbar({ defaultMode = "dark", latestChangelog }: { defaultMode?: "dark" | "light"; latestChangelog?: LatestChangelog } = {}) {
   const [openDropdown, setOpenDropdown] = useState<string | null>(null);
   const [isVisible, setIsVisible] = useState(false);
   const [navMode, setNavMode] = useState<"dark" | "light">(defaultMode);
@@ -304,22 +312,24 @@ export default function Navbar({ defaultMode = "dark" }: { defaultMode?: "dark" 
                   ))}
                 </div>
               </div>
+              {latestChangelog && (
               <div className="px-5 py-4">
                 <p className="mb-3 text-xs font-semibold tracking-widest text-muted uppercase">Recent update</p>
                 <div className="flex flex-col gap-3">
-                  <div className="overflow-hidden rounded-xl border border-border">
-                    <Image src="/images/daily-briefing.png" alt="Daily briefings" width={400} height={250} className="aspect-[16/10] w-full object-contain bg-white p-2" />
+                  <a href={`/changelog/${latestChangelog.slug}`} className="group overflow-hidden rounded-xl border border-border transition-colors hover:border-border/80">
+                    <Image src={latestChangelog.heroImage} alt={latestChangelog.title} width={400} height={250} className="aspect-[16/10] w-full object-cover bg-surface" />
                     <div className="p-3">
-                      <h4 className="text-sm font-semibold text-foreground">
-                        Daily briefings are now available
+                      <h4 className="text-sm font-semibold text-foreground group-hover:text-brand-blue transition-colors">
+                        {latestChangelog.title}
                       </h4>
                       <p className="mt-1 text-sm text-muted line-clamp-2">
-                        Get a weekly summary of collections activity, follow ups sent, and cash recovered, delivered straight to your inbox.
+                        {latestChangelog.description}
                       </p>
                     </div>
-                  </div>
+                  </a>
                 </div>
               </div>
+              )}
             </div>
           </div>
         </div>

@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#f8fafc"/>
+      <stop offset="100%" stop-color="#f1f5f9"/>
+    </linearGradient>
+    <pattern id="grid" width="60" height="60" patternUnits="userSpaceOnUse">
+      <path d="M 60 0 L 0 0 0 60" fill="none" stroke="#5aef76" stroke-width="0.5" opacity="0.08"/>
+    </pattern>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <rect width="1200" height="630" fill="url(#grid)"/>
+  <!-- Dashboard mockup -->
+  <g transform="translate(340, 100)">
+    <rect x="0" y="0" width="520" height="300" rx="16" fill="white" stroke="#e5e7eb" stroke-width="1.5"/>
+    <!-- Top bar -->
+    <rect x="0" y="0" width="520" height="40" rx="16" fill="#fafafa"/>
+    <rect x="0" y="24" width="520" height="16" fill="#fafafa"/>
+    <circle cx="24" cy="20" r="5" fill="#e13f3f" opacity="0.6"/>
+    <circle cx="42" cy="20" r="5" fill="#facc15" opacity="0.6"/>
+    <circle cx="60" cy="20" r="5" fill="#5aef76" opacity="0.6"/>
+    <!-- Metric cards -->
+    <rect x="20" y="56" width="115" height="60" rx="8" fill="#f8fafc" stroke="#e5e7eb" stroke-width="1"/>
+    <text x="36" y="78" fill="#52525B" font-size="10" font-family="Inter, sans-serif">Outstanding</text>
+    <text x="36" y="100" fill="#0c2756" font-size="18" font-family="Inter, sans-serif" font-weight="700">$142K</text>
+    <rect x="145" y="56" width="115" height="60" rx="8" fill="#f8fafc" stroke="#e5e7eb" stroke-width="1"/>
+    <text x="161" y="78" fill="#52525B" font-size="10" font-family="Inter, sans-serif">Overdue</text>
+    <text x="161" y="100" fill="#e13f3f" font-size="18" font-family="Inter, sans-serif" font-weight="700">$38K</text>
+    <rect x="270" y="56" width="115" height="60" rx="8" fill="#f8fafc" stroke="#e5e7eb" stroke-width="1"/>
+    <text x="286" y="78" fill="#52525B" font-size="10" font-family="Inter, sans-serif">DSO</text>
+    <text x="286" y="100" fill="#5aef76" font-size="18" font-family="Inter, sans-serif" font-weight="700">32 days</text>
+    <rect x="395" y="56" width="105" height="60" rx="8" fill="#f8fafc" stroke="#e5e7eb" stroke-width="1"/>
+    <text x="411" y="78" fill="#52525B" font-size="10" font-family="Inter, sans-serif">Collected</text>
+    <text x="411" y="100" fill="#0c2756" font-size="18" font-family="Inter, sans-serif" font-weight="700">94%</text>
+    <!-- Chart area placeholder -->
+    <rect x="20" y="130" width="480" height="150" rx="8" fill="#fafafa"/>
+    <polyline points="40,250 120,220 200,240 280,190 360,200 440,170 480,160" fill="none" stroke="#5aef76" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+  <!-- Title -->
+  <text x="600" y="470" text-anchor="middle" fill="#0c2756" font-size="42" font-family="Inter, sans-serif" font-weight="600">Dashboard Redesign</text>
+  <text x="600" y="520" text-anchor="middle" fill="#52525B" font-size="20" font-family="Inter, sans-serif">Cleaner, faster, built for AR teams</text>
+</svg>

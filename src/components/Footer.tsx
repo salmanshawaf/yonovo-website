@@ -8,7 +8,7 @@ const resourceLinks = [
   { label: "Contact us", href: "#" },
   { label: "Guide", href: "#" },
   { label: "Blog", href: "/blog" },
-  { label: "Changelog", href: "#" },
+  { label: "Changelog", href: "/changelog" },
 ];
 
 const industryLinks = [
