@@ -13,7 +13,9 @@ export function generateArticleJsonLd(post: BlogPost) {
     "@type": "Article",
     headline: post.frontmatter.title,
     description: post.frontmatter.description,
-    image: `${SITE_URL}${getHeroImage(post).src}`,
+    image: post.frontmatter.ogImage
+      ? `${SITE_URL}${post.frontmatter.ogImage}`
+      : `${SITE_URL}/api/og?title=${encodeURIComponent(post.frontmatter.title)}&category=${encodeURIComponent(post.frontmatter.category)}`,
     author: {
       "@type": "Person",
       name: post.author.name,

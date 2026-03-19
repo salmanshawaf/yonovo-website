@@ -129,10 +129,17 @@ export function getHeroImage(post: BlogPost): { src: string; alt: string } {
   if (post.frontmatter.heroImage && post.frontmatter.heroImageAlt) {
     return { src: post.frontmatter.heroImage, alt: post.frontmatter.heroImageAlt };
   }
-  return (
-    DEFAULT_HERO_IMAGES[post.frontmatter.category] ??
-    DEFAULT_HERO_IMAGES.insights
-  );
+  // Auto-generate a branded hero image via the OG API route
+  const params = new URLSearchParams({
+    title: post.frontmatter.title,
+    category: post.frontmatter.category,
+    tags: post.frontmatter.tags.join(","),
+    slug: post.frontmatter.slug,
+  });
+  return {
+    src: `/api/og?${params.toString()}`,
+    alt: post.frontmatter.title,
+  };
 }
 
 export function postToMeta(post: BlogPost): BlogPostMeta {
