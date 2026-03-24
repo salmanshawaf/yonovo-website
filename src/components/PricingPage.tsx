@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import Button from "@/components/Button";
 import FAQAccordion from "@/components/FAQAccordion";
 import CTASection from "@/components/sections/CTASection";
@@ -24,7 +25,7 @@ const tiers = [
     headline: "Start-ups focused on establishing best practices",
     description:
       "Insight and automation to ensure effective cash flow and protect business resources as you establish your company.",
-    ctaType: "slack" as const,
+    ctaType: "demo" as const,
   },
   {
     name: "Scale",
@@ -32,7 +33,7 @@ const tiers = [
     headline: "Scale-ups focused on streamlining operations",
     description:
       "Build the foundations for rapid growth through best in class financial practices, to scale your business without scaling your team.",
-    ctaType: "slack" as const,
+    ctaType: "demo" as const,
   },
 ];
 
@@ -85,18 +86,6 @@ function formatTurnover(value: number): string {
   return `$${value.toLocaleString("en-US")}`;
 }
 
-/* ── Slack icon ── */
-
-function SlackIcon() {
-  return (
-    <svg className="h-5 w-5" viewBox="0 0 24 24" fill="none">
-      <path d="M5.042 15.165a2.528 2.528 0 0 1-2.52 2.523A2.528 2.528 0 0 1 0 15.165a2.527 2.527 0 0 1 2.522-2.52h2.52v2.52zm1.271 0a2.527 2.527 0 0 1 2.521-2.52 2.527 2.527 0 0 1 2.521 2.52v6.313A2.528 2.528 0 0 1 8.834 24a2.528 2.528 0 0 1-2.521-2.522v-6.313z" fill="#E01E5A" />
-      <path d="M8.834 5.042a2.528 2.528 0 0 1-2.521-2.52A2.528 2.528 0 0 1 8.834 0a2.528 2.528 0 0 1 2.521 2.522v2.52H8.834zm0 1.271a2.528 2.528 0 0 1 2.521 2.521 2.528 2.528 0 0 1-2.521 2.521H2.522A2.528 2.528 0 0 1 0 8.834a2.528 2.528 0 0 1 2.522-2.521h6.312z" fill="#36C5F0" />
-      <path d="M18.956 8.834a2.528 2.528 0 0 1 2.522-2.521A2.528 2.528 0 0 1 24 8.834a2.528 2.528 0 0 1-2.522 2.521h-2.522V8.834zm-1.27 0a2.528 2.528 0 0 1-2.523 2.521 2.527 2.527 0 0 1-2.52-2.521V2.522A2.527 2.527 0 0 1 15.163 0a2.528 2.528 0 0 1 2.523 2.522v6.312z" fill="#2EB67D" />
-      <path d="M15.163 18.956a2.528 2.528 0 0 1 2.523 2.522A2.528 2.528 0 0 1 15.163 24a2.527 2.527 0 0 1-2.52-2.522v-2.522h2.52zm0-1.27a2.527 2.527 0 0 1-2.52-2.523 2.527 2.527 0 0 1 2.52-2.52h6.315A2.528 2.528 0 0 1 24 15.163a2.528 2.528 0 0 1-2.522 2.523h-6.315z" fill="#ECB22E" />
-    </svg>
-  );
-}
 
 /* ── Page Component ── */
 
@@ -123,16 +112,6 @@ export default function PricingPage() {
               Take control of your accounts receivable today, and unlock your owed cash reserves.
             </p>
 
-            {/* Chat with an Expert — Slack */}
-            <div className="flex flex-col items-center gap-1.5 mt-2">
-              <button className="inline-flex items-center gap-3 rounded-full border border-border bg-white px-6 py-2.5 text-sm font-medium text-foreground shadow-sm transition-colors hover:bg-surface cursor-pointer">
-                <SlackIcon />
-                Chat with an Expert
-              </button>
-              <p className="text-xs text-muted">
-                Anonymously, no Slack account required
-              </p>
-            </div>
           </div>
 
           {/* Pricing Cards */}
@@ -176,12 +155,12 @@ export default function PricingPage() {
                       Start Free
                     </Button>
                   ) : (
-                    <>
-                      <button className="inline-flex w-full items-center justify-center gap-3 rounded-md border border-border bg-white px-6 py-3 text-sm font-medium text-foreground transition-colors hover:bg-surface cursor-pointer h-14">
-                        <SlackIcon />
-                        Chat with Sales
-                      </button>
-                    </>
+                    <Link
+                      href="/book-demo"
+                      className="inline-flex w-full items-center justify-center gap-2 rounded-md border border-border bg-white px-6 py-3 text-sm font-medium text-foreground transition-colors hover:bg-surface h-14"
+                    >
+                      Book a Demo
+                    </Link>
                   )}
                 </div>
 
@@ -319,9 +298,12 @@ export default function PricingPage() {
                 <p className="text-sm text-white/80 leading-relaxed mb-4">
                   Want to get a more accurate estimate and learn how to reduce these costs?
                 </p>
-                <button className="w-full rounded-xl bg-white/20 px-6 py-3 text-sm font-medium text-white transition-colors hover:bg-white/30 cursor-pointer">
-                  Talk to an expert
-                </button>
+                <Link
+                  href="/book-demo"
+                  className="block w-full rounded-xl bg-white/20 px-6 py-3 text-sm font-medium text-white text-center transition-colors hover:bg-white/30"
+                >
+                  Book a Demo
+                </Link>
               </div>
             </div>
           </div>
