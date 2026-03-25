@@ -22,6 +22,14 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        {/* Preload Cal.com embed script so /book-demo loads faster */}
+        <link
+          rel="preload"
+          href="https://app.cal.com/embed/embed.js"
+          as="script"
+        />
+      </head>
       <body className={`${inter.variable} antialiased`}>
         {children}
         <Analytics />
