@@ -339,7 +339,7 @@ export default function Navbar({ defaultMode = "dark", latestChangelog }: { defa
         {/* Right — Auth */}
         <div className="hidden flex-1 items-center justify-end gap-4 lg:flex">
           <Link
-            href="https://app.yonovo.ai/"
+            href="https://dashboard.yonovo.ai/login"
             className={`text-sm font-medium transition-colors ${navMode === "light" ? "text-gray-900 hover:text-gray-600" : "text-white hover:text-white/70"}`}
           >
             Login
