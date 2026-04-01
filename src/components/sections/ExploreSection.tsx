@@ -1,6 +1,15 @@
 "use client";
 
 import { useState, useEffect, useCallback, useRef } from "react";
+import Image from "next/image";
+
+const tabImages: Record<string, string> = {
+  Dashboard: "/images/explore-dashboard.png",
+  Inbox: "/images/explore-inbox.png",
+  Customers: "/images/explore-costumers.png",
+  Workflows: "/images/explore-workflows.png",
+  Reporting: "/images/explore-reporting.png",
+};
 
 const tabs = [
   {
@@ -143,7 +152,7 @@ export default function ExploreSection() {
           {/* Preview Area */}
           <div
             key={shakeKey}
-            className="relative mt-2 aspect-video w-full overflow-hidden rounded-2xl"
+            className="relative mt-2 aspect-[19/10] w-full overflow-hidden rounded-2xl"
             style={{ animation: shakeKey > 0 ? "shake 0.5s ease-in-out" : "none" }}
           >
             {/* Gradient background */}
@@ -168,18 +177,28 @@ export default function ExploreSection() {
             {/* Content placeholder with fade + scale transition */}
             <div className="relative z-20 flex h-full w-full items-center justify-center p-10">
               <div
-                className="h-full w-auto max-w-full rounded-2xl bg-background shadow-2xl flex items-center justify-center transition-all duration-500 ease-out"
+                className="h-full w-auto max-w-full rounded-2xl bg-background shadow-2xl overflow-hidden transition-all duration-500 ease-out"
                 style={{
-                  aspectRatio: "16/10",
+                  aspectRatio: "19/10",
                   opacity: isFading ? 0 : 1,
                   transform: isFading ? "scale(0.98)" : "scale(1)",
                 }}
               >
-                <div className="flex flex-col items-center gap-2 px-20">
-                  <span className="text-muted text-sm font-medium">
-                    {tabs[displayedTab].label} Preview
-                  </span>
-                </div>
+                {tabImages[tabs[displayedTab].label] ? (
+                  <Image
+                    src={tabImages[tabs[displayedTab].label]}
+                    alt={`${tabs[displayedTab].label} preview`}
+                    width={1600}
+                    height={1000}
+                    className="h-full w-full object-cover object-top"
+                  />
+                ) : (
+                  <div className="flex h-full w-full flex-col items-center justify-center gap-2 px-20">
+                    <span className="text-muted text-sm font-medium">
+                      {tabs[displayedTab].label} Preview
+                    </span>
+                  </div>
+                )}
               </div>
             </div>
           </div>
