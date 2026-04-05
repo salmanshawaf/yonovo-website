@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import SectionBadge from "@/components/SectionBadge";
 import Button from "@/components/Button";
 import type { IndustryData } from "@/data/industries";
@@ -82,9 +83,11 @@ export default function IndustryPageTemplate({ data }: { data: IndustryData }) {
                     <Button variant="brand" size="md" className="h-14 px-[46px] text-lg font-medium">
                       Start Free
                     </Button>
-                    <Button variant="ghost-dark" size="md" className="h-14">
-                      Book Demo
-                    </Button>
+                    <Link href="/book-demo">
+                      <Button variant="ghost-dark" size="md" className="h-14">
+                        Book Demo
+                      </Button>
+                    </Link>
                   </div>
                   <div className="flex items-center gap-2 text-[13px] text-brand-blue">
                     <svg className="h-4 w-4" fill="none" stroke="currentColor" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 16 17">
@@ -251,9 +254,11 @@ export default function IndustryPageTemplate({ data }: { data: IndustryData }) {
               <Button variant="brand" size="lg" className="h-14 px-[46px] text-lg font-medium">
                 {data.hero.cta}
               </Button>
-              <Button variant="ghost-dark" size="lg" className="h-14">
-                Book Demo
-              </Button>
+              <Link href="/book-demo">
+                <Button variant="ghost-dark" size="lg" className="h-14">
+                  Book Demo
+                </Button>
+              </Link>
             </div>
           </div>
         </div>
@@ -300,9 +305,11 @@ export default function IndustryPageTemplate({ data }: { data: IndustryData }) {
                 <Button variant="brand" size="md" className="h-14 px-[46px] text-lg font-medium">
                   Start Free
                 </Button>
-                <Button variant="ghost-dark" size="md" className="h-14">
-                  Book Demo
-                </Button>
+                <Link href="/book-demo">
+                  <Button variant="ghost-dark" size="md" className="h-14">
+                    Book Demo
+                  </Button>
+                </Link>
               </div>
               <div className="flex items-center gap-2 text-muted text-sm">
                 <svg className="h-4 w-4" fill="none" stroke="currentColor" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 16 17">

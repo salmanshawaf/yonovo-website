@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import SectionBadge from "@/components/SectionBadge";
 import Button from "@/components/Button";
 import FAQAccordion from "@/components/FAQAccordion";
@@ -161,9 +162,11 @@ export default function QuickBooksPage() {
                   <Button variant="brand" size="md" className="h-14 px-[46px] text-lg font-medium whitespace-nowrap">
                     Start Free
                   </Button>
-                  <Button variant="ghost-light" size="md" className="h-14 whitespace-nowrap">
-                    Book Demo
-                  </Button>
+                  <Link href="/book-demo">
+                    <Button variant="ghost-light" size="md" className="h-14 whitespace-nowrap">
+                      Book Demo
+                    </Button>
+                  </Link>
                 </div>
               </div>
             </div>
@@ -539,9 +542,11 @@ export default function QuickBooksPage() {
                 <Button variant="brand" size="md" className="h-14 px-[46px] text-lg font-medium">
                   Start Free
                 </Button>
-                <Button variant="ghost-dark" size="md" className="h-14">
-                  Book Demo
-                </Button>
+                <Link href="/book-demo">
+                  <Button variant="ghost-dark" size="md" className="h-14">
+                    Book Demo
+                  </Button>
+                </Link>
               </div>
               <div className="flex items-center gap-2 text-muted text-sm">
                 {creditCardIcon}

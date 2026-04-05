@@ -1,23 +1,62 @@
+import type { ReactNode } from "react";
 import SectionBadge from "@/components/SectionBadge";
 
-const securityItems = [
+/* ─── Simple security icons ─── */
+function DataIcon() {
+  return (
+    <svg className="h-20 w-20 text-secondary" fill="none" stroke="currentColor" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24">
+      <ellipse cx="12" cy="5" rx="9" ry="3" />
+      <path d="M3 5v14c0 1.66 4.03 3 9 3s9-1.34 9-3V5" />
+      <path d="M3 12c0 1.66 4.03 3 9 3s9-1.34 9-3" />
+    </svg>
+  );
+}
+
+function LockIcon() {
+  return (
+    <svg className="h-20 w-20 text-secondary" fill="none" stroke="currentColor" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24">
+      <rect width="18" height="11" x="3" y="11" rx="2" />
+      <path d="M7 11V7a5 5 0 0 1 10 0v4" />
+      <circle cx="12" cy="16" r="1" />
+    </svg>
+  );
+}
+
+function LinkIcon() {
+  return (
+    <svg className="h-20 w-20 text-secondary" fill="none" stroke="currentColor" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24">
+      <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" />
+      <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" />
+    </svg>
+  );
+}
+
+const securityItems: {
+  title: string;
+  description: string;
+  hasBorder: boolean;
+  icon: ReactNode;
+}[] = [
   {
     title: "Your data stays yours",
     description:
       "All data is encrypted at rest and in transit using industry standard encryption.",
     hasBorder: true,
+    icon: <DataIcon />,
   },
   {
     title: "Encrypted everywhere",
     description:
       "All data is encrypted at rest and in transit using industry standard encryption protocols.",
     hasBorder: true,
+    icon: <LockIcon />,
   },
   {
     title: "Secure integrations",
     description:
       "All platform connections use OAuth and secure API tokens so your credentials are never stored.",
     hasBorder: false,
+    icon: <LinkIcon />,
   },
 ];
 
@@ -56,8 +95,10 @@ export default function SecuritySection() {
                   <p className="w-3/5 text-secondary lg:w-[65%]">
                     {item.description}
                   </p>
-                  {/* Icon placeholder */}
-                  <div className="absolute right-4 bottom-2 h-[100px] w-[100px] rounded-xl bg-surface sm:w-[112px] lg:right-8 lg:w-[132px]" />
+                  {/* Icon */}
+                  <div className="absolute right-6 top-1/2 -translate-y-1/2 lg:right-8">
+                    {item.icon}
+                  </div>
                 </div>
               ))}
             </div>

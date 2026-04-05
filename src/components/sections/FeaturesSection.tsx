@@ -1,4 +1,60 @@
+import Image from "next/image";
+import type { ReactNode } from "react";
 import SectionBadge from "@/components/SectionBadge";
+
+/* ─── Voice Call Mockup (AI voice calls card) ─── */
+function VoiceCallMockup() {
+  return (
+    <div className="flex h-full w-full flex-col overflow-hidden text-left" style={{ backgroundColor: '#f5f4ef' }}>
+      {/* Header */}
+      <div className="flex items-center gap-2 px-4 pt-4 pb-2.5">
+        <div className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-[#e8e7e3]">
+          <svg className="h-3.5 w-3.5 text-[#8a8a87]" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24">
+            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z" />
+          </svg>
+        </div>
+        <span className="font-semibold text-[13px] text-foreground">Pied Piper</span>
+        <span className="inline-flex items-center rounded-full bg-[#dcf5e0] px-2 py-0.5 text-[9px] font-medium text-[#2d8a4e]">Answered</span>
+        <span className="ml-auto text-[9px] text-[#8a8a87]">21h ago</span>
+      </div>
+
+      {/* Recording bar */}
+      <div className="mx-4 mb-3 flex items-center gap-2 rounded-lg bg-[#eae9e5] px-2.5 py-1.5">
+        <svg className="h-3.5 w-3.5 text-[#6b6b68] shrink-0" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z" /></svg>
+        <span className="text-[9px] text-[#6b6b68] font-medium">0:00 / 0:38</span>
+        <div className="flex-1 h-1 rounded-full bg-[#d4d3cf]" />
+        <svg className="h-3.5 w-3.5 text-[#6b6b68] shrink-0" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24"><path d="M11 5L6 9H2v6h4l5 4V5z" /><path d="M19.07 4.93a10 10 0 010 14.14M15.54 8.46a5 5 0 010 7.07" /></svg>
+      </div>
+
+      {/* Transcript */}
+      <div className="mx-4 flex flex-col gap-2.5 flex-1">
+        <p className="text-[9px] text-[#8a8a87] uppercase tracking-wider font-medium">Transcript</p>
+        <div className="flex flex-col gap-2.5">
+          <div className="flex gap-2.5">
+            <span className="text-[11px] font-semibold text-foreground w-[54px] shrink-0">Yonovo AI</span>
+            <p className="text-[11px] text-[#6b6b68] leading-[1.5]">Hi, this is the accounts team at Acme Corp. I&apos;m calling about an outstanding invoice. Do you have a moment?</p>
+          </div>
+          <div className="flex gap-2.5">
+            <span className="text-[11px] font-semibold text-foreground w-[54px] shrink-0">Customer</span>
+            <p className="text-[11px] text-[#6b6b68] leading-[1.5]">Sure, which invoice is this about?</p>
+          </div>
+          <div className="flex gap-2.5">
+            <span className="text-[11px] font-semibold text-foreground w-[54px] shrink-0">Yonovo AI</span>
+            <p className="text-[11px] text-[#6b6b68] leading-[1.5]">It&apos;s invoice #1042 for $2,400, originally due February 15th. Just wanted to see if everything&apos;s good on your end.</p>
+          </div>
+          <div className="flex gap-2.5">
+            <span className="text-[11px] font-semibold text-foreground w-[54px] shrink-0">Customer</span>
+            <p className="text-[11px] text-[#6b6b68] leading-[1.5]">Oh yeah, that one&apos;s been sitting on my desk. I&apos;ll get it sent over this week.</p>
+          </div>
+          <div className="flex gap-2.5">
+            <span className="text-[11px] font-semibold text-foreground w-[54px] shrink-0">Yonovo AI</span>
+            <p className="text-[11px] text-[#6b6b68] leading-[1.5]">Sounds good. I&apos;ll make a note and check back if we haven&apos;t received it by Friday. Appreciate it!</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
 
 const topFeatures = [
   {
@@ -6,12 +62,15 @@ const topFeatures = [
     description:
       "Follow up on overdue invoices by email, SMS, and AI powered voice calls automatically. Each channel escalates based on your rules so no invoice gets forgotten.",
     imageRatio: "aspect-[1216/696]",
+    image: "/images/feature-multichannel.png",
+    imageClassName: "scale-[1.02]",
   },
   {
     title: "Smart workflows that run for you",
     description:
       "Build collection sequences with escalation rules, timing delays, and channel preferences or let the AI recommend the best approach based on your customer data.",
     imageRatio: "aspect-[1216/696]",
+    image: "/images/feature-workflows-v2.png",
   },
 ];
 
@@ -20,19 +79,24 @@ const bottomFeatures = [
     title: "AI voice calls",
     description:
       "Automatically call overdue customers with a natural sounding AI agent that logs every conversation.",
-    imageRatio: "aspect-[794/696]",
+    imageRatio: "aspect-[794/860]",
+    image: "",
+    renderContent: () => <VoiceCallMockup />,
   },
   {
     title: "Customer intelligence",
     description:
       "Complete customer profiles with payment history and relationship context for every follow up.",
-    imageRatio: "aspect-[794/696]",
+    imageRatio: "aspect-[794/860]",
+    image: "/images/feature-customer-intel-v2.png",
   },
   {
     title: "Escalation rules",
     description:
       "Define when an invoice moves from friendly reminder to firm follow up to human handoff.",
-    imageRatio: "aspect-[794/696]",
+    imageRatio: "aspect-[794/860]",
+    image: "/images/feature-escalation.png",
+    imageClassName: "scale-[1.08]",
   },
 ];
 
@@ -87,17 +151,31 @@ function FeatureCard({
   title,
   description,
   imageRatio,
+  image,
+  imageClassName,
+  renderContent,
 }: {
   title: string;
   description: string;
   imageRatio: string;
+  image?: string;
+  imageClassName?: string;
+  renderContent?: () => ReactNode;
 }) {
   return (
     <div className="group flex flex-col overflow-hidden rounded-2xl border border-border transition-all duration-300 bg-background hover:border-secondary/40">
       <div className="w-full">
         <div className="w-full rounded-2xl px-4 pt-4">
-          <div className={`${imageRatio} w-full bg-surface rounded-t-xl flex items-center justify-center`}>
-            <span className="text-muted text-sm">{title}</span>
+          <div className={`relative ${imageRatio} w-full rounded-t-xl overflow-hidden`} style={{ backgroundColor: '#f5f4ef' }}>
+            {renderContent ? (
+              renderContent()
+            ) : image ? (
+              <Image src={image} alt={title} fill className={`object-contain ${imageClassName || ''}`} />
+            ) : (
+              <div className="flex h-full w-full items-center justify-center bg-surface">
+                <span className="text-muted text-sm">{title}</span>
+              </div>
+            )}
           </div>
         </div>
       </div>

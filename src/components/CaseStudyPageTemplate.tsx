@@ -322,9 +322,11 @@ export default function CaseStudyPageTemplate({
                 >
                   Start Free
                 </Button>
-                <Button variant="ghost-dark" size="md" className="h-14">
-                  Book Demo
-                </Button>
+                <Link href="/book-demo">
+                  <Button variant="ghost-dark" size="md" className="h-14">
+                    Book Demo
+                  </Button>
+                </Link>
               </div>
               <div className="flex items-center gap-2 text-muted text-sm">
                 <svg

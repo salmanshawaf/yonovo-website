@@ -134,9 +134,11 @@ export default function CaseStudiesPage() {
                   <Button variant="brand" size="md" className="h-14 px-[46px] text-lg font-medium">
                     Start Free
                   </Button>
-                  <Button variant="ghost-dark" size="md" className="h-14">
-                    Book Demo
-                  </Button>
+                  <Link href="/book-demo">
+                    <Button variant="ghost-dark" size="md" className="h-14">
+                      Book Demo
+                    </Button>
+                  </Link>
                 </div>
                 <div className="flex items-center gap-2 text-muted text-sm">
                   <svg className="h-4 w-4" fill="none" stroke="currentColor" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 16 17">

@@ -1,3 +1,4 @@
+import Image from "next/image";
 import SectionBadge from "@/components/SectionBadge";
 
 const highlights = [
@@ -6,18 +7,21 @@ const highlights = [
     description:
       "From signup to your first automated follow up in minutes, not weeks or months.",
     colSpan: "",
+    image: "/images/highlight-quick-setup.png",
   },
   {
     title: "Designed for simplicity",
     description:
       "Your entire collections process on autopilot so your team never has to chase a payment again.",
     colSpan: "",
+    image: "/images/highlight-oversight.png",
   },
   {
     title: "Engineered for human oversight",
     description:
       "Full control to review every message before it sends or step back and let it all run hands free.",
     colSpan: "md:col-span-2 lg:col-span-1",
+    image: "/images/highlight-human-oversight.png",
   },
 ];
 
@@ -47,9 +51,20 @@ export default function HighlightsSection() {
                 key={item.title}
                 className={`relative flex flex-col overflow-hidden rounded-3xl border border-border bg-background transition-all duration-300 hover:border-secondary/40 ${item.colSpan}`}
               >
-                {/* Image Placeholder */}
-                <div className="aspect-[784/800] w-full bg-surface flex items-center justify-center">
-                  <span className="text-muted text-sm">{item.title}</span>
+                {/* Image */}
+                <div className="relative aspect-[784/800] w-full overflow-hidden" style={{ backgroundColor: '#f5f4ef' }}>
+                  {item.image ? (
+                    <Image
+                      src={item.image}
+                      alt={item.title}
+                      fill
+                      className="object-contain"
+                    />
+                  ) : (
+                    <div className="flex h-full w-full items-center justify-center">
+                      <span className="text-muted text-sm">{item.title}</span>
+                    </div>
+                  )}
                 </div>
                 <div className="space-y-2 px-6 pb-6">
                   <h3 className="font-semibold text-xl text-foreground">
