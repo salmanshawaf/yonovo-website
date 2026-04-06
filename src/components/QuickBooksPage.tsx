@@ -137,6 +137,7 @@ const creditCardIcon = (
 const logos: { name: string; src: string; width: number; className: string; noFilter?: boolean }[] = [
   { name: "Troyes", src: "/logos/troyes-white.png", width: 130, className: "h-[37px] lg:h-[47px]", noFilter: true },
   { name: "TDG Inc", src: "/logos/tdg-inc.svg", width: 200, className: "h-[95px] lg:h-[120px]" },
+  { name: "SBC", src: "/logos/sbc.png", width: 200, className: "h-[75px] lg:h-[95px]" },
 ];
 
 /* ── Page Component ── */

@@ -9,6 +9,7 @@ import TestimonialsSection from "@/components/sections/TestimonialsSection";
 const logos = [
   { name: "Troyes", src: "/logos/troyes.png", width: 130, className: "h-[37px] lg:h-[47px]" },
   { name: "TDG Inc", src: "/logos/tdg-inc.svg", width: 200, className: "h-[95px] lg:h-[120px]" },
+  { name: "SBC", src: "/logos/sbc.png", width: 200, className: "h-[75px] lg:h-[95px]" },
 ];
 
 /* ── Icons ── */
