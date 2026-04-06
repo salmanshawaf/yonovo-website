@@ -29,6 +29,14 @@ export default function RootLayout({
           href="https://app.cal.com/embed/embed.js"
           as="script"
         />
+        {/* Instantly website tracking pixel */}
+        <script
+          id="vtag-ai-js"
+          async
+          src="https://r2.leadsy.ai/tag.js"
+          data-pid="1mLHIjUgE5yR1WIfM"
+          data-version="062024"
+        />
       </head>
       <body className={`${inter.variable} antialiased`}>
         {children}
