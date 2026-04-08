@@ -131,12 +131,14 @@ export default function CaseStudiesPage() {
 
               <div className="flex w-full flex-col items-center justify-center gap-6 md:gap-4">
                 <div className="flex flex-row items-center gap-6">
-                  <Button variant="brand" size="md" className="h-14 px-[46px] text-lg font-medium">
-                    Start Free
-                  </Button>
                   <Link href="/book-demo">
-                    <Button variant="ghost-dark" size="md" className="h-14">
+                    <Button variant="brand" size="md" className="h-14 px-[46px] text-lg font-medium">
                       Book Demo
+                    </Button>
+                  </Link>
+                  <Link href="https://dashboard.yonovo.ai/login">
+                    <Button variant="ghost-dark" size="md" className="h-14">
+                      Start Free
                     </Button>
                   </Link>
                 </div>

@@ -344,7 +344,7 @@ export default function Navbar({ defaultMode = "dark", latestChangelog }: { defa
           >
             Login
           </Link>
-<Button variant="brand" size="sm">Start Free</Button>
+<Link href="/book-demo"><Button variant="brand" size="sm">Book Demo</Button></Link>
         </div>
       </div>
     </nav>

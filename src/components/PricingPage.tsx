@@ -148,13 +148,15 @@ export default function PricingPage() {
                 {/* CTA — pinned to bottom */}
                 <div className="mt-10 flex flex-col items-center gap-2">
                   {tier.ctaType === "brand" ? (
-                    <Button
-                      variant="brand"
-                      size="md"
-                      className="w-full justify-center h-14"
-                    >
-                      Start Free
-                    </Button>
+                    <Link href="/book-demo" className="w-full">
+                      <Button
+                        variant="brand"
+                        size="md"
+                        className="w-full justify-center h-14"
+                      >
+                        Book Demo
+                      </Button>
+                    </Link>
                   ) : (
                     <Link
                       href="/book-demo"

@@ -81,12 +81,14 @@ export default function IndustryPageTemplate({ data }: { data: IndustryData }) {
                 </p>
                 <div className="mt-2 flex flex-col gap-4">
                   <div className="flex flex-row items-center gap-6">
-                    <Button variant="brand" size="md" className="h-14 px-[46px] text-lg font-medium">
-                      Start Free
-                    </Button>
                     <Link href="/book-demo">
-                      <Button variant="ghost-dark" size="md" className="h-14">
+                      <Button variant="brand" size="md" className="h-14 px-[46px] text-lg font-medium">
                         Book Demo
+                      </Button>
+                    </Link>
+                    <Link href="https://dashboard.yonovo.ai/login">
+                      <Button variant="ghost-dark" size="md" className="h-14">
+                        Start Free
                       </Button>
                     </Link>
                   </div>
@@ -252,12 +254,14 @@ export default function IndustryPageTemplate({ data }: { data: IndustryData }) {
 
             {/* CTA */}
             <div className="flex justify-center gap-6">
-              <Button variant="brand" size="lg" className="h-14 px-[46px] text-lg font-medium">
-                {data.hero.cta}
-              </Button>
               <Link href="/book-demo">
+                <Button variant="brand" size="lg" className="h-14 px-[46px] text-lg font-medium">
+                  {data.hero.cta}
+                </Button>
+              </Link>
+              <Link href="https://dashboard.yonovo.ai/login">
                 <Button variant="ghost-dark" size="lg" className="h-14">
-                  Book Demo
+                  Start Free
                 </Button>
               </Link>
             </div>
@@ -303,12 +307,14 @@ export default function IndustryPageTemplate({ data }: { data: IndustryData }) {
 
             <div className="flex w-full flex-col items-center justify-center gap-6 md:gap-4">
               <div className="flex flex-row items-center gap-6">
-                <Button variant="brand" size="md" className="h-14 px-[46px] text-lg font-medium">
-                  Start Free
-                </Button>
                 <Link href="/book-demo">
-                  <Button variant="ghost-dark" size="md" className="h-14">
+                  <Button variant="brand" size="md" className="h-14 px-[46px] text-lg font-medium">
                     Book Demo
+                  </Button>
+                </Link>
+                <Link href="https://dashboard.yonovo.ai/login">
+                  <Button variant="ghost-dark" size="md" className="h-14">
+                    Start Free
                   </Button>
                 </Link>
               </div>

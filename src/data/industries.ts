@@ -55,7 +55,7 @@ export const industries: Record<string, IndustryData> = {
       headline: "Collect faster without losing customers",
       description:
         "Yonovo automates your accounts receivable with personalized follow ups across email, SMS, and voice — built for the speed and scale of ecommerce and retail.",
-      cta: "Start Free",
+      cta: "Book Demo",
     },
     problems: {
       badge: "Problem",
@@ -213,7 +213,7 @@ export const industries: Record<string, IndustryData> = {
       headline: "Ready to collect smarter?",
       description:
         "Join the ecommerce and retail teams that are collecting faster, saving hours, and keeping every customer relationship intact.",
-      cta: "Start Free",
+      cta: "Book Demo",
     },
   },
   "wholesale-distribution": {
@@ -228,7 +228,7 @@ export const industries: Record<string, IndustryData> = {
       headline: "Collect faster, keep every account",
       description:
         "Yonovo automates your accounts receivable with personalized follow ups across email, SMS, and voice. Built for the long payment cycles and high-value relationships of wholesale distribution.",
-      cta: "Start Free",
+      cta: "Book Demo",
     },
     problems: {
       badge: "Problem",
@@ -386,7 +386,7 @@ export const industries: Record<string, IndustryData> = {
       headline: "Ready to collect smarter?",
       description:
         "Join the wholesale and distribution teams that are reducing DSO, saving hours, and keeping every buyer relationship intact.",
-      cta: "Start Free",
+      cta: "Book Demo",
     },
   },
   "manufacturing": {
@@ -401,7 +401,7 @@ export const industries: Record<string, IndustryData> = {
       headline: "Get paid, protect your contracts",
       description:
         "Yonovo automates your accounts receivable with personalized follow ups across email, SMS, and voice. Built for the extended payment cycles and high-value contracts of manufacturing.",
-      cta: "Start Free",
+      cta: "Book Demo",
     },
     problems: {
       badge: "Problem",
@@ -559,7 +559,7 @@ export const industries: Record<string, IndustryData> = {
       headline: "Ready to collect smarter?",
       description:
         "Join the manufacturing teams that are reducing DSO, saving hours, and keeping every customer relationship intact.",
-      cta: "Start Free",
+      cta: "Book Demo",
     },
   },
   "professional-services": {
@@ -574,7 +574,7 @@ export const industries: Record<string, IndustryData> = {
       headline: "Get paid faster, keep every client",
       description:
         "Yonovo automates your accounts receivable with personalized follow ups across email, SMS, and voice. Built for the project-based billing and long client relationships of professional services.",
-      cta: "Start Free",
+      cta: "Book Demo",
     },
     problems: {
       badge: "Problem",
@@ -732,7 +732,7 @@ export const industries: Record<string, IndustryData> = {
       headline: "Ready to collect smarter?",
       description:
         "Join the professional services firms that are reducing DSO, saving hours, and keeping every client relationship intact.",
-      cta: "Start Free",
+      cta: "Book Demo",
     },
   },
   "property-management": {
@@ -747,7 +747,7 @@ export const industries: Record<string, IndustryData> = {
       headline: "Collect on time, retain every tenant",
       description:
         "Yonovo automates your accounts receivable with personalized follow ups across email, SMS, and voice. Built for the recurring billing and tenant relationships of property management.",
-      cta: "Start Free",
+      cta: "Book Demo",
     },
     problems: {
       badge: "Problem",
@@ -905,7 +905,7 @@ export const industries: Record<string, IndustryData> = {
       headline: "Ready to collect smarter?",
       description:
         "Join the property management teams that are improving collection rates, saving hours, and keeping every tenant relationship intact.",
-      cta: "Start Free",
+      cta: "Book Demo",
     },
   },
   "gyms-fitness": {
@@ -920,7 +920,7 @@ export const industries: Record<string, IndustryData> = {
       headline: "Recover payments, keep every member",
       description:
         "Yonovo automates your accounts receivable with personalized follow ups across email, SMS, and voice. Built for the recurring billing and member relationships of gyms and fitness businesses.",
-      cta: "Start Free",
+      cta: "Book Demo",
     },
     problems: {
       badge: "Problem",
@@ -1078,7 +1078,7 @@ export const industries: Record<string, IndustryData> = {
       headline: "Ready to collect smarter?",
       description:
         "Join the gyms and fitness businesses that are recovering more revenue, saving hours, and keeping every member relationship intact.",
-      cta: "Start Free",
+      cta: "Book Demo",
     },
   },
 };

@@ -10,8 +10,8 @@ type InlineCtaProps = {
 export default function InlineCta({
   title = "Automate your collections",
   description = "See how Yonovo can help your team collect faster.",
-  href = "https://app.yonovo.ai/",
-  label = "Start Free",
+  href = "/book-demo",
+  label = "Book Demo",
 }: InlineCtaProps) {
   return (
     <div className="my-8 flex flex-col items-center gap-3 rounded-xl border border-border bg-surface p-6 text-center sm:flex-row sm:text-left">
