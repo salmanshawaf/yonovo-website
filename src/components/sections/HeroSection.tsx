@@ -1,3 +1,6 @@
+"use client";
+
+import { useState, useRef, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import Button from "@/components/Button";
@@ -8,7 +11,71 @@ const logos = [
   { name: "SBC", src: "/logos/sbc.png", width: 200, className: "h-[75px] lg:h-[95px]" },
 ];
 
+const HERO_START = 0;
+const HERO_END = 10;
+
+const RING_SIZE = 45;
+const STROKE = 2.5;
+const RADIUS = (RING_SIZE - STROKE) / 2;
+const CIRCUMFERENCE = 2 * Math.PI * RADIUS;
+
 export default function HeroSection() {
+  const [paused, setPaused] = useState(false);
+  const [progress, setProgress] = useState(0);
+  const videoRef = useRef<HTMLVideoElement>(null);
+
+  // Seek to startTime on mount
+  useEffect(() => {
+    const video = videoRef.current;
+    if (!video) return;
+
+    const seek = () => {
+      video.currentTime = HERO_START;
+      video.play();
+    };
+    video.addEventListener("loadedmetadata", seek, { once: true });
+    if (video.readyState >= 1) {
+      video.currentTime = HERO_START;
+      video.play();
+    }
+  }, []);
+
+  // Track progress and handle endTime looping
+  useEffect(() => {
+    const video = videoRef.current;
+    if (!video) return;
+
+    const onTimeUpdate = () => {
+      if (!video.duration) return;
+      const effectiveDuration = HERO_END - HERO_START;
+      const elapsed = video.currentTime - HERO_START;
+
+      if (video.currentTime >= HERO_END) {
+        video.currentTime = HERO_START;
+        return;
+      }
+
+      setProgress(Math.min(elapsed / effectiveDuration, 1));
+    };
+
+    video.addEventListener("timeupdate", onTimeUpdate);
+    return () => video.removeEventListener("timeupdate", onTimeUpdate);
+  }, []);
+
+  const togglePlayPause = () => {
+    const video = videoRef.current;
+    if (!video) return;
+    if (video.paused) {
+      video.play();
+      setPaused(false);
+    } else {
+      video.pause();
+      setPaused(true);
+    }
+  };
+
+  const dashOffset = CIRCUMFERENCE * (1 - progress);
+
   return (
     <section
       id="hero"
@@ -69,13 +136,72 @@ export default function HeroSection() {
             {/* Right — Dashboard Preview */}
             <div id="hero-video" className="group relative aspect-[0.939] w-full overflow-hidden rounded-3xl">
               <video
-                src="/hero-video.mov"
-                autoPlay
-                loop
+                ref={videoRef}
                 muted
                 playsInline
                 className="absolute inset-0 h-full w-full object-cover object-top"
-              />
+              >
+                <source src="/hero-video.mov" type="video/quicktime" />
+                <source src="/hero-video.mov" type="video/mp4" />
+              </video>
+
+              {/* Play/pause button with progress ring */}
+              <button
+                type="button"
+                onClick={togglePlayPause}
+                className="absolute bottom-4 left-4 flex items-center justify-center"
+                aria-label={paused ? "Play video" : "Pause video"}
+                style={{ width: RING_SIZE, height: RING_SIZE }}
+              >
+                {/* SVG ring */}
+                <svg
+                  width={RING_SIZE}
+                  height={RING_SIZE}
+                  className="absolute inset-0 -rotate-90"
+                  style={{ transform: "rotate(-90deg)" }}
+                >
+                  {/* Track */}
+                  <circle
+                    cx={RING_SIZE / 2}
+                    cy={RING_SIZE / 2}
+                    r={RADIUS}
+                    fill="rgba(0,0,0,0.25)"
+                    stroke="rgba(255,255,255,0.2)"
+                    strokeWidth={STROKE}
+                  />
+                  {/* Progress */}
+                  <circle
+                    cx={RING_SIZE / 2}
+                    cy={RING_SIZE / 2}
+                    r={RADIUS}
+                    fill="none"
+                    stroke="white"
+                    strokeWidth={STROKE}
+                    strokeDasharray={CIRCUMFERENCE}
+                    strokeDashoffset={dashOffset}
+                    strokeLinecap="round"
+                    style={{ transition: "stroke-dashoffset 0.25s linear" }}
+                  />
+                </svg>
+
+                {/* Icon */}
+                <svg
+                  className="relative z-10"
+                  width="13"
+                  height="13"
+                  viewBox="0 0 24 24"
+                  fill="white"
+                >
+                  {paused ? (
+                    <polygon points="5,3 19,12 5,21" />
+                  ) : (
+                    <>
+                      <rect x="14" y="4" width="4" height="16" rx="1" />
+                      <rect x="6" y="4" width="4" height="16" rx="1" />
+                    </>
+                  )}
+                </svg>
+              </button>
             </div>
           </div>
 

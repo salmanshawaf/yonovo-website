@@ -21,7 +21,8 @@ export default function Home() {
         <HowItWorksSection />
         <FeaturesSection />
         <ExploreSection />
-        <BenefitsSection />
+        {/* TODO: BenefitsSection hidden temporarily — re-enable when ready */}
+        {/* <BenefitsSection /> */}
         <AdvantagesSection />
         <TestimonialsSection />
         <SecuritySection />

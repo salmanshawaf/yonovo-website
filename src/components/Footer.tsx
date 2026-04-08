@@ -5,8 +5,7 @@ const integrationLinks = [
 
 const resourceLinks = [
   { label: "Pricing", href: "/pricing" },
-  { label: "Contact us", href: "#" },
-  { label: "Guide", href: "#" },
+  { label: "Contact us", href: "mailto:salman@yonovo.com" },
   { label: "Blog", href: "/blog" },
   { label: "Changelog", href: "/changelog" },
 ];
@@ -20,7 +19,7 @@ const industryLinks = [
 ];
 
 const companyLinks = [
-  { label: "Careers", href: "#" },
+  { label: "Careers", href: "/careers" },
   { label: "Privacy policy", href: "/privacy-policy" },
   { label: "Terms of service", href: "/terms-of-service" },
 ];
@@ -43,7 +42,7 @@ export default function Footer() {
 
             {/* Contact + Social icons grid */}
             <div className="grid w-full grid-cols-4 gap-4 md:w-auto md:grid-cols-6">
-              <a href="#" className="contents">
+              <a href="mailto:salman@yonovo.com" className="contents">
                 <button className="col-span-4 flex h-11 items-center justify-center rounded-md border border-white/20 bg-transparent px-5 py-3 font-medium text-base text-white transition-all duration-200 hover:bg-white/10 md:col-span-2">
                   Contact
                 </button>

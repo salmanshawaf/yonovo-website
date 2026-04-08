@@ -87,7 +87,7 @@ export const caseStudies: Record<string, CaseStudyData> = {
     contact: {
       name: "Mohammad Alshalabi",
       title: "Director of Finance",
-      photo: "/photos/mohammad-alshalabi.jpg",
+      photo: "/photos/generic-avatar.svg",
     },
     sections: [
       {
@@ -228,7 +228,7 @@ export const caseStudies: Record<string, CaseStudyData> = {
     contact: {
       name: "Apple Smith",
       title: "Accounts Receivable Manager",
-      photo: "/photos/mohammad-alshalabi.jpg",
+      photo: "/photos/generic-avatar.svg",
     },
     sections: [
       {

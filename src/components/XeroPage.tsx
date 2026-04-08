@@ -47,22 +47,28 @@ const timelineSteps = [
   {
     number: 1,
     text: "Invoice your customers as usual, from Xero.",
+    image: "/images/qb-step-1-invoice.png",
   },
   {
     number: 2,
     text: "Yonovo automatically syncs your invoices, contacts, and payment data.",
+    image: "/images/highlight-oversight.png",
+    overlay: "/images/qb-step-2-stats.png",
   },
   {
     number: 3,
     text: "When an invoice goes overdue, Yonovo follows up by email, SMS, and AI-powered phone calls on your behalf.",
+    image: "/images/qb-step-3-followup.png",
   },
   {
     number: 4,
     text: "The AI adapts its approach over time, learning what works for each customer and escalating to your team when a human is needed.",
+    image: "/images/qb-step-4-learns.png",
   },
   {
     number: 5,
     text: "Monitor recovery rates, DSO, and at-risk invoices from your dashboard so you always know where your receivables stand.",
+    image: "/images/qb-step-5-dashboard.png",
   },
 ];
 
@@ -371,6 +377,17 @@ export default function XeroPage() {
             <div className="flex flex-col gap-16 md:gap-24">
               {timelineSteps.map((step, i) => {
                 const isOdd = i % 2 === 0;
+                const imageBlock = step.image ? (
+                  <div className={`relative aspect-[4/3] w-full overflow-hidden rounded-2xl bg-gradient-to-b from-zinc-100 to-zinc-50 border border-border flex flex-col justify-center gap-3 p-6 md:p-10 ${step.overlay ? "items-center" : "items-center"}`}>
+                    {step.overlay && (
+                      <img src={step.overlay} alt="" className="w-[90%] h-auto rounded-lg shadow-2xl border border-zinc-200/60" />
+                    )}
+                    <img src={step.image} alt={step.text} className="max-w-full max-h-full rounded-lg shadow-xl border border-zinc-200/60" />
+                  </div>
+                ) : (
+                  <div className="aspect-[4/3] w-full rounded-2xl bg-background border border-border" />
+                );
+
                 return (
                   <div key={step.number} className="relative">
                     {/* Mobile layout */}
@@ -381,7 +398,7 @@ export default function XeroPage() {
                       <p className="text-lg font-medium text-foreground leading-relaxed">
                         {step.text}
                       </p>
-                      <div className="aspect-[4/3] w-full rounded-2xl bg-background border border-border" />
+                      {imageBlock}
                     </div>
 
                     {/* Desktop layout — zigzag */}
@@ -398,7 +415,7 @@ export default function XeroPage() {
                             </p>
                           </>
                         ) : (
-                          <div className="aspect-[4/3] w-full rounded-2xl bg-background border border-border" />
+                          imageBlock
                         )}
                       </div>
 
@@ -410,7 +427,7 @@ export default function XeroPage() {
                       {/* Right side */}
                       <div className={isOdd ? "flex items-center justify-center" : "flex flex-col gap-3"}>
                         {isOdd ? (
-                          <div className="aspect-[4/3] w-full rounded-2xl bg-background border border-border" />
+                          imageBlock
                         ) : (
                           <>
                             <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-brand-navy text-white font-medium">

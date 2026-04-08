@@ -37,7 +37,7 @@ html {
 }
 
 body {
-  background: var(--color-background);
+  background: var(--color-brand-navy);
   color: var(--color-primary);
   font-family: var(--font-sans);
 }
