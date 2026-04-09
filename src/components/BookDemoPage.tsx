@@ -57,7 +57,7 @@ export default function BookDemoPage() {
   return (
     <>
       {/* ── Hero: two-column layout ── */}
-      <section className="w-full -mt-16 pt-32 md:pt-40 pb-10 md:pb-12 bg-background">
+      <section className="w-full -mt-16 pt-36 md:pt-40 pb-10 md:pb-12 bg-background">
         <div className="mx-auto max-w-(--container-max-width) px-6">
           <div className="grid grid-cols-1 items-start gap-12 lg:grid-cols-2 lg:gap-16">
             {/* Left — Copy */}
