@@ -6,12 +6,12 @@ export default function BlogBottomCta() {
     <section className="w-full bg-gradient-to-b from-white from-60% to-brand-navy to-60% mt-16">
       <div className="mx-auto max-w-[1600px] px-6">
         <div className="relative flex w-full flex-col items-center justify-center gap-6 overflow-hidden border-t border-border bg-white px-6 py-12 pb-30 md:gap-8 md:rounded-3xl md:border md:p-15 lg:p-25">
-          {/* Gradient blob left */}
-          <div className="pointer-events-none absolute bottom-0 left-0 h-auto w-[40%] md:h-[40%] md:w-auto lg:h-[50%]">
+          {/* Gradient blob left — hidden on mobile */}
+          <div className="pointer-events-none absolute bottom-0 left-0 hidden md:block md:h-[40%] lg:h-[50%]">
             <div className="h-[350px] w-[350px] rounded-full bg-brand-blue opacity-70 blur-3xl" />
           </div>
-          {/* Gradient blob right */}
-          <div className="pointer-events-none absolute right-0 bottom-0 h-auto w-[40%] md:h-[40%] md:w-auto lg:h-[50%]">
+          {/* Gradient blob right — hidden on mobile */}
+          <div className="pointer-events-none absolute right-0 bottom-0 hidden md:block md:h-[40%] lg:h-[50%]">
             <div className="h-[350px] w-[350px] rounded-full bg-brand-blue opacity-70 blur-3xl" />
           </div>
 
@@ -28,14 +28,14 @@ export default function BlogBottomCta() {
 
           {/* CTA buttons */}
           <div className="flex w-full flex-col items-center justify-center gap-6 md:gap-4">
-            <div className="flex w-full flex-col items-center gap-3 sm:w-auto sm:flex-row sm:gap-6">
-              <Link href="/book-demo" className="w-full sm:w-auto">
-                <Button variant="brand" size="md" className="h-14 w-full px-[46px] text-lg font-medium sm:w-auto">
+            <div className="flex w-full max-w-sm flex-col gap-3 px-6 sm:max-w-none sm:w-auto sm:flex-row sm:gap-6 sm:px-0">
+              <Link href="/book-demo" className="block">
+                <Button variant="brand" size="md" className="h-14 w-full px-[46px] text-lg font-medium whitespace-nowrap">
                   Book Demo
                 </Button>
               </Link>
-              <Link href="https://dashboard.yonovo.ai/login" className="w-full sm:w-auto">
-                <Button variant="ghost-dark" size="md" className="h-14 w-full sm:w-auto">
+              <Link href="https://dashboard.yonovo.ai/login" className="block">
+                <Button variant="ghost-dark" size="md" className="h-14 w-full whitespace-nowrap">
                   Start Free
                 </Button>
               </Link>
