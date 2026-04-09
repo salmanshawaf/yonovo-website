@@ -31,23 +31,23 @@ const problems = [
 ];
 
 const comparisonFeatures = [
-  { feature: "Invoice creation and tracking", xero: true, yonovo: true },
-  { feature: "Aging reports", xero: true, yonovo: true },
-  { feature: "Automated payment reminders", xero: false, yonovo: true },
-  { feature: "Multi-channel follow ups (email, SMS, phone)", xero: false, yonovo: true },
-  { feature: "AI-powered collection strategies", xero: false, yonovo: true },
-  { feature: "Customer risk scoring", xero: false, yonovo: true },
-  { feature: "Escalation workflows", xero: false, yonovo: true },
-  { feature: "Real time AR dashboard", xero: false, yonovo: true },
-  { feature: "Payment portal for customers", xero: false, yonovo: true },
-  { feature: "DSO reduction tracking", xero: false, yonovo: true },
+  { feature: "Invoice creation and tracking", odoo: true, yonovo: true },
+  { feature: "Aging reports", odoo: true, yonovo: true },
+  { feature: "Automated payment reminders", odoo: false, yonovo: true },
+  { feature: "Multi-channel follow ups (email, SMS, phone)", odoo: false, yonovo: true },
+  { feature: "AI-powered collection strategies", odoo: false, yonovo: true },
+  { feature: "Customer risk scoring", odoo: false, yonovo: true },
+  { feature: "Escalation workflows", odoo: false, yonovo: true },
+  { feature: "Real time AR dashboard", odoo: false, yonovo: true },
+  { feature: "Payment portal for customers", odoo: false, yonovo: true },
+  { feature: "DSO reduction tracking", odoo: false, yonovo: true },
 ];
 
 const timelineSteps = [
   {
     number: 1,
-    text: "Invoice your customers as usual, from Xero.",
-    image: "/images/xero-step-1-invoice.png",
+    text: "Invoice your customers as usual, from Odoo.",
+    image: "/images/odoo-step-1-invoice.png",
   },
   {
     number: 2,
@@ -74,19 +74,24 @@ const timelineSteps = [
 
 const faqs = [
   {
-    question: "How does Yonovo connect to Xero?",
+    question: "How does Yonovo connect to Odoo?",
     answer:
-      "Yonovo uses a secure OAuth-based connection. Click \"Connect to Xero,\" authorize access with your admin credentials, and your data syncs automatically. No IT support needed.",
+      "Yonovo connects to your Odoo instance through a secure API integration. Enter your Odoo URL, authorize access, and your data syncs automatically. No custom development needed.",
   },
   {
-    question: "What Xero data does Yonovo access?",
+    question: "What Odoo data does Yonovo access?",
     answer:
-      "Yonovo syncs your invoices, customers, payment status, and aging data. Yonovo never modifies your Xero records. All data flows one way, from Xero to Yonovo, with payment status updates written back when collected.",
+      "Yonovo syncs your invoices, customers, payment status, and aging data. Yonovo never modifies your Odoo records. All data flows one way, from Odoo to Yonovo, with payment status updates written back when collected.",
+  },
+  {
+    question: "Does it work with Odoo Community and Enterprise?",
+    answer:
+      "Yes. Yonovo works with both Odoo Community and Enterprise editions, as well as Odoo Online (SaaS). Any version with the Invoicing or Accounting module enabled is supported.",
   },
   {
     question: "How long does setup take?",
     answer:
-      "Most teams are live within 15 minutes. Connect Xero, set your preferences, and Yonovo starts working on your overdue invoices right away.",
+      "Most teams are live within 15 minutes. Connect Odoo, set your preferences, and Yonovo starts working on your overdue invoices right away.",
   },
   {
     question: "Will my customers know I'm using Yonovo?",
@@ -143,7 +148,7 @@ const logos: { name: string; src: string; width: number; className: string; noFi
 
 /* ── Page Component ── */
 
-export default function XeroPage() {
+export default function OdooPage() {
   return (
     <>
       {/* ── Hero ── */}
@@ -154,11 +159,11 @@ export default function XeroPage() {
             <div className="flex flex-col gap-4 md:gap-6">
               <SectionBadge label="Integration" variant="light" />
               <h1 className="text-balance font-medium text-[42px] text-white leading-[1.1] tracking-tight md:text-[70px]">
-                Sync Xero and get paid
+                Sync Odoo and get paid
               </h1>
               <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
                 <p className="text-balance text-base text-zinc-400 tracking-tight md:text-xl">
-                  Yonovo connects to Xero and takes over the collections process. Every overdue invoice gets followed up by email, text, and phone so your team can stop spending hours on manual reminders.
+                  Yonovo connects to Odoo and takes over the collections process. Every overdue invoice gets followed up by email, text, and phone so your team can stop spending hours on manual reminders.
                 </p>
                 <div className="flex shrink-0 flex-row items-center gap-6">
                   <Link href="/book-demo">
@@ -182,12 +187,12 @@ export default function XeroPage() {
                 src="/videos/quickbooks-sync.mov"
                 className="aspect-square w-full overflow-hidden rounded-2xl bg-zinc-900 border border-white/10"
               />
-              {/* Right — Xero logo (desktop: landscape, mobile: square) */}
+              {/* Right — Odoo logo (desktop: landscape, mobile: square) */}
               <div className="relative hidden w-full items-center justify-center overflow-hidden rounded-2xl md:flex md:aspect-[1.5]">
-                <Image src="/logos/xero.png" alt="Xero" width={200} height={200} className="w-[35%] h-auto" />
+                <Image src="/images/odoo_logo_inverted.png" alt="Odoo" width={320} height={77} className="w-[40%] h-auto" />
               </div>
               <div className="relative flex aspect-square w-full items-center justify-center overflow-hidden rounded-2xl md:hidden">
-                <Image src="/logos/xero.png" alt="Xero" width={200} height={200} className="w-[40%] h-auto" />
+                <Image src="/images/odoo_logo_inverted.png" alt="Odoo" width={320} height={77} className="w-[35%] h-auto" />
               </div>
             </div>
 
@@ -223,10 +228,10 @@ export default function XeroPage() {
             <div className="flex flex-1 flex-col gap-4">
               <SectionBadge label="Problem" />
               <h2 className="text-balance font-medium text-4xl text-foreground leading-tight tracking-tight md:text-[54px]">
-                Xero wasn&apos;t made for collections
+                Odoo wasn&apos;t made for collections
               </h2>
               <p className="text-balance text-base text-secondary leading-normal tracking-tight md:text-xl">
-                Xero is great at invoicing, expense tracking, and financial reporting. But it was never designed to collect what is owed after the invoice is sent. That gap falls on your team, and it is costing you time, cash flow, and focus every single week.
+                Odoo handles invoicing, inventory, and operations across your entire business. But once an invoice is sent, collecting payment still falls on your team. That gap costs you time, cash flow, and focus every single week.
               </p>
             </div>
 
@@ -262,7 +267,7 @@ export default function XeroPage() {
               <div className="flex flex-1 flex-col gap-4">
                 <SectionBadge label="Solution" />
                 <h2 className="text-balance font-medium text-4xl text-foreground leading-tight tracking-tight md:text-[54px]">
-                  Yonovo picks up where Xero stops
+                  Yonovo picks up where Odoo stops
                 </h2>
               </div>
               <p className="text-base text-secondary leading-normal tracking-tight md:text-xl">
@@ -459,7 +464,7 @@ export default function XeroPage() {
                 What changes when you add Yonovo
               </h2>
               <p className="text-base text-secondary leading-normal tracking-tight md:text-xl">
-                See what your Xero setup is missing and what you unlock when you add Yonovo.
+                See what your Odoo setup is missing and what you unlock when you add Yonovo.
               </p>
             </div>
 
@@ -471,10 +476,10 @@ export default function XeroPage() {
                   <span className="font-medium text-sm text-muted uppercase tracking-wide">Feature</span>
                 </div>
                 <div className="flex items-center justify-center border-l border-border px-4 py-4">
-                  <Image src="/logos/xero.png" alt="Xero" width={29} height={29} className="h-7 w-7" />
+                  <Image src="/logos/odoo-icon.svg" alt="Odoo" width={80} height={26} className="h-5 w-auto" />
                 </div>
                 <div className="flex items-center justify-center gap-1.5 border-l border-brand-green/30 bg-brand-green/5 px-3 py-4">
-                  <Image src="/logos/xero.png" alt="Xero" width={24} height={24} className="h-6 w-6" />
+                  <Image src="/logos/odoo-icon.svg" alt="Odoo" width={80} height={26} className="h-4 w-auto" />
                   <span className="text-foreground font-medium text-sm">+</span>
                   <Image src="/yonovo-logo.png" alt="Yonovo" width={72} height={18} className="h-3.5 w-auto" />
                 </div>
@@ -490,7 +495,7 @@ export default function XeroPage() {
                     <span className="text-foreground">{row.feature}</span>
                   </div>
                   <div className="flex items-center justify-center border-l border-border px-4 py-4">
-                    {row.xero ? <CheckIcon /> : <XIcon />}
+                    {row.odoo ? <CheckIcon /> : <XIcon />}
                   </div>
                   <div className="flex items-center justify-center border-l border-brand-green/30 bg-brand-green/5 px-4 py-4">
                     <CheckIcon />
@@ -506,8 +511,8 @@ export default function XeroPage() {
                   <div className="font-medium text-foreground mb-3">{row.feature}</div>
                   <div className="flex items-center gap-6">
                     <div className="flex items-center gap-2">
-                      {row.xero ? <CheckIcon /> : <XIcon />}
-                      <span className="text-sm text-muted">Xero</span>
+                      {row.odoo ? <CheckIcon /> : <XIcon />}
+                      <span className="text-sm text-muted">Odoo</span>
                     </div>
                     <div className="flex items-center gap-2">
                       <CheckIcon />

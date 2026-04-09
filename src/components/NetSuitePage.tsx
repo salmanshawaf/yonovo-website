@@ -31,23 +31,23 @@ const problems = [
 ];
 
 const comparisonFeatures = [
-  { feature: "Invoice creation and tracking", xero: true, yonovo: true },
-  { feature: "Aging reports", xero: true, yonovo: true },
-  { feature: "Automated payment reminders", xero: false, yonovo: true },
-  { feature: "Multi-channel follow ups (email, SMS, phone)", xero: false, yonovo: true },
-  { feature: "AI-powered collection strategies", xero: false, yonovo: true },
-  { feature: "Customer risk scoring", xero: false, yonovo: true },
-  { feature: "Escalation workflows", xero: false, yonovo: true },
-  { feature: "Real time AR dashboard", xero: false, yonovo: true },
-  { feature: "Payment portal for customers", xero: false, yonovo: true },
-  { feature: "DSO reduction tracking", xero: false, yonovo: true },
+  { feature: "Invoice creation and tracking", netsuite: true, yonovo: true },
+  { feature: "Aging reports", netsuite: true, yonovo: true },
+  { feature: "Automated payment reminders", netsuite: false, yonovo: true },
+  { feature: "Multi-channel follow ups (email, SMS, phone)", netsuite: false, yonovo: true },
+  { feature: "AI-powered collection strategies", netsuite: false, yonovo: true },
+  { feature: "Customer risk scoring", netsuite: false, yonovo: true },
+  { feature: "Escalation workflows", netsuite: false, yonovo: true },
+  { feature: "Real time AR dashboard", netsuite: false, yonovo: true },
+  { feature: "Payment portal for customers", netsuite: false, yonovo: true },
+  { feature: "DSO reduction tracking", netsuite: false, yonovo: true },
 ];
 
 const timelineSteps = [
   {
     number: 1,
-    text: "Invoice your customers as usual, from Xero.",
-    image: "/images/xero-step-1-invoice.png",
+    text: "Invoice your customers as usual, from NetSuite.",
+    image: "/images/netsuite-step-1-invoice.png",
   },
   {
     number: 2,
@@ -74,19 +74,24 @@ const timelineSteps = [
 
 const faqs = [
   {
-    question: "How does Yonovo connect to Xero?",
+    question: "How does Yonovo connect to NetSuite?",
     answer:
-      "Yonovo uses a secure OAuth-based connection. Click \"Connect to Xero,\" authorize access with your admin credentials, and your data syncs automatically. No IT support needed.",
+      "Yonovo connects to your NetSuite account through a secure token-based integration. Authorize access with your admin credentials and your data syncs automatically. No custom SuiteScript development needed.",
   },
   {
-    question: "What Xero data does Yonovo access?",
+    question: "What NetSuite data does Yonovo access?",
     answer:
-      "Yonovo syncs your invoices, customers, payment status, and aging data. Yonovo never modifies your Xero records. All data flows one way, from Xero to Yonovo, with payment status updates written back when collected.",
+      "Yonovo syncs your invoices, customers, payment status, and aging data. Yonovo never modifies your NetSuite records. All data flows one way, from NetSuite to Yonovo, with payment status updates written back when collected.",
+  },
+  {
+    question: "Does it work with NetSuite OneWorld?",
+    answer:
+      "Yes. Yonovo supports NetSuite OneWorld for multi-subsidiary organizations. You can manage collections across subsidiaries from a single Yonovo dashboard.",
   },
   {
     question: "How long does setup take?",
     answer:
-      "Most teams are live within 15 minutes. Connect Xero, set your preferences, and Yonovo starts working on your overdue invoices right away.",
+      "Most teams are live within 15 minutes. Connect NetSuite, set your preferences, and Yonovo starts working on your overdue invoices right away.",
   },
   {
     question: "Will my customers know I'm using Yonovo?",
@@ -143,7 +148,7 @@ const logos: { name: string; src: string; width: number; className: string; noFi
 
 /* ── Page Component ── */
 
-export default function XeroPage() {
+export default function NetSuitePage() {
   return (
     <>
       {/* ── Hero ── */}
@@ -154,11 +159,11 @@ export default function XeroPage() {
             <div className="flex flex-col gap-4 md:gap-6">
               <SectionBadge label="Integration" variant="light" />
               <h1 className="text-balance font-medium text-[42px] text-white leading-[1.1] tracking-tight md:text-[70px]">
-                Sync Xero and get paid
+                Sync NetSuite and get paid
               </h1>
               <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
                 <p className="text-balance text-base text-zinc-400 tracking-tight md:text-xl">
-                  Yonovo connects to Xero and takes over the collections process. Every overdue invoice gets followed up by email, text, and phone so your team can stop spending hours on manual reminders.
+                  Yonovo connects to NetSuite and takes over the collections process. Every overdue invoice gets followed up by email, text, and phone so your team can stop spending hours on manual reminders.
                 </p>
                 <div className="flex shrink-0 flex-row items-center gap-6">
                   <Link href="/book-demo">
@@ -182,12 +187,12 @@ export default function XeroPage() {
                 src="/videos/quickbooks-sync.mov"
                 className="aspect-square w-full overflow-hidden rounded-2xl bg-zinc-900 border border-white/10"
               />
-              {/* Right — Xero logo (desktop: landscape, mobile: square) */}
+              {/* Right — NetSuite logo (desktop: landscape, mobile: square) */}
               <div className="relative hidden w-full items-center justify-center overflow-hidden rounded-2xl md:flex md:aspect-[1.5]">
-                <Image src="/logos/xero.png" alt="Xero" width={200} height={200} className="w-[35%] h-auto" />
+                <Image src="/images/netsuite_logo_inverted.png" alt="NetSuite" width={320} height={77} className="w-[40%] h-auto" />
               </div>
               <div className="relative flex aspect-square w-full items-center justify-center overflow-hidden rounded-2xl md:hidden">
-                <Image src="/logos/xero.png" alt="Xero" width={200} height={200} className="w-[40%] h-auto" />
+                <Image src="/images/netsuite_logo_inverted.png" alt="NetSuite" width={320} height={77} className="w-[35%] h-auto" />
               </div>
             </div>
 
@@ -219,32 +224,22 @@ export default function XeroPage() {
       <section className="w-full bg-surface py-12 md:py-15">
         <div className="mx-auto max-w-(--container-max-width) px-6">
           <div className="flex flex-col gap-8 lg:flex-row lg:gap-16">
-            {/* Left — heading */}
             <div className="flex flex-1 flex-col gap-4">
               <SectionBadge label="Problem" />
               <h2 className="text-balance font-medium text-4xl text-foreground leading-tight tracking-tight md:text-[54px]">
-                Xero wasn&apos;t made for collections
+                NetSuite wasn&apos;t made for collections
               </h2>
               <p className="text-balance text-base text-secondary leading-normal tracking-tight md:text-xl">
-                Xero is great at invoicing, expense tracking, and financial reporting. But it was never designed to collect what is owed after the invoice is sent. That gap falls on your team, and it is costing you time, cash flow, and focus every single week.
+                NetSuite handles your financials, inventory, and operations at scale. But once an invoice is sent, collecting payment still falls on your team. That gap costs you time, cash flow, and focus every single week.
               </p>
             </div>
-
-            {/* Right — 2×2 card grid */}
             <div className="grid flex-1 auto-rows-max grid-cols-1 content-center gap-3 md:grid-cols-2">
               {problems.map((card) => (
-                <div
-                  key={card.title}
-                  className="flex flex-row gap-5 p-6 md:px-8 md:py-6"
-                >
+                <div key={card.title} className="flex flex-row gap-5 p-6 md:px-8 md:py-6">
                   <div className="h-8 w-1 shrink-0 rounded-full bg-brand-red" />
                   <div className="flex flex-col gap-2">
-                    <span className="font-medium text-xl text-foreground tracking-tight md:text-2xl">
-                      {card.title}
-                    </span>
-                    <p className="text-sm text-secondary tracking-tight md:text-base">
-                      {card.description}
-                    </p>
+                    <span className="font-medium text-xl text-foreground tracking-tight md:text-2xl">{card.title}</span>
+                    <p className="text-sm text-secondary tracking-tight md:text-base">{card.description}</p>
                   </div>
                 </div>
               ))}
@@ -257,99 +252,31 @@ export default function XeroPage() {
       <section className="w-full bg-background py-12 md:py-15">
         <div className="mx-auto max-w-(--container-max-width) px-6">
           <div className="flex flex-col gap-8 md:gap-16">
-            {/* Header — heading left, description right */}
             <div className="grid grid-cols-1 items-end gap-8 md:grid-cols-2 md:gap-16">
               <div className="flex flex-1 flex-col gap-4">
                 <SectionBadge label="Solution" />
                 <h2 className="text-balance font-medium text-4xl text-foreground leading-tight tracking-tight md:text-[54px]">
-                  Yonovo picks up where Xero stops
+                  Yonovo picks up where NetSuite stops
                 </h2>
               </div>
               <p className="text-base text-secondary leading-normal tracking-tight md:text-xl">
                 One connection is all it takes. From there, Yonovo handles the outreach, the timing, and the escalations while your team focuses on the work that actually moves the business forward.
               </p>
             </div>
-
-            {/* 3×2 card grid — gap-px trick for 1px internal borders */}
             <div className="grid grid-cols-1 gap-px overflow-hidden rounded-3xl border border-border bg-border md:grid-cols-3">
               {[
-                {
-                  icon: (
-                    <svg className="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round">
-                      <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" />
-                    </svg>
-                  ),
-                  title: "Instant sync",
-                  desc: "Invoices, contacts, and aging data stay current in real time. No exports or manual imports.",
-                },
-                {
-                  icon: (
-                    <svg className="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round">
-                      <path d="M9 12l2 2 4-4" />
-                      <path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z" />
-                    </svg>
-                  ),
-                  title: "Always on brand",
-                  desc: "Messages go out under your company name, email, and voice. Customers only see you.",
-                },
-                {
-                  icon: (
-                    <svg className="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round">
-                      <rect x="3" y="3" width="7" height="7" rx="1" />
-                      <rect x="14" y="3" width="7" height="7" rx="1" />
-                      <rect x="3" y="14" width="7" height="7" rx="1" />
-                      <rect x="14" y="14" width="7" height="7" rx="1" />
-                    </svg>
-                  ),
-                  title: "Multi-channel",
-                  desc: "Reach customers across email, SMS, and phone so no single ignored channel holds up a payment.",
-                },
-                {
-                  icon: (
-                    <svg className="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round">
-                      <path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2" />
-                      <circle cx="9" cy="7" r="4" />
-                      <path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75" />
-                    </svg>
-                  ),
-                  title: "Smart escalation",
-                  desc: "Accounts that need a human touch get routed to the right person with full context.",
-                },
-                {
-                  icon: (
-                    <svg className="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round">
-                      <circle cx="12" cy="12" r="10" />
-                      <polyline points="12 6 12 12 16 14" />
-                    </svg>
-                  ),
-                  title: "Reduce DSO",
-                  desc: "Consistent outreach closes the gap between invoicing and payment so cash arrives sooner.",
-                },
-                {
-                  icon: (
-                    <svg className="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round">
-                      <path d="M22 11.08V12a10 10 0 11-5.93-9.14" />
-                      <polyline points="22 4 12 14.01 9 11.01" />
-                    </svg>
-                  ),
-                  title: "Better relationships",
-                  desc: "Professional reminders replace awkward one-off emails. Customers respond better and stay happy.",
-                },
+                { icon: (<svg className="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" /></svg>), title: "Instant sync", desc: "Invoices, contacts, and aging data stay current in real time. No exports or manual imports." },
+                { icon: (<svg className="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round"><path d="M9 12l2 2 4-4" /><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z" /></svg>), title: "Always on brand", desc: "Messages go out under your company name, email, and voice. Customers only see you." },
+                { icon: (<svg className="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round"><rect x="3" y="3" width="7" height="7" rx="1" /><rect x="14" y="3" width="7" height="7" rx="1" /><rect x="3" y="14" width="7" height="7" rx="1" /><rect x="14" y="14" width="7" height="7" rx="1" /></svg>), title: "Multi-channel", desc: "Reach customers across email, SMS, and phone so no single ignored channel holds up a payment." },
+                { icon: (<svg className="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2" /><circle cx="9" cy="7" r="4" /><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75" /></svg>), title: "Smart escalation", desc: "Accounts that need a human touch get routed to the right person with full context." },
+                { icon: (<svg className="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10" /><polyline points="12 6 12 12 16 14" /></svg>), title: "Reduce DSO", desc: "Consistent outreach closes the gap between invoicing and payment so cash arrives sooner." },
+                { icon: (<svg className="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round"><path d="M22 11.08V12a10 10 0 11-5.93-9.14" /><polyline points="22 4 12 14.01 9 11.01" /></svg>), title: "Better relationships", desc: "Professional reminders replace awkward one-off emails. Customers respond better and stay happy." },
               ].map((card) => (
-                <div
-                  key={card.title}
-                  className="flex flex-col gap-6 bg-background p-6 md:gap-10 md:p-8"
-                >
-                  <div className="flex h-7 w-7 items-center justify-center text-brand-green">
-                    {card.icon}
-                  </div>
+                <div key={card.title} className="flex flex-col gap-6 bg-background p-6 md:gap-10 md:p-8">
+                  <div className="flex h-7 w-7 items-center justify-center text-brand-green">{card.icon}</div>
                   <div className="flex flex-col gap-2">
-                    <h3 className="font-medium text-xl text-foreground tracking-tight md:text-2xl">
-                      {card.title}
-                    </h3>
-                    <p className="text-sm text-secondary tracking-tight md:text-base">
-                      {card.desc}
-                    </p>
+                    <h3 className="font-medium text-xl text-foreground tracking-tight md:text-2xl">{card.title}</h3>
+                    <p className="text-sm text-secondary tracking-tight md:text-base">{card.desc}</p>
                   </div>
                 </div>
               ))}
@@ -361,83 +288,35 @@ export default function XeroPage() {
       {/* ── Start Using Yonovo in Minutes ── */}
       <section className="w-full bg-background py-16 md:py-24">
         <div className="mx-auto max-w-(--container-max-width) px-6">
-          {/* Header */}
           <div className="mx-auto flex max-w-2xl flex-col items-center gap-4 text-center">
             <SectionBadge label="How it works" />
-            <h2 className="font-medium text-4xl text-foreground leading-tight tracking-tight md:text-[54px]">
-              Start using Yonovo in minutes
-            </h2>
+            <h2 className="font-medium text-4xl text-foreground leading-tight tracking-tight md:text-[54px]">Start using Yonovo in minutes</h2>
           </div>
-
-          {/* Timeline */}
           <div className="relative mx-auto mt-16 max-w-4xl">
-            {/* Vertical dashed line (desktop only) */}
             <div className="absolute left-1/2 top-0 hidden h-full w-px -translate-x-1/2 border-l-2 border-dashed border-border md:block" />
-
             <div className="flex flex-col gap-16 md:gap-24">
               {timelineSteps.map((step, i) => {
                 const isOdd = i % 2 === 0;
                 const imageBlock = step.image ? (
-                  <div className={`relative aspect-[4/3] w-full overflow-hidden rounded-2xl bg-gradient-to-b from-zinc-100 to-zinc-50 border border-border flex flex-col justify-center gap-3 p-6 md:p-10 ${step.overlay ? "items-center" : "items-center"}`}>
-                    {step.overlay && (
-                      <img src={step.overlay} alt="" className="w-[90%] h-auto rounded-lg shadow-2xl border border-zinc-200/60" />
-                    )}
+                  <div className={`relative aspect-[4/3] w-full overflow-hidden rounded-2xl bg-gradient-to-b from-zinc-100 to-zinc-50 border border-border flex flex-col justify-center gap-3 p-6 md:p-10 items-center`}>
+                    {step.overlay && (<img src={step.overlay} alt="" className="w-[90%] h-auto rounded-lg shadow-2xl border border-zinc-200/60" />)}
                     <img src={step.image} alt={step.text} className="max-w-full max-h-full rounded-lg shadow-xl border border-zinc-200/60" />
                   </div>
-                ) : (
-                  <div className="aspect-[4/3] w-full rounded-2xl bg-background border border-border" />
-                );
-
+                ) : (<div className="aspect-[4/3] w-full rounded-2xl bg-background border border-border" />);
                 return (
                   <div key={step.number} className="relative">
-                    {/* Mobile layout */}
                     <div className="flex flex-col gap-4 md:hidden">
-                      <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-brand-navy text-white font-medium">
-                        {step.number}
-                      </div>
-                      <p className="text-lg font-medium text-foreground leading-relaxed">
-                        {step.text}
-                      </p>
+                      <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-brand-navy text-white font-medium">{step.number}</div>
+                      <p className="text-lg font-medium text-foreground leading-relaxed">{step.text}</p>
                       {imageBlock}
                     </div>
-
-                    {/* Desktop layout — zigzag */}
                     <div className="hidden md:grid md:grid-cols-[1fr_auto_1fr] md:items-center md:gap-12">
-                      {/* Left side */}
                       <div className={isOdd ? "flex flex-col gap-3" : "flex items-center justify-center"}>
-                        {isOdd ? (
-                          <>
-                            <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-brand-navy text-white font-medium">
-                              {step.number}
-                            </div>
-                            <p className="text-lg font-medium text-foreground leading-relaxed">
-                              {step.text}
-                            </p>
-                          </>
-                        ) : (
-                          imageBlock
-                        )}
+                        {isOdd ? (<><div className="flex h-10 w-10 items-center justify-center rounded-xl bg-brand-navy text-white font-medium">{step.number}</div><p className="text-lg font-medium text-foreground leading-relaxed">{step.text}</p></>) : imageBlock}
                       </div>
-
-                      {/* Center dot */}
-                      <div className="relative z-10 flex h-4 w-4 items-center justify-center">
-                        <div className="h-3 w-3 rounded-full bg-brand-navy" />
-                      </div>
-
-                      {/* Right side */}
+                      <div className="relative z-10 flex h-4 w-4 items-center justify-center"><div className="h-3 w-3 rounded-full bg-brand-navy" /></div>
                       <div className={isOdd ? "flex items-center justify-center" : "flex flex-col gap-3"}>
-                        {isOdd ? (
-                          imageBlock
-                        ) : (
-                          <>
-                            <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-brand-navy text-white font-medium">
-                              {step.number}
-                            </div>
-                            <p className="text-lg font-medium text-foreground leading-relaxed">
-                              {step.text}
-                            </p>
-                          </>
-                        )}
+                        {isOdd ? imageBlock : (<><div className="flex h-10 w-10 items-center justify-center rounded-xl bg-brand-navy text-white font-medium">{step.number}</div><p className="text-lg font-medium text-foreground leading-relaxed">{step.text}</p></>)}
                       </div>
                     </div>
                   </div>
@@ -452,67 +331,38 @@ export default function XeroPage() {
       <section className="w-full bg-surface py-12 md:py-15">
         <div className="mx-auto max-w-(--container-max-width) px-6">
           <div className="flex flex-col items-center gap-8 md:gap-14">
-            {/* Header */}
             <div className="flex flex-col items-center gap-4 text-center">
               <SectionBadge label="Compare" />
-              <h2 className="text-balance font-medium text-4xl text-foreground leading-tight tracking-tight md:text-[54px]">
-                What changes when you add Yonovo
-              </h2>
-              <p className="text-base text-secondary leading-normal tracking-tight md:text-xl">
-                See what your Xero setup is missing and what you unlock when you add Yonovo.
-              </p>
+              <h2 className="text-balance font-medium text-4xl text-foreground leading-tight tracking-tight md:text-[54px]">What changes when you add Yonovo</h2>
+              <p className="text-base text-secondary leading-normal tracking-tight md:text-xl">See what your NetSuite setup is missing and what you unlock when you add Yonovo.</p>
             </div>
-
-            {/* Desktop Table */}
             <div className="hidden md:block overflow-hidden rounded-2xl border border-border bg-background max-w-3xl w-full">
-              {/* Header Row */}
               <div className="grid grid-cols-[1fr_140px_220px] border-b border-border">
-                <div className="px-6 py-4">
-                  <span className="font-medium text-sm text-muted uppercase tracking-wide">Feature</span>
-                </div>
+                <div className="px-6 py-4"><span className="font-medium text-sm text-muted uppercase tracking-wide">Feature</span></div>
                 <div className="flex items-center justify-center border-l border-border px-4 py-4">
-                  <Image src="/logos/xero.png" alt="Xero" width={29} height={29} className="h-7 w-7" />
+                  <Image src="/images/netsuite_logo_inverted.png" alt="NetSuite" width={80} height={26} className="h-5 w-auto invert" />
                 </div>
                 <div className="flex items-center justify-center gap-1.5 border-l border-brand-green/30 bg-brand-green/5 px-3 py-4">
-                  <Image src="/logos/xero.png" alt="Xero" width={24} height={24} className="h-6 w-6" />
+                  <Image src="/images/netsuite_logo_inverted.png" alt="NetSuite" width={80} height={26} className="h-4 w-auto invert" />
                   <span className="text-foreground font-medium text-sm">+</span>
                   <Image src="/yonovo-logo.png" alt="Yonovo" width={72} height={18} className="h-3.5 w-auto" />
                 </div>
               </div>
-
-              {/* Feature Rows */}
               {comparisonFeatures.map((row, i) => (
-                <div
-                  key={row.feature}
-                  className={`grid grid-cols-[1fr_140px_220px] ${i !== comparisonFeatures.length - 1 ? "border-b border-border" : ""}`}
-                >
-                  <div className="px-6 py-4 flex items-center">
-                    <span className="text-foreground">{row.feature}</span>
-                  </div>
-                  <div className="flex items-center justify-center border-l border-border px-4 py-4">
-                    {row.xero ? <CheckIcon /> : <XIcon />}
-                  </div>
-                  <div className="flex items-center justify-center border-l border-brand-green/30 bg-brand-green/5 px-4 py-4">
-                    <CheckIcon />
-                  </div>
+                <div key={row.feature} className={`grid grid-cols-[1fr_140px_220px] ${i !== comparisonFeatures.length - 1 ? "border-b border-border" : ""}`}>
+                  <div className="px-6 py-4 flex items-center"><span className="text-foreground">{row.feature}</span></div>
+                  <div className="flex items-center justify-center border-l border-border px-4 py-4">{row.netsuite ? <CheckIcon /> : <XIcon />}</div>
+                  <div className="flex items-center justify-center border-l border-brand-green/30 bg-brand-green/5 px-4 py-4"><CheckIcon /></div>
                 </div>
               ))}
             </div>
-
-            {/* Mobile Table */}
             <div className="flex flex-col gap-3 md:hidden">
               {comparisonFeatures.map((row) => (
                 <div key={row.feature} className="rounded-2xl border border-border bg-background p-4">
                   <div className="font-medium text-foreground mb-3">{row.feature}</div>
                   <div className="flex items-center gap-6">
-                    <div className="flex items-center gap-2">
-                      {row.xero ? <CheckIcon /> : <XIcon />}
-                      <span className="text-sm text-muted">Xero</span>
-                    </div>
-                    <div className="flex items-center gap-2">
-                      <CheckIcon />
-                      <span className="text-sm text-foreground font-medium">+ Yonovo</span>
-                    </div>
+                    <div className="flex items-center gap-2">{row.netsuite ? <CheckIcon /> : <XIcon />}<span className="text-sm text-muted">NetSuite</span></div>
+                    <div className="flex items-center gap-2"><CheckIcon /><span className="text-sm text-foreground font-medium">+ Yonovo</span></div>
                   </div>
                 </div>
               ))}
@@ -524,9 +374,7 @@ export default function XeroPage() {
       {/* ── FAQs ── */}
       <section className="w-full bg-background py-16 md:py-24">
         <div className="mx-auto max-w-(--container-max-width) px-6">
-          <h2 className="font-medium text-4xl text-foreground leading-tight tracking-tight md:text-[54px] mb-8 md:mb-12">
-            FAQs
-          </h2>
+          <h2 className="font-medium text-4xl text-foreground leading-tight tracking-tight md:text-[54px] mb-8 md:mb-12">FAQs</h2>
           <FAQAccordion items={faqs} />
         </div>
       </section>
@@ -535,40 +383,18 @@ export default function XeroPage() {
       <section className="w-full bg-gradient-to-b from-background from-60% to-brand-navy to-60%">
         <div className="mx-auto max-w-[1600px] px-6">
           <div className="relative flex w-full flex-col items-center justify-center gap-6 overflow-hidden border-t border-border bg-white px-6 py-12 pb-30 md:gap-8 md:rounded-3xl md:border md:p-15 lg:p-25">
-            <div className="pointer-events-none absolute bottom-0 left-0 h-auto w-[40%] md:h-[40%] md:w-auto lg:h-[50%]">
-              <div className="h-[350px] w-[350px] rounded-full bg-brand-blue opacity-70 blur-3xl" />
-            </div>
-            <div className="pointer-events-none absolute right-0 bottom-0 h-auto w-[40%] md:h-[40%] md:w-auto lg:h-[50%]">
-              <div className="h-[350px] w-[350px] rounded-full bg-brand-blue opacity-70 blur-3xl" />
-            </div>
-
+            <div className="pointer-events-none absolute bottom-0 left-0 h-auto w-[40%] md:h-[40%] md:w-auto lg:h-[50%]"><div className="h-[350px] w-[350px] rounded-full bg-brand-blue opacity-70 blur-3xl" /></div>
+            <div className="pointer-events-none absolute right-0 bottom-0 h-auto w-[40%] md:h-[40%] md:w-auto lg:h-[50%]"><div className="h-[350px] w-[350px] rounded-full bg-brand-blue opacity-70 blur-3xl" /></div>
             <div className="flex flex-col gap-4 md:max-w-[850px] md:gap-6">
-              <p className="text-center font-medium text-4xl text-foreground leading-tight tracking-tighter md:text-balance md:text-5xl lg:text-[54px]">
-                Ready to put collections on autopilot?
-              </p>
-              <p className="text-center font-normal text-base text-secondary tracking-[-0.4px] md:text-balance md:text-xl">
-                Join the finance teams that are collecting faster, saving hours,
-                and keeping every customer relationship intact.
-              </p>
+              <p className="text-center font-medium text-4xl text-foreground leading-tight tracking-tighter md:text-balance md:text-5xl lg:text-[54px]">Ready to put collections on autopilot?</p>
+              <p className="text-center font-normal text-base text-secondary tracking-[-0.4px] md:text-balance md:text-xl">Join the finance teams that are collecting faster, saving hours, and keeping every customer relationship intact.</p>
             </div>
-
             <div className="flex w-full flex-col items-center justify-center gap-6 md:gap-4">
               <div className="flex flex-row items-center gap-6">
-                <Link href="/book-demo">
-                  <Button variant="brand" size="md" className="h-14 px-[46px] text-lg font-medium">
-                    Book Demo
-                  </Button>
-                </Link>
-                <Link href="https://dashboard.yonovo.ai/login">
-                  <Button variant="ghost-dark" size="md" className="h-14">
-                    Start Free
-                  </Button>
-                </Link>
+                <Link href="/book-demo"><Button variant="brand" size="md" className="h-14 px-[46px] text-lg font-medium">Book Demo</Button></Link>
+                <Link href="https://dashboard.yonovo.ai/login"><Button variant="ghost-dark" size="md" className="h-14">Start Free</Button></Link>
               </div>
-              <div className="flex items-center gap-2 text-muted text-sm">
-                {creditCardIcon}
-                <p>No card required</p>
-              </div>
+              <div className="flex items-center gap-2 text-muted text-sm">{creditCardIcon}<p>No card required</p></div>
             </div>
           </div>
         </div>

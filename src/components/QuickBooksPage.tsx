@@ -471,17 +471,17 @@ export default function QuickBooksPage() {
             {/* Desktop Table */}
             <div className="hidden md:block overflow-hidden rounded-2xl border border-border bg-background max-w-3xl w-full">
               {/* Header Row */}
-              <div className="grid grid-cols-[1fr_140px_180px] border-b border-border">
+              <div className="grid grid-cols-[1fr_140px_220px] border-b border-border">
                 <div className="px-6 py-4">
                   <span className="font-medium text-sm text-muted uppercase tracking-wide">Feature</span>
                 </div>
                 <div className="flex items-center justify-center border-l border-border px-4 py-4">
-                  <Image src="/logos/quickbooks.png" alt="Intuit QuickBooks" width={120} height={29} className="h-6 w-auto" />
+                  <Image src="/logos/quickbooks.png" alt="Intuit QuickBooks" width={120} height={29} className="h-7 w-auto" />
                 </div>
-                <div className="flex items-center justify-center gap-2 border-l border-brand-green/30 bg-brand-green/5 px-4 py-4">
-                  <Image src="/logos/quickbooks-icon.png" alt="QuickBooks" width={24} height={24} className="h-6 w-6" />
+                <div className="flex items-center justify-center gap-1.5 border-l border-brand-green/30 bg-brand-green/5 px-3 py-4">
+                  <Image src="/logos/quickbooks-icon.png" alt="QuickBooks" width={24} height={24} className="h-[26px] w-[26px]" />
                   <span className="text-foreground font-medium text-sm">+</span>
-                  <Image src="/yonovo-logo.png" alt="Yonovo" width={72} height={18} className="h-4 w-auto" />
+                  <Image src="/yonovo-logo.png" alt="Yonovo" width={72} height={18} className="h-3.5 w-auto" />
                 </div>
               </div>
 
@@ -489,7 +489,7 @@ export default function QuickBooksPage() {
               {comparisonFeatures.map((row, i) => (
                 <div
                   key={row.feature}
-                  className={`grid grid-cols-[1fr_140px_180px] ${i !== comparisonFeatures.length - 1 ? "border-b border-border" : ""}`}
+                  className={`grid grid-cols-[1fr_140px_220px] ${i !== comparisonFeatures.length - 1 ? "border-b border-border" : ""}`}
                 >
                   <div className="px-6 py-4 flex items-center">
                     <span className="text-foreground">{row.feature}</span>
