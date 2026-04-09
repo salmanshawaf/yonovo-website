@@ -80,14 +80,14 @@ export default function IndustryPageTemplate({ data }: { data: IndustryData }) {
                   {data.hero.description}
                 </p>
                 <div className="mt-2 flex flex-col gap-4">
-                  <div className="flex flex-row items-center gap-6">
-                    <Link href="/book-demo">
-                      <Button variant="brand" size="md" className="h-14 px-[46px] text-lg font-medium">
+                  <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:gap-6">
+                    <Link href="/book-demo" className="w-full sm:w-auto">
+                      <Button variant="brand" size="md" className="h-14 w-full px-[46px] text-lg font-medium sm:w-auto">
                         Book Demo
                       </Button>
                     </Link>
-                    <Link href="https://dashboard.yonovo.ai/login">
-                      <Button variant="ghost-dark" size="md" className="h-14">
+                    <Link href="https://dashboard.yonovo.ai/login" className="w-full sm:w-auto">
+                      <Button variant="ghost-dark" size="md" className="h-14 w-full sm:w-auto">
                         Start Free
                       </Button>
                     </Link>
@@ -306,14 +306,14 @@ export default function IndustryPageTemplate({ data }: { data: IndustryData }) {
             </div>
 
             <div className="flex w-full flex-col items-center justify-center gap-6 md:gap-4">
-              <div className="flex flex-row items-center gap-6">
-                <Link href="/book-demo">
-                  <Button variant="brand" size="md" className="h-14 px-[46px] text-lg font-medium">
+              <div className="flex w-full flex-col items-center gap-3 sm:w-auto sm:flex-row sm:gap-6">
+                <Link href="/book-demo" className="w-full sm:w-auto">
+                  <Button variant="brand" size="md" className="h-14 w-full px-[46px] text-lg font-medium sm:w-auto">
                     Book Demo
                   </Button>
                 </Link>
-                <Link href="https://dashboard.yonovo.ai/login">
-                  <Button variant="ghost-dark" size="md" className="h-14">
+                <Link href="https://dashboard.yonovo.ai/login" className="w-full sm:w-auto">
+                  <Button variant="ghost-dark" size="md" className="h-14 w-full sm:w-auto">
                     Start Free
                   </Button>
                 </Link>

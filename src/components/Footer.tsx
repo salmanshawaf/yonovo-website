@@ -67,8 +67,8 @@ export default function Footer() {
 
           </div>
 
-          {/* Right columns — Links (desktop only) */}
-          <div className="hidden md:flex md:gap-10 lg:gap-24 xl:gap-32">
+          {/* Right columns — Links */}
+          <div className="grid grid-cols-2 gap-8 md:flex md:gap-10 lg:gap-24 xl:gap-32">
             <div className="flex flex-col gap-4">
               <h6 className="font-semibold text-sm text-zinc-50 capitalize tracking-widest">
                 INTEGRATIONS
@@ -84,7 +84,7 @@ export default function Footer() {
               ))}
             </div>
             <div className="flex flex-col gap-4">
-              <h6 className="font-semibold text-sm text-zinc-50 capitalize tracking-widest whitespace-nowrap">
+              <h6 className="font-semibold text-sm text-zinc-50 capitalize tracking-widest md:whitespace-nowrap">
                 AR AUTOMATION FOR
               </h6>
               {industryLinks.map((link) => (

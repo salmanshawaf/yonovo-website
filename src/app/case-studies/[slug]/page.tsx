@@ -29,7 +29,7 @@ export default async function CaseStudyPage({ params }: Props) {
   return (
     <>
       <NavbarWrapper defaultMode="light" />
-      <main className="pt-16 min-h-screen">
+      <main className="pt-16 min-h-screen bg-background">
         <CaseStudyPageTemplate data={data} />
       </main>
       <Footer />

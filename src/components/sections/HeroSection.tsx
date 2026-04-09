@@ -99,21 +99,21 @@ export default function HeroSection() {
           <div className="relative mx-auto grid w-full items-center gap-6 px-4 lg:grid-cols-2">
             {/* Left — Text Content */}
             <div className="flex flex-col gap-6">
-              <h1 className="font-medium text-[38px] text-white leading-[1.2] tracking-tight lg:text-[4.095rem] lg:leading-[1.2] lg:tracking-normal">
-                Automate your<br /><span className="whitespace-nowrap">accounts receivable.</span><br />Get paid&nbsp;faster.
+              <h1 className="font-medium text-[32px] text-white leading-[1.2] tracking-tight md:text-[38px] lg:text-[4.095rem] lg:leading-[1.2] lg:tracking-normal">
+                Automate your<br /><span className="md:whitespace-nowrap">accounts receivable.</span><br />Get paid&nbsp;faster.
               </h1>
-              <p className="text-[16px] text-white/70 leading-[1.6] md:text-xl lg:w-[75%]">
+              <p className="text-[15px] text-white/70 leading-[1.6] md:text-xl lg:w-[75%]">
                 Yonovo follows up by email, text, and phone on every invoice until they&apos;re paid.
               </p>
               <div className="mt-2 flex flex-col gap-4">
-                <div className="flex flex-row items-center gap-6">
-                  <Link href="/book-demo">
-                    <Button variant="brand" size="md" className="h-14 px-[46px] text-lg font-medium">
+                <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:gap-6">
+                  <Link href="/book-demo" className="w-full sm:w-auto">
+                    <Button variant="brand" size="md" className="h-14 w-full px-[46px] text-lg font-medium sm:w-auto">
                       Book Demo
                     </Button>
                   </Link>
-                  <Link href="https://dashboard.yonovo.ai/login">
-                    <Button variant="ghost-light" size="md" className="h-14">
+                  <Link href="https://dashboard.yonovo.ai/login" className="w-full sm:w-auto">
+                    <Button variant="ghost-light" size="md" className="h-14 w-full sm:w-auto">
                       Start Free
                     </Button>
                   </Link>

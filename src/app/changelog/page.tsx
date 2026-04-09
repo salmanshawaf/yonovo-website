@@ -34,7 +34,7 @@ export default async function ChangelogPage() {
   return (
     <>
       <NavbarWrapper defaultMode="light" />
-      <main className="min-h-screen pt-16">
+      <main className="min-h-screen pt-16 bg-background">
         <div className="mx-auto w-full max-w-5xl px-4 md:px-20">
           {/* Header */}
           <div className="pt-12 md:pt-16">

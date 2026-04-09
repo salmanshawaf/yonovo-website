@@ -87,7 +87,7 @@ export default async function BlogPostPage({ params }: Props) {
 
       <NavbarWrapper defaultMode="light" />
 
-      <main className="min-h-screen pt-16">
+      <main className="min-h-screen pt-16 bg-background">
         {/* Header section */}
         <div className="mx-auto max-w-5xl px-4 pt-12 md:pt-15 lg:pt-25">
           {/* Breadcrumbs */}

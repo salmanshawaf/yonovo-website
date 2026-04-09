@@ -166,8 +166,20 @@ export default function Navbar({ defaultMode = "dark", latestChangelog }: { defa
   const [openDropdown, setOpenDropdown] = useState<string | null>(null);
   const [isVisible, setIsVisible] = useState(false);
   const [navMode, setNavMode] = useState<"dark" | "light">(defaultMode);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [mobileAccordion, setMobileAccordion] = useState<string | null>(null);
   const timeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   const navLinksRef = useRef<HTMLDivElement>(null);
+
+  // Lock body scroll when mobile menu is open
+  useEffect(() => {
+    if (mobileMenuOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+    return () => { document.body.style.overflow = ""; };
+  }, [mobileMenuOpen]);
 
   useEffect(() => {
     const NAV_HEIGHT = 64;
@@ -224,13 +236,14 @@ export default function Navbar({ defaultMode = "dark", latestChangelog }: { defa
   }, []);
 
   return (
-    <nav className={`fixed top-0 left-0 right-0 z-50 border-b backdrop-blur-xl transition-colors duration-150 ${navMode === "light" ? "border-border bg-white/70" : "border-transparent bg-transparent"}`}>
+    <>
+    <nav className={`fixed top-0 left-0 right-0 z-50 border-b backdrop-blur-xl transition-colors duration-150 ${mobileMenuOpen ? "border-border bg-white" : navMode === "light" ? "border-border bg-white/70" : "border-transparent bg-transparent"}`}>
       <div className="relative mx-auto flex h-16 w-full max-w-(--container-max-width) items-center justify-between px-6 py-3">
         {/* Left — Logo */}
         <div className="flex flex-1 items-center">
           <Link href="/" className="inline-block">
             <Image
-              src={navMode === "light" ? "/yonovo-logo.png" : "/yonovo-logo-white.png"}
+              src={navMode === "light" || mobileMenuOpen ? "/yonovo-logo.png" : "/yonovo-logo-white.png"}
               alt="Yonovo"
               width={96}
               height={15}
@@ -353,7 +366,7 @@ export default function Navbar({ defaultMode = "dark", latestChangelog }: { defa
           )}
         </div>
 
-        {/* Right — Auth */}
+        {/* Right — Auth (desktop) */}
         <div className="hidden flex-1 items-center justify-end gap-4 lg:flex">
           <Link
             href="https://dashboard.yonovo.ai/login"
@@ -361,9 +374,170 @@ export default function Navbar({ defaultMode = "dark", latestChangelog }: { defa
           >
             Login
           </Link>
-<Link href="/book-demo"><Button variant="brand" size="sm">Book Demo</Button></Link>
+          <Link href="/book-demo"><Button variant="brand" size="sm">Book Demo</Button></Link>
+        </div>
+
+        {/* Mobile — Hamburger button */}
+        <div className="flex items-center lg:hidden">
+          <button
+            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            className={`relative z-[60] flex h-10 w-10 items-center justify-center rounded-lg transition-colors ${
+              mobileMenuOpen
+                ? "text-foreground"
+                : navMode === "light"
+                  ? "text-foreground"
+                  : "text-white"
+            }`}
+            aria-label={mobileMenuOpen ? "Close menu" : "Open menu"}
+          >
+            <div className="flex h-5 w-5 flex-col items-center justify-center gap-[5px]">
+              <span className={`block h-[2px] w-5 rounded-full transition-all duration-300 ${
+                mobileMenuOpen
+                  ? "translate-y-[7px] rotate-45 bg-foreground"
+                  : navMode === "light" ? "bg-foreground" : "bg-white"
+              }`} />
+              <span className={`block h-[2px] w-5 rounded-full transition-all duration-300 ${
+                mobileMenuOpen
+                  ? "opacity-0"
+                  : navMode === "light" ? "bg-foreground" : "bg-white"
+              }`} />
+              <span className={`block h-[2px] w-5 rounded-full transition-all duration-300 ${
+                mobileMenuOpen
+                  ? "-translate-y-[7px] -rotate-45 bg-foreground"
+                  : navMode === "light" ? "bg-foreground" : "bg-white"
+              }`} />
+            </div>
+          </button>
         </div>
       </div>
+
     </nav>
+
+    {/* Mobile menu overlay — outside nav to avoid backdrop-filter stacking context */}
+    <div
+      className={`fixed top-16 right-0 bottom-0 left-0 z-[55] bg-white transition-transform duration-300 ease-in-out lg:hidden ${
+        mobileMenuOpen ? "translate-x-0" : "translate-x-full"
+      }`}
+    >
+      <div className="h-full overflow-y-auto px-6 pb-8 pt-4">
+        {/* Solutions accordion */}
+        <div className="border-b border-border">
+          <button
+            onClick={() => setMobileAccordion(mobileAccordion === "Solutions" ? null : "Solutions")}
+            className="flex w-full items-center justify-between py-4 text-base font-medium text-foreground"
+          >
+            Solutions
+            <svg
+              className={`h-4 w-4 text-muted transition-transform duration-200 ${mobileAccordion === "Solutions" ? "rotate-180" : ""}`}
+              fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24"
+            >
+              <path d="M6 9l6 6 6-6" />
+            </svg>
+          </button>
+          <div className={`overflow-hidden transition-all duration-300 ${mobileAccordion === "Solutions" ? "max-h-[1000px] pb-4" : "max-h-0"}`}>
+            <p className="mb-2 text-xs font-semibold tracking-widest text-muted uppercase">By integration</p>
+            <div className="flex flex-col gap-1">
+              {integrations.map((item) => (
+                <Link
+                  key={item.title}
+                  href={item.href}
+                  onClick={() => setMobileMenuOpen(false)}
+                  className="flex items-center gap-3 rounded-lg p-2.5 transition-colors active:bg-surface"
+                >
+                  <div className="flex h-9 w-9 shrink-0 items-center justify-center overflow-hidden rounded-full">
+                    {item.icon}
+                  </div>
+                  <div>
+                    <div className="text-sm font-medium text-foreground">{item.title}</div>
+                    <div className="text-xs text-muted">{item.description}</div>
+                  </div>
+                </Link>
+              ))}
+            </div>
+            <p className="mb-2 mt-4 text-xs font-semibold tracking-widest text-muted uppercase">By industry</p>
+            <div className="flex flex-col gap-1">
+              {industries.map((item) => (
+                <Link
+                  key={item.title}
+                  href={item.href}
+                  onClick={() => setMobileMenuOpen(false)}
+                  className="flex items-center gap-3 rounded-lg p-2.5 transition-colors active:bg-surface"
+                >
+                  <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg border border-border text-foreground">
+                    {item.icon}
+                  </div>
+                  <div>
+                    <div className="text-sm font-medium text-foreground">{item.title}</div>
+                    <div className="text-xs text-muted">{item.description}</div>
+                  </div>
+                </Link>
+              ))}
+            </div>
+          </div>
+        </div>
+
+        {/* Resources accordion */}
+        <div className="border-b border-border">
+          <button
+            onClick={() => setMobileAccordion(mobileAccordion === "Resources" ? null : "Resources")}
+            className="flex w-full items-center justify-between py-4 text-base font-medium text-foreground"
+          >
+            Resources
+            <svg
+              className={`h-4 w-4 text-muted transition-transform duration-200 ${mobileAccordion === "Resources" ? "rotate-180" : ""}`}
+              fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24"
+            >
+              <path d="M6 9l6 6 6-6" />
+            </svg>
+          </button>
+          <div className={`overflow-hidden transition-all duration-300 ${mobileAccordion === "Resources" ? "max-h-[500px] pb-4" : "max-h-0"}`}>
+            <div className="flex flex-col gap-1">
+              {quickLinks.map((item) => (
+                <Link
+                  key={item.title}
+                  href={item.href}
+                  onClick={() => setMobileMenuOpen(false)}
+                  className="flex items-center gap-3 rounded-lg p-2.5 transition-colors active:bg-surface"
+                >
+                  <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg border border-border text-foreground">
+                    {item.icon}
+                  </div>
+                  <div>
+                    <div className="text-sm font-medium text-foreground">{item.title}</div>
+                    <div className="text-xs text-muted">{item.description}</div>
+                  </div>
+                </Link>
+              ))}
+            </div>
+          </div>
+        </div>
+
+        {/* Pricing link */}
+        <div className="border-b border-border">
+          <Link
+            href="/pricing"
+            onClick={() => setMobileMenuOpen(false)}
+            className="flex w-full items-center py-4 text-base font-medium text-foreground"
+          >
+            Pricing
+          </Link>
+        </div>
+
+        {/* CTA buttons */}
+        <div className="mt-6 flex flex-col gap-3">
+          <Link href="/book-demo" onClick={() => setMobileMenuOpen(false)}>
+            <Button variant="brand" size="md" className="w-full">Book Demo</Button>
+          </Link>
+          <Link
+            href="https://dashboard.yonovo.ai/login"
+            onClick={() => setMobileMenuOpen(false)}
+            className="flex h-11 items-center justify-center rounded-full border border-border text-sm font-medium text-foreground transition-colors active:bg-surface"
+          >
+            Login
+          </Link>
+        </div>
+      </div>
+    </div>
+    </>
   );
 }

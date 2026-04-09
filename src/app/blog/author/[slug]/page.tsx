@@ -61,7 +61,7 @@ export default async function AuthorPage({ params }: Props) {
 
       <NavbarWrapper defaultMode="light" />
 
-      <main className="min-h-screen pt-16">
+      <main className="min-h-screen pt-16 bg-background">
         <div className="mx-auto max-w-(--container-max-width) px-6 pt-12 pb-16">
           <Breadcrumbs
             items={[

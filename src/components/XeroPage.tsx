@@ -160,14 +160,14 @@ export default function XeroPage() {
                 <p className="text-balance text-base text-zinc-400 tracking-tight md:text-xl">
                   Yonovo connects to Xero and takes over the collections process. Every overdue invoice gets followed up by email, text, and phone so your team can stop spending hours on manual reminders.
                 </p>
-                <div className="flex shrink-0 flex-row items-center gap-6">
-                  <Link href="/book-demo">
-                    <Button variant="brand" size="md" className="h-14 px-[46px] text-lg font-medium whitespace-nowrap">
+                <div className="flex w-full shrink-0 flex-col items-center gap-3 sm:w-auto sm:flex-row sm:gap-6">
+                  <Link href="/book-demo" className="w-full sm:w-auto">
+                    <Button variant="brand" size="md" className="h-14 w-full px-[46px] text-lg font-medium whitespace-nowrap sm:w-auto">
                       Book Demo
                     </Button>
                   </Link>
-                  <Link href="https://dashboard.yonovo.ai/login">
-                    <Button variant="ghost-light" size="md" className="h-14 whitespace-nowrap">
+                  <Link href="https://dashboard.yonovo.ai/login" className="w-full sm:w-auto">
+                    <Button variant="ghost-light" size="md" className="h-14 w-full whitespace-nowrap sm:w-auto">
                       Start Free
                     </Button>
                   </Link>
@@ -553,14 +553,14 @@ export default function XeroPage() {
             </div>
 
             <div className="flex w-full flex-col items-center justify-center gap-6 md:gap-4">
-              <div className="flex flex-row items-center gap-6">
-                <Link href="/book-demo">
-                  <Button variant="brand" size="md" className="h-14 px-[46px] text-lg font-medium">
+              <div className="flex w-full flex-col items-center gap-3 sm:w-auto sm:flex-row sm:gap-6">
+                <Link href="/book-demo" className="w-full sm:w-auto">
+                  <Button variant="brand" size="md" className="h-14 w-full px-[46px] text-lg font-medium sm:w-auto">
                     Book Demo
                   </Button>
                 </Link>
-                <Link href="https://dashboard.yonovo.ai/login">
-                  <Button variant="ghost-dark" size="md" className="h-14">
+                <Link href="https://dashboard.yonovo.ai/login" className="w-full sm:w-auto">
+                  <Button variant="ghost-dark" size="md" className="h-14 w-full sm:w-auto">
                     Start Free
                   </Button>
                 </Link>

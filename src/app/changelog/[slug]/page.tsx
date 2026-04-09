@@ -82,7 +82,7 @@ export default async function ChangelogEntryPage({ params }: Props) {
 
       <NavbarWrapper defaultMode="light" />
 
-      <main className="min-h-screen pt-16">
+      <main className="min-h-screen pt-16 bg-background">
         <div className="mx-auto max-w-4xl px-6 pt-8 md:pt-12">
           {/* Back nav */}
           <ChangelogBackNav />

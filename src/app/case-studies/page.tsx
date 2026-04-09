@@ -21,7 +21,7 @@ export default function CaseStudiesPage() {
   return (
     <>
       <NavbarWrapper defaultMode="light" />
-      <main className="pt-16 min-h-screen">
+      <main className="pt-16 min-h-screen bg-background">
         {/* ── Hero ── */}
         <section className="w-full -mt-16 pt-28 md:pt-32 pb-10 md:pb-12 bg-background">
           <div className="mx-auto max-w-(--container-max-width) px-6">
