@@ -47,7 +47,7 @@ const timelineSteps = [
   {
     number: 1,
     text: "Invoice your customers as usual, from Xero.",
-    image: "/images/qb-step-1-invoice.png",
+    image: "/images/xero-step-1-invoice.png",
   },
   {
     number: 2,
