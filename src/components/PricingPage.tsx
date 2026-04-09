@@ -38,9 +38,9 @@ const tiers = [
 ];
 
 const logos = [
-  { name: "Troyes", src: "/logos/troyes.png", width: 130, className: "h-[37px] lg:h-[47px]" },
-  { name: "TDG Inc", src: "/logos/tdg-inc.svg", width: 200, className: "h-[95px] lg:h-[120px]" },
-  { name: "SBC", src: "/logos/sbc.png", width: 200, className: "h-[75px] lg:h-[95px]" },
+  { name: "Troyes", src: "/logos/troyes.png", width: 130, className: "h-[28px] lg:h-[47px]" },
+  { name: "TDG Inc", src: "/logos/tdg-inc.svg", width: 200, className: "h-[65px] lg:h-[120px]" },
+  { name: "SBC", src: "/logos/sbc.png", width: 200, className: "h-[50px] lg:h-[95px]" },
 ];
 
 const faqItems = [
@@ -177,8 +177,8 @@ export default function PricingPage() {
       <section className="w-full bg-background py-6 md:py-8">
         <div className="mx-auto max-w-(--container-max-width) px-6">
           <div className="flex w-full flex-col items-center gap-0">
-            <p className="font-medium text-base text-zinc-500">
-              Trusted by finance teams who hate chasing payments
+            <p className="text-center font-medium text-base text-zinc-500">
+              Trusted by teams who hate chasing payments
             </p>
             <div className="w-full -mt-5">
               <div className="flex items-center justify-center gap-10">
