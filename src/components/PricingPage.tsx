@@ -57,7 +57,7 @@ const faqItems = [
   {
     question: "What integrations do you support?",
     answer:
-      "Yonovo integrates with QuickBooks, Xero, Sage, FreshBooks, NetSuite, Salesforce, HubSpot, SAP, and more. We are continuously adding new integrations.",
+      "Yonovo integrates with QuickBooks, Xero, Odoo, Sage, FreshBooks, NetSuite, Salesforce, HubSpot, and SAP.",
   },
   {
     question: "How long does setup take?",
@@ -68,11 +68,6 @@ const faqItems = [
     question: "Can I change plans later?",
     answer:
       "Absolutely. You can upgrade or adjust your plan at any time as your business grows. Our team will help you find the right fit.",
-  },
-  {
-    question: "Is my data secure?",
-    answer:
-      "Yes. We use bank-level encryption, SOC 2 compliance, and strict access controls to keep your financial data safe.",
   },
 ];
 
