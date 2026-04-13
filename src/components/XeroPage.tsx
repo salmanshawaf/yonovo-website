@@ -186,7 +186,7 @@ export default function XeroPage() {
               <div className="relative hidden w-full items-center justify-center overflow-hidden rounded-2xl md:flex md:aspect-[1.5]">
                 <Image src="/logos/xero.png" alt="Xero" width={200} height={200} className="w-[35%] h-auto" />
               </div>
-              <div className="relative flex h-32 w-full items-center justify-center overflow-hidden rounded-2xl md:hidden">
+              <div className="relative flex h-40 w-full items-center justify-center overflow-hidden rounded-2xl md:hidden">
                 <Image src="/logos/xero.png" alt="Xero" width={200} height={200} className="w-[40%] h-auto" />
               </div>
             </div>
