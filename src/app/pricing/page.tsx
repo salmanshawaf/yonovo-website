@@ -1,12 +1,30 @@
 import type { Metadata } from "next";
+import { SITE_URL, SITE_NAME } from "@/lib/site-config";
 import NavbarWrapper from "@/components/NavbarWrapper";
 import Footer from "@/components/Footer";
 import PricingPage from "@/components/PricingPage";
 
 export const metadata: Metadata = {
-  title: "Pricing | Yonovo",
+  title: "Accounts Receivable Automation Pricing",
   description:
-    "Pricing adapted to your needs. Take control of your accounts receivable today and unlock your owed cash reserves.",
+    "Take control of your accounts receivable. Plans from free analytics to full automation across email, SMS, and voice.",
+  alternates: {
+    canonical: `${SITE_URL}/pricing`,
+  },
+  openGraph: {
+    type: "website",
+    title: `Accounts Receivable Automation Pricing | ${SITE_NAME}`,
+    description:
+      "Take control of your accounts receivable. Plans from free analytics to full automation across email, SMS, and voice.",
+    url: `${SITE_URL}/pricing`,
+    siteName: SITE_NAME,
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: `Accounts Receivable Automation Pricing | ${SITE_NAME}`,
+    description:
+      "Take control of your accounts receivable. Plans from free analytics to full automation across email, SMS, and voice.",
+  },
 };
 
 export default function Page() {

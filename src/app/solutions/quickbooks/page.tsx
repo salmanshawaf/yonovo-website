@@ -1,12 +1,30 @@
 import type { Metadata } from "next";
+import { SITE_URL, SITE_NAME } from "@/lib/site-config";
 import NavbarWrapper from "@/components/NavbarWrapper";
 import Footer from "@/components/Footer";
 import QuickBooksPage from "@/components/QuickBooksPage";
 
 export const metadata: Metadata = {
-  title: "QuickBooks Integration | Yonovo",
+  title: "QuickBooks Online AR Automation | Automate Collections",
   description:
-    "Connect Yonovo to QuickBooks Online and automate your accounts receivable collections. Sync invoices, follow up automatically, and get paid faster.",
+    "Automate accounts receivable for QuickBooks Online. AI-powered follow-ups via email, SMS, and voice. Connect in 15 minutes and reduce DSO.",
+  alternates: {
+    canonical: `${SITE_URL}/solutions/quickbooks`,
+  },
+  openGraph: {
+    type: "website",
+    title: `QuickBooks Online AR Automation | ${SITE_NAME}`,
+    description:
+      "Automate accounts receivable for QuickBooks Online. AI-powered follow-ups via email, SMS, and voice. Connect in 15 minutes.",
+    url: `${SITE_URL}/solutions/quickbooks`,
+    siteName: SITE_NAME,
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: `QuickBooks Online AR Automation | ${SITE_NAME}`,
+    description:
+      "Automate accounts receivable for QuickBooks Online. AI-powered follow-ups via email, SMS, and voice.",
+  },
 };
 
 export default function Page() {

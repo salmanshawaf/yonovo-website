@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
+import { SITE_URL, SITE_NAME } from "@/lib/site-config";
 import NavbarWrapper from "@/components/NavbarWrapper";
 import Footer from "@/components/Footer";
 import SectionBadge from "@/components/SectionBadge";
@@ -10,8 +11,23 @@ import { caseStudies } from "@/data/caseStudies";
 import { getAllPosts } from "@/lib/blog";
 
 export const metadata: Metadata = {
-  title: "Case Studies | Yonovo",
+  title: "Case Studies",
   description: "See how real teams use Yonovo to automate collections, reduce DSO, and improve cash flow.",
+  alternates: {
+    canonical: `${SITE_URL}/case-studies`,
+  },
+  openGraph: {
+    type: "website",
+    title: `Case Studies | ${SITE_NAME}`,
+    description: "See how real teams use Yonovo to automate collections, reduce DSO, and improve cash flow.",
+    url: `${SITE_URL}/case-studies`,
+    siteName: SITE_NAME,
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: `Case Studies | ${SITE_NAME}`,
+    description: "See how real teams use Yonovo to automate collections, reduce DSO, and improve cash flow.",
+  },
 };
 
 export default function CaseStudiesPage() {

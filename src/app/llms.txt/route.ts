@@ -1,6 +1,5 @@
 import { getAllPosts } from "@/lib/blog";
-
-const SITE_URL = "https://yonovo.ai";
+import { SITE_URL } from "@/lib/site-config";
 
 export async function GET() {
   const posts = getAllPosts();
@@ -18,6 +17,9 @@ export async function GET() {
 - Pricing: ${SITE_URL}/pricing
 - QuickBooks Integration: ${SITE_URL}/solutions/quickbooks
 - Xero Integration: ${SITE_URL}/solutions/xero
+- NetSuite Integration: ${SITE_URL}/solutions/netsuite
+- Odoo Integration: ${SITE_URL}/solutions/odoo
+- Sage Integration: ${SITE_URL}/solutions/sage
 
 ## Industries
 - Ecommerce & Retail: ${SITE_URL}/industries/ecommerce-retail

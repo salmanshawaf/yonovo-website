@@ -31,13 +31,13 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     openGraph: {
       title: `${entry.frontmatter.title} | Yonovo Changelog`,
       description: entry.frontmatter.description,
-      url: `https://yonovo.ai/changelog/${slug}`,
+      url: `https://www.yonovo.com/changelog/${slug}`,
       type: "article",
       publishedTime: entry.frontmatter.publishedAt,
       images: [{ url: entry.frontmatter.heroImage, width: 1200, height: 630 }],
     },
     alternates: {
-      canonical: `https://yonovo.ai/changelog/${slug}`,
+      canonical: `https://www.yonovo.com/changelog/${slug}`,
     },
   };
 }
@@ -65,11 +65,11 @@ export default async function ChangelogEntryPage({ params }: Props) {
     publisher: {
       "@type": "Organization",
       name: "Yonovo",
-      url: "https://yonovo.ai",
+      url: "https://www.yonovo.com",
     },
     mainEntityOfPage: {
       "@type": "WebPage",
-      "@id": `https://yonovo.ai/changelog/${slug}`,
+      "@id": `https://www.yonovo.com/changelog/${slug}`,
     },
   };
 

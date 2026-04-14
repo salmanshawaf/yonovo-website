@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
+import { SITE_URL, SITE_NAME } from "@/lib/site-config";
 import "./globals.css";
 
 const inter = Inter({
@@ -10,9 +11,13 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://yonovo.ai"),
-  title: "Yonovo",
-  description: "Yonovo — modern solutions for your business",
+  metadataBase: new URL(SITE_URL),
+  title: {
+    default: `${SITE_NAME} | AI-Powered Accounts Receivable Automation`,
+    template: `%s | ${SITE_NAME}`,
+  },
+  description:
+    "Automate invoice follow-ups across email, SMS, and voice. Yonovo connects to your accounting system and handles collections so your team can focus on growth.",
 };
 
 export default function RootLayout({

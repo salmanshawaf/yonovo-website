@@ -8,6 +8,7 @@ import BlogPostCard from "@/components/blog/BlogPostCard";
 import Breadcrumbs from "@/components/blog/Breadcrumbs";
 import { authors } from "@/content/authors";
 import { getAllPosts, postToMeta } from "@/lib/blog";
+import { SITE_URL } from "@/lib/site-config";
 
 type Props = { params: Promise<{ slug: string }> };
 
@@ -25,7 +26,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     description: author.bio,
     robots: { index: true, follow: true },
     alternates: {
-      canonical: `https://yonovo.ai/blog/author/${slug}`,
+      canonical: `${SITE_URL}/blog/author/${slug}`,
     },
   };
 }
@@ -48,7 +49,7 @@ export default async function AuthorPage({ params }: Props) {
       "@type": "Organization",
       name: "Yonovo",
     },
-    url: `https://yonovo.ai/blog/author/${slug}`,
+    url: `${SITE_URL}/blog/author/${slug}`,
     ...(author.linkedin && { sameAs: [author.linkedin] }),
   };
 

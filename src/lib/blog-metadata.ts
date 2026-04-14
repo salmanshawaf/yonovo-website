@@ -1,9 +1,7 @@
 import type { Metadata } from "next";
 import type { BlogPost } from "./blog";
 import { getHeroImage } from "./blog";
-
-const SITE_URL = "https://yonovo.ai";
-const SITE_NAME = "Yonovo";
+import { SITE_URL, SITE_NAME } from "./site-config";
 
 // ── JSON-LD Generators ──
 

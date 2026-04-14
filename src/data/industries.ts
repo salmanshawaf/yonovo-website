@@ -46,9 +46,9 @@ export const industries: Record<string, IndustryData> = {
   "ecommerce-retail": {
     slug: "ecommerce-retail",
     meta: {
-      title: "Ecommerce & Retail Collections | Yonovo",
+      title: "AR Automation for Ecommerce & Retail | Reduce Chargebacks & DSO",
       description:
-        "Automate accounts receivable for ecommerce and retail businesses. Collect faster without damaging customer relationships.",
+        "Automate accounts receivable for ecommerce and retail businesses. Recover payments faster across email, SMS, and voice without damaging customer relationships.",
     },
     hero: {
       badge: "Ecommerce & Retail",
@@ -219,9 +219,9 @@ export const industries: Record<string, IndustryData> = {
   "wholesale-distribution": {
     slug: "wholesale-distribution",
     meta: {
-      title: "Wholesale & Distribution Collections | Yonovo",
+      title: "AR Automation for Wholesale Distributors | Collect on Net Terms Faster",
       description:
-        "Automate accounts receivable for wholesale and distribution businesses. Reduce DSO and collect faster without risking key buyer relationships.",
+        "Automate accounts receivable for wholesale and distribution businesses. Reduce DSO and collect on net terms faster without risking key buyer relationships.",
     },
     hero: {
       badge: "Wholesale & Distribution",
@@ -392,7 +392,7 @@ export const industries: Record<string, IndustryData> = {
   "manufacturing": {
     slug: "manufacturing",
     meta: {
-      title: "Manufacturing Collections | Yonovo",
+      title: "AR Automation for Manufacturers | Automate Invoice Follow-Ups",
       description:
         "Automate accounts receivable for manufacturing businesses. Reduce DSO and collect on overdue invoices without disrupting supply chain relationships.",
     },
@@ -565,9 +565,9 @@ export const industries: Record<string, IndustryData> = {
   "professional-services": {
     slug: "professional-services",
     meta: {
-      title: "Professional Services Collections | Yonovo",
+      title: "AR Automation for Professional Services | Bill Collection on Autopilot",
       description:
-        "Automate accounts receivable for professional services firms. Collect on overdue invoices without putting client relationships at risk.",
+        "Automate accounts receivable for professional services firms. Collect on overdue invoices via email, SMS, and voice without putting client relationships at risk.",
     },
     hero: {
       badge: "Professional Services",
@@ -738,9 +738,9 @@ export const industries: Record<string, IndustryData> = {
   "property-management": {
     slug: "property-management",
     meta: {
-      title: "Property Management Collections | Yonovo",
+      title: "AR Automation for Property Management | Automate Rent & Fee Collection",
       description:
-        "Automate accounts receivable for property management companies. Collect rent and fees on time without straining tenant relationships.",
+        "Automate accounts receivable for property management companies. Collect rent and fees on time via email, SMS, and voice without straining tenant relationships.",
     },
     hero: {
       badge: "Property Management",
@@ -911,9 +911,9 @@ export const industries: Record<string, IndustryData> = {
   "gyms-fitness": {
     slug: "gyms-fitness",
     meta: {
-      title: "Gyms & Fitness Collections | Yonovo",
+      title: "AR Automation for Gyms & Fitness | Recover Missed Payments",
       description:
-        "Automate accounts receivable for gyms and fitness businesses. Recover failed payments and collect past-due membership dues without losing members.",
+        "Automate accounts receivable for gyms and fitness businesses. Recover failed payments and collect past-due membership dues via email, SMS, and voice without losing members.",
     },
     hero: {
       badge: "Gyms & Fitness",

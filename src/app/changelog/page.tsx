@@ -14,11 +14,11 @@ export const metadata: Metadata = {
     title: "Changelog | Yonovo",
     description:
       "See what's new at Yonovo. Product updates, new features, and improvements to help you collect payments faster.",
-    url: "https://yonovo.ai/changelog",
+    url: "https://www.yonovo.com/changelog",
     type: "website",
   },
   alternates: {
-    canonical: "https://yonovo.ai/changelog",
+    canonical: "https://www.yonovo.com/changelog",
   },
 };
 

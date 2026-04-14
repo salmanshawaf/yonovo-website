@@ -1,3 +1,5 @@
+import type { Metadata } from "next";
+import { SITE_URL, SITE_NAME } from "@/lib/site-config";
 import NavbarWrapper from "@/components/NavbarWrapper";
 import Footer from "@/components/Footer";
 import HeroSection from "@/components/sections/HeroSection";
@@ -10,6 +12,29 @@ import AdvantagesSection from "@/components/sections/AdvantagesSection";
 import TestimonialsSection from "@/components/sections/TestimonialsSection";
 import SecuritySection from "@/components/sections/SecuritySection";
 import CTASection from "@/components/sections/CTASection";
+
+export const metadata: Metadata = {
+  title: `${SITE_NAME} | AI-Powered Accounts Receivable Automation`,
+  description:
+    "Automate invoice follow-ups across email, SMS, and voice. Yonovo connects to your accounting system and handles collections so your team can focus on growth.",
+  alternates: {
+    canonical: `${SITE_URL}/`,
+  },
+  openGraph: {
+    type: "website",
+    title: `${SITE_NAME} | AI-Powered Accounts Receivable Automation`,
+    description:
+      "Automate invoice follow-ups across email, SMS, and voice. Yonovo handles AR collections so your team can focus on growth.",
+    url: `${SITE_URL}/`,
+    siteName: SITE_NAME,
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: `${SITE_NAME} | AI-Powered Accounts Receivable Automation`,
+    description:
+      "Automate invoice follow-ups across email, SMS, and voice. Yonovo handles AR collections so your team can focus on growth.",
+  },
+};
 
 export default function Home() {
   return (

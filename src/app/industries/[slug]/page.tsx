@@ -1,5 +1,6 @@
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
+import { SITE_URL, SITE_NAME } from "@/lib/site-config";
 import NavbarWrapper from "@/components/NavbarWrapper";
 import Footer from "@/components/Footer";
 import IndustryPageTemplate from "@/components/IndustryPageTemplate";
@@ -18,6 +19,21 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title: data.meta.title,
     description: data.meta.description,
+    alternates: {
+      canonical: `${SITE_URL}/industries/${slug}`,
+    },
+    openGraph: {
+      type: "website",
+      title: data.meta.title,
+      description: data.meta.description,
+      url: `${SITE_URL}/industries/${slug}`,
+      siteName: SITE_NAME,
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: data.meta.title,
+      description: data.meta.description,
+    },
   };
 }
 

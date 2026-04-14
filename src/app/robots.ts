@@ -1,4 +1,5 @@
 import type { MetadataRoute } from "next";
+import { SITE_URL } from "@/lib/site-config";
 
 export default function robots(): MetadataRoute.Robots {
   return {
@@ -12,6 +13,6 @@ export default function robots(): MetadataRoute.Robots {
       // This is a deliberate decision to maximize AI search visibility.
       // Revisit if content licensing or training data concerns arise.
     ],
-    sitemap: "https://yonovo.ai/sitemap.xml",
+    sitemap: `${SITE_URL}/sitemap.xml`,
   };
 }

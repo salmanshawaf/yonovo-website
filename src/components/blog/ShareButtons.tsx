@@ -1,6 +1,6 @@
 "use client";
 
-const SITE_URL = "https://yonovo.ai";
+const SITE_URL = "https://www.yonovo.com";
 
 export default function ShareButtons({ slug, title }: { slug: string; title: string }) {
   const url = `${SITE_URL}/blog/${slug}`;

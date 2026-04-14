@@ -1,6 +1,5 @@
 import { getAllPosts, getHeroImage } from "@/lib/blog";
-
-const SITE_URL = "https://yonovo.ai";
+import { SITE_URL } from "@/lib/site-config";
 
 export async function GET() {
   const posts = getAllPosts();
