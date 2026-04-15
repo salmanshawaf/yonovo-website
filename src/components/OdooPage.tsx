@@ -4,6 +4,7 @@ import SectionBadge from "@/components/SectionBadge";
 import Button from "@/components/Button";
 import FAQAccordion from "@/components/FAQAccordion";
 import VideoPlayer from "@/components/VideoPlayer";
+import RelatedResources from "@/components/RelatedResources";
 
 /* ── Data ── */
 
@@ -535,6 +536,13 @@ export default function OdooPage() {
           <FAQAccordion items={faqs} />
         </div>
       </section>
+
+      {/* ── Related Resources ── */}
+      <RelatedResources items={[
+        { label: "Case Studies", href: "/case-studies", description: "See how real teams automate AR collections and reduce DSO with Yonovo." },
+        { label: "Best AR Automation Software (2026)", href: "/blog/best-ar-automation-software", description: "Side-by-side comparison of 10 AR platforms on features, pricing, and setup time." },
+        { label: "Multi-Channel Payment Chasing", href: "/blog/multi-channel-payment-chasing", description: "Why email alone is not enough and how to follow up across SMS, voice, and more." },
+      ]} />
 
       {/* ── CTA ── */}
       <section className="w-full bg-gradient-to-b from-background from-60% to-brand-navy to-60%">

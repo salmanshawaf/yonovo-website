@@ -4,6 +4,7 @@ import SectionBadge from "@/components/SectionBadge";
 import Button from "@/components/Button";
 import FAQAccordion from "@/components/FAQAccordion";
 import VideoPlayer from "@/components/VideoPlayer";
+import RelatedResources from "@/components/RelatedResources";
 
 /* ── Data ── */
 
@@ -535,6 +536,13 @@ export default function QuickBooksPage() {
           <FAQAccordion items={faqs} />
         </div>
       </section>
+
+      {/* ── Related Resources ── */}
+      <RelatedResources items={[
+        { label: "Case Study: TDG Inc.", href: "/case-studies/tdg-inc", description: "How TDG Inc. reduced manual follow-ups by 80% and cut DSO by 15 days with Yonovo + QuickBooks." },
+        { label: "Case Study: Troyes Canada", href: "/case-studies/troyes", description: "Troyes went from fully manual to automated collections in a single day, saving 25+ hours per month." },
+        { label: "Best QuickBooks AR Integrations", href: "/blog/best-quickbooks-ar-integration", description: "A comparison of the top AR automation tools for QuickBooks Online users." },
+      ]} />
 
       {/* ── CTA ── */}
       <section className="w-full bg-gradient-to-b from-background from-60% to-brand-navy to-60%">

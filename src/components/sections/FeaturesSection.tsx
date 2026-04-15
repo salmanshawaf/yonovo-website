@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import type { ReactNode } from "react";
 import SectionBadge from "@/components/SectionBadge";
 
@@ -101,15 +102,15 @@ const bottomFeatures = [
 ];
 
 const integrations = [
-  { name: "QuickBooks", logo: "/logos/quickbooks-icon.png" },
-  { name: "Xero", logo: "/logos/xero.png" },
-  { name: "Sage", logo: "/logos/sage-icon.svg" },
-  { name: "Odoo", logo: "/logos/odoo-icon.svg" },
+  { name: "QuickBooks", logo: "/logos/quickbooks-icon.png", href: "/solutions/quickbooks" },
+  { name: "Xero", logo: "/logos/xero.png", href: "/solutions/xero" },
+  { name: "Sage", logo: "/logos/sage-icon.svg", href: "/solutions/sage" },
+  { name: "Odoo", logo: "/logos/odoo-icon.svg", href: "/solutions/odoo" },
   { name: "FreshBooks", logo: "/logos/freshbooks-icon.png" },
 ];
 
 const integrations2 = [
-  { name: "NetSuite", logo: "/logos/netsuite-icon.svg" },
+  { name: "NetSuite", logo: "/logos/netsuite-icon.svg", href: "/solutions/netsuite" },
   { name: "Salesforce", logo: "/logos/salesforce-icon.webp" },
   { name: "HubSpot", logo: "/logos/hubspot-icon.png" },
   { name: "SAP", logo: "/logos/sap-icon.webp" },
@@ -192,15 +193,17 @@ function FeatureCard({
   );
 }
 
-function IntegrationPill({ name, logo, iconClassName }: { name: string; logo: string; iconClassName?: string }) {
-  return (
-    <div className="inline-flex h-10 shrink-0 items-center gap-2 rounded-full bg-surface p-1">
+function IntegrationPill({ name, logo, iconClassName, href }: { name: string; logo: string; iconClassName?: string; href?: string }) {
+  const pill = (
+    <div className={`inline-flex h-10 shrink-0 items-center gap-2 rounded-full bg-surface p-1${href ? " transition-shadow hover:shadow-md" : ""}`}>
       <div className="flex h-8 w-8 items-center justify-center rounded-full border border-border bg-background">
         <img src={logo} alt={name} className={iconClassName || "h-5 w-5 object-contain"} />
       </div>
       <div className="pr-2 font-medium text-sm text-foreground">{name}</div>
     </div>
   );
+  if (href) return <Link href={href}>{pill}</Link>;
+  return pill;
 }
 
 export default function FeaturesSection() {

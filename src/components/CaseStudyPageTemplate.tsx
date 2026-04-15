@@ -5,7 +5,16 @@ import Image from "next/image";
 import Link from "next/link";
 import Button from "@/components/Button";
 import SectionBadge from "@/components/SectionBadge";
+import RelatedResources from "@/components/RelatedResources";
 import type { CaseStudyData } from "@/data/caseStudies";
+
+const integrationSolutionMap: Record<string, { label: string; href: string; description: string }> = {
+  QuickBooks: { label: "QuickBooks AR Automation", href: "/solutions/quickbooks", description: "See how Yonovo connects to QuickBooks Online to automate collections." },
+  Xero: { label: "Xero AR Automation", href: "/solutions/xero", description: "See how Yonovo connects to Xero to automate collections." },
+  NetSuite: { label: "NetSuite AR Automation", href: "/solutions/netsuite", description: "See how Yonovo connects to NetSuite to automate collections." },
+  Odoo: { label: "Odoo AR Automation", href: "/solutions/odoo", description: "See how Yonovo connects to Odoo to automate collections." },
+  Sage: { label: "Sage AR Automation", href: "/solutions/sage", description: "See how Yonovo connects to Sage to automate collections." },
+};
 
 /* ── Blockquote ── */
 
@@ -292,6 +301,15 @@ export default function CaseStudyPageTemplate({
           </div>
         </div>
       </section>
+
+      {/* ── Related Resources ── */}
+      <RelatedResources items={[
+        ...(integrationSolutionMap[data.profile.integration]
+          ? [integrationSolutionMap[data.profile.integration]]
+          : []),
+        { label: "Best AR Automation Software (2026)", href: "/blog/best-ar-automation-software", description: "Side-by-side comparison of 10 AR platforms on features, pricing, and setup time." },
+        { label: "Pricing", href: "/pricing", description: "Plans from free analytics to full automation across email, SMS, and voice." },
+      ]} />
 
       {/* ── CTA ── */}
       <section className="w-full bg-gradient-to-b from-surface from-60% to-brand-navy to-60%">
