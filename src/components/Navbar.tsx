@@ -7,35 +7,35 @@ import Button from "./Button";
 
 const integrations = [
   {
-    icon: <Image src="/images/idFyhAFeIL_1775761334880.png" alt="" width={40} height={40} className="h-10 w-10 rounded-full object-cover" />,
+    icon: <Image src="/images/idFyhAFeIL_1775761334880.png" alt="" width={40} height={40} className="h-10 w-10 rounded-full object-cover" aria-hidden="true" />,
     title: "QuickBooks",
     description: "Maximize collection efficiency",
     href: "/solutions/quickbooks",
     iconVariant: "brand" as const,
   },
   {
-    icon: <Image src="/images/idJC49YIcQ_1775761347167.png" alt="" width={40} height={40} className="h-10 w-10 rounded-full object-cover" />,
+    icon: <Image src="/images/idJC49YIcQ_1775761347167.png" alt="" width={40} height={40} className="h-10 w-10 rounded-full object-cover" aria-hidden="true" />,
     title: "Xero",
     description: "Collect invoices faster",
     href: "/solutions/xero",
     iconVariant: "brand" as const,
   },
   {
-    icon: <Image src="/images/idwVC6PrT7_1775761363800.jpeg" alt="" width={40} height={40} className="h-10 w-10 rounded-full object-cover" />,
+    icon: <Image src="/images/idwVC6PrT7_1775761363800.jpeg" alt="" width={40} height={40} className="h-10 w-10 rounded-full object-cover" aria-hidden="true" />,
     title: "Odoo",
     description: "Connect Yonovo to Odoo",
     href: "/solutions/odoo",
     iconVariant: "brand" as const,
   },
   {
-    icon: <Image src="/images/NetSuite_idTS9MV_0S_0.jpeg" alt="" width={40} height={40} className="h-10 w-10 rounded-full object-cover" />,
+    icon: <Image src="/images/NetSuite_idTS9MV_0S_0.jpeg" alt="" width={40} height={40} className="h-10 w-10 rounded-full object-cover" aria-hidden="true" />,
     title: "NetSuite",
     description: "Your ERP data, actionable",
     href: "/solutions/netsuite",
     iconVariant: "brand" as const,
   },
   {
-    icon: <Image src="/logos/sage-circle-icon.svg" alt="" width={40} height={40} className="h-10 w-10 rounded-full object-cover" />,
+    icon: <Image src="/logos/sage-circle-icon.svg" alt="" width={40} height={40} className="h-10 w-10 rounded-full object-cover" aria-hidden="true" />,
     title: "Sage Intacct",
     description: "Accelerate your cash collection",
     href: "/solutions/sage",
