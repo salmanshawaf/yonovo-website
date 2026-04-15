@@ -5,7 +5,7 @@ const highlights = [
   {
     title: "Built for quick setup",
     description:
-      "From signup to your first automated follow up in minutes, not weeks or months.",
+      "From signup to your first automated follow up in one day, not weeks or months.",
     colSpan: "",
     image: "/images/highlight-quick-setup.png",
   },

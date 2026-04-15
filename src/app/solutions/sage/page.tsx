@@ -7,7 +7,7 @@ import SagePage from "@/components/SagePage";
 export const metadata: Metadata = {
   title: "Sage AR Automation | Automate Collections for Sage",
   description:
-    "Automate accounts receivable for Sage. Sync invoices, send follow-ups via email, SMS, and voice, and reduce DSO. Connect in 15 minutes.",
+    "Automate accounts receivable for Sage. Sync invoices, send follow-ups via email, SMS, and voice, and reduce DSO. Go live in one day.",
   alternates: {
     canonical: `${SITE_URL}/solutions/sage`,
   },

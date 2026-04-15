@@ -7,7 +7,7 @@ import XeroPage from "@/components/XeroPage";
 export const metadata: Metadata = {
   title: "Xero AR Automation | Automate Collections for Xero",
   description:
-    "Automate accounts receivable for Xero. Sync invoices, send follow-ups via email, SMS, and voice, and reduce DSO. Connect in 15 minutes.",
+    "Automate accounts receivable for Xero. Sync invoices, send follow-ups via email, SMS, and voice, and reduce DSO. Go live in one day.",
   alternates: {
     canonical: `${SITE_URL}/solutions/xero`,
   },

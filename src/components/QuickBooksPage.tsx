@@ -87,12 +87,12 @@ const faqs = [
   {
     question: "Does Yonovo work with QuickBooks Desktop?",
     answer:
-      "Yonovo currently supports QuickBooks Online. QuickBooks Desktop support is on the roadmap. Contact us if you'd like to be notified when it's available.",
+      "Yonovo supports QuickBooks Online only. QuickBooks Desktop is not supported.",
   },
   {
     question: "How long does setup take?",
     answer:
-      "Most teams are live within 15 minutes. Connect QuickBooks, set your preferences, and Yonovo starts working on your overdue invoices right away.",
+      "Most teams are live within one day. Connect QuickBooks, set your preferences, and Yonovo starts working on your overdue invoices right away.",
   },
   {
     question: "Will my customers know I'm using Yonovo?",

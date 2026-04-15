@@ -201,7 +201,7 @@ export const industries: Record<string, IndustryData> = {
       {
         question: "What accounting platforms does Yonovo integrate with?",
         answer:
-          "Yonovo integrates with QuickBooks, Xero, Odoo, NetSuite, Sage, FreshBooks, Salesforce, HubSpot, and SAP. Your invoices, customers, and aging data sync automatically so there's no manual setup required.",
+          "Yonovo integrates with QuickBooks Online, Xero, Odoo, NetSuite, Sage, FreshBooks, Salesforce, HubSpot, SAP, and WhatsApp. Your invoices, customers, and aging data sync automatically so there's no manual setup required.",
       },
       {
         question: "How is Yonovo different from a traditional collections agency?",
@@ -374,7 +374,7 @@ export const industries: Record<string, IndustryData> = {
       {
         question: "What accounting platforms does Yonovo integrate with?",
         answer:
-          "Yonovo integrates with QuickBooks, Xero, Odoo, NetSuite, Sage, FreshBooks, Salesforce, HubSpot, and SAP. Your invoices, customers, and aging data sync automatically so there's no manual setup required.",
+          "Yonovo integrates with QuickBooks Online, Xero, Odoo, NetSuite, Sage, FreshBooks, Salesforce, HubSpot, SAP, and WhatsApp. Your invoices, customers, and aging data sync automatically so there's no manual setup required.",
       },
       {
         question: "How is Yonovo different from a traditional collections agency?",
@@ -547,7 +547,7 @@ export const industries: Record<string, IndustryData> = {
       {
         question: "What accounting platforms does Yonovo integrate with?",
         answer:
-          "Yonovo integrates with QuickBooks, Xero, Odoo, NetSuite, Sage, FreshBooks, Salesforce, HubSpot, and SAP. Your invoices, customers, and aging data sync automatically so there's no manual setup required.",
+          "Yonovo integrates with QuickBooks Online, Xero, Odoo, NetSuite, Sage, FreshBooks, Salesforce, HubSpot, SAP, and WhatsApp. Your invoices, customers, and aging data sync automatically so there's no manual setup required.",
       },
       {
         question: "How is Yonovo different from a traditional collections agency?",
@@ -720,7 +720,7 @@ export const industries: Record<string, IndustryData> = {
       {
         question: "What accounting platforms does Yonovo integrate with?",
         answer:
-          "Yonovo integrates with QuickBooks, Xero, Odoo, NetSuite, Sage, FreshBooks, Salesforce, HubSpot, and SAP. Your invoices, clients, and aging data sync automatically so there's no manual setup required.",
+          "Yonovo integrates with QuickBooks Online, Xero, Odoo, NetSuite, Sage, FreshBooks, Salesforce, HubSpot, SAP, and WhatsApp. Your invoices, clients, and aging data sync automatically so there's no manual setup required.",
       },
       {
         question: "How is Yonovo different from a traditional collections agency?",
@@ -893,7 +893,7 @@ export const industries: Record<string, IndustryData> = {
       {
         question: "What accounting platforms does Yonovo integrate with?",
         answer:
-          "Yonovo integrates with QuickBooks, Xero, Odoo, NetSuite, Sage, FreshBooks, Salesforce, HubSpot, and SAP. Your tenants, balances, and aging data sync automatically so there's no manual setup required.",
+          "Yonovo integrates with QuickBooks Online, Xero, Odoo, NetSuite, Sage, FreshBooks, Salesforce, HubSpot, SAP, and WhatsApp. Your tenants, balances, and aging data sync automatically so there's no manual setup required.",
       },
       {
         question: "How is Yonovo different from a traditional collections agency?",
@@ -1066,7 +1066,7 @@ export const industries: Record<string, IndustryData> = {
       {
         question: "What accounting platforms does Yonovo integrate with?",
         answer:
-          "Yonovo integrates with QuickBooks, Xero, Odoo, NetSuite, Sage, FreshBooks, Salesforce, HubSpot, and SAP. Your members, balances, and aging data sync automatically so there's no manual setup required.",
+          "Yonovo integrates with QuickBooks Online, Xero, Odoo, NetSuite, Sage, FreshBooks, Salesforce, HubSpot, SAP, and WhatsApp. Your members, balances, and aging data sync automatically so there's no manual setup required.",
       },
       {
         question: "How is Yonovo different from a traditional collections agency?",

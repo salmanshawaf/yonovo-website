@@ -7,7 +7,7 @@ import QuickBooksPage from "@/components/QuickBooksPage";
 export const metadata: Metadata = {
   title: "QuickBooks Online AR Automation | Automate Collections",
   description:
-    "Automate accounts receivable for QuickBooks Online. AI-powered follow-ups via email, SMS, and voice. Connect in 15 minutes and reduce DSO.",
+    "Automate accounts receivable for QuickBooks Online. AI-powered follow-ups via email, SMS, and voice. Go live in one day and reduce DSO.",
   alternates: {
     canonical: `${SITE_URL}/solutions/quickbooks`,
   },
@@ -15,7 +15,7 @@ export const metadata: Metadata = {
     type: "website",
     title: `QuickBooks Online AR Automation | ${SITE_NAME}`,
     description:
-      "Automate accounts receivable for QuickBooks Online. AI-powered follow-ups via email, SMS, and voice. Connect in 15 minutes.",
+      "Automate accounts receivable for QuickBooks Online. AI-powered follow-ups via email, SMS, and voice. Go live in one day.",
     url: `${SITE_URL}/solutions/quickbooks`,
     siteName: SITE_NAME,
   },

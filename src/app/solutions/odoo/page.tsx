@@ -7,7 +7,7 @@ import OdooPage from "@/components/OdooPage";
 export const metadata: Metadata = {
   title: "Odoo AR Automation | Automate Collections for Odoo",
   description:
-    "Automate accounts receivable for Odoo Community, Enterprise, and Online. Multi-channel follow-ups via email, SMS, and voice. Connect in 15 minutes.",
+    "Automate accounts receivable for Odoo Community, Enterprise, and Online. Multi-channel follow-ups via email, SMS, and voice. Go live in one day.",
   alternates: {
     canonical: `${SITE_URL}/solutions/odoo`,
   },
@@ -15,7 +15,7 @@ export const metadata: Metadata = {
     type: "website",
     title: `Odoo AR Automation | ${SITE_NAME}`,
     description:
-      "Automate accounts receivable for Odoo. Multi-channel follow-ups via email, SMS, and voice. Connect in 15 minutes.",
+      "Automate accounts receivable for Odoo. Multi-channel follow-ups via email, SMS, and voice. Go live in one day.",
     url: `${SITE_URL}/solutions/odoo`,
     siteName: SITE_NAME,
   },

@@ -7,7 +7,7 @@ import NetSuitePage from "@/components/NetSuitePage";
 export const metadata: Metadata = {
   title: "NetSuite AR Automation | Automate Collections for NetSuite",
   description:
-    "Automate accounts receivable for NetSuite. Sync invoices across subsidiaries, send multi-channel follow-ups, and reduce DSO. Connect in 15 minutes.",
+    "Automate accounts receivable for NetSuite. Sync invoices across subsidiaries, send multi-channel follow-ups, and reduce DSO. Go live in one day.",
   alternates: {
     canonical: `${SITE_URL}/solutions/netsuite`,
   },
