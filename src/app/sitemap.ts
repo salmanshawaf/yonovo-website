@@ -1,6 +1,7 @@
 import type { MetadataRoute } from "next";
 import { getAllPosts, BLOG_CATEGORIES } from "@/lib/blog";
 import { authors } from "@/content/authors";
+import { caseStudies } from "@/data/caseStudies";
 import { SITE_URL } from "@/lib/site-config";
 
 export default function sitemap(): MetadataRoute.Sitemap {
@@ -104,8 +105,16 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.5,
   }));
 
+  const caseStudyPages: MetadataRoute.Sitemap = Object.keys(caseStudies).map((slug) => ({
+    url: `${SITE_URL}/case-studies/${slug}`,
+    lastModified: new Date(),
+    changeFrequency: "monthly" as const,
+    priority: 0.7,
+  }));
+
   return [
     ...staticPages,
+    ...caseStudyPages,
     ...industryPages,
     ...blogPosts,
     ...categoryPages,
