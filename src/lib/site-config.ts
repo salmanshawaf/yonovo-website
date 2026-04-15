@@ -9,3 +9,4 @@
 
 export const SITE_URL = "https://www.yonovo.com";
 export const SITE_NAME = "Yonovo";
+export const CANONICAL_HOST = "www.yonovo.com";
