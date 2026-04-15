@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
 import { SITE_URL, SITE_NAME } from "@/lib/site-config";
+import { breadcrumbSchema } from "@/lib/schemas";
+import JsonLd from "@/components/JsonLd";
 import NavbarWrapper from "@/components/NavbarWrapper";
 import Footer from "@/components/Footer";
 import SectionBadge from "@/components/SectionBadge";
@@ -36,6 +38,7 @@ export default function CaseStudiesPage() {
 
   return (
     <>
+      <JsonLd data={breadcrumbSchema([{ name: "Home", href: "/" }, { name: "Case Studies" }])} />
       <NavbarWrapper defaultMode="light" />
       <main className="pt-16 min-h-screen bg-background">
         {/* ── Hero ── */}

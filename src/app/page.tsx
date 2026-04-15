@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { SITE_URL, SITE_NAME } from "@/lib/site-config";
+import { organizationSchema, webSiteSchema } from "@/lib/schemas";
 import NavbarWrapper from "@/components/NavbarWrapper";
 import Footer from "@/components/Footer";
 import HeroSection from "@/components/sections/HeroSection";
@@ -37,8 +38,13 @@ export const metadata: Metadata = {
 };
 
 export default function Home() {
+  const orgSchema = organizationSchema();
+  const siteSchema = webSiteSchema();
+
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(orgSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(siteSchema) }} />
       <NavbarWrapper />
       <main className="pt-16 min-h-screen">
         <HeroSection />

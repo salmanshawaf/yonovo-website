@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import { SITE_URL, SITE_NAME } from "@/lib/site-config";
+import { breadcrumbSchema, softwareApplicationSchema } from "@/lib/schemas";
+import JsonLd from "@/components/JsonLd";
 import NavbarWrapper from "@/components/NavbarWrapper";
 import Footer from "@/components/Footer";
 import SagePage from "@/components/SagePage";
@@ -30,6 +32,10 @@ export const metadata: Metadata = {
 export default function Page() {
   return (
     <>
+      <JsonLd data={[
+        breadcrumbSchema([{ name: "Home", href: "/" }, { name: "Solutions", href: "/solutions/sage" }, { name: "Sage" }]),
+        softwareApplicationSchema({ integrationName: "Sage", description: "Automate accounts receivable for Sage. Sync invoices, send follow-ups via email, SMS, voice, and WhatsApp.", url: "/solutions/sage" }),
+      ]} />
       <NavbarWrapper defaultMode="dark" />
       <main className="pt-16 min-h-screen">
         <SagePage />

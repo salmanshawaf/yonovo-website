@@ -1,6 +1,8 @@
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import { SITE_URL, SITE_NAME } from "@/lib/site-config";
+import { breadcrumbSchema } from "@/lib/schemas";
+import JsonLd from "@/components/JsonLd";
 import NavbarWrapper from "@/components/NavbarWrapper";
 import Footer from "@/components/Footer";
 import IndustryPageTemplate from "@/components/IndustryPageTemplate";
@@ -42,8 +44,11 @@ export default async function IndustryPage({ params }: Props) {
   const data = industries[slug];
   if (!data) notFound();
 
+  const industryName = data.meta.title.split("|")[0].replace("AR Automation for ", "").trim();
+
   return (
     <>
+      <JsonLd data={breadcrumbSchema([{ name: "Home", href: "/" }, { name: "Industries", href: `/industries/${slug}` }, { name: industryName }])} />
       <NavbarWrapper defaultMode="light" />
       <main className="pt-16 min-h-screen">
         <IndustryPageTemplate data={data} />
