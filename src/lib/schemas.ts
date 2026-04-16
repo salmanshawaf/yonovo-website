@@ -103,54 +103,67 @@ export function softwareApplicationSchema(opts: {
   };
 }
 
-// ── Product with PriceSpecification (pricing page) ──
+// ── SoftwareApplication (pricing page) ──
+//
+// Uses SoftwareApplication instead of Product to avoid triggering Google's
+// Merchant listings evaluation (which expects image, shippingDetails,
+// hasMerchantReturnPolicy — none of which apply to SaaS).
 
-export function productPricingSchema() {
+export function pricingSchema() {
   return {
     "@context": "https://schema.org",
-    "@type": "Product",
+    "@type": "SoftwareApplication",
     name: `${SITE_NAME} AR Automation`,
+    applicationCategory: "BusinessApplication",
+    operatingSystem: "Web",
     description:
       "AI-powered accounts receivable automation platform. Automate invoice follow-ups across email, SMS, voice, and WhatsApp.",
-    brand: {
-      "@type": "Brand",
+    url: `${SITE_URL}/pricing`,
+    image: `${SITE_URL}/yonovo-logo.png`,
+    publisher: {
+      "@type": "Organization",
       name: SITE_NAME,
     },
-    url: `${SITE_URL}/pricing`,
-    offers: [
-      {
-        "@type": "Offer",
-        name: "Discover",
-        description: "Free AR analytics and benchmarking",
-        price: "0",
-        priceCurrency: "USD",
-        availability: "https://schema.org/InStock",
-        url: `${SITE_URL}/pricing`,
-      },
-      {
-        "@type": "Offer",
-        name: "Grow",
-        description: "Automation for startups establishing best practices",
-        priceSpecification: {
-          "@type": "PriceSpecification",
+    offers: {
+      "@type": "AggregateOffer",
+      lowPrice: "0",
+      priceCurrency: "USD",
+      offerCount: "3",
+      offers: [
+        {
+          "@type": "Offer",
+          name: "Discover",
+          description: "Free AR analytics and benchmarking",
+          price: "0",
           priceCurrency: "USD",
-          description: "Built for $0-$10M ARR businesses",
+          availability: "https://schema.org/InStock",
+          url: `${SITE_URL}/pricing`,
         },
-        availability: "https://schema.org/InStock",
-        url: `${SITE_URL}/pricing`,
-      },
-      {
-        "@type": "Offer",
-        name: "Scale",
-        description: "Best-in-class automation for rapid growth",
-        priceSpecification: {
-          "@type": "PriceSpecification",
-          priceCurrency: "USD",
-          description: "Built for $10M-$50M ARR businesses",
+        {
+          "@type": "Offer",
+          name: "Grow",
+          description:
+            "Automation for startups establishing best practices. Built for $0–$10M ARR businesses.",
+          url: `${SITE_URL}/pricing`,
         },
-        availability: "https://schema.org/InStock",
-        url: `${SITE_URL}/pricing`,
-      },
+        {
+          "@type": "Offer",
+          name: "Scale",
+          description:
+            "Best-in-class automation for rapid growth. Built for $10M–$50M ARR businesses.",
+          url: `${SITE_URL}/pricing`,
+        },
+      ],
+    },
+    featureList: [
+      "Automated payment reminders",
+      "Multi-channel follow-ups (email, SMS, voice, WhatsApp)",
+      "AI-powered collection strategies",
+      "Customer risk scoring",
+      "Escalation workflows",
+      "Real-time AR dashboard",
+      "Payment portal for customers",
+      "DSO reduction tracking",
     ],
   };
 }
