@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { SITE_URL, SITE_NAME } from "@/lib/site-config";
-import { breadcrumbSchema, productPricingSchema } from "@/lib/schemas";
+import { breadcrumbSchema, pricingSchema } from "@/lib/schemas";
 import JsonLd from "@/components/JsonLd";
 import NavbarWrapper from "@/components/NavbarWrapper";
 import Footer from "@/components/Footer";
@@ -34,7 +34,7 @@ export default function Page() {
     <>
       <JsonLd data={[
         breadcrumbSchema([{ name: "Home", href: "/" }, { name: "Pricing" }]),
-        productPricingSchema(),
+        pricingSchema(),
       ]} />
       <NavbarWrapper defaultMode="light" />
       <PricingPage />
