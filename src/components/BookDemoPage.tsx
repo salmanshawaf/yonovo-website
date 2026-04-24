@@ -110,7 +110,7 @@ export default function BookDemoPage() {
               <div className={calLoaded ? "opacity-100 transition-opacity duration-300" : "opacity-0 absolute inset-0"}>
                 <Cal
                   namespace="yonovo-discovery"
-                  calLink="team/yonovo/yonovo-discovery"
+                  calLink="salmanshawaf/discovery"
                   style={{ width: "100%", height: "100%", overflow: "scroll" }}
                   config={{ layout: "month_view" }}
                 />
