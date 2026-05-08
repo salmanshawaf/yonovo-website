@@ -5,9 +5,10 @@
 // Requires the dev server to be running at http://localhost:3000.
 
 import { execFileSync } from "node:child_process";
-import { mkdirSync, readFileSync, existsSync } from "node:fs";
+import { mkdirSync, readFileSync, writeFileSync, existsSync } from "node:fs";
 import { resolve, dirname } from "node:path";
 import { fileURLToPath } from "node:url";
+import { PDFDocument } from "pdf-lib";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const ROOT = resolve(__dirname, "..");
@@ -54,7 +55,7 @@ async function checkServer() {
   }
 }
 
-function generatePdf(chrome, slug) {
+async function generatePdf(chrome, slug) {
   const url = `${BASE_URL}/case-studies/${slug}/print`;
   const out = resolve(OUT_DIR, `${slug}.pdf`);
   console.log(`→ ${slug}: ${url} → ${out}`);
@@ -71,6 +72,21 @@ function generatePdf(chrome, slug) {
     ],
     { stdio: ["ignore", "ignore", "inherit"] }
   );
+  await dropLastPage(out);
+}
+
+async function dropLastPage(path) {
+  const bytes = readFileSync(path);
+  const doc = await PDFDocument.load(bytes);
+  const pageCount = doc.getPageCount();
+  if (pageCount <= 1) {
+    console.log(`   only ${pageCount} page(s); skipping last-page removal`);
+    return;
+  }
+  doc.removePage(pageCount - 1);
+  const trimmed = await doc.save();
+  writeFileSync(path, trimmed);
+  console.log(`   trimmed ${pageCount} → ${pageCount - 1} pages`);
 }
 
 async function main() {
@@ -81,7 +97,7 @@ async function main() {
 
   const slugs = argSlug ? [argSlug] : readSlugs();
   console.log(`Generating ${slugs.length} PDF(s) using ${chrome}`);
-  for (const slug of slugs) generatePdf(chrome, slug);
+  for (const slug of slugs) await generatePdf(chrome, slug);
   console.log(`Done. Wrote ${slugs.length} PDF(s) to ${OUT_DIR}`);
 }
 

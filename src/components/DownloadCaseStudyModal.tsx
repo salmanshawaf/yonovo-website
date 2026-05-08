@@ -129,7 +129,7 @@ export default function DownloadCaseStudyModal({
             </div>
             <a
               href={pdfUrl}
-              download
+              download="case_study_yonovo.pdf"
               className="block"
               onClick={() => setTimeout(onClose, 300)}
             >
