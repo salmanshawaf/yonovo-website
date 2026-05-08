@@ -16,6 +16,7 @@ export type CaseStudySection = {
 
 export type CaseStudyData = {
   slug: string;
+  pdfUrl: string;
   meta: {
     title: string;
     description: string;
@@ -54,6 +55,7 @@ export type CaseStudyData = {
 export const caseStudies: Record<string, CaseStudyData> = {
   "tdg-inc": {
     slug: "tdg-inc",
+    pdfUrl: "/case-studies/tdg-inc.pdf",
     meta: {
       title: "TDG Inc. | Yonovo Case Study",
       description:
@@ -196,6 +198,7 @@ export const caseStudies: Record<string, CaseStudyData> = {
 
   troyes: {
     slug: "troyes",
+    pdfUrl: "/case-studies/troyes.pdf",
     meta: {
       title: "Troyes Canada | Yonovo Case Study",
       description:

@@ -6,6 +6,7 @@ import Link from "next/link";
 import Button from "@/components/Button";
 import SectionBadge from "@/components/SectionBadge";
 import RelatedResources from "@/components/RelatedResources";
+import DownloadCaseStudyModal from "@/components/DownloadCaseStudyModal";
 import type { CaseStudyData } from "@/data/caseStudies";
 
 const integrationSolutionMap: Record<string, { label: string; href: string; description: string }> = {
@@ -50,6 +51,7 @@ export default function CaseStudyPageTemplate({
   data: CaseStudyData;
 }) {
   const [activeSection, setActiveSection] = useState<string>("");
+  const [downloadOpen, setDownloadOpen] = useState(false);
 
   useEffect(() => {
     const ids = data.sections.map((s) => s.id);
@@ -112,6 +114,19 @@ export default function CaseStudyPageTemplate({
                 {data.card.summary}
               </p>
 
+              <div className="flex flex-wrap items-center gap-3">
+                <Button
+                  variant="primary"
+                  size="md"
+                  onClick={() => setDownloadOpen(true)}
+                  className="inline-flex h-12 items-center gap-2 px-5 text-sm font-medium"
+                >
+                  <svg className="h-4 w-4" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M12 4v12m0 0l-4-4m4 4l4-4M4 20h16" />
+                  </svg>
+                  Download PDF
+                </Button>
+              </div>
             </div>
 
             {/* Right — Company hero card */}
@@ -363,6 +378,14 @@ export default function CaseStudyPageTemplate({
           </div>
         </div>
       </section>
+
+      <DownloadCaseStudyModal
+        open={downloadOpen}
+        onClose={() => setDownloadOpen(false)}
+        pdfUrl={data.pdfUrl}
+        slug={data.slug}
+        companyName={data.card.companyName}
+      />
     </>
   );
 }
