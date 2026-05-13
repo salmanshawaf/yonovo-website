@@ -98,6 +98,20 @@ const industries = [
     description: "Recover failed payments, keep members",
     href: "/industries/gyms-fitness",
   },
+  {
+    icon: (
+      <svg className="h-5 w-5" fill="none" stroke="currentColor" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24">
+        <rect x="2" y="3" width="20" height="14" rx="2" />
+        <path d="M8 21h8" />
+        <path d="M12 17v4" />
+        <path d="m9 9 2 2-2 2" />
+        <path d="M13 13h2" />
+      </svg>
+    ),
+    title: "Software & Tech",
+    description: "Recover failed payments, retain customers",
+    href: "/industries/software-tech",
+  },
 ];
 
 const quickLinks = [

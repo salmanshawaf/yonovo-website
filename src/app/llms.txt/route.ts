@@ -28,6 +28,7 @@ export async function GET() {
 - Professional Services: ${SITE_URL}/industries/professional-services
 - Property Management: ${SITE_URL}/industries/property-management
 - Gyms & Fitness: ${SITE_URL}/industries/gyms-fitness
+- Software & Tech: ${SITE_URL}/industries/software-tech
 
 ## Case Studies
 - ${SITE_URL}/case-studies

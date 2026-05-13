@@ -32,6 +32,7 @@ const industryLinks = [
   { label: "Professional Services", href: "/industries/professional-services" },
   { label: "Property Management", href: "/industries/property-management" },
   { label: "Gyms & Fitness", href: "/industries/gyms-fitness" },
+  { label: "Software & Tech", href: "/industries/software-tech" },
 ];
 
 const companyLinks = [

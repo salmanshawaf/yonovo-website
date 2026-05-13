@@ -1081,4 +1081,182 @@ export const industries: Record<string, IndustryData> = {
       cta: "Book Demo",
     },
   },
+  "software-tech": {
+    slug: "software-tech",
+    meta: {
+      title: "AR Automation for Software & Tech | Recover Failed Payments, Reduce Churn",
+      description:
+        "Automate accounts receivable for software and tech companies. Recover failed subscription payments and collect on enterprise invoices via email, SMS, and voice without driving customers to churn.",
+    },
+    hero: {
+      badge: "Software & Tech",
+      headline: "Recover revenue without losing customers",
+      description:
+        "Yonovo automates your accounts receivable with personalized follow ups across email, SMS, and voice. Built for the recurring billing, enterprise contracts, and global customer base of software and tech companies.",
+      cta: "Book Demo",
+    },
+    problems: {
+      badge: "Problem",
+      headline: "Failed payments quietly become churn",
+      description:
+        "Software and tech companies live and die by recurring revenue. When subscriptions fail, enterprise invoices stall, or annual renewals slip, every dollar that goes uncollected is a dollar of ARR you cannot afford to lose.",
+      cards: [
+        {
+          title: "Failed cards become silent churn",
+          description:
+            "Card declines, expired cards, and failed retries pile up. Without timely outreach, customers fall off auto-renewal and you lose ARR that should have stayed on the books.",
+        },
+        {
+          title: "Enterprise invoices stall in procurement",
+          description:
+            "Net-30 and net-60 invoices sit in customer AP queues for weeks. Your finance team cannot chase every PO, every approver, and every renewal across hundreds of accounts.",
+        },
+        {
+          title: "Aggressive collections drive churn",
+          description:
+            "One blunt dunning email can push a customer to cancel instead of update their card. Generic collection emails do not reflect the product experience your team has built.",
+        },
+      ],
+    },
+    solutions: {
+      badge: "Solution",
+      headline: "Collections built for SaaS revenue",
+      description:
+        "Yonovo follows up on every failed payment and overdue invoice automatically with the right tone, timing, and channel so you recover revenue without putting renewals or expansion at risk.",
+      cards: [
+        {
+          icon: "users",
+          title: "Follow ups shaped by each customer",
+          description:
+            "Every message reflects the customer's plan, payment history, and relationship length. Strategic accounts get the tone they deserve, self-serve customers get a quick nudge.",
+        },
+        {
+          icon: "send",
+          title: "Multichannel outreach",
+          description:
+            "Reach customers where they respond. Email, SMS, and AI-powered voice calls with automatic escalation based on your rules.",
+        },
+        {
+          icon: "shield",
+          title: "Your brand, not a collector",
+          description:
+            "Every message goes out in your company's name and from your domain. Customers see the product team they already trust, not a third-party agency.",
+        },
+        {
+          icon: "chart",
+          title: "Full visibility into receivables",
+          description:
+            "Track every failed payment, every renewal at risk, and every outstanding invoice in one dashboard. Know exactly which accounts need attention and which are on track.",
+        },
+      ],
+      highlights: [
+        {
+          icon: "building",
+          title: "Any model",
+          description: "Self-serve SaaS, usage-based billing, and enterprise contracts.",
+        },
+        {
+          icon: "globe",
+          title: "Every channel",
+          description: "Email, SMS, and AI voice, all automated and personalized.",
+        },
+        {
+          icon: "zap",
+          title: "One dashboard",
+          description: "One view of every customer, every invoice, every follow up.",
+        },
+      ],
+    },
+    howItWorks: {
+      badge: "How It Works",
+      headline: "Up and running in minutes",
+      description:
+        "Connect your accounting or billing platform and Yonovo starts collecting on your behalf the same day.",
+      steps: [
+        {
+          title: "Connect your books",
+          description:
+            "Link QuickBooks, Xero, NetSuite, or your accounting platform. Yonovo imports your customers, invoices, and aging data automatically.",
+        },
+        {
+          title: "Set your rules",
+          description:
+            "Define follow up timing, escalation triggers, and channel preferences per plan tier or contract type. Or let Yonovo's AI recommend the best strategy.",
+        },
+        {
+          title: "Yonovo collects for you",
+          description:
+            "Personalized follow ups go out automatically across email, SMS, and voice. Every interaction is logged and visible to your team.",
+        },
+        {
+          title: "Review and improve",
+          description:
+            "Monitor recovery rates, DSO, and at-risk renewals. Yonovo learns what works and adapts its approach over time.",
+        },
+      ],
+    },
+    testimonials: {
+      badge: "Testimonials",
+      headline: "What people say",
+      items: [
+        {
+          company: "TDG Inc.",
+          name: "Mohammad Alshalabi",
+          title: "Director of Finance",
+          quote:
+            "We used to spend hours every week chasing overdue invoices manually. Since switching to Yonovo, our manual follow ups dropped by 80% and we're collecting faster than ever.",
+        },
+        {
+          company: "Troyes",
+          name: "Apple Smith",
+          title: "Accounts Receivable Manager",
+          quote:
+            "What impressed us most was how quickly we were up and running. We connected QuickBooks, set our preferences, and Yonovo was collecting on our behalf within the same day.",
+        },
+      ],
+    },
+    faqs: [
+      {
+        question: "How does Yonovo help software and tech companies collect faster?",
+        answer:
+          "Yonovo automates your entire accounts receivable workflow by sending personalized follow ups via email, SMS, and AI-powered voice calls based on each customer's payment history and behavior. You recover more failed payments and reduce DSO without adding headcount.",
+      },
+      {
+        question: "Can Yonovo handle subscription dunning and failed card payments?",
+        answer:
+          "Yes. Yonovo automates outreach for failed subscription payments, expired cards, and overdue enterprise invoices. You can set different cadences for self-serve customers, mid-market accounts, and strategic enterprise relationships.",
+      },
+      {
+        question: "Can I set different rules for different plan tiers or contract types?",
+        answer:
+          "Yes. You can define follow up timing, tone, channel, and escalation triggers per plan tier, contract type, or account size. Enterprise accounts can get a different cadence than self-serve customers on monthly plans.",
+      },
+      {
+        question: "Will automated follow ups push customers to churn?",
+        answer:
+          "No. Every message goes out in your company's voice, from your domain, and is personalized to the customer's history. Customers see a professional follow up from a product team they trust, not a collections agency. The result is more recovered revenue and fewer customers lost to friction.",
+      },
+      {
+        question: "How quickly can I get started with Yonovo?",
+        answer:
+          "Most teams are up and running the same day. Connect your accounting or billing platform, set your preferences, and Yonovo starts collecting on your behalf immediately.",
+      },
+      {
+        question: "What accounting and billing platforms does Yonovo integrate with?",
+        answer:
+          "Yonovo integrates with QuickBooks Online, Xero, Odoo, NetSuite, Sage, FreshBooks, Salesforce, HubSpot, SAP, and WhatsApp. Your customers, invoices, and aging data sync automatically so there is no manual setup required.",
+      },
+      {
+        question: "How is Yonovo different from a traditional collections agency?",
+        answer:
+          "Traditional agencies take a cut of recovered funds, damage customer relationships, and operate as a black box. Yonovo gives you full visibility, keeps your brand front and center, and costs a fraction of what agencies charge.",
+      },
+    ],
+    cta: {
+      headline: "Ready to collect smarter?",
+      description:
+        "Join the software and tech teams that are recovering more ARR, saving hours, and keeping every customer relationship intact.",
+      cta: "Book Demo",
+    },
+  },
 };

@@ -77,6 +77,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "professional-services",
     "property-management",
     "gyms-fitness",
+    "software-tech",
   ].map((slug) => ({
     url: `${SITE_URL}/industries/${slug}`,
     lastModified: new Date(),
