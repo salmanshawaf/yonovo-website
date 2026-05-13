@@ -42,6 +42,13 @@ export default function RootLayout({
           data-pid="1mLHIjUgE5yR1WIfM"
           data-version="062024"
         />
+        {/* RB2B website tracking */}
+        <script
+          id="reb2b-js"
+          dangerouslySetInnerHTML={{
+            __html: `!function(key){if(window.reb2b)return;window.reb2b={loaded:true};var s=document.createElement("script");s.async=true;s.src="https://ddwl4m2hdecbv.cloudfront.net/b/"+key+"/"+key+".js.gz";document.getElementsByTagName("script")[0].parentNode.insertBefore(s,document.getElementsByTagName("script")[0]);}("W6Z57HZ481OX");`,
+          }}
+        />
       </head>
       <body className={`${inter.variable} antialiased`}>
         {children}
