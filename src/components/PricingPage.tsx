@@ -13,7 +13,7 @@ import TestimonialsSection from "@/components/sections/TestimonialsSection";
 const tiers = [
   {
     name: "Discover",
-    price: "Free forever",
+    price: "Built for: getting started",
     headline: "Finance teams exploring AR health for the first time",
     description:
       "Deep analytics tool for data discovery and benchmarking against your peers.",
@@ -47,12 +47,12 @@ const faqItems = [
   {
     question: "How does Yonovo pricing work?",
     answer:
-      "Our pricing is adapted to your company's size and needs. The Discover plan is free forever. For Grow and Scale plans, pricing is custom based on your annual revenue, number of customers, and the features you need. Contact us for a personalized quote.",
+      "Our pricing is adapted to your company's size and needs. Pricing is custom based on your annual revenue, number of customers, and the features you need. Book a demo and we'll put together a personalized quote.",
   },
   {
-    question: "Is there a free trial?",
+    question: "How do I get started?",
     answer:
-      "Yes. Our Discover plan is completely free with no time limit. You get access to AR health analytics, aging reports, and benchmarking tools. No credit card required.",
+      "Book a demo with our team. We'll walk you through Yonovo on your real invoices, recommend the right plan for your size, and get you set up. Most teams are live within a day.",
   },
   {
     question: "What integrations do you support?",

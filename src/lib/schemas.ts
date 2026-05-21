@@ -81,9 +81,7 @@ export function softwareApplicationSchema(opts: {
     url: `${SITE_URL}${opts.url}`,
     offers: {
       "@type": "Offer",
-      price: "0",
-      priceCurrency: "USD",
-      description: "Free tier available",
+      description: "Custom pricing. Book a demo.",
       url: `${SITE_URL}/pricing`,
     },
     publisher: {
@@ -124,37 +122,28 @@ export function pricingSchema() {
       "@type": "Organization",
       name: SITE_NAME,
     },
-    offers: {
-      "@type": "AggregateOffer",
-      lowPrice: "0",
-      priceCurrency: "USD",
-      offerCount: "3",
-      offers: [
-        {
-          "@type": "Offer",
-          name: "Discover",
-          description: "Free AR analytics and benchmarking",
-          price: "0",
-          priceCurrency: "USD",
-          availability: "https://schema.org/InStock",
-          url: `${SITE_URL}/pricing`,
-        },
-        {
-          "@type": "Offer",
-          name: "Grow",
-          description:
-            "Automation for startups establishing best practices. Built for $0–$10M ARR businesses.",
-          url: `${SITE_URL}/pricing`,
-        },
-        {
-          "@type": "Offer",
-          name: "Scale",
-          description:
-            "Best-in-class automation for rapid growth. Built for $10M–$50M ARR businesses.",
-          url: `${SITE_URL}/pricing`,
-        },
-      ],
-    },
+    offers: [
+      {
+        "@type": "Offer",
+        name: "Discover",
+        description: "AR analytics and benchmarking for teams getting started.",
+        url: `${SITE_URL}/pricing`,
+      },
+      {
+        "@type": "Offer",
+        name: "Grow",
+        description:
+          "Automation for startups establishing best practices. Built for $0–$10M ARR businesses.",
+        url: `${SITE_URL}/pricing`,
+      },
+      {
+        "@type": "Offer",
+        name: "Scale",
+        description:
+          "Best-in-class automation for rapid growth. Built for $10M–$50M ARR businesses.",
+        url: `${SITE_URL}/pricing`,
+      },
+    ],
     featureList: [
       "Automated payment reminders",
       "Multi-channel follow-ups (email, SMS, voice, WhatsApp)",

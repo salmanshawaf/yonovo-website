@@ -110,9 +110,9 @@ const faqs = [
       "Yonovo flags disputes and pauses automated follow ups for that invoice. Your team gets notified with full context so they can handle it directly.",
   },
   {
-    question: "Is there a free trial?",
+    question: "How do I get started?",
     answer:
-      "Yes. Start free with no credit card required. See results before committing to a plan.",
+      "Book a demo with our team. We'll connect Sage, show you Yonovo running on your real invoices, and get you set up. Most teams are live within a day.",
   },
 ];
 
@@ -133,13 +133,6 @@ function XIcon() {
     </svg>
   );
 }
-
-const creditCardIcon = (
-  <svg className="h-4 w-4" fill="none" stroke="currentColor" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 16 17">
-    <path d="M14.66 6.5H1.33M14.66 6.5c0 .28 0 .59 0 .94V9.5M14.66 6.5c-.01-.9-.06-1.44-.29-1.88a2.67 2.67 0 0 0-1.16-1.16C12.63 3.17 11.89 3.17 10.39 3.17H5.59c-1.49 0-2.24 0-2.81.29a2.67 2.67 0 0 0-1.16 1.16c-.22.44-.28.98-.29 1.88M1.33 6.5c0 .28 0 .59 0 .94v2.13c0 1.49 0 2.24.29 2.81.26.5.67.91 1.17 1.17.57.29 1.31.29 2.81.29h2.51M5.99 9.17H3.99" />
-    <path d="M11.25 14.58l1.41-1.41m0 0l1.42-1.42m-1.42 1.42l-1.41-1.42m1.41 1.42l1.42 1.42" />
-  </svg>
-);
 
 const logos: { name: string; src: string; width: number; className: string; noFilter?: boolean }[] = [
   { name: "Troyes", src: "/logos/troyes-white.png", width: 130, className: "h-[28px] lg:h-[47px]", noFilter: true },
@@ -167,7 +160,6 @@ export default function SagePage() {
                 </p>
                 <div className="flex w-full shrink-0 flex-col items-center gap-3 sm:w-auto sm:flex-row sm:gap-6">
                   <Link href="/book-demo" className="w-full sm:w-auto"><Button variant="brand" size="md" className="h-14 w-full px-[46px] text-lg font-medium whitespace-nowrap sm:w-auto">Book Demo</Button></Link>
-                  <Link href="https://dashboard.yonovo.ai/login" className="w-full sm:w-auto"><Button variant="ghost-light" size="md" className="h-14 w-full whitespace-nowrap sm:w-auto">Start Free</Button></Link>
                 </div>
               </div>
             </div>
@@ -377,9 +369,7 @@ export default function SagePage() {
             <div className="flex w-full flex-col items-center justify-center gap-6 md:gap-4">
               <div className="flex w-full max-w-sm flex-col gap-3 px-6 sm:max-w-none sm:w-auto sm:flex-row sm:gap-6 sm:px-0">
                 <Link href="/book-demo" className="block"><Button variant="brand" size="md" className="h-14 w-full px-[46px] text-lg font-medium whitespace-nowrap">Book Demo</Button></Link>
-                <Link href="https://dashboard.yonovo.ai/login" className="block"><Button variant="ghost-dark" size="md" className="h-14 w-full whitespace-nowrap">Start Free</Button></Link>
               </div>
-              <div className="flex items-center gap-2 text-muted text-sm">{creditCardIcon}<p>No card required</p></div>
             </div>
           </div>
         </div>
