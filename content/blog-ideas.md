@@ -9,7 +9,7 @@ Categories: `guides`, `insights`, `comparisons`.
 
 - [x] How Can AI Help Me Get Paid Faster? — Reduce days sales outstanding and accelerate cash flow (guides) (skipped: duplicates /blog/how-to-reduce-dso)
 - [x] Will AI Replace My Accounts Receivable Job? — Job security concerns about automation (insights)
-- [ ] Can I Really Automate Accounts Receivable? — Feasibility of AR automation for their business (guides)
+- [x] Can I Really Automate Accounts Receivable? — Feasibility of AR automation for their business (guides)
 - [ ] How Much Time Can AI Save in Collections? — ROI and efficiency gains from AR automation (insights)
 - [ ] What's the Best AI Tool for Invoicing? — Product comparison for automated invoicing (comparisons)
 - [ ] How Do I Stop Chasing Late Payments? — Automated payment reminders and follow-ups (guides)
@@ -61,3 +61,4 @@ Categories: `guides`, `insights`, `comparisons`.
 
 (The routine appends completed posts here as `- [x] Title -> /blog/<slug> (YYYY-MM-DD)`.)
 - [x] Will AI Replace My Accounts Receivable Job? -> /blog/will-ai-replace-my-accounts-receivable-job (2026-05-21)
+- [x] Can I Really Automate Accounts Receivable? -> /blog/can-i-really-automate-accounts-receivable (2026-05-21)
