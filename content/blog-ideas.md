@@ -1,0 +1,62 @@
+# Blog Ideas Backlog
+
+This is the queue for the automated blog routine. On each run, the agent picks the **first unchecked** idea (`- [ ]`) from top to bottom, writes the post, then checks it off (`- [x]`) and appends the published slug.
+
+Format: `- [ ] Title — angle (suggested category)`
+Categories: `guides`, `insights`, `comparisons`.
+
+## Queue
+
+- [ ] How Can AI Help Me Get Paid Faster? — Reduce days sales outstanding and accelerate cash flow (guides)
+- [ ] Will AI Replace My Accounts Receivable Job? — Job security concerns about automation (insights)
+- [ ] Can I Really Automate Accounts Receivable? — Feasibility of AR automation for their business (guides)
+- [ ] How Much Time Can AI Save in Collections? — ROI and efficiency gains from AR automation (insights)
+- [ ] What's the Best AI Tool for Invoicing? — Product comparison for automated invoicing (comparisons)
+- [ ] How Do I Stop Chasing Late Payments? — Automated payment reminders and follow-ups (guides)
+- [ ] Can AI Match Payments to Invoices Automatically? — Reconciliation automation capabilities (guides)
+- [ ] How Can I Reduce Manual Data Entry in AR? — Eliminating spreadsheet work and manual processes (guides)
+- [ ] What Are the 5 C's of Accounts Receivable Management? — Core principles of effective AR management (guides)
+- [ ] How Can Small Businesses Automate AR Without IT Help? — User-friendly automation for non-technical teams (guides)
+- [ ] Why Am I Still Doing Manual Reconciliations? — Real-time reconciliation solutions (insights)
+- [ ] How Can AI Spot Payment Disputes Before They Happen? — Proactive dispute detection and prevention (insights)
+- [ ] What's the Best Way to Track Unpaid Invoices? — AR aging report automation and visibility (guides)
+- [ ] Can AI Extract Invoice Data Automatically? — OCR and data extraction for invoice processing (guides)
+- [ ] How Do I Know If My AR Process Needs Automation? — Signs and benchmarks for needing AR improvement (guides)
+- [ ] What's the 10 Rule for Accounts Receivable? — Industry standards and best practices in AR (guides)
+- [ ] How Can I Automate Invoice Generation? — Reducing time spent creating and sending invoices (guides)
+- [ ] Will Automating AR Reduce Human Error? — Accuracy improvements from AI-powered processes (insights)
+- [ ] How Can AI Help With Customer Credit Decisions? — Risk assessment and creditworthiness evaluation (guides)
+- [ ] Can AI Predict Which Customers Will Pay Late? — Payment behavior prediction and risk management (insights)
+- [ ] How Do I Set Up Automated Payment Reminders? — Implementation of intelligent follow-up systems (guides)
+- [ ] What Should I Automate First in Accounts Receivable? — Prioritization of AR automation projects (guides)
+- [ ] How Can I Improve Cash Flow With AR Automation? — Direct financial benefits of automated AR (guides)
+- [ ] Can AI Handle Complex Billing Schedules? — Automation for recurring or tiered billing (guides)
+- [ ] How Much Does AR Automation Actually Cost? — Pricing and budget planning for AR solutions (guides)
+- [ ] What Happens When an Invoice Doesn't Match a Payment? — Exception handling and dispute resolution (guides)
+- [ ] How Can Spreadsheets Be Replaced With AI? — Moving away from manual tracking systems (guides)
+- [ ] Can Small Businesses Really Use AR Automation? — Scalability and affordability for SMEs (insights)
+- [ ] What Data Security Issues Should I Know About? — Safety and compliance concerns with automated AR (guides)
+- [ ] How Can AI Improve My Collections Strategy? — Optimization of payment collection processes (guides)
+- [ ] Can AI Generate Accurate Financial Reports Automatically? — Real-time AR reporting and insights (guides)
+- [ ] How Long Does It Take to Implement AR Automation? — Timeline and deployment considerations (guides)
+- [ ] What's the Difference Between Automation and AI in AR? — Understanding terminology and capabilities (insights)
+- [ ] How Can I Get My Team to Accept AR Automation? — Change management and employee adoption (guides)
+- [ ] Why Do I Need More Than Just Invoicing Software? — Comprehensive AR solution benefits (insights)
+- [ ] Can AI Negotiate Payment Terms With Customers? — Advanced automation of customer communications (insights)
+- [ ] How Often Should I Review My AR Automation Settings? — Maintenance and optimization of AR systems (guides)
+- [ ] What Are Common AR Automation Mistakes to Avoid? — Implementation pitfalls and best practices (guides)
+- [ ] How Can I Measure the Success of AR Automation? — KPIs and performance tracking after implementation (guides)
+- [ ] AR Automation ROI Calculator for Businesses — How to estimate the financial return of automating AR (guides)
+- [ ] Customer Success Stories: Before and After AR Automation — Real outcomes from switching to automated AR (insights)
+- [ ] AR Automation vs Hiring a Collections Person — Cost and effectiveness comparison (comparisons)
+- [ ] How to Audit an Automated AR System — Verifying accuracy and controls in automated AR (guides)
+- [ ] Connecting AR Automation to Your Accounting Software — Integration guide for QuickBooks, Xero, NetSuite, and more (guides)
+- [ ] Free and Low-Cost AR Automation Options for Startups — Market overview of budget AR tooling (guides)
+- [ ] AR Automation for Multi-Currency Businesses — Handling cross-border invoicing and collections (guides)
+- [ ] How AI Learns From Your Invoicing Patterns — How adaptive collection models improve over time (insights)
+- [ ] Compliance and Regulations for Automated AR — What finance teams need to know about automated collections (guides)
+- [ ] AR Automation for Subscription Businesses — Recurring billing, dunning, and involuntary churn (guides)
+
+## Published
+
+(The routine appends completed posts here as `- [x] Title -> /blog/<slug> (YYYY-MM-DD)`.)
