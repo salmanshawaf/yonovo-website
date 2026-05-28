@@ -7,7 +7,7 @@ Categories: `guides`, `insights`, `comparisons`.
 
 ## Queue
 
-- [x] How Can AI Help Me Get Paid Faster? — Reduce days sales outstanding and accelerate cash flow (guides) (skipped: duplicates /blog/how-to-reduce-dso)
+- [x] How Can AI Help Me Get Paid Faster? — Reduce days sales outstanding and accelerate cash flow (guides)
 - [x] Will AI Replace My Accounts Receivable Job? — Job security concerns about automation (insights)
 - [x] Can I Really Automate Accounts Receivable? — Feasibility of AR automation for their business (guides)
 - [x] How Much Time Can AI Save in Collections? — ROI and efficiency gains from AR automation (insights)
@@ -63,3 +63,4 @@ Categories: `guides`, `insights`, `comparisons`.
 - [x] Will AI Replace My Accounts Receivable Job? -> /blog/will-ai-replace-my-accounts-receivable-job (2026-05-21)
 - [x] Can I Really Automate Accounts Receivable? -> /blog/can-i-really-automate-accounts-receivable (2026-05-21)
 - [x] How Much Time Can AI Save in Collections? -> /blog/how-much-time-can-ai-save-in-collections (2026-05-25)
+- [x] How Can AI Help Me Get Paid Faster? -> /blog/how-can-ai-help-me-get-paid-faster (2026-05-28)
