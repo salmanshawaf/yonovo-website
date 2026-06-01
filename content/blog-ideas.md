@@ -11,7 +11,7 @@ Categories: `guides`, `insights`, `comparisons`.
 - [x] Will AI Replace My Accounts Receivable Job? — Job security concerns about automation (insights)
 - [x] Can I Really Automate Accounts Receivable? — Feasibility of AR automation for their business (guides)
 - [x] How Much Time Can AI Save in Collections? — ROI and efficiency gains from AR automation (insights)
-- [ ] What's the Best AI Tool for Invoicing? — Product comparison for automated invoicing (comparisons)
+- [x] What's the Best AI Tool for Invoicing? — Product comparison for automated invoicing (comparisons)
 - [ ] How Do I Stop Chasing Late Payments? — Automated payment reminders and follow-ups (guides)
 - [ ] Can AI Match Payments to Invoices Automatically? — Reconciliation automation capabilities (guides)
 - [ ] How Can I Reduce Manual Data Entry in AR? — Eliminating spreadsheet work and manual processes (guides)
@@ -64,3 +64,4 @@ Categories: `guides`, `insights`, `comparisons`.
 - [x] Can I Really Automate Accounts Receivable? -> /blog/can-i-really-automate-accounts-receivable (2026-05-21)
 - [x] How Much Time Can AI Save in Collections? -> /blog/how-much-time-can-ai-save-in-collections (2026-05-25)
 - [x] How Can AI Help Me Get Paid Faster? -> /blog/how-can-ai-help-me-get-paid-faster (2026-05-28)
+- [x] What's the Best AI Tool for Invoicing? -> /blog/whats-the-best-ai-tool-for-invoicing (2026-06-01)
