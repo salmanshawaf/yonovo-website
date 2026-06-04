@@ -57,7 +57,7 @@ export default function PrivacyPolicyPage() {
           </p>
           <p>Yonovo Inc.</p>
           <p>
-            <a href="mailto:salman@yonovo.com">salman@yonovo.com</a>
+            <a href="mailto:security@yonovo.com">security@yonovo.com</a>
           </p>
 
           <p>
@@ -236,7 +236,7 @@ export default function PrivacyPolicyPage() {
             upon verified request from data subjects or their authorized agents.
             For more information on where and how long your personal data is
             stored, please contact us at{" "}
-            <a href="mailto:salman@yonovo.com">salman@yonovo.com</a>.
+            <a href="mailto:security@yonovo.com">security@yonovo.com</a>.
           </p>
 
           <p>
@@ -266,7 +266,7 @@ export default function PrivacyPolicyPage() {
           </p>
           <p>Yonovo Inc.</p>
           <p>
-            <a href="mailto:salman@yonovo.com">salman@yonovo.com</a>
+            <a href="mailto:security@yonovo.com">security@yonovo.com</a>
           </p>
         </section>
       </main>

@@ -236,7 +236,7 @@ export default function TermsOfServicePage() {
           </p>
           <p>Yonovo Inc.</p>
           <p>
-            <a href="mailto:salman@yonovo.com">salman@yonovo.com</a>
+            <a href="mailto:info@yonovo.com">info@yonovo.com</a>
           </p>
         </section>
       </main>
