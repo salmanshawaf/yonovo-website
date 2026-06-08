@@ -29,6 +29,8 @@ export default function ChangelogTimeline({
   }, []);
 
   useEffect(() => {
+    // Measure dot positions from the rendered DOM (layout sync, runs after paint).
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     measureDots();
     window.addEventListener("resize", measureDots);
     // Re-measure after a short delay to account for images loading

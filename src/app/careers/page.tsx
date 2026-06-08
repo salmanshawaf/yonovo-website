@@ -21,7 +21,7 @@ export default function CareersPage() {
               Careers
             </h1>
             <p className="text-base text-secondary leading-relaxed md:text-xl">
-              We don't have any open positions right now, but we're always looking for talented people. If you think you'd be a great fit, reach out and introduce yourself.
+              We don&apos;t have any open positions right now, but we&apos;re always looking for talented people. If you think you&apos;d be a great fit, reach out and introduce yourself.
             </p>
             <Link href="mailto:salman@yonovo.com">
               <Button variant="brand" size="md" className="h-14 px-[46px] text-lg font-medium mt-4">

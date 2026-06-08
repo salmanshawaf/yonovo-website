@@ -92,6 +92,8 @@ export default function ExploreSection() {
   // Fade out, swap content, fade in + trigger shake
   useEffect(() => {
     if (activeTab === displayedTab) return;
+    // Drive the fade/shake transition when the active tab changes (animation sync).
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setIsFading(true);
     setShakeKey((k) => k + 1);
     const timeout = setTimeout(() => {

@@ -69,8 +69,11 @@ export default function HowItWorksSection() {
     const video = videoRef.current;
     if (!video || !currentStep.video) return;
 
+    // Reset the player UI to sync with the <video> element when the step changes.
+    /* eslint-disable react-hooks/set-state-in-effect */
     setPaused(false);
     setProgress(0);
+    /* eslint-enable react-hooks/set-state-in-effect */
 
     const startTime = currentStep.startTime ?? 0;
     const seek = () => {

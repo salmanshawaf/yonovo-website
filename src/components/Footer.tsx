@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
 
 const integrationLinks = [
   { label: "QuickBooks", href: "/solutions/quickbooks" },
@@ -77,9 +78,9 @@ export default function Footer() {
         {/* ===== MOBILE LAYOUT (below md) ===== */}
         <div className="flex flex-col items-center md:hidden">
           {/* Logo */}
-          <a href="/">
+          <Link href="/">
             <img src="/yonovo-logo-white.png" alt="Yonovo" className="h-4 w-auto" />
-          </a>
+          </Link>
 
           {/* Copyright */}
           <p className="mt-4 text-center font-medium text-zinc-400 leading-5">
@@ -159,7 +160,7 @@ export default function Footer() {
           {/* Left column */}
           <div className="flex flex-col items-start gap-8">
             <div className="flex flex-col items-start gap-4">
-              <a href="/"><img src="/yonovo-logo-white.png" alt="Yonovo" className="h-4 w-auto" /></a>
+              <Link href="/"><img src="/yonovo-logo-white.png" alt="Yonovo" className="h-4 w-auto" /></Link>
               <p className="text-left font-medium text-zinc-400 leading-5">
                 &copy; 2026 Yonovo, Inc.
               </p>
