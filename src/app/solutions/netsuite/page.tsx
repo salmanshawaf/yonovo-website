@@ -1,10 +1,10 @@
 import type { Metadata } from "next";
 import { SITE_URL, SITE_NAME } from "@/lib/site-config";
-import { breadcrumbSchema, softwareApplicationSchema } from "@/lib/schemas";
+import { breadcrumbSchema, softwareApplicationSchema, faqSchema } from "@/lib/schemas";
 import JsonLd from "@/components/JsonLd";
 import NavbarWrapper from "@/components/NavbarWrapper";
 import Footer from "@/components/Footer";
-import NetSuitePage from "@/components/NetSuitePage";
+import NetSuitePage, { faqs } from "@/components/NetSuitePage";
 
 export const metadata: Metadata = {
   title: "NetSuite AR Automation",
@@ -37,6 +37,7 @@ export default function Page() {
       <JsonLd data={[
         breadcrumbSchema([{ name: "Home", href: "/" }, { name: "Solutions", href: "/solutions/netsuite" }, { name: "NetSuite" }]),
         softwareApplicationSchema({ integrationName: "NetSuite", description: "Automate accounts receivable for NetSuite. Sync invoices across subsidiaries, send multi-channel follow-ups.", url: "/solutions/netsuite" }),
+        faqSchema(faqs),
       ]} />
       <NavbarWrapper defaultMode="dark" />
       <main className="pt-16 min-h-screen">

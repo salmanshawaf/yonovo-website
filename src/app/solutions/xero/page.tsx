@@ -1,10 +1,10 @@
 import type { Metadata } from "next";
 import { SITE_URL, SITE_NAME } from "@/lib/site-config";
-import { breadcrumbSchema, softwareApplicationSchema } from "@/lib/schemas";
+import { breadcrumbSchema, softwareApplicationSchema, faqSchema } from "@/lib/schemas";
 import JsonLd from "@/components/JsonLd";
 import NavbarWrapper from "@/components/NavbarWrapper";
 import Footer from "@/components/Footer";
-import XeroPage from "@/components/XeroPage";
+import XeroPage, { faqs } from "@/components/XeroPage";
 
 export const metadata: Metadata = {
   title: "Xero AR Automation | Automate Collections for Xero",
@@ -37,6 +37,7 @@ export default function Page() {
       <JsonLd data={[
         breadcrumbSchema([{ name: "Home", href: "/" }, { name: "Solutions", href: "/solutions/xero" }, { name: "Xero" }]),
         softwareApplicationSchema({ integrationName: "Xero", description: "Automate accounts receivable for Xero. Sync invoices, send follow-ups via email, SMS, voice, and WhatsApp.", url: "/solutions/xero" }),
+        faqSchema(faqs),
       ]} />
       <NavbarWrapper defaultMode="dark" />
       <main className="pt-16 min-h-screen">

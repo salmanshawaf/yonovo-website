@@ -64,6 +64,20 @@ export function breadcrumbSchema(items: BreadcrumbItem[]) {
   };
 }
 
+// ── FAQPage (solution / landing pages with a visible FAQ) ──
+
+export function faqSchema(faqs: { question: string; answer: string }[]) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: faqs.map((f) => ({
+      "@type": "Question",
+      name: f.question,
+      acceptedAnswer: { "@type": "Answer", text: f.answer },
+    })),
+  };
+}
+
 // ── SoftwareApplication (solution pages) ──
 
 export function softwareApplicationSchema(opts: {

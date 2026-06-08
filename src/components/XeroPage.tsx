@@ -73,7 +73,7 @@ const timelineSteps = [
   },
 ];
 
-const faqs = [
+export const faqs = [
   {
     question: "How does Yonovo connect to Xero?",
     answer:
@@ -152,7 +152,7 @@ export default function XeroPage() {
               </h1>
               <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
                 <p className="text-balance text-base text-zinc-400 tracking-tight md:text-xl">
-                  Yonovo connects to Xero and takes over the collections process. Every overdue invoice gets followed up by email, text, and phone so your team can stop spending hours on manual reminders.
+                  Yonovo is Xero AR automation. It connects to Xero and takes over the collections process. Every overdue invoice gets followed up by email, text, and phone so your team can stop spending hours on manual reminders.
                 </p>
                 <div className="flex w-full shrink-0 flex-col items-center gap-3 sm:w-auto sm:flex-row sm:gap-6">
                   <Link href="/book-demo" className="w-full sm:w-auto">

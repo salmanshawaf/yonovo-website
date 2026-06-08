@@ -73,7 +73,7 @@ const timelineSteps = [
   },
 ];
 
-const faqs = [
+export const faqs = [
   {
     question: "How does Yonovo connect to QuickBooks?",
     answer:
@@ -82,7 +82,12 @@ const faqs = [
   {
     question: "What QuickBooks data does Yonovo access?",
     answer:
-      "Yonovo syncs your invoices, customers, payment status, and aging data. Yonovo never modifies your QuickBooks records. All data flows one way, from QuickBooks to Yonovo, with payment status updates written back when collected.",
+      "Yonovo reads your invoices, customers, payment status, and aging data from QuickBooks Online to drive collections, and writes payment and status updates back so your ledger stays current.",
+  },
+  {
+    question: "Does Yonovo offer two-way sync with QuickBooks?",
+    answer:
+      "Yes. Yonovo provides two-way sync with QuickBooks Online. It pulls invoices, customers, and aging data from QuickBooks, then writes payment records, partial payments, invoice status changes, and payment promise dates back to QuickBooks automatically (every 15 minutes, or on demand). That eliminates double entry and keeps both systems reconciled.",
   },
   {
     question: "Does Yonovo work with QuickBooks Desktop?",
@@ -157,7 +162,7 @@ export default function QuickBooksPage() {
               </h1>
               <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
                 <p className="text-balance text-base text-zinc-400 tracking-tight md:text-xl">
-                  Yonovo connects to QuickBooks and takes over the collections process. Every overdue invoice gets followed up by email, text, and phone so your team can stop spending hours on manual reminders.
+                  Yonovo is QuickBooks AR automation. It connects to QuickBooks and takes over the collections process. Every overdue invoice gets followed up by email, text, and phone so your team can stop spending hours on manual reminders.
                 </p>
                 <div className="flex w-full shrink-0 flex-col items-center gap-3 sm:w-auto sm:flex-row sm:gap-6">
                   <Link href="/book-demo" className="w-full sm:w-auto">

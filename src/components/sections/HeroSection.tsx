@@ -105,7 +105,7 @@ export default function HeroSection() {
                 Automate your<br /><span className="md:whitespace-nowrap">accounts receivable.</span><br />Get paid&nbsp;faster.
               </h1>
               <p className="text-[15px] text-white/70 leading-[1.6] md:text-xl lg:w-[75%]">
-                Yonovo follows up by email, text, and phone on every invoice until they&apos;re paid.
+                Yonovo is accounts receivable automation software that follows up by email, text, and phone on every invoice until they&apos;re paid.
               </p>
               <div className="mt-2 flex flex-col gap-4">
                 <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:gap-6">
