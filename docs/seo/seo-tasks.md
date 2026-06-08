@@ -76,7 +76,7 @@
   | /blog/cash-collections-formula | Cash Collections Formula: Forecast When You Will Get Paid (2026) \| Yonovo (73) | Cash Collections Formula Explained (2026) \| Yonovo |
 
 - **How to verify (after):** Each affected page's rendered `<title>` ≤ ~60 chars, unique, keyword‑led. Build passes. Re‑crawl in Ahrefs shows "Title too long" count dropping.
-- **Status:** OPEN — page list + proposed titles ready above.
+- **Status:** ✅ DONE (2026-06-07). Shortened all over-length titles via the real title pipeline: blog posts → `seoTitle` frontmatter (17 posts), industry pages → `meta.title` in `src/data/industries.ts` (6), solutions → page `metadata.title` (`quickbooks`, `netsuite`). **Important:** the root layout (`src/app/layout.tsx`) applies a `%s | Yonovo` template, so titles are set WITHOUT the brand suffix (it's appended automatically) — the task file's proposed titles already included `| Yonovo` and would have doubled it. All rendered `<title>`s now ≤57 chars. Verified: `seo:qa` **Title too long 26 → 0**. (ecommerce-retail was deleted, not fixed — see TASK-009.)
 
 ### TASK‑004 — Shorten over‑length meta descriptions (≈26 pages)
 - **Priority:** High (CTR)
@@ -166,7 +166,7 @@
   - `/industries/ecommerce-retail` is in `sitemap.xml` but was **not** seen in the site's nav/footer (which lists 6 industries). Confirm whether this page exists/should exist; if it exists, link it in nav/footer; if not, remove it from the sitemap source.
   - `/industries/construction` returns 404 and is correctly **not** in the sitemap (left as 404 by decision) — no action, just don't link to it.
 - **How to verify:** Sitemap, nav/footer, and actual routes all agree on the set of live industry pages. No sitemap entry returns a non‑200.
-- **Status:** OPEN.
+- **Status:** ✅ DONE (2026-06-07). **Decision (Salman):** `/industries/ecommerce-retail` was never a real page — it was hallucinated by the `/create-blog` skill and added to an automated post. Both `ecommerce-retail` AND `construction` are removed from the website entirely (this overrides the handover's "keep construction as a 404" note, per direct instruction). Changes: deleted the `ecommerce-retail` data block from `src/data/industries.ts` (route now 404s via `generateStaticParams` + `notFound()`), removed it from `src/app/sitemap.ts` and `src/app/llms.txt/route.ts`, and unlinked the 2 `[construction companies](/industries/construction)` links in `upflow-vs-yonovo.mdx` and `yonovo-vs-chaser.mdx` (kept the plain-text "construction companies" and all legitimate prose mentions of the construction industry). This also clears the TASK-007 broken-link sources. Verified: `/industries/ecommerce-retail` → 404; sitemap now 43 URLs; `seo:links` reports 0 broken internal links.
 
 ### TASK‑010 — Investigate source of malformed internal URLs (`/$`, `/&`)
 - **Priority:** Low
@@ -281,4 +281,5 @@
 
 ## Claude Code execution log (in-repo implementation)
 
+- **2026‑06‑07 — Sprint 1: TASK‑009 + TASK‑003 DONE.** Removed phantom pages `ecommerce-retail` + `construction` entirely (per Salman: ecommerce-retail was a `/create-blog` hallucination). Trimmed all 26 over-length `<title>`s to ≤57 chars via `seoTitle`/`meta.title`/page metadata, accounting for the `%s | Yonovo` template. `seo:qa`: **Title too long 26 → 0**, total errors **96 → 68**, pages 44 → 43. Build clean; ecommerce-retail 404s; 0 broken internal links.
 - **2026‑06‑07 — Sprint 0 (TASK‑017) DONE.** Copied task log to `docs/seo/seo-tasks.md` and auditor to `scripts/seo-audit.mjs`; installed `cheerio`, `@lhci/cli`, `linkinator`; added `seo:qa` / `seo:links` / `seo:lh` npm scripts and `lighthouserc.json` (mobile, assert perf≥90 & LCP<2.5s on home + `/solutions/quickbooks` + `/blog/what-is-ar-automation`). **Fixed a concurrency bug** in the provided `runPool` (it audited only 5/44 pages); SEO rules untouched. Captured baselines (`docs/seo/baseline-seo-qa.txt`, `docs/seo/baseline-lighthouse.txt`): **seo:qa 96 errors / 44 warns across 44 pages** (40 OG, 28 meta-too-long, 26 title-too-long, 2 missing canonical); Lighthouse all fail; 2 broken-link sources → `/industries/construction`. Verify-first findings logged under TASK‑017 (notably: TASK‑006 likely already resolved — 0 missing-alt at baseline; title template appends `| Yonovo`).

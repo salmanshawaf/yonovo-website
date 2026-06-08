@@ -22,7 +22,6 @@ export async function GET() {
 - Sage Integration: ${SITE_URL}/solutions/sage
 
 ## Industries
-- Ecommerce & Retail: ${SITE_URL}/industries/ecommerce-retail
 - Wholesale & Distribution: ${SITE_URL}/industries/wholesale-distribution
 - Manufacturing: ${SITE_URL}/industries/manufacturing
 - Professional Services: ${SITE_URL}/industries/professional-services

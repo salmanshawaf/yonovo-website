@@ -7,7 +7,7 @@ import Footer from "@/components/Footer";
 import QuickBooksPage from "@/components/QuickBooksPage";
 
 export const metadata: Metadata = {
-  title: "QuickBooks Online AR Automation | Automate Collections",
+  title: "QuickBooks Online AR Automation",
   description:
     "Automate accounts receivable for QuickBooks Online. AI-powered follow-ups via email, SMS, and voice. Go live in one day and reduce DSO.",
   alternates: {

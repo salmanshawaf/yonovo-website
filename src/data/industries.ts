@@ -43,183 +43,10 @@ export type IndustryData = {
 };
 
 export const industries: Record<string, IndustryData> = {
-  "ecommerce-retail": {
-    slug: "ecommerce-retail",
-    meta: {
-      title: "AR Automation for Ecommerce & Retail | Reduce Chargebacks & DSO",
-      description:
-        "Automate accounts receivable for ecommerce and retail businesses. Recover payments faster across email, SMS, and voice without damaging customer relationships.",
-    },
-    hero: {
-      badge: "Ecommerce & Retail",
-      headline: "Collect faster without losing customers",
-      description:
-        "Yonovo automates your accounts receivable with personalized follow ups across email, SMS, and voice — built for the speed and scale of ecommerce and retail.",
-      cta: "Book Demo",
-    },
-    problems: {
-      badge: "Problem",
-      headline: "Unpaid invoices pile up fast",
-      description:
-        "Ecommerce and retail businesses deal with high transaction volumes, thin margins, and customers who expect a seamless experience — even when they owe you money.",
-      cards: [
-        {
-          title: "High volume, low visibility",
-          description:
-            "Hundreds of invoices go out every week. Without automation, overdue accounts slip through the cracks and your team can't keep up.",
-        },
-        {
-          title: "Manual follow ups don't scale",
-          description:
-            "Your AR team spends hours chasing payments instead of focusing on growth. As order volume increases, the problem only gets worse.",
-        },
-        {
-          title: "Aggressive collections hurt retention",
-          description:
-            "One tone-deaf reminder can lose a repeat customer. Generic collection emails damage the brand experience you've worked hard to build.",
-        },
-      ],
-    },
-    solutions: {
-      badge: "Solution",
-      headline: "Collections that",
-      description:
-        "Yonovo follows up on every invoice automatically — with the right tone, timing, and channel — so you get paid faster without risking customer relationships.",
-      cards: [
-        {
-          icon: "users",
-          title: "Personalized follow ups at scale",
-          description:
-            "Every message is shaped by the customer's purchase history, payment patterns, and relationship length. No two follow ups are the same.",
-        },
-        {
-          icon: "send",
-          title: "Multichannel outreach",
-          description:
-            "Reach customers where they are — email, SMS, and AI-powered voice calls — with automatic escalation based on your rules.",
-        },
-        {
-          icon: "shield",
-          title: "Brand-safe communication",
-          description:
-            "Every message goes out in your company's voice and from your domain. Customers see a name they trust, not a collections agency.",
-        },
-        {
-          icon: "chart",
-          title: "Real-time visibility",
-          description:
-            "Track every invoice, every follow up, and every response in one dashboard. Know exactly where your receivables stand at any moment.",
-        },
-      ],
-      highlights: [
-        {
-          icon: "building",
-          title: "Any business",
-          description: "DTC, marketplaces, omnichannel, and subscription businesses.",
-        },
-        {
-          icon: "globe",
-          title: "Every channel",
-          description: "Website, product pages, checkout, and post-purchase support.",
-        },
-        {
-          icon: "zap",
-          title: "One experience",
-          description: "One source of truth, one voice, fewer conflicting answers.",
-        },
-      ],
-    },
-    howItWorks: {
-      badge: "How It Works",
-      headline: "Up and running in minutes",
-      description:
-        "Connect your accounting software and Yonovo starts collecting on your behalf the same day.",
-      steps: [
-        {
-          title: "Connect your books",
-          description:
-            "Link QuickBooks, Xero, or your accounting platform. Yonovo imports your invoices, customers, and aging data automatically.",
-        },
-        {
-          title: "Set your rules",
-          description:
-            "Define follow up timing, escalation triggers, and channel preferences — or let Yonovo's AI recommend the best strategy.",
-        },
-        {
-          title: "Yonovo collects for you",
-          description:
-            "Personalized follow ups go out automatically across email, SMS, and voice. Every interaction is logged and visible to your team.",
-        },
-        {
-          title: "Review and improve",
-          description:
-            "Monitor recovery rates, DSO, and at-risk accounts. Yonovo learns what works and adapts its approach over time.",
-        },
-      ],
-    },
-    testimonials: {
-      badge: "Testimonials",
-      headline: "What people say",
-      items: [
-        {
-          company: "TDG Inc.",
-          name: "Mohammad Alshalabi",
-          title: "Director of Finance",
-          quote:
-            "We used to spend hours every week chasing overdue invoices manually. Since switching to Yonovo, our manual follow ups dropped by 80% and we're collecting faster than ever.",
-        },
-        {
-          company: "Troyes",
-          name: "Apple Smith",
-          title: "Accounts Receivable Manager",
-          quote:
-            "What impressed us most was how quickly we were up and running. We connected QuickBooks, set our preferences, and Yonovo was collecting on our behalf within the same day.",
-        },
-      ],
-    },
-    faqs: [
-      {
-        question: "How does Yonovo help my ecommerce business collect faster?",
-        answer:
-          "Yonovo automates your entire accounts receivable workflow — sending personalized follow ups by email, SMS, and AI-powered voice calls based on each customer's payment history and behavior. You get paid faster without lifting a finger.",
-      },
-      {
-        question: "Can I set custom follow up rules and escalation triggers?",
-        answer:
-          "Yes. You can define exactly when and how Yonovo follows up — timing, channel, tone, and escalation triggers. Or you can let Yonovo's AI recommend the optimal strategy based on your data.",
-      },
-      {
-        question: "Will automated collections damage my customer relationships?",
-        answer:
-          "No. Every message goes out in your company's voice, from your domain, and is personalized to the customer's history. Customers see a professional follow up from a brand they trust, not a collections agency.",
-      },
-      {
-        question: "How quickly can I get started with Yonovo?",
-        answer:
-          "Most teams are up and running the same day. Connect your accounting platform, set your preferences, and Yonovo starts collecting on your behalf immediately.",
-      },
-      {
-        question: "What accounting platforms does Yonovo integrate with?",
-        answer:
-          "Yonovo integrates with QuickBooks Online, Xero, Odoo, NetSuite, Sage, FreshBooks, Salesforce, HubSpot, SAP, and WhatsApp. Your invoices, customers, and aging data sync automatically so there's no manual setup required.",
-      },
-      {
-        question: "How is Yonovo different from a traditional collections agency?",
-        answer:
-          "Traditional agencies take a cut of recovered funds, damage customer relationships, and operate as a black box. Yonovo gives you full visibility, keeps your brand front and center, and costs a fraction of what agencies charge.",
-      },
-    ],
-    cta: {
-      headline: "Ready to collect smarter?",
-      description:
-        "Join the ecommerce and retail teams that are collecting faster, saving hours, and keeping every customer relationship intact.",
-      cta: "Book Demo",
-    },
-  },
   "wholesale-distribution": {
     slug: "wholesale-distribution",
     meta: {
-      title: "AR Automation for Wholesale Distributors | Collect on Net Terms Faster",
+      title: "AR Automation for Wholesale Distributors",
       description:
         "Automate accounts receivable for wholesale and distribution businesses. Reduce DSO and collect on net terms faster without risking key buyer relationships.",
     },
@@ -392,7 +219,7 @@ export const industries: Record<string, IndustryData> = {
   "manufacturing": {
     slug: "manufacturing",
     meta: {
-      title: "AR Automation for Manufacturers | Automate Invoice Follow-Ups",
+      title: "AR Automation for Manufacturers",
       description:
         "Automate accounts receivable for manufacturing businesses. Reduce DSO and collect on overdue invoices without disrupting supply chain relationships.",
     },
@@ -565,7 +392,7 @@ export const industries: Record<string, IndustryData> = {
   "professional-services": {
     slug: "professional-services",
     meta: {
-      title: "AR Automation for Professional Services | Bill Collection on Autopilot",
+      title: "AR Automation for Professional Services",
       description:
         "Automate accounts receivable for professional services firms. Collect on overdue invoices via email, SMS, and voice without putting client relationships at risk.",
     },
@@ -738,7 +565,7 @@ export const industries: Record<string, IndustryData> = {
   "property-management": {
     slug: "property-management",
     meta: {
-      title: "AR Automation for Property Management | Automate Rent & Fee Collection",
+      title: "AR Automation for Property Management",
       description:
         "Automate accounts receivable for property management companies. Collect rent and fees on time via email, SMS, and voice without straining tenant relationships.",
     },
@@ -911,7 +738,7 @@ export const industries: Record<string, IndustryData> = {
   "gyms-fitness": {
     slug: "gyms-fitness",
     meta: {
-      title: "AR Automation for Gyms & Fitness | Recover Missed Payments",
+      title: "AR Automation for Gyms & Fitness",
       description:
         "Automate accounts receivable for gyms and fitness businesses. Recover failed payments and collect past-due membership dues via email, SMS, and voice without losing members.",
     },
@@ -1084,7 +911,7 @@ export const industries: Record<string, IndustryData> = {
   "software-tech": {
     slug: "software-tech",
     meta: {
-      title: "AR Automation for Software & Tech | Recover Failed Payments, Reduce Churn",
+      title: "AR Automation for Software & Tech",
       description:
         "Automate accounts receivable for software and tech companies. Recover failed subscription payments and collect on enterprise invoices via email, SMS, and voice without driving customers to churn.",
     },

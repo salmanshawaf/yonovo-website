@@ -7,7 +7,7 @@ import Footer from "@/components/Footer";
 import NetSuitePage from "@/components/NetSuitePage";
 
 export const metadata: Metadata = {
-  title: "NetSuite AR Automation | Automate Collections for NetSuite",
+  title: "NetSuite AR Automation",
   description:
     "Automate accounts receivable for NetSuite. Sync invoices across subsidiaries, send multi-channel follow-ups, and reduce DSO. Go live in one day.",
   alternates: {

@@ -71,7 +71,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
   ];
 
   const industryPages: MetadataRoute.Sitemap = [
-    "ecommerce-retail",
     "wholesale-distribution",
     "manufacturing",
     "professional-services",
