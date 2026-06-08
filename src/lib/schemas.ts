@@ -20,7 +20,7 @@ export function organizationSchema() {
       "Yonovo is an AI-powered accounts receivable automation platform that helps finance teams collect payments faster across email, SMS, voice, and WhatsApp while keeping customer relationships intact.",
     foundingDate: "2024",
     sameAs: [
-      "https://www.linkedin.com/company/yonovo",
+      "https://www.linkedin.com/company/yonovoai",
     ],
     contactPoint: {
       "@type": "ContactPoint",
