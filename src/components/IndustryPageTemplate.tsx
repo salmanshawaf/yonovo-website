@@ -94,7 +94,9 @@ export default function IndustryPageTemplate({ data }: { data: IndustryData }) {
               <div className="w-full px-0 md:px-15">
                 <div className="relative aspect-[0.8] w-full overflow-hidden rounded-2xl">
                   <video
-                    src="/industry-hero-video.mov"
+                    src="/industry-hero-video.mp4"
+                    poster="/industry-hero-poster.jpg"
+                    preload="none"
                     autoPlay
                     loop
                     muted

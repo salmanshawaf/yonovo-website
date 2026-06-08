@@ -80,8 +80,10 @@ export default function HeroSection() {
     <section
       id="hero"
       className="relative w-full -mt-16 pt-28 md:pt-32 pb-10 md:pb-12"
-      style={{ background: "white url('/hero-gradient-bg.webp') center top / 100% 90% no-repeat" }}
+      style={{ background: "white url('/hero-gradient-bg.jpg') center top / 100% 90% no-repeat" }}
     >
+      {/* Preload the hero poster so it is the LCP element and paints immediately (React hoists to <head>) */}
+      <link rel="preload" as="image" href="/hero-poster.jpg" fetchPriority="high" />
       {/* Dark area marker — covers the visually dark portion of the gradient (ends near video bottom) */}
       <div data-navbar-dark className="pointer-events-none absolute inset-x-0 top-0 h-[76%]" aria-hidden="true" />
       {/* Noise texture overlay */}
@@ -127,10 +129,11 @@ export default function HeroSection() {
                 ref={videoRef}
                 muted
                 playsInline
+                preload="none"
+                poster="/hero-poster.jpg"
                 className="absolute inset-0 h-full w-full object-cover object-top"
               >
-                <source src="/hero-video.mov" type="video/quicktime" />
-                <source src="/hero-video.mov" type="video/mp4" />
+                <source src="/hero-video.mp4" type="video/mp4" />
               </video>
 
               {/* Play/pause button with progress ring */}

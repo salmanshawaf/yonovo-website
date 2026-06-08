@@ -4,9 +4,11 @@ import { useRef, useState, useEffect, useCallback } from "react";
 
 export default function VideoPlayer({
   src,
+  poster,
   className,
 }: {
   src: string;
+  poster?: string;
   className?: string;
 }) {
   const videoRef = useRef<HTMLVideoElement>(null);
@@ -51,9 +53,10 @@ export default function VideoPlayer({
         loop
         muted
         playsInline
+        preload="none"
+        poster={poster}
         className="absolute inset-0 h-full w-full object-cover"
       >
-        <source src={src} type="video/quicktime" />
         <source src={src} type="video/mp4" />
       </video>
 

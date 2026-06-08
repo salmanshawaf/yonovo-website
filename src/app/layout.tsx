@@ -28,12 +28,6 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        {/* Preload Cal.com embed script so /book-demo loads faster */}
-        <link
-          rel="preload"
-          href="https://app.cal.com/embed/embed.js"
-          as="script"
-        />
         {/* Instantly website tracking pixel */}
         <script
           id="vtag-ai-js"

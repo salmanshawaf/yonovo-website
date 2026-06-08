@@ -8,7 +8,8 @@ const steps = [
     title: "Connect your books",
     description:
       "Link your accounting software and Yonovo automatically imports your invoices, customers, and aging data on your behalf.",
-    video: "/videos/step-1-connect.mov",
+    video: "/videos/step-1-connect.mp4",
+    poster: "/videos/step-1-connect-poster.jpg",
     startTime: 0,
     endTime: 10,
   },
@@ -16,7 +17,8 @@ const steps = [
     title: "Set your rules or let AI decide",
     description:
       "Define your own follow up workflows or let Yonovo analyze your customers and recommend the best collection strategy for you to approve.",
-    video: "/videos/step-2-rules.mov",
+    video: "/videos/step-2-rules.mp4",
+    poster: "/videos/step-2-rules-poster.jpg",
     startTime: 6,
     endTime: 22.5,
   },
@@ -24,7 +26,8 @@ const steps = [
     title: "Yonovo learns and improves",
     description:
       "The AI identifies what\u2019s working, spots unresponsive customers, and adapts its approach over time with your approval.",
-    video: "/videos/step-3-learns.mov",
+    video: "/videos/step-3-learns.mp4",
+    poster: "/videos/step-3-learns-poster.jpg",
     startTime: 3,
     endTime: 14,
   },
@@ -32,7 +35,8 @@ const steps = [
     title: "Escalate what needs a human",
     description:
       "80% of collections are handled automatically. When a customer disputes a charge or needs a real conversation, your team gets flagged instantly.",
-    video: "/videos/step-4-escalate.mov",
+    video: "/videos/step-4-escalate.mp4",
+    poster: "/videos/step-4-escalate-poster.jpg",
     startTime: 2,
     endTime: 30,
   },
@@ -40,7 +44,8 @@ const steps = [
     title: "Review your results",
     description:
       "Monitor recovery rates, DSO, at risk invoices, and time saved so you always know where your receivables stand.",
-    video: "/videos/step-5-results.mov",
+    video: "/videos/step-5-results.mp4",
+    poster: "/videos/step-5-results-poster.jpg",
     startTime: 3,
     endTime: 13,
   },
@@ -206,8 +211,9 @@ export default function HowItWorksSection() {
                           loop
                           muted
                           playsInline
+                          preload="none"
+                          poster={currentStep.poster}
                         >
-                          <source src={currentStep.video} type="video/quicktime" />
                           <source src={currentStep.video} type="video/mp4" />
                         </video>
 
