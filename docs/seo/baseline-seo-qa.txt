@@ -1,0 +1,205 @@
+
+> yonovo-website@0.1.0 seo:qa
+> node scripts/seo-audit.mjs
+
+
+🔎 SEO audit against http://localhost:3000
+
+Found 44 URLs in sitemap.
+
+❌ https://www.yonovo.com
+     ERROR: Meta description too long (157 > 155)
+     ERROR: Missing/empty og:image
+     warn:  37 <img> missing width/height
+❌ https://www.yonovo.com/blog
+     ERROR: Missing/empty og:image
+     warn:  11 <img> missing width/height
+❌ https://www.yonovo.com/blog/accounts-receivable-saas-companies
+     ERROR: Meta description too long (164 > 155)
+     warn:  6 <img> missing width/height
+❌ https://www.yonovo.com/blog/ar-automation-vs-manual-collections
+     ERROR: Title too long (76 > 60): "AR Automation vs. Manual Collections: Cost, Time, and Risk Compared | Yonovo"
+     ERROR: Meta description too long (164 > 155)
+     warn:  6 <img> missing width/height
+❌ https://www.yonovo.com/blog/author/alex
+     ERROR: Meta description too long (691 > 155)
+     ERROR: Missing/empty og:title
+     ERROR: Missing/empty og:description
+     ERROR: Missing/empty og:image
+     ERROR: Missing/empty og:url
+     ERROR: Missing/empty og:type
+     warn:  6 <img> missing width/height
+❌ https://www.yonovo.com/blog/author/salman
+     ERROR: Meta description too long (570 > 155)
+     ERROR: Missing/empty og:title
+     ERROR: Missing/empty og:description
+     ERROR: Missing/empty og:image
+     ERROR: Missing/empty og:url
+     ERROR: Missing/empty og:type
+     warn:  18 <img> missing width/height
+❌ https://www.yonovo.com/blog/best-ar-automation-software
+     ERROR: Title too long (72 > 60): "10 Best Accounts Receivable Automation Software Compared (2026) | Yonovo"
+     ERROR: Meta description too long (164 > 155)
+     warn:  6 <img> missing width/height
+❌ https://www.yonovo.com/blog/best-quickbooks-ar-integration
+     ERROR: Title too long (73 > 60): "5 Best QuickBooks AR Integrations to Automate Collections (2026) | Yonovo"
+     ERROR: Meta description too long (161 > 155)
+     warn:  6 <img> missing width/height
+❌ https://www.yonovo.com/blog/can-i-really-automate-accounts-receivable
+     ERROR: Title too long (98 > 60): "Can I Really Automate Accounts Receivable? Feasibility Guide for B2B Finance Teams (2026) | Yonovo"
+     ERROR: Meta description too long (201 > 155)
+     warn:  6 <img> missing width/height
+❌ https://www.yonovo.com/blog/cash-collections-formula
+     ERROR: Title too long (73 > 60): "Cash Collections Formula: Forecast When You Will Get Paid (2026) | Yonovo"
+     ERROR: Meta description too long (178 > 155)
+     warn:  6 <img> missing width/height
+❌ https://www.yonovo.com/blog/category/comparisons
+     ERROR: Missing/empty og:image
+     warn:  11 <img> missing width/height
+❌ https://www.yonovo.com/blog/category/guides
+     ERROR: Missing/empty og:image
+     warn:  11 <img> missing width/height
+❌ https://www.yonovo.com/blog/category/insights
+     ERROR: Missing/empty og:image
+     warn:  11 <img> missing width/height
+❌ https://www.yonovo.com/blog/cfo-role-automation
+     ERROR: Title too long (63 > 60): "Why CFOs Are Becoming Chief Automation Officers (2026) | Yonovo"
+     ERROR: Meta description too long (189 > 155)
+     warn:  7 <img> missing width/height
+❌ https://www.yonovo.com/blog/how-can-ai-help-me-get-paid-faster
+     ERROR: Title too long (85 > 60): "How Can AI Help Me Get Paid Faster? 6 Ways AI Accelerates Collections (2026) | Yonovo"
+     ERROR: Meta description too long (214 > 155)
+     warn:  6 <img> missing width/height
+❌ https://www.yonovo.com/blog/how-much-time-can-ai-save-in-collections
+     ERROR: Title too long (104 > 60): "How Much Time Can AI Save in Collections? ROI and Efficiency Gains for B2B Finance Teams (2026) | Yonovo"
+     ERROR: Meta description too long (248 > 155)
+     warn:  6 <img> missing width/height
+❌ https://www.yonovo.com/blog/how-to-reduce-dso
+     ERROR: Title too long (65 > 60): "7 Proven Ways to Reduce DSO and Improve Cash Flow (2026) | Yonovo"
+     ERROR: Meta description too long (186 > 155)
+     warn:  6 <img> missing width/height
+❌ https://www.yonovo.com/blog/invoice-reminder-best-practices
+     ERROR: Title too long (72 > 60): "Invoice Reminder Best Practices: Email Templates and SMS Timing | Yonovo"
+     ERROR: Meta description too long (185 > 155)
+     warn:  6 <img> missing width/height
+❌ https://www.yonovo.com/blog/manual-ar-heavy-industries-financial-risk
+     ERROR: Title too long (87 > 60): "Manual AR in Heavy Industries: 4 Failure Points That Threaten Cash Flow (2026) | Yonovo"
+     ERROR: Meta description too long (182 > 155)
+     warn:  6 <img> missing width/height
+❌ https://www.yonovo.com/blog/manual-ar-hidden-revenue-drain
+     ERROR: Title too long (68 > 60): "Manual AR Is Draining Your Revenue: The Hidden Costs (2026) | Yonovo"
+     ERROR: Meta description too long (163 > 155)
+     warn:  6 <img> missing width/height
+❌ https://www.yonovo.com/blog/multi-channel-payment-chasing
+     ERROR: Title too long (76 > 60): "Multi-Channel Payment Chasing: SMS, WhatsApp, AI Voice Calls (2026) | Yonovo"
+     ERROR: Meta description too long (167 > 155)
+     warn:  6 <img> missing width/height
+❌ https://www.yonovo.com/blog/upflow-vs-yonovo
+     ERROR: Meta description too long (172 > 155)
+     warn:  6 <img> missing width/height
+❌ https://www.yonovo.com/blog/what-is-ar-automation
+     ERROR: Title too long (73 > 60): "What Is AR Automation? How It Works, Benefits, and When to Start | Yonovo"
+     ERROR: Meta description too long (174 > 155)
+     warn:  6 <img> missing width/height
+❌ https://www.yonovo.com/blog/whats-the-best-ai-tool-for-invoicing
+     ERROR: Title too long (86 > 60): "What's the Best AI Tool for Invoicing? Top AI Invoicing Tools Compared (2026) | Yonovo"
+     ERROR: Meta description too long (246 > 155)
+     warn:  6 <img> missing width/height
+❌ https://www.yonovo.com/blog/when-to-send-invoices-to-collections
+     ERROR: Title too long (75 > 60): "When to Send Unpaid Invoices to Collections: A Timing Guide (2026) | Yonovo"
+     ERROR: Meta description too long (172 > 155)
+     warn:  6 <img> missing width/height
+❌ https://www.yonovo.com/blog/will-ai-replace-my-accounts-receivable-job
+     ERROR: Title too long (85 > 60): "Will AI Replace My Accounts Receivable Job? What AR Pros Need to Know (2026) | Yonovo"
+     ERROR: Meta description too long (185 > 155)
+     warn:  6 <img> missing width/height
+❌ https://www.yonovo.com/blog/yonovo-vs-chaser
+     ERROR: Meta description too long (169 > 155)
+     warn:  6 <img> missing width/height
+❌ https://www.yonovo.com/case-studies
+     ERROR: Missing/empty og:image
+     warn:  5 <img> missing width/height
+❌ https://www.yonovo.com/case-studies/tdg-inc
+     ERROR: Missing canonical
+     ERROR: Missing/empty og:title
+     ERROR: Missing/empty og:description
+     ERROR: Missing/empty og:image
+     ERROR: Missing/empty og:url
+     ERROR: Missing/empty og:type
+     warn:  2 <img> missing width/height
+❌ https://www.yonovo.com/case-studies/troyes
+     ERROR: Missing canonical
+     ERROR: Missing/empty og:title
+     ERROR: Missing/empty og:description
+     ERROR: Missing/empty og:image
+     ERROR: Missing/empty og:url
+     ERROR: Missing/empty og:type
+     warn:  2 <img> missing width/height
+❌ https://www.yonovo.com/changelog
+     ERROR: Missing/empty og:image
+     warn:  7 <img> missing width/height
+❌ https://www.yonovo.com/industries/ecommerce-retail
+     ERROR: Title too long (72 > 60): "AR Automation for Ecommerce & Retail | Reduce Chargebacks & DSO | Yonovo"
+     ERROR: Meta description too long (159 > 155)
+     ERROR: Missing/empty og:image
+     warn:  2 <img> missing width/height
+❌ https://www.yonovo.com/industries/gyms-fitness
+     ERROR: Title too long (67 > 60): "AR Automation for Gyms & Fitness | Recover Missed Payments | Yonovo"
+     ERROR: Meta description too long (172 > 155)
+     ERROR: Missing/empty og:image
+     warn:  2 <img> missing width/height
+❌ https://www.yonovo.com/industries/manufacturing
+     ERROR: Title too long (70 > 60): "AR Automation for Manufacturers | Automate Invoice Follow-Ups | Yonovo"
+     ERROR: Missing/empty og:image
+     warn:  2 <img> missing width/height
+❌ https://www.yonovo.com/industries/professional-services
+     ERROR: Title too long (79 > 60): "AR Automation for Professional Services | Bill Collection on Autopilot | Yonovo"
+     ERROR: Meta description too long (161 > 155)
+     ERROR: Missing/empty og:image
+     warn:  2 <img> missing width/height
+❌ https://www.yonovo.com/industries/property-management
+     ERROR: Title too long (79 > 60): "AR Automation for Property Management | Automate Rent & Fee Collection | Yonovo"
+     ERROR: Meta description too long (159 > 155)
+     ERROR: Missing/empty og:image
+     warn:  2 <img> missing width/height
+❌ https://www.yonovo.com/industries/software-tech
+     ERROR: Title too long (82 > 60): "AR Automation for Software & Tech | Recover Failed Payments, Reduce Churn | Yonovo"
+     ERROR: Meta description too long (195 > 155)
+     ERROR: Missing/empty og:image
+     warn:  2 <img> missing width/height
+❌ https://www.yonovo.com/industries/wholesale-distribution
+     ERROR: Title too long (79 > 60): "AR Automation for Wholesale Distributors | Collect on Net Terms Faster | Yonovo"
+     ERROR: Missing/empty og:image
+     warn:  2 <img> missing width/height
+❌ https://www.yonovo.com/pricing
+     ERROR: Missing/empty og:image
+     warn:  2 <img> missing width/height
+❌ https://www.yonovo.com/solutions/netsuite
+     ERROR: Title too long (67 > 60): "NetSuite AR Automation | Automate Collections for NetSuite | Yonovo"
+     ERROR: Missing/empty og:image
+     warn:  14 <img> missing width/height
+❌ https://www.yonovo.com/solutions/odoo
+     ERROR: Missing/empty og:image
+     warn:  14 <img> missing width/height
+❌ https://www.yonovo.com/solutions/quickbooks
+     ERROR: Title too long (63 > 60): "QuickBooks Online AR Automation | Automate Collections | Yonovo"
+     ERROR: Missing/empty og:image
+     warn:  14 <img> missing width/height
+❌ https://www.yonovo.com/solutions/sage
+     ERROR: Missing/empty og:image
+     warn:  14 <img> missing width/height
+❌ https://www.yonovo.com/solutions/xero
+     ERROR: Missing/empty og:image
+     warn:  14 <img> missing width/height
+
+──────── SUMMARY ────────
+Pages checked: 44
+Errors: 96   Warnings: 44
+
+Errors by type:
+  40	Open Graph incomplete
+  28	Meta description too long
+  26	Title too long
+  2	Canonical issue
+─────────────────────────
+

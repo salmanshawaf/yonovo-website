@@ -173,15 +173,19 @@ function auditPage({ sitemapLoc, testUrl }, status, html) {
 
 async function runPool(items, worker, concurrency) {
   const queue = [...items];
-  const running = [];
+  // Each worker, after finishing an item, recursively pulls the next one off the
+  // queue and awaits it. Awaiting the N starter chains drains the whole queue
+  // (the original implementation snapshotted `running` in Promise.all before the
+  // continuations were pushed, so only `concurrency` pages were ever audited).
   async function next() {
     const item = queue.shift();
     if (!item) return;
-    const p = worker(item).then(() => next());
-    running.push(p);
+    await worker(item);
+    return next();
   }
-  for (let i = 0; i < Math.min(concurrency, queue.length); i++) await next();
-  await Promise.all(running);
+  const starters = [];
+  for (let i = 0; i < Math.min(concurrency, queue.length); i++) starters.push(next());
+  await Promise.all(starters);
 }
 
 async function main() {

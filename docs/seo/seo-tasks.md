@@ -39,7 +39,12 @@
   3. Lighthouse (mobile) via `@lhci/cli` or `npx lighthouse … --form-factor=mobile --only-categories=performance` against home + one `/solutions/*` + one blog post; assert **LCP < 2.5s, Performance ≥ 90**.
   4. Add `package.json` scripts: `seo:qa`, `seo:links`, `seo:lh`. Optional: a GitHub Action running `seo:qa` + Lighthouse on each PR.
 - **How to verify:** `npm run seo:qa` runs clean on syntax; run it once now to capture a **baseline** report (it will currently FAIL on the known title/meta/alt issues — that's expected and becomes the before/after benchmark).
-- **Status:** OPEN — build first.
+- **Status:** ✅ DONE (2026-06-07). Harness wired: `scripts/seo-audit.mjs` (`npm run seo:qa`), `lighthouserc.json` (`npm run seo:lh`), `linkinator` (`npm run seo:links`). Baseline captured below.
+  - **Harness fix (flagged):** the provided `seo-audit.mjs` had a concurrency bug in `runPool` — `Promise.all` snapshotted the in-flight array before the queued continuations were pushed, so it only ever audited `concurrency` (5) of the 44 pages. Fixed the pool runner only (no SEO rule / threshold / output changes) so it scans the full sitemap.
+  - **Baseline seo:qa (44 pages):** 96 errors / 44 warnings. By type: 40 Open Graph incomplete, 28 meta description too long, 26 title too long, 2 missing canonical (`/case-studies/tdg-inc`, `/case-studies/troyes`). Full report: `docs/seo/baseline-seo-qa.txt`.
+  - **Baseline Lighthouse (mobile):** home perf 75 / LCP 7.1s; `/solutions/quickbooks` 84 / 4.5s; `/blog/what-is-ar-automation` 82 / 4.8s. All fail (perf<90, LCP>2.5s). Full: `docs/seo/baseline-lighthouse.txt`.
+  - **Baseline links:** 2 pages link to the broken `/industries/construction` (`/blog/upflow-vs-yonovo`, `/blog/yonovo-vs-chaser`) — these are the TASK-007 broken-link sources. No other broken internal links.
+  - **Verify-before-acting notes for later tasks:** (a) TASK-006 — seo:qa reports **0** `<img>` missing `alt` at baseline (only width/height WARNs); the "missing alt" issue appears already resolved in-repo — confirm before doing TASK-006. (b) The root layout uses a Next.js title template `%s | Yonovo`, so per-page `title` values must NOT include the `| Yonovo` suffix (it's appended automatically) — affects TASK-003. (c) No duplicate title/desc, H1, or invalid-JSON-LD errors at baseline.
 
 ### TASK‑003 — Trim over‑length `<title>` tags (≈19 pages)
 - **Priority:** High (improves click‑through rate from search)
@@ -271,3 +276,9 @@
 - **2026‑06‑07 (update 3)** — Issue #9 (authority/link‑building) worked. Most of it is off‑repo (see `yonovo-link-building-plan.md`). Added the two repo enablers: TASK‑013 (Organization `sameAs` schema) and TASK‑014 (free DSO/cash‑collections calculator linkable asset).
 - **2026‑06‑07 (update 5)** — Added TASK‑017: a self‑QA harness (`scripts/seo-audit.mjs` + linkinator + Lighthouse CI, wired to `npm run seo:qa`) so all verification runs in‑repo. Build it first; every other task is gated on passing it. See the handover doc for the full spec and the 3 external checks (GSC indexing/rankings, Ahrefs re‑crawl, Rich Results Test) that remain outside the repo.
 - **2026‑06‑07 (update 4)** — Worked Issues #7, #8, #10, #11, #12. Added TASK‑015 (mobile LCP/page‑weight fix; hero `.mov` is the culprit) and TASK‑016 (content roadmap: Upflow‑alternatives + competitor comparisons + integration guides + glossary). #8: Vercel Speed Insights already enabled — use for RUM CWV monitoring (no repo action). #10: noindex/robots exclusions confirmed intentional (no action). #12 (US market) is strategic prioritization, not new repo work — see the issue tracker. **All 12 audit issues now have an owner/plan.**
+
+---
+
+## Claude Code execution log (in-repo implementation)
+
+- **2026‑06‑07 — Sprint 0 (TASK‑017) DONE.** Copied task log to `docs/seo/seo-tasks.md` and auditor to `scripts/seo-audit.mjs`; installed `cheerio`, `@lhci/cli`, `linkinator`; added `seo:qa` / `seo:links` / `seo:lh` npm scripts and `lighthouserc.json` (mobile, assert perf≥90 & LCP<2.5s on home + `/solutions/quickbooks` + `/blog/what-is-ar-automation`). **Fixed a concurrency bug** in the provided `runPool` (it audited only 5/44 pages); SEO rules untouched. Captured baselines (`docs/seo/baseline-seo-qa.txt`, `docs/seo/baseline-lighthouse.txt`): **seo:qa 96 errors / 44 warns across 44 pages** (40 OG, 28 meta-too-long, 26 title-too-long, 2 missing canonical); Lighthouse all fail; 2 broken-link sources → `/industries/construction`. Verify-first findings logged under TASK‑017 (notably: TASK‑006 likely already resolved — 0 missing-alt at baseline; title template appends `| Yonovo`).
