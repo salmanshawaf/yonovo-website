@@ -30,6 +30,13 @@ function buildRealRoutes() {
   for (const d of fs.readdirSync(path.join(ROOT, "src/app/solutions"))) {
     if (fs.statSync(path.join(ROOT, "src/app/solutions", d)).isDirectory()) real.add(`/solutions/${d}`);
   }
+  // Tools: route folders (e.g. /tools/dso-calculator)
+  const toolsDir = path.join(ROOT, "src/app/tools");
+  if (fs.existsSync(toolsDir)) {
+    for (const d of fs.readdirSync(toolsDir)) {
+      if (fs.statSync(path.join(toolsDir, d)).isDirectory()) real.add(`/tools/${d}`);
+    }
+  }
   // Blog posts: mdx slugs
   for (const f of fs.readdirSync(BLOG_DIR)) if (f.endsWith(".mdx")) real.add(`/blog/${f.replace(/\.mdx$/, "")}`);
   // Case studies: object keys in src/data/caseStudies.ts

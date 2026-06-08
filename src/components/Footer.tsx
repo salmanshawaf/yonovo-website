@@ -13,6 +13,7 @@ const integrationLinks = [
 
 const resourceLinks = [
   { label: "Case Studies", href: "/case-studies" },
+  { label: "DSO Calculator", href: "/tools/dso-calculator" },
   { label: "Pricing", href: "/pricing" },
   { label: "Contact us", href: "mailto:salman@yonovo.com" },
   { label: "Blog", href: "/blog" },
@@ -21,6 +22,7 @@ const resourceLinks = [
 
 const mobileResourceLinks = [
   { label: "Case Studies", href: "/case-studies" },
+  { label: "DSO Calculator", href: "/tools/dso-calculator" },
   { label: "Pricing", href: "/pricing" },
   { label: "Blog", href: "/blog" },
   { label: "Changelog", href: "/changelog" },
