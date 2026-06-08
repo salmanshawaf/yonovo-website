@@ -20,9 +20,11 @@ export const metadata: Metadata = {
       "Take control of your accounts receivable. Plans from free analytics to full automation across email, SMS, and voice.",
     url: `${SITE_URL}/pricing`,
     siteName: SITE_NAME,
+    images: [{ url: "/og-default.png", width: 1200, height: 630, alt: SITE_NAME }],
   },
   twitter: {
     card: "summary_large_image",
+    images: ["/og-default.png"],
     title: `Accounts Receivable Automation Pricing | ${SITE_NAME}`,
     description:
       "Take control of your accounts receivable. Plans from free analytics to full automation across email, SMS, and voice.",

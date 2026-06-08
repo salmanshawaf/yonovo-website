@@ -28,9 +28,11 @@ export const metadata: Metadata = {
       "Automate invoice follow-ups across email, SMS, and voice. Yonovo handles AR collections so your team can focus on growth.",
     url: `${SITE_URL}/`,
     siteName: SITE_NAME,
+    images: [{ url: "/og-default.png", width: 1200, height: 630, alt: SITE_NAME }],
   },
   twitter: {
     card: "summary_large_image",
+    images: ["/og-default.png"],
     title: `${SITE_NAME} | AI-Powered Accounts Receivable Automation`,
     description:
       "Automate invoice follow-ups across email, SMS, and voice. Yonovo handles AR collections so your team can focus on growth.",

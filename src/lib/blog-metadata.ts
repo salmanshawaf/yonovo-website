@@ -198,11 +198,13 @@ export function generateBlogListingMetadata(category?: string): Metadata {
         ? `${SITE_URL}/blog/category/${category}`
         : `${SITE_URL}/blog`,
       siteName: SITE_NAME,
+      images: [{ url: `/api/og?title=${encodeURIComponent(title)}&category=${category || "guides"}`, width: 1200, height: 630, alt: title }],
     },
     twitter: {
       card: "summary_large_image",
       title,
       description,
+      images: [`/api/og?title=${encodeURIComponent(title)}&category=${category || "guides"}`],
     },
   };
 }

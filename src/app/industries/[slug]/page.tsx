@@ -18,6 +18,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
   const data = industries[slug];
   if (!data) return {};
+  const ogImage = `/api/og?title=${encodeURIComponent(data.meta.title)}&category=guides`;
   return {
     title: data.meta.title,
     description: data.meta.description,
@@ -30,11 +31,13 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       description: data.meta.description,
       url: `${SITE_URL}/industries/${slug}`,
       siteName: SITE_NAME,
+      images: [{ url: ogImage, width: 1200, height: 630, alt: data.meta.title }],
     },
     twitter: {
       card: "summary_large_image",
       title: data.meta.title,
       description: data.meta.description,
+      images: [ogImage],
     },
   };
 }

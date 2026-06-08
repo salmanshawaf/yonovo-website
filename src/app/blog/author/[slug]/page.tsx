@@ -8,7 +8,7 @@ import BlogPostCard from "@/components/blog/BlogPostCard";
 import Breadcrumbs from "@/components/blog/Breadcrumbs";
 import { authors } from "@/content/authors";
 import { getAllPosts, postToMeta } from "@/lib/blog";
-import { SITE_URL } from "@/lib/site-config";
+import { SITE_URL, SITE_NAME } from "@/lib/site-config";
 
 type Props = { params: Promise<{ slug: string }> };
 
@@ -21,12 +21,30 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const author = authors[slug];
   if (!author) return {};
 
+  const title = `${author.name} | Blog | Yonovo`;
+  const description = author.metaDescription || author.bio;
+  const url = `${SITE_URL}/blog/author/${slug}`;
+  const ogImage = `/api/og?title=${encodeURIComponent(author.name)}&category=insights`;
   return {
-    title: { absolute: `${author.name} | Blog | Yonovo` },
-    description: author.metaDescription || author.bio,
+    title: { absolute: title },
+    description,
     robots: { index: true, follow: true },
     alternates: {
-      canonical: `${SITE_URL}/blog/author/${slug}`,
+      canonical: url,
+    },
+    openGraph: {
+      type: "profile",
+      title,
+      description,
+      url,
+      siteName: SITE_NAME,
+      images: [{ url: ogImage, width: 1200, height: 630, alt: author.name }],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title,
+      description,
+      images: [ogImage],
     },
   };
 }

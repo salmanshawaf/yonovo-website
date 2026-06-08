@@ -123,7 +123,11 @@
 - **Problem:** Missing/partial OG tags (`og:title`, `og:description`, `og:image`, `og:url`, `og:type`) produce poor social/link previews.
 - **What to do:** Ensure every indexable page outputs a complete OG set (ideally via a shared metadata helper so it's consistent). The blog already generates `og:image` via `/api/og` — extend the same pattern to the pages missing it.
 - **How to verify:** Inspect rendered `<head>` for affected routes; all required OG tags present and pointing to the `www` host.
-- **Status:** OPEN.
+- **Status:** ✅ DONE (2026-06-08). 41 OG/canonical errors → 0. Breakdown of the fix:
+  - **19 pages missing only `og:image`** (home, /blog + 3 categories, /case-studies, /changelog, 6 industries, /pricing, 5 solutions): added `images` to each page's `openGraph` + `twitter`. **Note:** Next.js does NOT inherit `openGraph.images` into a child that defines its own `openGraph` (tested — it replaces, not deep-merges), so a layout-level default alone was insufficient; images had to be added per page. Industries via the `[slug]` template (1 edit → 6 pages); solutions scripted across the 5 files; listing/marketing pages use a new static `public/og-default.png` (generated from `/api/og`); industries/solutions/blog/case-studies/authors use per-page `/api/og?title=...` cards.
+  - **4 pages missing ALL OG tags:** the 2 author routes and 2 case-study routes had no `openGraph` block. Added full OG + twitter. The 2 **case-study pages also had no canonical** — added `alternates.canonical` (this clears the 2 "Missing canonical" errors too).
+  - Also added a site-wide `openGraph`/`twitter` default (with `og-default.png`) to the root layout as a fallback for any future page that sets no OG.
+  - Verified: `seo:qa` **0 errors / 43 warnings** (warnings are next/image width/height only). All og:image URLs return 200; case-study canonicals restored.
 
 ### TASK‑006 — Add missing image `alt` text
 - **Priority:** Medium (accessibility + image SEO)
@@ -288,6 +292,7 @@
 
 ## Claude Code execution log (in-repo implementation)
 
+- **2026‑06‑08 — Sprint 2: TASK‑005 (Open Graph) DONE.** Added `og:image` to the 19 pages that lacked it (per-page `/api/og` cards + a new static `public/og-default.png`), and full OG + `twitter` to the 2 author + 2 case-study pages that had none. Case-study pages also gained `alternates.canonical`. `seo:qa`: **41 → 0 errors** (96 → 0 vs baseline). Also addressed flagged cleanups: doubled `| Yonovo | Yonovo` titles (blog/changelog) and all 8 pre-existing ESLint errors (now 0 errors). Plus root-caused + fixed the `/create-blog` skill that emitted the `/industries/construction` broken link (added `scripts/check-blog-links.mjs` + skill allowlist).
 - **2026‑06‑07 — Sprint 1: TASK‑015 (perf) + TASK‑013 (schema).** TASK‑013: fixed Organization `sameAs` LinkedIn (`yonovo`→`yonovoai`) to match the real profile (block already existed on the homepage). TASK‑015: transcoded all `.mov`→optimized MP4 + posters, lazy-loaded videos with posters as LCP, shrank the 4K hero gradient + logos, removed the site-wide Cal.com preload, deleted ~25 MB of dead media. Lighthouse home perf 75→87 / LCP 7.1→4.1s / weight 1788→680 KiB; blog 82→93 / 4.8→3.1s. Strict lab LCP<2.5s not met (render-delay/hydration bound) — decision flagged to Salman. `seo:qa` still 41 (39 OG + 2 canonical, both Sprint 2) — no regression.
 - **2026‑06‑07 — Sprint 1: TASK‑004 DONE.** Trimmed all 27 over-length meta descriptions to ≤155 (20 blog, 4 industry, homepage, 2 author). Author pages now use a short `metaDescription` field instead of the full bio. `seo:qa`: **Meta description too long 27 → 0**, total errors **68 → 41**.
 - **2026‑06‑07 — Sprint 1: TASK‑009 + TASK‑003 DONE.** Removed phantom pages `ecommerce-retail` + `construction` entirely (per Salman: ecommerce-retail was a `/create-blog` hallucination). Trimmed all 26 over-length `<title>`s to ≤57 chars via `seoTitle`/`meta.title`/page metadata, accounting for the `%s | Yonovo` template. `seo:qa`: **Title too long 26 → 0**, total errors **96 → 68**, pages 44 → 43. Build clean; ecommerce-retail 404s; 0 broken internal links.

@@ -18,6 +18,19 @@ export const metadata: Metadata = {
   },
   description:
     "Automate invoice follow-ups across email, SMS, and voice. Yonovo connects to your accounting system and handles collections so your team can focus on growth.",
+  // Site-wide defaults. Pages that set their own openGraph/twitter inherit these
+  // fields (e.g. images) unless they override them — gives every page a valid
+  // og:image / twitter:image without repeating it on each route.
+  openGraph: {
+    type: "website",
+    siteName: SITE_NAME,
+    url: SITE_URL,
+    images: [{ url: "/og-default.png", width: 1200, height: 630, alt: SITE_NAME }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    images: ["/og-default.png"],
+  },
 };
 
 export default function RootLayout({

@@ -20,9 +20,11 @@ export const metadata: Metadata = {
       "Automate accounts receivable for NetSuite. Sync invoices, send multi-channel follow-ups, and reduce DSO.",
     url: `${SITE_URL}/solutions/netsuite`,
     siteName: SITE_NAME,
+    images: [{ url: "/api/og?title=NetSuite%20AR%20Automation&category=guides", width: 1200, height: 630, alt: "NetSuite AR Automation" }],
   },
   twitter: {
     card: "summary_large_image",
+    images: ["/api/og?title=NetSuite%20AR%20Automation&category=guides"],
     title: `NetSuite AR Automation | ${SITE_NAME}`,
     description:
       "Automate accounts receivable for NetSuite. Sync invoices, send multi-channel follow-ups, and reduce DSO.",

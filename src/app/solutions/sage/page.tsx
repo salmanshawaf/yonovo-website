@@ -20,9 +20,11 @@ export const metadata: Metadata = {
       "Automate accounts receivable for Sage. Sync invoices, send follow-ups via email, SMS, and voice, and reduce DSO.",
     url: `${SITE_URL}/solutions/sage`,
     siteName: SITE_NAME,
+    images: [{ url: "/api/og?title=Sage%20AR%20Automation%20%7C%20Automate%20Collections%20for%20Sage&category=guides", width: 1200, height: 630, alt: "Sage AR Automation | Automate Collections for Sage" }],
   },
   twitter: {
     card: "summary_large_image",
+    images: ["/api/og?title=Sage%20AR%20Automation%20%7C%20Automate%20Collections%20for%20Sage&category=guides"],
     title: `Sage AR Automation | ${SITE_NAME}`,
     description:
       "Automate accounts receivable for Sage. Sync invoices, send follow-ups via email, SMS, and voice.",

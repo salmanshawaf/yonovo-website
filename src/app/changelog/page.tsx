@@ -16,6 +16,7 @@ export const metadata: Metadata = {
       "See what's new at Yonovo. Product updates, new features, and improvements to help you collect payments faster.",
     url: "https://www.yonovo.com/changelog",
     type: "website",
+    images: [{ url: "/og-default.png", width: 1200, height: 630, alt: "Yonovo" }],
   },
   alternates: {
     canonical: "https://www.yonovo.com/changelog",

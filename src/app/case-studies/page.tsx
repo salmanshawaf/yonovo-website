@@ -24,9 +24,11 @@ export const metadata: Metadata = {
     description: "See how real teams use Yonovo to automate collections, reduce DSO, and improve cash flow.",
     url: `${SITE_URL}/case-studies`,
     siteName: SITE_NAME,
+    images: [{ url: "/og-default.png", width: 1200, height: 630, alt: SITE_NAME }],
   },
   twitter: {
     card: "summary_large_image",
+    images: ["/og-default.png"],
     title: `Case Studies | ${SITE_NAME}`,
     description: "See how real teams use Yonovo to automate collections, reduce DSO, and improve cash flow.",
   },
