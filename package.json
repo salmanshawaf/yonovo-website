@@ -10,7 +10,8 @@
     "generate-case-study-pdfs": "node scripts/generate-case-study-pdf.mjs",
     "seo:qa": "node scripts/seo-audit.mjs",
     "seo:links": "linkinator http://localhost:3000 --recurse --silent",
-    "seo:lh": "lhci autorun"
+    "seo:lh": "lhci autorun",
+    "check:blog-links": "node scripts/check-blog-links.mjs"
   },
   "dependencies": {
     "@calcom/embed-react": "^1.5.3",
