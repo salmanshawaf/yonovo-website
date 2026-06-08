@@ -23,7 +23,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
   return {
     title: `${author.name} | Blog | Yonovo`,
-    description: author.bio,
+    description: author.metaDescription || author.bio,
     robots: { index: true, follow: true },
     alternates: {
       canonical: `${SITE_URL}/blog/author/${slug}`,

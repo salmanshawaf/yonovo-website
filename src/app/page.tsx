@@ -17,7 +17,7 @@ import CTASection from "@/components/sections/CTASection";
 export const metadata: Metadata = {
   title: `${SITE_NAME} | AI-Powered Accounts Receivable Automation`,
   description:
-    "Automate invoice follow-ups across email, SMS, and voice. Yonovo connects to your accounting system and handles collections so your team can focus on growth.",
+    "Automate invoice follow-ups across email, SMS, and voice. Yonovo connects to your accounting system and collects overdue invoices so you get paid faster.",
   alternates: {
     canonical: `${SITE_URL}/`,
   },

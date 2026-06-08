@@ -115,7 +115,7 @@
   | /changelog/smart-payment-reminders | 171 | Yonovo now sends personalized payment reminders based on each customer's behavior and payment history. No more manual follow‑ups. |
 
 - **How to verify:** Build/crawl; each affected page's `<meta name="description">` ≤ ~155 chars, unique, and accurate. Re‑crawl shows the count dropping.
-- **Status:** OPEN — page list + proposed descriptions ready above.
+- **Status:** ✅ DONE (2026-06-07). Shortened all 27 over-length descriptions to ≤155 chars (live-measured, not the file's counts): 20 blog posts (frontmatter `description`), 4 industry pages (`meta.description` in `industries.ts`), the homepage (`src/app/page.tsx` — note: the homepage overrides the layout default, so the fix went there), and the 2 author pages. **Author special-case:** added an optional `metaDescription` field to the `Author` type (`src/content/authors.ts`), wrote a short purpose description for salman + alex, and used `author.metaDescription || author.bio` in the author route — the full bio stays as visible page content (no truncation). All copy avoids em dashes per house style. Verified: `seo:qa` **Meta description too long 27 → 0** (note: `/changelog/smart-payment-reminders` was already ≤155 live, so not in the set). Total errors now 41 (39 OG + 2 canonical remain for Sprint 2).
 
 ### TASK‑005 — Complete incomplete Open Graph tags (≈20 pages)
 - **Priority:** Medium
@@ -281,5 +281,6 @@
 
 ## Claude Code execution log (in-repo implementation)
 
+- **2026‑06‑07 — Sprint 1: TASK‑004 DONE.** Trimmed all 27 over-length meta descriptions to ≤155 (20 blog, 4 industry, homepage, 2 author). Author pages now use a short `metaDescription` field instead of the full bio. `seo:qa`: **Meta description too long 27 → 0**, total errors **68 → 41**.
 - **2026‑06‑07 — Sprint 1: TASK‑009 + TASK‑003 DONE.** Removed phantom pages `ecommerce-retail` + `construction` entirely (per Salman: ecommerce-retail was a `/create-blog` hallucination). Trimmed all 26 over-length `<title>`s to ≤57 chars via `seoTitle`/`meta.title`/page metadata, accounting for the `%s | Yonovo` template. `seo:qa`: **Title too long 26 → 0**, total errors **96 → 68**, pages 44 → 43. Build clean; ecommerce-retail 404s; 0 broken internal links.
 - **2026‑06‑07 — Sprint 0 (TASK‑017) DONE.** Copied task log to `docs/seo/seo-tasks.md` and auditor to `scripts/seo-audit.mjs`; installed `cheerio`, `@lhci/cli`, `linkinator`; added `seo:qa` / `seo:links` / `seo:lh` npm scripts and `lighthouserc.json` (mobile, assert perf≥90 & LCP<2.5s on home + `/solutions/quickbooks` + `/blog/what-is-ar-automation`). **Fixed a concurrency bug** in the provided `runPool` (it audited only 5/44 pages); SEO rules untouched. Captured baselines (`docs/seo/baseline-seo-qa.txt`, `docs/seo/baseline-lighthouse.txt`): **seo:qa 96 errors / 44 warns across 44 pages** (40 OG, 28 meta-too-long, 26 title-too-long, 2 missing canonical); Lighthouse all fail; 2 broken-link sources → `/industries/construction`. Verify-first findings logged under TASK‑017 (notably: TASK‑006 likely already resolved — 0 missing-alt at baseline; title template appends `| Yonovo`).

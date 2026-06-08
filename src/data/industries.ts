@@ -394,7 +394,7 @@ export const industries: Record<string, IndustryData> = {
     meta: {
       title: "AR Automation for Professional Services",
       description:
-        "Automate accounts receivable for professional services firms. Collect on overdue invoices via email, SMS, and voice without putting client relationships at risk.",
+        "Automate AR for professional services firms. Collect overdue invoices via email, SMS, and voice without risking client relationships.",
     },
     hero: {
       badge: "Professional Services",
@@ -567,7 +567,7 @@ export const industries: Record<string, IndustryData> = {
     meta: {
       title: "AR Automation for Property Management",
       description:
-        "Automate accounts receivable for property management companies. Collect rent and fees on time via email, SMS, and voice without straining tenant relationships.",
+        "Automate AR for property management. Collect rent and fees on time via email, SMS, and voice without straining tenant relationships.",
     },
     hero: {
       badge: "Property Management",
@@ -740,7 +740,7 @@ export const industries: Record<string, IndustryData> = {
     meta: {
       title: "AR Automation for Gyms & Fitness",
       description:
-        "Automate accounts receivable for gyms and fitness businesses. Recover failed payments and collect past-due membership dues via email, SMS, and voice without losing members.",
+        "Automate AR for gyms and fitness businesses. Recover failed payments and collect past-due dues via email, SMS, and voice.",
     },
     hero: {
       badge: "Gyms & Fitness",
@@ -913,7 +913,7 @@ export const industries: Record<string, IndustryData> = {
     meta: {
       title: "AR Automation for Software & Tech",
       description:
-        "Automate accounts receivable for software and tech companies. Recover failed subscription payments and collect on enterprise invoices via email, SMS, and voice without driving customers to churn.",
+        "Automate AR for software and tech companies. Recover failed subscription payments and collect enterprise invoices via email, SMS, and voice.",
     },
     hero: {
       badge: "Software & Tech",
