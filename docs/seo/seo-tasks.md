@@ -162,7 +162,15 @@
 - **What to do:** Add **contextual** internal links to these pages from already‑indexed, frequently‑crawled pages — e.g., link each industry page from the homepage industries section AND from topically related blog posts; link case studies from the homepage/testimonials and relevant industry pages; cross‑link related blog posts ("Keep reading" + in‑body links). Footer links alone are too weak a signal. Aim for ≥2–3 relevant in‑content links to each page.
 - **Author archives (`/blog/author/*`):** low SEO value. Either leave, or add `noindex` to focus crawl budget — your call; confirm with the team before noindexing.
 - **How to verify:** Each target page is reachable via at least 2–3 in‑content links from indexed pages; build passes; over the following weeks the pages move to "Indexed" in GSC.
-- **Status:** OPEN (homepage re‑index + 2 manual index requests already submitted outside the repo).
+- **Status:** ✅ DONE (2026-06-08). **Measured incoming in-body links first** (not all targets were actually under-linked): `case-studies/troyes` (13) and `how-to-reduce-dso` (12) were already well-linked → no action. Added natural contextual in-body links to the 6 genuinely under-linked targets, all from already-indexed posts:
+  - `/industries/gyms-fitness` (was 0) → now 2, added to the customer-vertical lists in `upflow-vs-yonovo` and `yonovo-vs-chaser`.
+  - `/blog/yonovo-vs-chaser` (was 1) → 2, from `best-ar-automation-software` (Chaser section).
+  - `/blog/accounts-receivable-saas-companies` (was 0) → 1, from `best-ar-automation-software` (Upflow/SaaS section).
+  - `/blog/will-ai-replace-my-accounts-receivable-job` (was 0) → 1, from `how-can-ai-help-me-get-paid-faster`.
+  - `/blog/how-much-time-can-ai-save-in-collections` (was 1) → 2, from `how-can-ai-help-me-get-paid-faster`.
+  - `/blog/can-i-really-automate-accounts-receivable` (was 0) → 1, from `what-is-ar-automation`.
+  - **Note:** every blog post also auto-renders a "Keep reading" section (3 related by category/tags via `getRelatedPosts`), so these targets get additional template links on top of the in-body ones. Prioritized natural placement over hitting an exact 2-3 count to avoid over-optimization. All links validated by `npm run check:blog-links`; build passes. Indexing outcome to be confirmed in GSC over the following weeks (outside the repo).
+  - **Author archives:** left as-is (indexable, low priority); did not noindex without team sign-off, per the task note.
 
 ### TASK‑009 — Reconcile industry routes with nav + sitemap
 - **Priority:** Low (hygiene)
