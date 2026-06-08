@@ -374,6 +374,7 @@ export default function NetSuitePage() {
         { label: "Case Studies", href: "/case-studies", description: "See how real teams automate AR collections and reduce DSO with Yonovo." },
         { label: "Best AR Automation Software (2026)", href: "/blog/best-ar-automation-software", description: "Side-by-side comparison of 10 AR platforms on features, pricing, and setup time." },
         { label: "Manual AR Is a Financial Risk", href: "/blog/manual-ar-heavy-industries-financial-risk", description: "Why manual accounts receivable processes create hidden financial exposure." },
+        { label: "How to Automate AR in NetSuite", href: "/blog/netsuite-ar-automation", description: "A step-by-step guide to automating collections in NetSuite, including multi-subsidiary setups." },
       ]} />
 
       {/* ── CTA ── */}

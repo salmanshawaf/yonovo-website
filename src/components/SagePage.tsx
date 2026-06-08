@@ -355,6 +355,7 @@ export default function SagePage() {
         { label: "Case Studies", href: "/case-studies", description: "See how real teams automate AR collections and reduce DSO with Yonovo." },
         { label: "Best AR Automation Software (2026)", href: "/blog/best-ar-automation-software", description: "Side-by-side comparison of 10 AR platforms on features, pricing, and setup time." },
         { label: "Invoice Reminder Best Practices", href: "/blog/invoice-reminder-best-practices", description: "When to send reminders, what tone to use, and how to escalate without damaging relationships." },
+        { label: "How to Automate AR in Sage", href: "/blog/sage-ar-automation", description: "A step-by-step guide to automating collections in Sage Intacct, including multi-entity setups." },
       ]} />
 
       {/* ── CTA ── */}

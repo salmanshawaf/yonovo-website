@@ -526,6 +526,7 @@ export default function XeroPage() {
         { label: "Case Studies", href: "/case-studies", description: "See how real teams automate AR collections and reduce DSO with Yonovo." },
         { label: "Best AR Automation Software (2026)", href: "/blog/best-ar-automation-software", description: "Side-by-side comparison of 10 AR platforms on features, pricing, and setup time." },
         { label: "How to Reduce DSO", href: "/blog/how-to-reduce-dso", description: "Practical strategies to shorten your days sales outstanding and improve cash flow." },
+        { label: "How to Automate AR in Xero", href: "/blog/xero-ar-automation", description: "A step-by-step guide to automating collections in Xero beyond its built-in reminders." },
       ]} />
 
       {/* ── CTA ── */}
