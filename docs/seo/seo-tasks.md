@@ -231,7 +231,7 @@
   2. **Images** — serve via `next/image` with modern formats (WebP/AVIF), correct responsive sizes, and **explicit width/height** on all images.
   3. **Trim payload** toward <1.5 MB; remove unused/legacy JS where easy.
 - **How to verify:** Re‑run PageSpeed mobile for the homepage (and a top blog post). Target LCP <2.5s and Performance ≥90. Build passes. Confirm the LCP element is a fast image/text, not the video.
-- **Status:** 🟡 LARGELY DONE — big improvements landed; strict lab threshold not met (see decision flagged to Salman). Work done:
+- **Status:** ✅ DONE (2026-06-07). **Decision (Salman): relax the lab threshold** — `lighthouserc.json` now asserts realistic Slow-4G lab targets (perf ≥ 0.75, LCP < 5500ms, TBT warn) which the optimized site passes (`npm run seo:lh` exits 0) and which still catch regressions toward the pre-optimization baseline (home was 75 / 7.1s). The real target remains **field CWV "good" (LCP < 2.5s p75 in GSC)**, documented in the config. Lab LCP variance is ~0.5s run-to-run; `/solutions/quickbooks` is the laggard (perf ~81-84, LCP ~4.5-5.1s) since its hero video isn't above-the-fold-optimized like the homepage. Work done:
   - **Transcoded every site `.mov` → optimized faststart MP4** (scaled 760px, CRF 30, no audio) via ffmpeg, and generated JPEG poster frames. Hero 1367 KB → 69 KB; the 5 HowItWorks step videos (≈19 MB total) → ≈950 KB; `quickbooks-sync` 649→59 KB. Deleted the now-dead `.mov` originals (~25 MB removed from the deploy).
   - **Hero LCP:** added a `poster` (10 KB) + `preload="none"` so the poster (not the 69 KB video) is the LCP, and preloaded it with `fetchpriority=high`.
   - **HowItWorks / VideoPlayer / IndustryPageTemplate:** all videos now `preload="none"` + poster, single MP4 source.
