@@ -7,7 +7,7 @@ import { getAllEntries, entryToMeta } from "@/lib/changelog";
 import { renderMdxToHtml } from "@/lib/changelog-render";
 
 export const metadata: Metadata = {
-  title: "Changelog | Yonovo",
+  title: { absolute: "Changelog | Yonovo" },
   description:
     "See what's new at Yonovo. Product updates, new features, and improvements to help you collect payments faster.",
   openGraph: {

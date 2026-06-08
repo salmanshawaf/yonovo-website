@@ -26,7 +26,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   if (!entry) return {};
 
   return {
-    title: `${entry.frontmatter.title} | Yonovo Changelog`,
+    title: { absolute: `${entry.frontmatter.title} | Yonovo Changelog` },
     description: entry.frontmatter.description,
     openGraph: {
       title: `${entry.frontmatter.title} | Yonovo Changelog`,

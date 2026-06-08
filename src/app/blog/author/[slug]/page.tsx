@@ -22,7 +22,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   if (!author) return {};
 
   return {
-    title: `${author.name} | Blog | Yonovo`,
+    title: { absolute: `${author.name} | Blog | Yonovo` },
     description: author.metaDescription || author.bio,
     robots: { index: true, follow: true },
     alternates: {

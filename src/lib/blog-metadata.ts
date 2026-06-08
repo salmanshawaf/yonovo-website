@@ -180,7 +180,9 @@ export function generateBlogListingMetadata(category?: string): Metadata {
     : "Expert insights on AR automation, collections strategies, and finance operations to help your team collect faster and improve cash flow.";
 
   return {
-    title,
+    // `absolute` bypasses the root layout's "%s | Yonovo" template; `title`
+    // already ends in "| Yonovo", so without this it would render doubled.
+    title: { absolute: title },
     description,
     robots: { index: true, follow: true },
     alternates: {
