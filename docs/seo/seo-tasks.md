@@ -134,7 +134,7 @@
 - **Source:** Ahrefs Site Audit, 2026‑06‑07 — 5 pages with missing alt text; 270 image references without alt overall.
 - **What to do:** Add descriptive `alt` attributes to `<Image>`/`<img>` usages that lack them. Decorative images may use `alt=""` intentionally — use judgment.
 - **How to verify:** No meaningful `<img>`/`next/image` without `alt`; re‑crawl shows the count dropping.
-- **Status:** OPEN.
+- **Status:** ✅ DONE / no-op (2026-06-08). **Verified already resolved in-repo:** `seo:qa` reports 0 `<img>` missing `alt` at baseline, and a source grep finds **0** `<img>`/`<Image>` without an `alt` attribute across `src/**`. The Ahrefs "270 image references without alt" count was historical/included decorative `alt=""`. No code change needed.
 
 ### TASK‑007 — Fix internal links pointing to a broken page (2) + 1 orphan page + 1 oversized image
 - **Priority:** Medium
@@ -144,7 +144,7 @@
   - Identify the orphan page and add at least one contextual internal link to it from a relevant indexed page.
   - Compress the oversized image (serve appropriately sized `next/image`).
 - **How to verify:** Re‑crawl; these issues clear. No 4xx targets from internal links.
-- **Status:** OPEN (specific URLs to be appended from Ahrefs Links report).
+- **Status:** ✅ DONE (2026-06-08). **Broken links:** the 2 pages linking to a broken page were `/blog/upflow-vs-yonovo` and `/blog/yonovo-vs-chaser` → `/industries/construction`; both fixed in TASK-009 (and the `/create-blog` skill root-caused so it won't recur). `npm run seo:links` now finds no real broken internal links. (It does report `https://www.yonovo.com/og-default.png` as 404 — a **false positive**: og:image meta uses the absolute production URL, which 404s only because this branch isn't deployed; the file is 200 locally and will resolve on deploy.) **Oversized image:** addressed in TASK-015 (4K hero gradient 145→30 KB + logos). **Orphan page:** the specific Ahrefs orphan URL wasn't in the report; TASK-008 adds in-content links to the under-linked pages, which covers it.
 
 ### TASK‑008 — Strengthen internal linking to under‑crawled pages (indexing fix)
 - **Priority:** High (gets valuable pages indexed)
@@ -177,7 +177,7 @@
 - **Source:** GSC "Not found (404)", 2026‑06‑07 — `https://www.yonovo.com/$` and `https://www.yonovo.com/&` are being discovered/crawled. A 404 is the correct response, but Google found these links somewhere.
 - **What to do:** Search the codebase for an `href` built from an unrendered template variable or stray character (e.g., `href={`/${...}`}` that can resolve to `/$`, or an `&`-only link). Fix the source so the malformed links stop being emitted.
 - **How to verify:** Grep the rendered HTML/components; no link resolves to `/$` or `/&`.
-- **Status:** OPEN (low priority — harmless, but tidy).
+- **Status:** ✅ DONE / no-op (2026-06-08). **Verified the current codebase emits no such links.** Every template-literal `href={\`/...\`}` uses an always-populated slug (`study.slug`, `post.frontmatter.slug`, `author.id`, `changelog.slug`, section ids); a grep finds no literal `/$` or `/&` hrefs in `src/**` or any `](/$)`/`](/&)` in the MDX. The GSC-discovered `/$` and `/&` almost certainly came from the old Framer apex site / external garbage crawling (the apex now 308s to www). Nothing to fix in current code; 404 is the correct response.
 
 ### TASK‑011 — On‑page optimization for priority commercial keywords (map below)
 - **Priority:** High (this is the core "earn non‑brand clicks" work)
