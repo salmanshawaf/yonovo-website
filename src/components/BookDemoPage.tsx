@@ -77,7 +77,7 @@ export default function BookDemoPage() {
                 <ul className="flex flex-col gap-3">
                   {[
                     "Review your current AR workflow and identify gaps",
-                    "Demo the platform with your specific use case",
+                    "Find out how much time it frees up for your team",
                     "Show you how teams like yours reduced DSO by 40%+",
                     "Answer any questions about pricing, integrations, or setup",
                   ].map((item) => (
