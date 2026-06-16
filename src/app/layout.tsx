@@ -41,6 +41,12 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
+        {/* Ahrefs Web Analytics */}
+        <script
+          src="https://analytics.ahrefs.com/analytics.js"
+          data-key="ipVXZ/JV5A8m1E0PSwHGPw"
+          async
+        />
         {/* Instantly website tracking pixel */}
         <script
           id="vtag-ai-js"
