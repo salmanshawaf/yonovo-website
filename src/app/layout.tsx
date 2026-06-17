@@ -41,6 +41,20 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
+        {/* Google tag (gtag.js) */}
+        <script
+          async
+          src="https://www.googletagmanager.com/gtag/js?id=G-BK8T7VN9WM"
+        />
+        <script
+          id="gtag-init"
+          dangerouslySetInnerHTML={{
+            __html: `window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-BK8T7VN9WM');`,
+          }}
+        />
         {/* Ahrefs Web Analytics */}
         <script
           src="https://analytics.ahrefs.com/analytics.js"
