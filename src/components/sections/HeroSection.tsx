@@ -1,9 +1,7 @@
-"use client";
-
-import { useState, useRef, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import Button from "@/components/Button";
+import HeroCards from "@/components/sections/HeroCards";
 
 const logos = [
   { name: "Troyes", src: "/logos/troyes.png", width: 130, className: "h-[28px] lg:h-[47px]" },
@@ -11,80 +9,14 @@ const logos = [
   { name: "SBC", src: "/logos/sbc.png", width: 200, className: "h-[50px] lg:h-[95px]" },
 ];
 
-const HERO_START = 0;
-const HERO_END = 10;
-
-const RING_SIZE = 45;
-const STROKE = 2.5;
-const RADIUS = (RING_SIZE - STROKE) / 2;
-const CIRCUMFERENCE = 2 * Math.PI * RADIUS;
-
 export default function HeroSection() {
-  const [paused, setPaused] = useState(false);
-  const [progress, setProgress] = useState(0);
-  const videoRef = useRef<HTMLVideoElement>(null);
-
-  // Seek to startTime on mount
-  useEffect(() => {
-    const video = videoRef.current;
-    if (!video) return;
-
-    const seek = () => {
-      video.currentTime = HERO_START;
-      video.play();
-    };
-    video.addEventListener("loadedmetadata", seek, { once: true });
-    if (video.readyState >= 1) {
-      video.currentTime = HERO_START;
-      video.play();
-    }
-  }, []);
-
-  // Track progress and handle endTime looping
-  useEffect(() => {
-    const video = videoRef.current;
-    if (!video) return;
-
-    const onTimeUpdate = () => {
-      if (!video.duration) return;
-      const effectiveDuration = HERO_END - HERO_START;
-      const elapsed = video.currentTime - HERO_START;
-
-      if (video.currentTime >= HERO_END) {
-        video.currentTime = HERO_START;
-        return;
-      }
-
-      setProgress(Math.min(elapsed / effectiveDuration, 1));
-    };
-
-    video.addEventListener("timeupdate", onTimeUpdate);
-    return () => video.removeEventListener("timeupdate", onTimeUpdate);
-  }, []);
-
-  const togglePlayPause = () => {
-    const video = videoRef.current;
-    if (!video) return;
-    if (video.paused) {
-      video.play();
-      setPaused(false);
-    } else {
-      video.pause();
-      setPaused(true);
-    }
-  };
-
-  const dashOffset = CIRCUMFERENCE * (1 - progress);
-
   return (
     <section
       id="hero"
-      className="relative w-full -mt-16 pt-28 md:pt-32 pb-10 md:pb-12"
+      className="relative w-full -mt-16 overflow-hidden pt-24 md:pt-32 pb-10 md:pb-12"
       style={{ background: "white url('/hero-gradient-bg.jpg') center top / 100% 90% no-repeat" }}
     >
-      {/* Preload the hero poster so it is the LCP element and paints immediately (React hoists to <head>) */}
-      <link rel="preload" as="image" href="/hero-poster.jpg" fetchPriority="high" />
-      {/* Dark area marker — covers the visually dark portion of the gradient (ends near video bottom) */}
+      {/* Dark area marker — covers the visually dark portion of the gradient (ends near cards) */}
       <div data-navbar-dark className="pointer-events-none absolute inset-x-0 top-0 h-[76%]" aria-hidden="true" />
       {/* Noise texture overlay */}
       <div
@@ -96,103 +28,33 @@ export default function HeroSection() {
         }}
       />
       <div className="mx-auto max-w-(--container-max-width) px-6">
-        <div className="relative flex w-full flex-col gap-12 overflow-hidden">
+        <div className="relative flex w-full flex-col gap-12">
           {/* Hero Grid */}
           <div className="relative mx-auto grid w-full items-center gap-6 px-4 lg:grid-cols-2">
             {/* Left — Text Content */}
-            <div className="flex flex-col gap-6">
+            <div className="flex flex-col items-center gap-6 text-center lg:items-start lg:text-left">
+              <span className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-3.5 py-1.5 text-[13px] font-medium text-white/70">
+                <span className="h-1.5 w-1.5 rounded-full bg-brand-green" />
+                AI accounts receivable
+              </span>
               <h1 className="font-medium text-[32px] text-white leading-[1.2] tracking-tight md:text-[38px] lg:text-[4.095rem] lg:leading-[1.2] lg:tracking-normal">
-                Automate your<br /><span className="md:whitespace-nowrap">accounts receivable.</span><br />Get paid&nbsp;faster.
+                Automate your<br /><span className="xl:whitespace-nowrap">accounts receivable.</span><br />Get paid&nbsp;faster.
               </h1>
               <p className="text-[15px] text-white/70 leading-[1.6] md:text-xl lg:w-[75%]">
                 Yonovo is accounts receivable automation software that follows up by email, text, and phone on every invoice until they&apos;re paid.
               </p>
-              <div className="mt-2 flex flex-col gap-4">
-                <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:gap-6">
-                  <Link href="/book-demo" className="w-full sm:w-auto">
-                    <Button variant="brand" size="md" className="h-14 w-full px-[46px] text-lg font-medium sm:w-auto">
-                      Book Demo
-                    </Button>
-                  </Link>
-                </div>
-                <div className="mt-1 flex items-center gap-3 hidden">
-                  <span className="text-[13px] text-white/50">Works with</span>
-                  <Image src="/logos/quickbooks.png" alt="QuickBooks" width={120} height={29} className="h-6 w-auto brightness-0 invert opacity-60" />
-                  <Image src="/logos/xero.png" alt="Xero" width={29} height={29} className="h-6 w-auto brightness-0 invert opacity-60" />
-                </div>
+              <div className="mt-2">
+                <Link href="/book-demo">
+                  <Button variant="brand" size="md" className="h-12 px-8 text-base font-medium">
+                    Book Demo
+                  </Button>
+                </Link>
               </div>
             </div>
 
-            {/* Right — Dashboard Preview */}
-            <div id="hero-video" className="group relative aspect-[0.939] w-full overflow-hidden rounded-3xl">
-              <video
-                ref={videoRef}
-                muted
-                playsInline
-                preload="none"
-                poster="/hero-poster.jpg"
-                className="absolute inset-0 h-full w-full object-cover object-top"
-              >
-                <source src="/hero-video.mp4" type="video/mp4" />
-              </video>
-
-              {/* Play/pause button with progress ring */}
-              <button
-                type="button"
-                onClick={togglePlayPause}
-                className="absolute bottom-4 left-4 flex items-center justify-center"
-                aria-label={paused ? "Play video" : "Pause video"}
-                style={{ width: RING_SIZE, height: RING_SIZE }}
-              >
-                {/* SVG ring */}
-                <svg
-                  width={RING_SIZE}
-                  height={RING_SIZE}
-                  className="absolute inset-0 -rotate-90"
-                  style={{ transform: "rotate(-90deg)" }}
-                >
-                  {/* Track */}
-                  <circle
-                    cx={RING_SIZE / 2}
-                    cy={RING_SIZE / 2}
-                    r={RADIUS}
-                    fill="rgba(0,0,0,0.25)"
-                    stroke="rgba(255,255,255,0.2)"
-                    strokeWidth={STROKE}
-                  />
-                  {/* Progress */}
-                  <circle
-                    cx={RING_SIZE / 2}
-                    cy={RING_SIZE / 2}
-                    r={RADIUS}
-                    fill="none"
-                    stroke="white"
-                    strokeWidth={STROKE}
-                    strokeDasharray={CIRCUMFERENCE}
-                    strokeDashoffset={dashOffset}
-                    strokeLinecap="round"
-                    style={{ transition: "stroke-dashoffset 0.25s linear" }}
-                  />
-                </svg>
-
-                {/* Icon */}
-                <svg
-                  className="relative z-10"
-                  width="13"
-                  height="13"
-                  viewBox="0 0 24 24"
-                  fill="white"
-                >
-                  {paused ? (
-                    <polygon points="5,3 19,12 5,21" />
-                  ) : (
-                    <>
-                      <rect x="14" y="4" width="4" height="16" rx="1" />
-                      <rect x="6" y="4" width="4" height="16" rx="1" />
-                    </>
-                  )}
-                </svg>
-              </button>
+            {/* Right — Floating product cards */}
+            <div className="w-full">
+              <HeroCards />
             </div>
           </div>
 
