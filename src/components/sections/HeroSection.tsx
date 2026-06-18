@@ -41,7 +41,7 @@ export default function HeroSection() {
                 Automate your<br /><span className="xl:whitespace-nowrap">accounts receivable.</span><br />Get paid&nbsp;faster.
               </h1>
               <p className="text-[15px] text-white/70 leading-[1.6] md:text-xl lg:w-[75%]">
-                Yonovo is accounts receivable automation software that follows up by email, text, and phone on every invoice until they&apos;re paid.
+                Yonovo helps finance teams collect faster, automate every follow-up, and stay in control of their receivables, without adding headcount.
               </p>
               <div className="mt-2">
                 <Link href="/book-demo">

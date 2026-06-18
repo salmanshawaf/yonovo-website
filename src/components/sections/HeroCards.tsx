@@ -185,16 +185,21 @@ function AgingCard() {
 function ClientAgentCard() {
   return (
     <div className="flex h-full flex-col gap-2.5">
-      {/* User question — chat bubble */}
+      {/* User question — chat bubble, right-aligned */}
       <div className="flex justify-end">
-        <span className="max-w-[88%] rounded-2xl rounded-br-sm bg-brand-navy px-3 py-1.5 text-right text-[11px] font-medium text-white">
+        <span className="max-w-[88%] rounded-2xl rounded-br-sm bg-brand-navy px-3 py-1.5 text-left text-[11px] font-medium text-white">
           What's the fastest way to cut our overdue balance?
         </span>
       </div>
       {/* Agent answer — clipped with a fade (xl only) to imply a longer response */}
       <div className="relative xl:max-h-[148px] xl:overflow-hidden">
         <div className="flex flex-col gap-1.5 text-[12px] leading-snug text-zinc-700">
-          <span className="text-[12px] font-bold text-zinc-900">My suggested next move</span>
+          <span className="flex items-center gap-1.5 text-[12px] font-bold text-zinc-900">
+            <span className="flex h-[18px] w-[18px] shrink-0 items-center justify-center rounded-full bg-brand-navy text-[10px] font-bold leading-none text-white">
+              Y
+            </span>
+            My suggested next move
+          </span>
           <p>A focused two-part AR sprint —</p>
           <p>
             <span className="font-semibold text-zinc-900">This week:</span> the biggest overdue balances — Maple Ridge

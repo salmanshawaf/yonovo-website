@@ -55,7 +55,7 @@ const industries = [
       </svg>
     ),
     title: "Software & Tech",
-    description: "Recover failed payments, retain customers",
+    description: "Automate collections, protect cash flow",
     href: "/industries/software-tech",
   },
   {
