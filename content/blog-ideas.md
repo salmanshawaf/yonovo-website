@@ -15,7 +15,7 @@ Categories: `guides`, `insights`, `comparisons`.
 - [x] How Do I Stop Chasing Late Payments? — Automated payment reminders and follow-ups (guides)
 - [x] Can AI Match Payments to Invoices Automatically? — Reconciliation automation capabilities (guides)
 - [x] How Can I Reduce Manual Data Entry in AR? — Eliminating spreadsheet work and manual processes (guides)
-- [ ] What Are the 5 C's of Accounts Receivable Management? — Core principles of effective AR management (guides)
+- [x] What Are the 5 C's of Accounts Receivable Management? — Core principles of effective AR management (guides)
 - [ ] How Can Small Businesses Automate AR Without IT Help? — User-friendly automation for non-technical teams (guides)
 - [ ] Why Am I Still Doing Manual Reconciliations? — Real-time reconciliation solutions (insights)
 - [ ] How Can AI Spot Payment Disputes Before They Happen? — Proactive dispute detection and prevention (insights)
@@ -68,3 +68,4 @@ Categories: `guides`, `insights`, `comparisons`.
 - [x] How Do I Stop Chasing Late Payments? -> /blog/how-do-i-stop-chasing-late-payments (2026-06-08)
 - [x] Can AI Match Payments to Invoices Automatically? -> /blog/can-ai-match-payments-to-invoices-automatically (2026-06-11)
 - [x] How Can I Reduce Manual Data Entry in AR? -> /blog/how-can-i-reduce-manual-data-entry-in-ar (2026-06-15)
+- [x] What Are the 5 C's of Accounts Receivable Management? -> /blog/what-are-the-5-cs-of-accounts-receivable-management (2026-06-18)
