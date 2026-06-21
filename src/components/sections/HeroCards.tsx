@@ -264,18 +264,19 @@ function ReplyCard() {
   );
 }
 
-/* Bleed: pin the cluster's right edge ~28px past the viewport edge at vw>=1280.
-   base flush = calc((1280px - 100vw)/2 - 40px); subtract more to push further off-screen. */
-const CLUSTER_BLEED = "xl:right-[calc((1280px_-_100vw)/2_-_68px)]";
+/* Cluster sits flush with the right grid column's right edge.
+   The container maxes at 1280px and centers, so on wider monitors the H1
+   and cluster move together and the cluster never bleeds off-screen. */
+const CLUSTER_BLEED = "xl:right-0";
 
 export default function HeroCards() {
   return (
     <div className="xl:relative xl:h-[688px]">
       {/* ── Desktop cluster (xl+): fills the space from just past the headline to the screen edge,
            bleeding off-screen. Width is automatic (left-0 + right bleed) so it grows with the viewport. ── */}
-      <div className={`hidden xl:absolute xl:top-0 xl:block xl:h-[688px] xl:w-[660px] ${CLUSTER_BLEED}`}>
+      <div className={`hidden xl:absolute xl:top-0 xl:block xl:h-[688px] xl:w-[580px] ${CLUSTER_BLEED}`}>
         {/* Left column — matched small pair, vertically centered against the right column */}
-        <div className="absolute left-0 top-1/2 w-[264px] -translate-y-1/2 space-y-5">
+        <div className="absolute left-0 top-1/2 w-[228px] -translate-y-1/2 space-y-5">
           <div className={CARD}>
             <DsoCard />
           </div>
@@ -284,8 +285,8 @@ export default function HeroCards() {
           </div>
         </div>
 
-        {/* Right column — two equal-size anchors with space between, bleeding off the edge */}
-        <div className="absolute right-0 top-0 flex h-full w-[372px] flex-col gap-[24px]">
+        {/* Right column — two equal-size anchors with space between */}
+        <div className="absolute right-0 top-0 flex h-full w-[324px] flex-col gap-[24px]">
           <div className={`${CARD_BASE} flex h-[332px] flex-col p-5`}>
             <AgingCard />
           </div>
