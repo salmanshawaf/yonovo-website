@@ -17,7 +17,7 @@ Categories: `guides`, `insights`, `comparisons`.
 - [x] How Can I Reduce Manual Data Entry in AR? — Eliminating spreadsheet work and manual processes (guides)
 - [x] What Are the 5 C's of Accounts Receivable Management? — Core principles of effective AR management (guides)
 - [x] How Can Small Businesses Automate AR Without IT Help? — User-friendly automation for non-technical teams (guides)
-- [ ] Why Am I Still Doing Manual Reconciliations? — Real-time reconciliation solutions (insights)
+- [x] Why Am I Still Doing Manual Reconciliations? — Real-time reconciliation solutions (insights)
 - [ ] How Can AI Spot Payment Disputes Before They Happen? — Proactive dispute detection and prevention (insights)
 - [ ] What's the Best Way to Track Unpaid Invoices? — AR aging report automation and visibility (guides)
 - [ ] Can AI Extract Invoice Data Automatically? — OCR and data extraction for invoice processing (guides)
@@ -70,3 +70,4 @@ Categories: `guides`, `insights`, `comparisons`.
 - [x] How Can I Reduce Manual Data Entry in AR? -> /blog/how-can-i-reduce-manual-data-entry-in-ar (2026-06-15)
 - [x] What Are the 5 C's of Accounts Receivable Management? -> /blog/what-are-the-5-cs-of-accounts-receivable-management (2026-06-18)
 - [x] How Can Small Businesses Automate AR Without IT Help? -> /blog/how-can-small-businesses-automate-ar-without-it-help (2026-06-22)
+- [x] Why Am I Still Doing Manual Reconciliations? -> /blog/why-am-i-still-doing-manual-reconciliations (2026-06-25)
