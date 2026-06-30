@@ -4,10 +4,10 @@ import { organizationSchema, webSiteSchema } from "@/lib/schemas";
 import NavbarWrapper from "@/components/NavbarWrapper";
 import Footer from "@/components/Footer";
 import HeroSection from "@/components/sections/HeroSection";
+import ProductVideoSection from "@/components/sections/ProductVideoSection";
 import HighlightsSection from "@/components/sections/HighlightsSection";
 import HowItWorksSection from "@/components/sections/HowItWorksSection";
 import FeaturesSection from "@/components/sections/FeaturesSection";
-import ExploreSection from "@/components/sections/ExploreSection";
 import BenefitsSection from "@/components/sections/BenefitsSection";
 import AdvantagesSection from "@/components/sections/AdvantagesSection";
 import TestimonialsSection from "@/components/sections/TestimonialsSection";
@@ -50,10 +50,10 @@ export default function Home() {
       <NavbarWrapper />
       <main className="pt-16 min-h-screen">
         <HeroSection />
+        <ProductVideoSection />
         <HighlightsSection />
         <HowItWorksSection />
         <FeaturesSection />
-        <ExploreSection />
         {/* TODO: BenefitsSection hidden temporarily — re-enable when ready */}
         {/* <BenefitsSection /> */}
         <AdvantagesSection />

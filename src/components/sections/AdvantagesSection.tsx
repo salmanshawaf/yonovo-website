@@ -315,13 +315,13 @@ export default function AdvantagesSection() {
   const canNext = offset < maxOffset;
 
   return (
-    <section className="w-full py-12 md:py-15 bg-background">
+    <section data-navbar-dark className="w-full py-12 md:py-15 bg-brand-blue">
       <div className="mx-auto max-w-(--container-max-width) px-6">
         <div className="flex w-full flex-col gap-4">
           {/* Header — centered */}
           <div className="flex flex-col items-center gap-4">
-            <SectionBadge label="Advantages" />
-            <h2 className="text-center font-medium text-3xl text-foreground tracking-tight md:text-5xl lg:text-6xl">
+            <SectionBadge label="Advantages" variant="dark" />
+            <h2 className="text-center font-medium text-3xl text-white tracking-tight md:text-5xl lg:text-6xl">
               Not your typical
               <br />
               AR software
@@ -348,10 +348,10 @@ export default function AdvantagesSection() {
                       </div>
                       <div className="flex flex-1 flex-col justify-between gap-2 pt-6">
                         <div className="flex flex-col gap-1">
-                          <h3 className="font-medium text-xl text-foreground">
+                          <h3 className="font-medium text-xl text-white">
                             {item.title}
                           </h3>
-                          <p className="text-sm text-secondary">
+                          <p className="text-sm text-white/70">
                             {item.description}
                           </p>
                         </div>
@@ -431,7 +431,7 @@ export default function AdvantagesSection() {
                     key={item.title}
                     onClick={() => setOffset(index)}
                     className={`relative h-1 w-full overflow-hidden rounded-full ${
-                      index === offset ? "bg-primary" : "bg-secondary"
+                      index === offset ? "bg-white" : "bg-white/30"
                     }`}
                   />
                 ))}
