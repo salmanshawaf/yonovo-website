@@ -9,36 +9,43 @@ const integrations = [
   {
     icon: <Image src="/images/idFyhAFeIL_1775761334880.png" alt="" width={40} height={40} className="h-10 w-10 rounded-full object-cover" aria-hidden="true" />,
     title: "QuickBooks",
-    description: "Maximize collection efficiency",
     href: "/solutions/quickbooks",
     iconVariant: "brand" as const,
   },
   {
     icon: <Image src="/images/idJC49YIcQ_1775761347167.png" alt="" width={40} height={40} className="h-10 w-10 rounded-full object-cover" aria-hidden="true" />,
     title: "Xero",
-    description: "Collect invoices faster",
     href: "/solutions/xero",
     iconVariant: "brand" as const,
   },
   {
     icon: <Image src="/images/idwVC6PrT7_1775761363800.jpeg" alt="" width={40} height={40} className="h-10 w-10 rounded-full object-cover" aria-hidden="true" />,
     title: "Odoo",
-    description: "Connect Yonovo to Odoo",
     href: "/solutions/odoo",
     iconVariant: "brand" as const,
   },
   {
     icon: <Image src="/images/NetSuite_idTS9MV_0S_0.jpeg" alt="" width={40} height={40} className="h-10 w-10 rounded-full object-cover" aria-hidden="true" />,
     title: "NetSuite",
-    description: "Your ERP data, actionable",
     href: "/solutions/netsuite",
     iconVariant: "brand" as const,
   },
   {
     icon: <Image src="/logos/sage-circle-icon.svg" alt="" width={40} height={40} className="h-10 w-10 rounded-full object-cover" aria-hidden="true" />,
     title: "Sage Intacct",
-    description: "Accelerate your cash collection",
     href: "/solutions/sage",
+    iconVariant: "brand" as const,
+  },
+  {
+    icon: <Image src="/logos/stripe-icon.svg" alt="" width={40} height={40} className="h-10 w-10 rounded-full object-cover" aria-hidden="true" />,
+    title: "Stripe Billing",
+    href: "/solutions/stripe",
+    iconVariant: "brand" as const,
+  },
+  {
+    icon: <Image src="/logos/bill-icon.svg" alt="" width={40} height={40} className="h-10 w-10 rounded-full object-cover" aria-hidden="true" />,
+    title: "BILL",
+    href: "/solutions/bill",
     iconVariant: "brand" as const,
   },
 ];
@@ -163,7 +170,7 @@ const navLinks = [
   { label: "Pricing", href: "/pricing", hasDropdown: false },
 ];
 
-function DropdownItem({ icon, title, description, href, iconVariant }: { icon: React.ReactNode; title: string; description: string; href?: string; iconVariant?: "brand" | "default" }) {
+function DropdownItem({ icon, title, description, href, iconVariant }: { icon: React.ReactNode; title: string; description?: string; href?: string; iconVariant?: "brand" | "default" }) {
   return (
     <a href={href ?? "#"} className="flex items-center gap-3 rounded-lg p-3 transition-colors hover:bg-surface">
       <div className={`flex h-10 w-10 shrink-0 items-center justify-center overflow-hidden ${
@@ -173,7 +180,7 @@ function DropdownItem({ icon, title, description, href, iconVariant }: { icon: R
       </div>
       <div>
         <div className="text-sm font-medium text-foreground">{title}</div>
-        <div className="text-sm text-muted">{description}</div>
+        {description && <div className="text-sm text-muted">{description}</div>}
       </div>
     </a>
   );
@@ -473,7 +480,6 @@ export default function Navbar({ defaultMode = "dark", latestChangelog }: { defa
                   </div>
                   <div>
                     <div className="text-sm font-medium text-foreground">{item.title}</div>
-                    <div className="text-xs text-muted">{item.description}</div>
                   </div>
                 </Link>
               ))}
