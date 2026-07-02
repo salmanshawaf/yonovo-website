@@ -19,7 +19,7 @@ Categories: `guides`, `insights`, `comparisons`.
 - [x] How Can Small Businesses Automate AR Without IT Help? — User-friendly automation for non-technical teams (guides)
 - [x] Why Am I Still Doing Manual Reconciliations? — Real-time reconciliation solutions (insights)
 - [x] How Can AI Spot Payment Disputes Before They Happen? — Proactive dispute detection and prevention (insights)
-- [ ] What's the Best Way to Track Unpaid Invoices? — AR aging report automation and visibility (guides)
+- [x] What's the Best Way to Track Unpaid Invoices? — AR aging report automation and visibility (guides)
 - [ ] Can AI Extract Invoice Data Automatically? — OCR and data extraction for invoice processing (guides)
 - [ ] How Do I Know If My AR Process Needs Automation? — Signs and benchmarks for needing AR improvement (guides)
 - [ ] What's the 10 Rule for Accounts Receivable? — Industry standards and best practices in AR (guides)
@@ -72,3 +72,4 @@ Categories: `guides`, `insights`, `comparisons`.
 - [x] How Can Small Businesses Automate AR Without IT Help? -> /blog/how-can-small-businesses-automate-ar-without-it-help (2026-06-22)
 - [x] Why Am I Still Doing Manual Reconciliations? -> /blog/why-am-i-still-doing-manual-reconciliations (2026-06-25)
 - [x] How Can AI Spot Payment Disputes Before They Happen? -> /blog/how-can-ai-spot-payment-disputes-before-they-happen (2026-06-29)
+- [x] What's the Best Way to Track Unpaid Invoices? -> /blog/whats-the-best-way-to-track-unpaid-invoices (2026-07-02)
