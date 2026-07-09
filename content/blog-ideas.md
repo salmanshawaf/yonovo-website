@@ -21,7 +21,7 @@ Categories: `guides`, `insights`, `comparisons`.
 - [x] How Can AI Spot Payment Disputes Before They Happen? — Proactive dispute detection and prevention (insights)
 - [x] What's the Best Way to Track Unpaid Invoices? — AR aging report automation and visibility (guides)
 - [x] Can AI Extract Invoice Data Automatically? — OCR and data extraction for invoice processing (guides)
-- [ ] How Do I Know If My AR Process Needs Automation? — Signs and benchmarks for needing AR improvement (guides)
+- [x] How Do I Know If My AR Process Needs Automation? — Signs and benchmarks for needing AR improvement (guides)
 - [ ] What's the 10 Rule for Accounts Receivable? — Industry standards and best practices in AR (guides)
 - [ ] How Can I Automate Invoice Generation? — Reducing time spent creating and sending invoices (guides)
 - [ ] Will Automating AR Reduce Human Error? — Accuracy improvements from AI-powered processes (insights)
@@ -74,3 +74,4 @@ Categories: `guides`, `insights`, `comparisons`.
 - [x] How Can AI Spot Payment Disputes Before They Happen? -> /blog/how-can-ai-spot-payment-disputes-before-they-happen (2026-06-29)
 - [x] What's the Best Way to Track Unpaid Invoices? -> /blog/whats-the-best-way-to-track-unpaid-invoices (2026-07-02)
 - [x] Can AI Extract Invoice Data Automatically? -> /blog/can-ai-extract-invoice-data-automatically (2026-07-06)
+- [x] How Do I Know If My AR Process Needs Automation? -> /blog/how-do-i-know-if-my-ar-process-needs-automation (2026-07-09)
