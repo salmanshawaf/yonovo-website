@@ -23,7 +23,7 @@ Categories: `guides`, `insights`, `comparisons`.
 - [x] Can AI Extract Invoice Data Automatically? — OCR and data extraction for invoice processing (guides)
 - [x] How Do I Know If My AR Process Needs Automation? — Signs and benchmarks for needing AR improvement (guides)
 - [x] What's the 10 Rule for Accounts Receivable? — Industry standards and best practices in AR (guides)
-- [ ] How Can I Automate Invoice Generation? — Reducing time spent creating and sending invoices (guides)
+- [x] How Can I Automate Invoice Generation? — Reducing time spent creating and sending invoices (guides)
 - [ ] Will Automating AR Reduce Human Error? — Accuracy improvements from AI-powered processes (insights)
 - [ ] How Can AI Help With Customer Credit Decisions? — Risk assessment and creditworthiness evaluation (guides)
 - [ ] Can AI Predict Which Customers Will Pay Late? — Payment behavior prediction and risk management (insights)
@@ -76,3 +76,4 @@ Categories: `guides`, `insights`, `comparisons`.
 - [x] Can AI Extract Invoice Data Automatically? -> /blog/can-ai-extract-invoice-data-automatically (2026-07-06)
 - [x] How Do I Know If My AR Process Needs Automation? -> /blog/how-do-i-know-if-my-ar-process-needs-automation (2026-07-09)
 - [x] What's the 10 Rule for Accounts Receivable? -> /blog/whats-the-10-rule-for-accounts-receivable (2026-07-13)
+- [x] How Can I Automate Invoice Generation? -> /blog/how-can-i-automate-invoice-generation (2026-07-16)
