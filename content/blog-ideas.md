@@ -24,7 +24,7 @@ Categories: `guides`, `insights`, `comparisons`.
 - [x] How Do I Know If My AR Process Needs Automation? — Signs and benchmarks for needing AR improvement (guides)
 - [x] What's the 10 Rule for Accounts Receivable? — Industry standards and best practices in AR (guides)
 - [x] How Can I Automate Invoice Generation? — Reducing time spent creating and sending invoices (guides)
-- [ ] Will Automating AR Reduce Human Error? — Accuracy improvements from AI-powered processes (insights)
+- [x] Will Automating AR Reduce Human Error? — Accuracy improvements from AI-powered processes (insights)
 - [ ] How Can AI Help With Customer Credit Decisions? — Risk assessment and creditworthiness evaluation (guides)
 - [ ] Can AI Predict Which Customers Will Pay Late? — Payment behavior prediction and risk management (insights)
 - [ ] How Do I Set Up Automated Payment Reminders? — Implementation of intelligent follow-up systems (guides)
@@ -77,3 +77,4 @@ Categories: `guides`, `insights`, `comparisons`.
 - [x] How Do I Know If My AR Process Needs Automation? -> /blog/how-do-i-know-if-my-ar-process-needs-automation (2026-07-09)
 - [x] What's the 10 Rule for Accounts Receivable? -> /blog/whats-the-10-rule-for-accounts-receivable (2026-07-13)
 - [x] How Can I Automate Invoice Generation? -> /blog/how-can-i-automate-invoice-generation (2026-07-16)
+- [x] Will Automating AR Reduce Human Error? -> /blog/will-automating-ar-reduce-human-error (2026-07-20)
