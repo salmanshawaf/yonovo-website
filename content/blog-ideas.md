@@ -26,7 +26,7 @@ Categories: `guides`, `insights`, `comparisons`.
 - [x] How Can I Automate Invoice Generation? — Reducing time spent creating and sending invoices (guides)
 - [x] Will Automating AR Reduce Human Error? — Accuracy improvements from AI-powered processes (insights)
 - [x] How Can AI Help With Customer Credit Decisions? — Risk assessment and creditworthiness evaluation (guides)
-- [ ] Can AI Predict Which Customers Will Pay Late? — Payment behavior prediction and risk management (insights)
+- [x] Can AI Predict Which Customers Will Pay Late? — Payment behavior prediction and risk management (insights)
 - [ ] How Do I Set Up Automated Payment Reminders? — Implementation of intelligent follow-up systems (guides)
 - [ ] What Should I Automate First in Accounts Receivable? — Prioritization of AR automation projects (guides)
 - [ ] How Can I Improve Cash Flow With AR Automation? — Direct financial benefits of automated AR (guides)
@@ -79,3 +79,4 @@ Categories: `guides`, `insights`, `comparisons`.
 - [x] How Can I Automate Invoice Generation? -> /blog/how-can-i-automate-invoice-generation (2026-07-16)
 - [x] Will Automating AR Reduce Human Error? -> /blog/will-automating-ar-reduce-human-error (2026-07-20)
 - [x] How Can AI Help With Customer Credit Decisions? -> /blog/how-can-ai-help-with-customer-credit-decisions (2026-07-23)
+- [x] Can AI Predict Which Customers Will Pay Late? -> /blog/can-ai-predict-which-customers-will-pay-late (2026-07-27)
