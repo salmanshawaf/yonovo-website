@@ -28,11 +28,11 @@ export const metadata: Metadata = {
       "Automate invoice follow-ups across email, SMS, and voice. Yonovo handles AR collections so your team can focus on growth.",
     url: `${SITE_URL}/`,
     siteName: SITE_NAME,
-    images: [{ url: "/og-default.png", width: 1200, height: 630, alt: SITE_NAME }],
+    images: [{ url: "/api/og?title=AI-Powered%20Accounts%20Receivable%20Automation&subtitle=Automate%20invoice%20follow-ups%20across%20email%2C%20SMS%2C%20and%20voice.", width: 1200, height: 630, alt: SITE_NAME }],
   },
   twitter: {
     card: "summary_large_image",
-    images: ["/og-default.png"],
+    images: ["/api/og?title=AI-Powered%20Accounts%20Receivable%20Automation&subtitle=Automate%20invoice%20follow-ups%20across%20email%2C%20SMS%2C%20and%20voice."],
     title: `${SITE_NAME} | AI-Powered Accounts Receivable Automation`,
     description:
       "Automate invoice follow-ups across email, SMS, and voice. Yonovo handles AR collections so your team can focus on growth.",

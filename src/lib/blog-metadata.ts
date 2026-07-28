@@ -11,9 +11,9 @@ export function generateArticleJsonLd(post: BlogPost) {
     "@type": "Article",
     headline: post.frontmatter.title,
     description: post.frontmatter.description,
-    image: post.frontmatter.ogImage
-      ? `${SITE_URL}${post.frontmatter.ogImage}`
-      : `${SITE_URL}/api/og?title=${encodeURIComponent(post.frontmatter.title)}&category=${encodeURIComponent(post.frontmatter.category)}`,
+    // Prefer an explicit ogImage, then the post's branded hero image
+    // (getHeroImage falls back to the /api/og card when no hero exists).
+    image: `${SITE_URL}${post.frontmatter.ogImage || getHeroImage(post).src}`,
     author: {
       "@type": "Person",
       name: post.author.name,
@@ -131,7 +131,9 @@ export function generateAllJsonLd(post: BlogPost): Record<string, any>[] {
 export function generateBlogPostMetadata(post: BlogPost): Metadata {
   const title = post.frontmatter.seoTitle || post.frontmatter.title;
   const heroImage = getHeroImage(post);
-  const ogImage = post.frontmatter.ogImage || `/api/og?title=${encodeURIComponent(post.frontmatter.title)}&category=${encodeURIComponent(post.frontmatter.category)}`;
+  // Use the post's branded hero image as the social preview. getHeroImage
+  // returns /images/blog/*.png when present, else falls back to the /api/og card.
+  const ogImage = post.frontmatter.ogImage || heroImage.src;
 
   return {
     title,
@@ -150,8 +152,10 @@ export function generateBlogPostMetadata(post: BlogPost): Metadata {
       images: [
         {
           url: ogImage,
-          width: 1200,
-          height: 630,
+          // Blog hero PNGs are 1408x768; the /api/og fallback is 1200x630.
+          // Either renders as a large summary card (slight center-crop on 16:9).
+          width: 1408,
+          height: 768,
           alt: heroImage.alt,
         },
       ],

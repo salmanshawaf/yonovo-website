@@ -20,11 +20,11 @@ export const metadata: Metadata = {
       "Automate accounts receivable for QuickBooks Online. AI-powered follow-ups via email, SMS, and voice. Go live in one day.",
     url: `${SITE_URL}/solutions/quickbooks`,
     siteName: SITE_NAME,
-    images: [{ url: "/api/og?title=QuickBooks%20Online%20AR%20Automation&category=guides", width: 1200, height: 630, alt: "QuickBooks Online AR Automation" }],
+    images: [{ url: "/api/og?title=QuickBooks%20Online%20AR%20Automation&category=guides&label=Solution", width: 1200, height: 630, alt: "QuickBooks Online AR Automation" }],
   },
   twitter: {
     card: "summary_large_image",
-    images: ["/api/og?title=QuickBooks%20Online%20AR%20Automation&category=guides"],
+    images: ["/api/og?title=QuickBooks%20Online%20AR%20Automation&category=guides&label=Solution"],
     title: `QuickBooks Online AR Automation | ${SITE_NAME}`,
     description:
       "Automate accounts receivable for QuickBooks Online. AI-powered follow-ups via email, SMS, and voice.",
