@@ -18,7 +18,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
   const data = industries[slug];
   if (!data) return {};
-  const ogImage = `/api/og?title=${encodeURIComponent(data.meta.title)}&category=guides`;
+  const ogImage = `/api/og?title=${encodeURIComponent(data.meta.title)}&category=guides&label=Industry`;
   return {
     title: data.meta.title,
     description: data.meta.description,

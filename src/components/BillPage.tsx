@@ -47,7 +47,7 @@ const timelineSteps = [
   {
     number: 1,
     text: "Connect BILL in a few clicks. Enter your BILL organization ID and sync-token credentials on the integrations page. No OAuth redirect needed.",
-    image: "/images/highlight-oversight.png",
+    image: "/images/bill-step-1-connect.png",
   },
   {
     number: 2,

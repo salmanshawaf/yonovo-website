@@ -25,11 +25,11 @@ export const metadata: Metadata = {
     type: "website",
     siteName: SITE_NAME,
     url: SITE_URL,
-    images: [{ url: "/og-default.png", width: 1200, height: 630, alt: SITE_NAME }],
+    images: [{ url: "/api/og?title=AI-Powered%20Accounts%20Receivable%20Automation", width: 1200, height: 630, alt: SITE_NAME }],
   },
   twitter: {
     card: "summary_large_image",
-    images: ["/og-default.png"],
+    images: ["/api/og?title=AI-Powered%20Accounts%20Receivable%20Automation"],
   },
 };
 

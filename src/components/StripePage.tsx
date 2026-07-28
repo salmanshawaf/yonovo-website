@@ -47,7 +47,7 @@ const timelineSteps = [
   {
     number: 1,
     text: "Bill your customers as usual from Stripe Billing.",
-    image: "/images/highlight-oversight.png",
+    image: "/images/stripe-step-1-portal.png",
   },
   {
     number: 2,

@@ -11,7 +11,7 @@ import Button from "@/components/Button";
 import DSOCalculator from "@/components/DSOCalculator";
 
 const url = `${SITE_URL}/tools/dso-calculator`;
-const ogImage = `/api/og?title=${encodeURIComponent("DSO Calculator")}&category=guides`;
+const ogImage = `/api/og?title=${encodeURIComponent("DSO Calculator")}&category=guides&label=Tool`;
 
 export const metadata: Metadata = {
   title: "DSO Calculator",
