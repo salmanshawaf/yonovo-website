@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import type { BlogPost } from "./blog";
-import { getHeroImage } from "./blog";
 import { SITE_URL, SITE_NAME } from "./site-config";
 
 // ── JSON-LD Generators ──
@@ -11,9 +10,8 @@ export function generateArticleJsonLd(post: BlogPost) {
     "@type": "Article",
     headline: post.frontmatter.title,
     description: post.frontmatter.description,
-    // Prefer an explicit ogImage, then the post's branded hero image
-    // (getHeroImage falls back to the /api/og card when no hero exists).
-    image: `${SITE_URL}${post.frontmatter.ogImage || getHeroImage(post).src}`,
+    // All pages, including blog posts, share the flagship social card.
+    image: `${SITE_URL}/og-default.png`,
     author: {
       "@type": "Person",
       name: post.author.name,
@@ -130,10 +128,8 @@ export function generateAllJsonLd(post: BlogPost): Record<string, any>[] {
 
 export function generateBlogPostMetadata(post: BlogPost): Metadata {
   const title = post.frontmatter.seoTitle || post.frontmatter.title;
-  const heroImage = getHeroImage(post);
-  // Use the post's branded hero image as the social preview. getHeroImage
-  // returns /images/blog/*.png when present, else falls back to the /api/og card.
-  const ogImage = post.frontmatter.ogImage || heroImage.src;
+  // Every page, including blog posts, shares the flagship social card.
+  const ogImage = "/og-default.png";
 
   return {
     title,
@@ -152,11 +148,9 @@ export function generateBlogPostMetadata(post: BlogPost): Metadata {
       images: [
         {
           url: ogImage,
-          // Blog hero PNGs are 1408x768; the /api/og fallback is 1200x630.
-          // Either renders as a large summary card (slight center-crop on 16:9).
-          width: 1408,
-          height: 768,
-          alt: heroImage.alt,
+          width: 1200,
+          height: 630,
+          alt: SITE_NAME,
         },
       ],
       publishedTime: post.frontmatter.publishedAt,
@@ -202,13 +196,13 @@ export function generateBlogListingMetadata(category?: string): Metadata {
         ? `${SITE_URL}/blog/category/${category}`
         : `${SITE_URL}/blog`,
       siteName: SITE_NAME,
-      images: [{ url: `/api/og?title=${encodeURIComponent(title)}&category=${category || "guides"}`, width: 1200, height: 630, alt: title }],
+      images: [{ url: "/og-default.png", width: 1200, height: 630, alt: title }],
     },
     twitter: {
       card: "summary_large_image",
       title,
       description,
-      images: [`/api/og?title=${encodeURIComponent(title)}&category=${category || "guides"}`],
+      images: ["/og-default.png"],
     },
   };
 }

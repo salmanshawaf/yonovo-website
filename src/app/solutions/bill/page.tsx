@@ -20,11 +20,11 @@ export const metadata: Metadata = {
       "Automate accounts receivable for BILL (formerly Bill.com). AI-powered follow-ups with pay-now links. Go live in one day.",
     url: `${SITE_URL}/solutions/bill`,
     siteName: SITE_NAME,
-    images: [{ url: "/api/og?title=BILL%20AR%20Automation&category=guides&label=Solution", width: 1200, height: 630, alt: "BILL AR Automation" }],
+    images: [{ url: "/og-default.png", width: 1200, height: 630, alt: "BILL AR Automation" }],
   },
   twitter: {
     card: "summary_large_image",
-    images: ["/api/og?title=BILL%20AR%20Automation&category=guides&label=Solution"],
+    images: ["/og-default.png"],
     title: `BILL (Bill.com) AR Automation | ${SITE_NAME}`,
     description:
       "Automate accounts receivable for BILL (formerly Bill.com). AI-powered follow-ups with pay-now links.",

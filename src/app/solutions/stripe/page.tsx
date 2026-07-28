@@ -20,11 +20,11 @@ export const metadata: Metadata = {
       "Automate accounts receivable for Stripe Billing. AI-powered follow-ups via email, SMS, and voice. Go live in one day.",
     url: `${SITE_URL}/solutions/stripe`,
     siteName: SITE_NAME,
-    images: [{ url: "/api/og?title=Stripe%20Billing%20AR%20Automation&category=guides&label=Solution", width: 1200, height: 630, alt: "Stripe Billing AR Automation" }],
+    images: [{ url: "/og-default.png", width: 1200, height: 630, alt: "Stripe Billing AR Automation" }],
   },
   twitter: {
     card: "summary_large_image",
-    images: ["/api/og?title=Stripe%20Billing%20AR%20Automation&category=guides&label=Solution"],
+    images: ["/og-default.png"],
     title: `Stripe Billing AR Automation | ${SITE_NAME}`,
     description:
       "Automate accounts receivable for Stripe Billing. AI-powered follow-ups via email, SMS, and voice.",

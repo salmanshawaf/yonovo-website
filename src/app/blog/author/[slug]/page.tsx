@@ -24,7 +24,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const title = `${author.name} | Blog | Yonovo`;
   const description = author.metaDescription || author.bio;
   const url = `${SITE_URL}/blog/author/${slug}`;
-  const ogImage = `/api/og?title=${encodeURIComponent(author.name)}&category=insights&label=Author`;
+  const ogImage = "/og-default.png";
   return {
     title: { absolute: title },
     description,
