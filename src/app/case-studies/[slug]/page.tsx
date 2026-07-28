@@ -17,7 +17,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const data = caseStudies[slug];
   if (!data) return {};
   const url = `${SITE_URL}/case-studies/${slug}`;
-  const ogImage = `/api/og?title=${encodeURIComponent(data.meta.title)}&category=comparisons&label=Case%20Study`;
+  const ogImage = "/og-default.png";
   return {
     title: data.meta.title,
     description: data.meta.description,
