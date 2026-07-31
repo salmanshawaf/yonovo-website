@@ -411,10 +411,10 @@ export default function AdvantagesSection() {
                         </div>
                         <div className="flex flex-1 flex-col justify-between gap-2 pt-6">
                           <div className="flex flex-col gap-1">
-                            <h3 className="font-medium text-xl text-foreground">
+                            <h3 className="font-medium text-xl text-white">
                               {item.title}
                             </h3>
-                            <p className="text-sm text-secondary">
+                            <p className="text-sm text-white/70">
                               {item.description}
                             </p>
                           </div>
