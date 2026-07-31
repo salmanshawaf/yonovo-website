@@ -42,3 +42,38 @@ next-env.d.ts
 
 # Lighthouse CI
 .lighthouseci/
+
+# Local AI/editor tooling scratch dirs (not part of the project, may hold secrets)
+.adal/
+.agent/
+.agents/
+.augment/
+.codebuddy/
+.commandcode/
+.continue/
+.cortex/
+.crush/
+.factory/
+.firecrawl/
+.goose/
+.iflow/
+.junie/
+.kilocode/
+.kiro/
+.kode/
+.mcpjam/
+.mux/
+.neovate/
+.openhands/
+.pi/
+.pochi/
+.qoder/
+.qwen/
+.roo/
+.trae/
+.vibe/
+.windsurf/
+.zencoder/
+.playwright-mcp/
+.mcp.json
+_to_delete/
