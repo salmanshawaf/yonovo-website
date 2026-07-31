@@ -77,3 +77,9 @@ next-env.d.ts
 .playwright-mcp/
 .mcp.json
 _to_delete/
+
+# Tool-installed Claude skills (project skills like create-blog stay tracked)
+.claude/skills/firecrawl*
+.claude/skills/nextjs/
+.claude/skills/tailwindcss/
+.claude/skills/ui-ux-pro-max/
