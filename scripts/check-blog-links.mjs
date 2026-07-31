@@ -37,6 +37,9 @@ function buildRealRoutes() {
       if (fs.statSync(path.join(toolsDir, d)).isDirectory()) real.add(`/tools/${d}`);
     }
   }
+  // Comparison pages: slug fields in src/data/comparisons.ts (root-level routes)
+  const cmp = fs.readFileSync(path.join(ROOT, "src/data/comparisons.ts"), "utf8");
+  for (const m of cmp.matchAll(/slug:\s*"([a-z0-9-]+)"/g)) real.add(`/${m[1]}`);
   // Blog posts: mdx slugs
   for (const f of fs.readdirSync(BLOG_DIR)) if (f.endsWith(".mdx")) real.add(`/blog/${f.replace(/\.mdx$/, "")}`);
   // Case studies: object keys in src/data/caseStudies.ts

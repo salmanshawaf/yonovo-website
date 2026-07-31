@@ -29,6 +29,18 @@ const nextConfig: NextConfig = {
         destination: "/blog",
         permanent: true,
       },
+      // Comparison content consolidated onto dedicated root-level pages.
+      // 301 the old blog posts so link equity flows to the canonical pages.
+      {
+        source: "/blog/upflow-vs-yonovo",
+        destination: "/yonovo-vs-upflow",
+        permanent: true,
+      },
+      {
+        source: "/blog/yonovo-vs-chaser",
+        destination: "/yonovo-vs-chaser",
+        permanent: true,
+      },
     ];
   },
 };

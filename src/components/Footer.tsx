@@ -38,6 +38,12 @@ const industryLinks = [
   { label: "Software & Tech", href: "/industries/software-tech" },
 ];
 
+const compareLinks = [
+  { label: "Yonovo vs Upflow", href: "/yonovo-vs-upflow" },
+  { label: "Yonovo vs Chaser", href: "/yonovo-vs-chaser" },
+  { label: "Yonovo vs Invoiced", href: "/yonovo-vs-invoiced" },
+];
+
 const companyLinks = [
   { label: "Careers", href: "/careers" },
   { label: "Privacy policy", href: "/privacy-policy" },
@@ -47,6 +53,7 @@ const companyLinks = [
 const linkSections = [
   { title: "INTEGRATIONS", links: integrationLinks },
   { title: "AR AUTOMATION FOR", links: industryLinks },
+  { title: "COMPARE", links: compareLinks },
   { title: "RESOURCES", links: resourceLinks },
   { title: "COMPANY", links: companyLinks },
 ];
@@ -54,6 +61,7 @@ const linkSections = [
 const mobileLinkSections = [
   { title: "INTEGRATIONS", links: integrationLinks },
   { title: "AR AUTOMATION FOR", links: industryLinks },
+  { title: "COMPARE", links: compareLinks },
   { title: "RESOURCES", links: mobileResourceLinks },
   { title: "COMPANY", links: companyLinks },
 ];
@@ -192,7 +200,7 @@ export default function Footer() {
           </div>
 
           {/* Right columns — Links */}
-          <div className="flex gap-10 lg:gap-24 xl:gap-32">
+          <div className="flex gap-8 lg:gap-16 xl:gap-24">
             <div className="flex flex-col gap-4">
               <h6 className="font-semibold text-sm text-zinc-50 capitalize tracking-widest">
                 INTEGRATIONS
@@ -209,6 +217,16 @@ export default function Footer() {
               </h6>
               {industryLinks.map((link) => (
                 <a key={link.label} href={link.href} className="font-medium text-sm text-zinc-400 transition-colors duration-200 ease-in-out hover:text-white">
+                  {link.label}
+                </a>
+              ))}
+            </div>
+            <div className="flex flex-col gap-4">
+              <h6 className="font-semibold text-sm text-zinc-50 capitalize tracking-widest">
+                COMPARE
+              </h6>
+              {compareLinks.map((link) => (
+                <a key={link.label} href={link.href} className="font-medium text-sm text-zinc-400 transition-colors duration-200 ease-in-out hover:text-white whitespace-nowrap">
                   {link.label}
                 </a>
               ))}

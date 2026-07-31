@@ -90,6 +90,17 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.7,
   }));
 
+  const comparisonPages: MetadataRoute.Sitemap = [
+    "yonovo-vs-upflow",
+    "yonovo-vs-chaser",
+    "yonovo-vs-invoiced",
+  ].map((slug) => ({
+    url: `${SITE_URL}/${slug}`,
+    lastModified: new Date(),
+    changeFrequency: "monthly" as const,
+    priority: 0.8,
+  }));
+
   const blogPosts: MetadataRoute.Sitemap = posts.map((post) => ({
     url: `${SITE_URL}/blog/${post.frontmatter.slug}`,
     lastModified: new Date(post.frontmatter.updatedAt || post.frontmatter.publishedAt),
@@ -122,6 +133,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...staticPages,
     ...caseStudyPages,
     ...industryPages,
+    ...comparisonPages,
     ...blogPosts,
     ...categoryPages,
     ...authorPages,
