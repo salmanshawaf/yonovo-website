@@ -522,7 +522,9 @@ export default function XeroPage() {
       </section>
 
       {/* ── Related Resources ── */}
-      <RelatedResources items={[
+      <RelatedResources background="background" items={[
+        { label: "Accounts Receivable Automation Software", href: "/accounts-receivable-automation-software", description: "The category guide: what AR automation is and which platform fits your team." },
+        { label: "Debt Collection Software for B2B Invoices", href: "/debt-collection-software", description: "First party B2B collections, contrasted with agencies and consumer debt recovery." },
         { label: "Case Studies", href: "/case-studies", description: "See how real teams automate AR collections and reduce DSO with Yonovo." },
         { label: "Best AR Automation Software (2026)", href: "/blog/best-ar-automation-software", description: "Side-by-side comparison of 10 AR platforms on features, pricing, and setup time." },
         { label: "How to Reduce DSO", href: "/blog/how-to-reduce-dso", description: "Practical strategies to shorten your days sales outstanding and improve cash flow." },

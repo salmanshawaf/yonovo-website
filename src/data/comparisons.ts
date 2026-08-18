@@ -73,7 +73,7 @@ export const comparisons: Record<string, ComparisonData> = {
     },
     verdict: [
       "Yonovo and Upflow both connect to your accounting system and automate invoice follow-ups, but they are built for different teams. Upflow is a self-serve Financial Relationship Management platform aimed at venture-backed SaaS companies with $10M+ ARR, priced by revenue bracket with SMS, postal, and calls metered per use. Yonovo is a white-glove AR automation service for SMB and mid-market teams across industries: a dedicated Slack channel and hands-on onboarding get collections running across email, SMS, AI voice, and WhatsApp in about a day.",
-      "Choose Upflow if you are a scaled SaaS company that wants an engagement layer and free AR benchmarking. Choose Yonovo if you want a team to get collections live for you this week, with multi-channel outreach included rather than metered per use.",
+      "Choose Upflow if you are a scaled SaaS company that wants an engagement layer and free AR benchmarking. Choose Yonovo if you want a team to get collections live for you this week, with multi-channel outreach included rather than metered per use. Still building your shortlist? Start with the [accounts receivable automation software guide](/accounts-receivable-automation-software).",
     ],
     lastReviewed: "July 2026",
     table: {
@@ -114,7 +114,7 @@ export const comparisons: Record<string, ComparisonData> = {
       {
         heading: "Channels and outreach",
         body: [
-          "Upflow is email-first, adding SMS, postal, and live calls as metered extensions. Yonovo treats multi-channel as first-class: you can design an escalation path that moves from a friendly email at day 1 to an SMS at day 14 to an AI voice reminder at day 30, without thinking about per-use charges. For the reasoning behind this, see [multi-channel payment chasing](/blog/multi-channel-payment-chasing).",
+          "Upflow is email-first, adding SMS, postal, and live calls as metered extensions. Yonovo treats multi-channel as first-class: you can design an escalation path that moves from a friendly email at day 1 to an SMS at day 14 to an AI voice reminder at day 30, without thinking about per-use charges. For the reasoning behind this, see [multi-channel payment chasing](/blog/multi-channel-payment-chasing). If your evaluation is specifically about collecting overdue B2B invoices, our [debt collection software](/debt-collection-software) page covers that job end to end.",
         ],
       },
       {
@@ -204,7 +204,7 @@ export const comparisons: Record<string, ComparisonData> = {
     },
     verdict: [
       "Yonovo and Chaser both connect to your accounting system and automate chasing unpaid invoices, but they were built for different markets. Chaser is a UK-based, self-serve platform with strong cash-flow forecasting, deep Xero integration, and an optional outsourced credit-control service (Care). Yonovo is a US-based, white-glove service: a dedicated Slack channel and hands-on onboarding get collections live across email, SMS, AI voice, and WhatsApp in about a day, with multi-channel outreach included.",
-      "Choose Chaser if you are a UK or European team that wants built-in forecasting or a human to chase on your behalf. Choose Yonovo if you want a US-based team to get collections running for you this week, with multi-channel outreach included.",
+      "Choose Chaser if you are a UK or European team that wants built-in forecasting or a human to chase on your behalf. Choose Yonovo if you want a US-based team to get collections running for you this week, with multi-channel outreach included. Comparing more than these two? See how ten platforms stack up in the [AR automation software comparison](/accounts-receivable-automation-software).",
     ],
     lastReviewed: "July 2026",
     table: {
@@ -225,7 +225,7 @@ export const comparisons: Record<string, ComparisonData> = {
         heading: "Positioning and target customer",
         body: [
           "Chaser is a UK company that prices in GBP, leads with cash flow forecasting, and runs an active partner program for accountants and bookkeepers. Its customer base is SMB-heavy, with a concentration in the Xero ecosystem, and it claims more than 10,000 users worldwide.",
-          "Yonovo was built for US-based businesses, prices in USD, and integrates broadly across [QuickBooks](/solutions/quickbooks), [Xero](/solutions/xero), [NetSuite](/solutions/netsuite), [Sage Intacct](/solutions/sage), [Odoo](/solutions/odoo), FreshBooks, Salesforce, HubSpot, and SAP. Customers span [manufacturing](/industries/manufacturing), [wholesale and distribution](/industries/wholesale-distribution), [professional services](/industries/professional-services), and more.",
+          "Yonovo was built for US-based businesses, prices in USD, and integrates broadly across [QuickBooks](/solutions/quickbooks), [Xero](/solutions/xero), [NetSuite](/solutions/netsuite), [Sage Intacct](/solutions/sage), [Odoo](/solutions/odoo), FreshBooks, Salesforce, HubSpot, and SAP. Customers span [manufacturing](/industries/manufacturing), [wholesale and distribution](/industries/wholesale-distribution), [professional services](/industries/professional-services), and more. Both platforms sit in the same corner of the market: [B2B debt collection software](/debt-collection-software) that chases a client's own invoices rather than outsourcing them.",
         ],
       },
       {
@@ -337,7 +337,7 @@ export const comparisons: Record<string, ComparisonData> = {
     },
     verdict: [
       "Yonovo and Invoiced both automate the invoice-to-cash process, but they aim at different buyers. Invoiced is a mid-market-to-enterprise AR platform with deep ERP integration, AI-powered cash application, and global multi-currency payments, sold through demos with pricing on request. Yonovo is a white-glove AR automation service for SMB and mid-market teams: a dedicated Slack channel and hands-on onboarding get collections running across email, SMS, AI voice, and WhatsApp in about a day.",
-      "Choose Invoiced if you are a larger enterprise with complex ERP and global payment needs. Choose Yonovo if you want a team to get collections live for you this week, with multi-channel outreach included.",
+      "Choose Invoiced if you are a larger enterprise with complex ERP and global payment needs. Choose Yonovo if you want a team to get collections live for you this week, with multi-channel outreach included. For the wider field, our [accounts receivable automation software](/accounts-receivable-automation-software) guide compares ten platforms.",
     ],
     lastReviewed: "July 2026",
     table: {
@@ -378,7 +378,7 @@ export const comparisons: Record<string, ComparisonData> = {
       {
         heading: "Channels and collections",
         body: [
-          "Invoiced centers on a customer payment portal with automated dunning and AI-powered cash application to reconcile payments. Yonovo leans into proactive multi-channel outreach: an escalation path that moves from email to SMS to AI voice to WhatsApp, and a team that gets it running for you. For the reasoning behind multi-channel, see [multi-channel payment chasing](/blog/multi-channel-payment-chasing).",
+          "Invoiced centers on a customer payment portal with automated dunning and AI-powered cash application to reconcile payments. Yonovo leans into proactive multi-channel outreach: an escalation path that moves from email to SMS to AI voice to WhatsApp, and a team that gets it running for you. For the reasoning behind multi-channel, see [multi-channel payment chasing](/blog/multi-channel-payment-chasing). For how that outreach handles seriously overdue accounts, see [debt collection software for B2B invoices](/debt-collection-software).",
         ],
       },
       {
@@ -447,6 +447,120 @@ export const comparisons: Record<string, ComparisonData> = {
         question: "Can I switch from Invoiced to Yonovo?",
         answer:
           "Yes. Both sit on top of your accounting system, so your invoices, customers, and payments stay in your ledger. Yonovo's team handles onboarding in a dedicated Slack channel, making it low-risk to test before cutting over.",
+      },
+    ],
+  },
+
+  bill: {
+    slug: "yonovo-vs-bill-com",
+    competitor: { name: "Bill.com", site: "bill.com" },
+    meta: {
+      title: "Yonovo vs Bill.com: AR Automation Compared (2026)",
+      description:
+        "Yonovo vs Bill.com: compare AR collections, channels, pricing, setup, and integrations to see which fits your finance team's accounts receivable.",
+    },
+    hero: {
+      badge: "Compare",
+      headline: "Yonovo vs Bill.com",
+      subhead:
+        "A financial operations suite and a dedicated collections engine. Here is an honest, side-by-side look at where each one wins.",
+    },
+    verdict: [
+      "Bill.com and Yonovo both touch accounts receivable, but they solve different problems. Bill.com (the company brands itself BILL) is a broad financial operations platform that combines accounts payable, accounts receivable, and spend management in one suite, with AR centered on invoicing, auto-pay, and email reminders. Yonovo is a dedicated AR collections service: a white-glove team gets multi-channel follow-ups running across email, SMS, AI voice, and WhatsApp in about a day, with every channel included in the price.",
+      "Choose Bill.com if you want AP, AR, and spend management consolidated in a single vendor. Choose Yonovo if your priority is collecting faster, with a specialist tool that chases every overdue invoice for you. If you are still mapping the category, the [AR automation software guide](/accounts-receivable-automation-software) compares ten platforms side by side.",
+    ],
+    lastReviewed: "August 2026",
+    table: {
+      rows: [
+        { feature: "Product scope", yonovo: "Dedicated AR collections automation", competitor: "AP + AR + spend management suite" },
+        { feature: "Best for", yonovo: "Teams whose priority is collecting faster", competitor: "Teams wanting AP, AR, and spend in one" },
+        { feature: "Onboarding & support", yonovo: "Dedicated Slack channel + hands-on onboarding and rollout", competitor: "Self-serve; setup typically takes days" },
+        { feature: "Time to first follow-up", yonovo: "About a day, set up with you", competitor: "Days" },
+        { feature: "Pricing model", yonovo: "By company size, custom quote (book a demo)", competitor: "Per user, from ~$49/user/mo + transaction fees" },
+        { feature: "Collections channels", yonovo: "Email, SMS, AI voice, WhatsApp", competitor: "Email, auto-pay reminders" },
+        { feature: "AI voice calls", yonovo: true, competitor: false },
+        { feature: "Built-in accounts payable & spend", yonovo: false, competitor: true },
+        { feature: "Accounting integrations", yonovo: "QuickBooks Online, Xero, NetSuite, Sage Intacct, Odoo, FreshBooks, Salesforce, HubSpot, SAP", competitor: "QuickBooks, Xero, NetSuite, Sage Intacct, MS Dynamics" },
+      ],
+    },
+    sections: [
+      {
+        heading: "Scope: a suite versus a specialist",
+        body: [
+          "The clearest difference is breadth. Bill.com is built to run a large part of your finance back office: paying bills, sending invoices, managing corporate cards and budgets, and even accessing credit lines. AR is one module inside that suite. For teams that want to consolidate AP, AR, and spend into a single vendor, that breadth is the main draw.",
+          "Yonovo is the opposite by design. It is a specialist that does collections deeply rather than a suite that does many things at a moderate level. If your biggest pain is overdue invoices and the hours your team spends chasing them, a focused tool usually outperforms a module inside a broader platform. [Troyes](/case-studies/troyes) went from fully manual to fully automated in a single day, and [TDG Inc](/case-studies/tdg-inc) cut manual follow-ups by 80% and DSO by 15 days.",
+        ],
+      },
+      {
+        heading: "Channels: email and auto-pay versus multi-channel",
+        body: [
+          "Bill.com's AR centers on invoicing, auto-pay, and email reminders. That works well when customers respond to email and opt into auto-pay. But email-only outreach sees declining response rates as invoices age, and not every customer pays on autopilot.",
+          "Yonovo sequences follow-ups across email, SMS, AI voice, and WhatsApp, escalating channels as an invoice gets older and flagging accounts that need a human. For industries where customers do not respond to email alone, [multi-channel payment chasing](/blog/multi-channel-payment-chasing) is the difference between a paid invoice and a write-off. Our guide to [collecting overdue B2B invoices](/debt-collection-software) covers that escalation in depth.",
+        ],
+      },
+      {
+        heading: "Pricing and total cost",
+        body: [
+          "Bill.com uses per-user pricing, starting around $49 per user per month for Essentials and $65 per user per month for Team, with AR features included across tiers. Payments carry per-transaction fees, and some procurement and ERP integrations sit on higher plans. Costs scale with the number of users you add.",
+          "Yonovo prices by company size rather than per seat, quoted after a short demo, with multi-channel outreach included, so your price does not climb with every user you add. For a finance team that wants predictable cost as it grows, that is a meaningful difference. [See how Yonovo pricing works](/pricing).",
+        ],
+      },
+      {
+        heading: "Integrations",
+        body: [
+          "Both cover the major accounting systems with two-way sync. Bill.com syncs with QuickBooks, Xero, NetSuite, Sage Intacct, and Microsoft Dynamics. Yonovo integrates with [QuickBooks Online](/solutions/quickbooks), [Xero](/solutions/xero), [NetSuite](/solutions/netsuite), [Sage Intacct](/solutions/sage), [Odoo](/solutions/odoo), FreshBooks, Salesforce, HubSpot, and SAP, with a check before every reminder so paid invoices are not chased. If you already use QuickBooks, both will sync cleanly, and Yonovo offers [two-way sync with QuickBooks](/solutions/quickbooks) so payments and status changes flow back automatically.",
+        ],
+      },
+    ],
+    competitorStrengths: {
+      heading: "Where Bill.com is stronger",
+      intro: "A fair comparison names what the other tool does well. Bill.com leads in a few areas:",
+      points: [
+        "Suite breadth: accounts payable, accounts receivable, spend management, and corporate cards in one platform under one vendor.",
+        "Built-in payments: invoicing with auto-pay and payment processing inside the platform, so customers can pay without leaving it.",
+        "Price transparency: published per-user tiers, so you can budget upfront instead of requesting a quote.",
+        "Microsoft Dynamics: two-way sync for Dynamics shops, which Yonovo does not offer.",
+      ],
+    },
+    choose: {
+      yonovo: [
+        "Your priority is collecting faster: reducing DSO and freeing your team from manual chasing.",
+        "You want multi-channel follow-ups (email, SMS, AI voice, WhatsApp) included, not email-only reminders.",
+        "You want a team to set collections up for you in a shared Slack channel, running in about a day.",
+        "You want pricing by company size, not a per-user meter that climbs as you grow.",
+      ],
+      competitor: [
+        "You want to run accounts payable, accounts receivable, and spend management from a single platform.",
+        "Your AR needs are met by invoicing, auto-pay, and email reminders.",
+        "You want built-in payment processing and corporate cards alongside AR.",
+        "You run Microsoft Dynamics and need native two-way sync.",
+      ],
+    },
+    faqs: [
+      {
+        question: "What is the main difference between Yonovo and Bill.com?",
+        answer:
+          "Bill.com is a broad financial operations suite that combines accounts payable, accounts receivable, and spend management, with AR focused on invoicing, auto-pay, and email reminders. Yonovo is a dedicated AR collections automation platform that follows up on overdue invoices across email, SMS, voice, and WhatsApp. If you want AP, AR, and corporate cards in one tool, Bill.com fits. If collections is your priority, Yonovo is purpose-built for it.",
+      },
+      {
+        question: "How does Bill.com pricing compare to Yonovo?",
+        answer:
+          "Bill.com uses per-user pricing that starts around $49 per user per month for its Essentials plan and $65 per user per month for Team, with AR features included across tiers and per-transaction fees for payments. Yonovo prices by company size rather than per seat, with multi-channel outreach included, so cost does not climb with every user you add.",
+      },
+      {
+        question: "Does Bill.com do collections like Yonovo?",
+        answer:
+          "Bill.com automates invoicing, auto-pay, and payment reminders, primarily over email. Yonovo is collections-first: it sequences follow-ups across email, SMS, voice, and WhatsApp, scores customer risk, escalates to your team when needed, and adapts over time. For teams whose main problem is overdue invoices and slow collections, Yonovo goes deeper on outreach.",
+      },
+      {
+        question: "Which accounting systems do Yonovo and Bill.com integrate with?",
+        answer:
+          "Both connect to the major systems. Bill.com offers two-way sync with QuickBooks, Xero, NetSuite, Sage Intacct, and Microsoft Dynamics. Yonovo integrates with QuickBooks Online, Xero, NetSuite, Sage Intacct, Odoo, FreshBooks, Salesforce, HubSpot, and SAP.",
+      },
+      {
+        question: "Can I use Yonovo and Bill.com together?",
+        answer:
+          "Yes. Some teams run Bill.com for accounts payable and spend while using Yonovo as their dedicated AR collections layer on top of the same accounting system. Because both sit on your ledger, your invoices and payments stay in one source of truth.",
       },
     ],
   },

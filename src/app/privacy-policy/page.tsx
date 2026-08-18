@@ -3,7 +3,7 @@ import NavbarWrapper from "@/components/NavbarWrapper";
 import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
-  title: "Privacy Policy | Yonovo",
+  title: "Privacy Policy",
   description:
     "Yonovo Privacy Policy. Learn how we collect, use, and protect your data.",
 };

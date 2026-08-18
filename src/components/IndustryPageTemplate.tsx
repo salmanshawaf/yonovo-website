@@ -5,6 +5,7 @@ import Button from "@/components/Button";
 import type { IndustryData } from "@/data/industries";
 import FAQAccordion from "@/components/FAQAccordion";
 import TestimonialsSection from "@/components/sections/TestimonialsSection";
+import RelatedResources from "@/components/RelatedResources";
 
 const logos = [
   { name: "Troyes", src: "/logos/troyes.png", width: 130, className: "h-[28px] lg:h-[47px]" },
@@ -268,6 +269,13 @@ export default function IndustryPageTemplate({ data }: { data: IndustryData }) {
           </div>
         </section>
       )}
+
+      {/* ── Related Resources ── */}
+      <RelatedResources items={[
+        { label: "Accounts Receivable Automation Software", href: "/accounts-receivable-automation-software", description: "The category guide: what AR automation does and how ten platforms compare." },
+        { label: "Best AR Automation Software: 15 Platforms Compared", href: "/blog/best-ar-automation-software", description: "The full ranked comparison of the leading AR automation platforms." },
+        { label: "Case Studies", href: "/case-studies", description: "See how real teams automate collections and reduce DSO with Yonovo." },
+      ]} />
 
       {/* ── CTA ── */}
       <section className="w-full bg-gradient-to-b from-background from-60% to-brand-navy to-60%">

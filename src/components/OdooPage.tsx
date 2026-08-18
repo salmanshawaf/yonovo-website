@@ -527,7 +527,9 @@ export default function OdooPage() {
       </section>
 
       {/* ── Related Resources ── */}
-      <RelatedResources items={[
+      <RelatedResources background="background" items={[
+        { label: "Accounts Receivable Automation Software", href: "/accounts-receivable-automation-software", description: "What AR automation software does and how the leading tools stack up." },
+        { label: "Debt Collection Software for B2B Invoices", href: "/debt-collection-software", description: "Software for chasing your own unpaid B2B invoices, in your name." },
         { label: "Case Studies", href: "/case-studies", description: "See how real teams automate AR collections and reduce DSO with Yonovo." },
         { label: "Best AR Automation Software (2026)", href: "/blog/best-ar-automation-software", description: "Side-by-side comparison of 10 AR platforms on features, pricing, and setup time." },
         { label: "Multi-Channel Payment Chasing", href: "/blog/multi-channel-payment-chasing", description: "Why email alone is not enough and how to follow up across SMS, voice, and more." },

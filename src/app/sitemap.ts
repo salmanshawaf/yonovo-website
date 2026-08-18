@@ -21,6 +21,36 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.8,
     },
     {
+      url: `${SITE_URL}/accounts-receivable-automation-software`,
+      lastModified: new Date(),
+      changeFrequency: "weekly",
+      priority: 0.8,
+    },
+    {
+      url: `${SITE_URL}/debt-collection-software`,
+      lastModified: new Date(),
+      changeFrequency: "weekly",
+      priority: 0.8,
+    },
+    {
+      url: `${SITE_URL}/ar-collections-software`,
+      lastModified: new Date(),
+      changeFrequency: "weekly",
+      priority: 0.8,
+    },
+    {
+      url: `${SITE_URL}/dunning-management-software`,
+      lastModified: new Date(),
+      changeFrequency: "weekly",
+      priority: 0.8,
+    },
+    {
+      url: `${SITE_URL}/accounts-receivable-statistics`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.8,
+    },
+    {
       url: `${SITE_URL}/case-studies`,
       lastModified: new Date(),
       changeFrequency: "weekly",
@@ -63,6 +93,18 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.7,
     },
     {
+      url: `${SITE_URL}/solutions/stripe`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.7,
+    },
+    {
+      url: `${SITE_URL}/solutions/bill`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.7,
+    },
+    {
       url: `${SITE_URL}/changelog`,
       lastModified: new Date(),
       changeFrequency: "weekly",
@@ -94,6 +136,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "yonovo-vs-upflow",
     "yonovo-vs-chaser",
     "yonovo-vs-invoiced",
+    "yonovo-vs-bill-com",
   ].map((slug) => ({
     url: `${SITE_URL}/${slug}`,
     lastModified: new Date(),

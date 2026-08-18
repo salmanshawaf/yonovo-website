@@ -529,7 +529,9 @@ export default function StripePage() {
       </section>
 
       {/* ── Related Resources ── */}
-      <RelatedResources items={[
+      <RelatedResources background="background" items={[
+        { label: "Accounts Receivable Automation Software", href: "/accounts-receivable-automation-software", description: "How AR automation works and how ten leading platforms compare." },
+        { label: "Debt Collection Software for B2B Invoices", href: "/debt-collection-software", description: "What B2B debt collection software does and how it differs from an agency." },
         { label: "Case Study: TDG Inc.", href: "/case-studies/tdg-inc", description: "How TDG Inc. reduced manual follow-ups by 80% and cut DSO by 15 days with Yonovo." },
         { label: "Case Study: Troyes Canada", href: "/case-studies/troyes", description: "Troyes went from fully manual to automated collections in a single day, saving 25+ hours per month." },
         { label: "How to Automate AR", href: "/blog", description: "Tips and playbooks for collecting faster without adding headcount." },

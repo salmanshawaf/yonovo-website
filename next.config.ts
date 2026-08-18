@@ -41,6 +41,11 @@ const nextConfig: NextConfig = {
         destination: "/yonovo-vs-chaser",
         permanent: true,
       },
+      {
+        source: "/blog/yonovo-vs-bill-com",
+        destination: "/yonovo-vs-bill-com",
+        permanent: true,
+      },
     ];
   },
 };

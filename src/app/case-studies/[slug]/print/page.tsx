@@ -14,7 +14,7 @@ export async function generateMetadata({ params }: Props) {
   const { slug } = await params;
   const data = caseStudies[slug];
   if (!data) return {};
-  return { title: data.meta.title, robots: { index: false, follow: false } };
+  return { title: { absolute: data.meta.title }, robots: { index: false, follow: false } };
 }
 
 const PRINT_CSS = `

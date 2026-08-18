@@ -128,6 +128,11 @@ export default function DSOCalculatorPage() {
               <Link href="/blog/cash-collections-formula" className="text-brand-blue underline underline-offset-2">cash collections formula</Link> guide, or see{" "}
               <Link href="/blog/how-to-reduce-dso" className="text-brand-blue underline underline-offset-2">7 proven ways to reduce DSO</Link>.
             </p>
+            <p className="text-base text-secondary leading-relaxed">
+              A stubbornly high DSO is usually a follow up problem. See how{" "}
+              <Link href="/ar-collections-software" className="text-brand-blue underline underline-offset-2">accounts receivable collections software</Link> runs the reminder timeline for you, or benchmark your number against the industry data on our{" "}
+              <Link href="/accounts-receivable-statistics" className="text-brand-blue underline underline-offset-2">accounts receivable statistics</Link> page.
+            </p>
           </div>
         </section>
 

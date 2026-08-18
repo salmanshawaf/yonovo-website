@@ -532,7 +532,9 @@ export default function QuickBooksPage() {
       </section>
 
       {/* ── Related Resources ── */}
-      <RelatedResources items={[
+      <RelatedResources background="background" items={[
+        { label: "Accounts Receivable Automation Software", href: "/accounts-receivable-automation-software", description: "How the AR automation category works and how ten platforms compare." },
+        { label: "Debt Collection Software for B2B Invoices", href: "/debt-collection-software", description: "Collecting your own overdue invoices, under your brand, without a collection agency." },
         { label: "Case Study: TDG Inc.", href: "/case-studies/tdg-inc", description: "How TDG Inc. reduced manual follow-ups by 80% and cut DSO by 15 days with Yonovo + QuickBooks." },
         { label: "Case Study: Troyes Canada", href: "/case-studies/troyes", description: "Troyes went from fully manual to automated collections in a single day, saving 25+ hours per month." },
         { label: "Best QuickBooks AR Integrations", href: "/blog/best-quickbooks-ar-integration", description: "A comparison of the top AR automation tools for QuickBooks Online users." },

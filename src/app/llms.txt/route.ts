@@ -45,6 +45,11 @@ export async function GET() {
 
   const productLinks = [
     `- [Yonovo Homepage](${SITE_URL}): Overview of the Yonovo accounts receivable automation platform.`,
+    `- [Accounts Receivable Automation Software](${SITE_URL}/accounts-receivable-automation-software): Category guide comparing Yonovo with nine other AR automation platforms on setup time, channels, integrations, and pricing.`,
+    `- [Debt Collection Software for B2B Invoices](${SITE_URL}/debt-collection-software): Software for businesses collecting their own unpaid B2B invoices under their own brand, contrasted with consumer collections and third party agencies.`,
+    `- [Accounts Receivable Collections Software](${SITE_URL}/ar-collections-software): The full collections workflow, day by day: reminder timing, aging buckets, channel switching, escalation, and reporting.`,
+    `- [Dunning Management Software](${SITE_URL}/dunning-management-software): What dunning is, the four stage dunning sequence, and how automated dunning adapts per customer.`,
+    `- [Accounts Receivable Statistics](${SITE_URL}/accounts-receivable-statistics): Verified AR statistics on late payments, DSO, collections cost, automation adoption, cash flow, and small business impact, each linked to its original source.`,
     `- [Pricing](${SITE_URL}/pricing): Plans and pricing for Yonovo's AR automation platform.`,
     `- [Book a Demo](${SITE_URL}/book-demo): Schedule a live demo with the Yonovo team.`,
     `- [DSO Calculator](${SITE_URL}/tools/dso-calculator): Free tool to calculate your Days Sales Outstanding and benchmark collections performance.`,

@@ -4,7 +4,7 @@ import Footer from "@/components/Footer";
 import BookDemoPage from "@/components/BookDemoPage";
 
 export const metadata: Metadata = {
-  title: "Book a Demo | Yonovo",
+  title: "Book a Demo",
   description:
     "Schedule a discovery call with the Yonovo team. See how AI-powered accounts receivable automation can unlock your owed cash reserves.",
 };

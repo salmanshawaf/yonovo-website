@@ -19,7 +19,10 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const url = `${SITE_URL}/case-studies/${slug}`;
   const ogImage = "/og-default.png";
   return {
-    title: data.meta.title,
+    // `absolute` bypasses the root layout's "%s | Yonovo" template; the case
+    // study title already ends in "| Yonovo Case Study", so without this it
+    // would render doubled.
+    title: { absolute: data.meta.title },
     description: data.meta.description,
     alternates: { canonical: url },
     openGraph: {

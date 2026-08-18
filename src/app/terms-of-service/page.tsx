@@ -3,7 +3,7 @@ import NavbarWrapper from "@/components/NavbarWrapper";
 import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
-  title: "Terms of Service | Yonovo",
+  title: "Terms of Service",
   description:
     "Yonovo Terms of Service. Review the terms and conditions for using our accounts receivable automation platform.",
 };

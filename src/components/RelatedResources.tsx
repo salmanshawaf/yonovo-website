@@ -6,9 +6,16 @@ type ResourceLink = {
   description: string;
 };
 
-export default function RelatedResources({ items }: { items: ResourceLink[] }) {
+export default function RelatedResources({
+  items,
+  background = "surface",
+}: {
+  items: ResourceLink[];
+  /** "surface" (gray, default) or "background" (white) to match the surrounding sections. */
+  background?: "surface" | "background";
+}) {
   return (
-    <section className="w-full bg-surface py-12 md:py-16">
+    <section className={`w-full py-12 md:py-16 ${background === "background" ? "bg-background" : "bg-surface"}`}>
       <div className="mx-auto max-w-(--container-max-width) px-6">
         <h2 className="font-medium text-xl text-foreground tracking-tight mb-6">
           Related resources
@@ -18,7 +25,7 @@ export default function RelatedResources({ items }: { items: ResourceLink[] }) {
             <Link
               key={item.href}
               href={item.href}
-              className="group flex flex-col gap-1.5 rounded-xl border border-border bg-background p-5 transition-shadow hover:shadow-md"
+              className={`group flex flex-col gap-1.5 rounded-xl border border-border p-5 transition-shadow hover:shadow-md ${background === "background" ? "bg-surface" : "bg-background"}`}
             >
               <span className="font-medium text-sm text-foreground group-hover:text-brand-blue transition-colors">
                 {item.label}

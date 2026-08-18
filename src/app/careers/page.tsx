@@ -5,7 +5,7 @@ import Link from "next/link";
 import Button from "@/components/Button";
 
 export const metadata: Metadata = {
-  title: "Careers | Yonovo",
+  title: "Careers",
   description:
     "Join the Yonovo team. See open roles and help us automate accounts receivable for businesses everywhere.",
 };

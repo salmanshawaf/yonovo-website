@@ -22,6 +22,9 @@ function buildRealRoutes() {
   const real = new Set([
     "/", "/pricing", "/book-demo", "/case-studies", "/blog",
     "/changelog", "/careers", "/privacy-policy", "/terms-of-service",
+    "/accounts-receivable-automation-software",
+    "/debt-collection-software", "/ar-collections-software", "/dunning-management-software",
+    "/accounts-receivable-statistics",
   ]);
   // Industries: object keys in src/data/industries.ts
   const ind = fs.readFileSync(path.join(ROOT, "src/data/industries.ts"), "utf8");

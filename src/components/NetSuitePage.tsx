@@ -370,7 +370,9 @@ export default function NetSuitePage() {
       </section>
 
       {/* ── Related Resources ── */}
-      <RelatedResources items={[
+      <RelatedResources background="background" items={[
+        { label: "Accounts Receivable Automation Software", href: "/accounts-receivable-automation-software", description: "Compare ten AR automation platforms on setup time, channels, and pricing." },
+        { label: "Debt Collection Software for B2B Invoices", href: "/debt-collection-software", description: "How to collect seriously overdue B2B invoices without handing accounts to an agency." },
         { label: "Case Studies", href: "/case-studies", description: "See how real teams automate AR collections and reduce DSO with Yonovo." },
         { label: "Best AR Automation Software (2026)", href: "/blog/best-ar-automation-software", description: "Side-by-side comparison of 10 AR platforms on features, pricing, and setup time." },
         { label: "Manual AR Is a Financial Risk", href: "/blog/manual-ar-heavy-industries-financial-risk", description: "Why manual accounts receivable processes create hidden financial exposure." },

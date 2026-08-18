@@ -351,7 +351,9 @@ export default function SagePage() {
       </section>
 
       {/* ── Related Resources ── */}
-      <RelatedResources items={[
+      <RelatedResources background="background" items={[
+        { label: "Accounts Receivable Automation Software", href: "/accounts-receivable-automation-software", description: "The full category guide: ten AR platforms compared side by side." },
+        { label: "Debt Collection Software for B2B Invoices", href: "/debt-collection-software", description: "Collections on overdue B2B invoices that stays under your brand." },
         { label: "Case Studies", href: "/case-studies", description: "See how real teams automate AR collections and reduce DSO with Yonovo." },
         { label: "Best AR Automation Software (2026)", href: "/blog/best-ar-automation-software", description: "Side-by-side comparison of 10 AR platforms on features, pricing, and setup time." },
         { label: "Invoice Reminder Best Practices", href: "/blog/invoice-reminder-best-practices", description: "When to send reminders, what tone to use, and how to escalate without damaging relationships." },
