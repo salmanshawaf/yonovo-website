@@ -2,6 +2,26 @@ import Image from "next/image";
 import Link from "next/link";
 import Button from "@/components/Button";
 import HeroCards from "@/components/sections/HeroCards";
+import RatingBadge from "@/components/RatingBadge";
+import ExploreWithAI from "@/components/ExploreWithAI";
+
+// Copied from https://www.g2.com/products/yonovo/reviews, never estimated.
+// Re-check that profile before changing it: the average moves as reviews land.
+// Verified 2026-08-18: 4.8/5 from 3 reviews.
+const reviewRating: { rating: number } | null = { rating: 4.8 };
+
+function G2Mark() {
+  return (
+    <Image
+      src="/logos/g2.svg"
+      alt=""
+      width={50}
+      height={50}
+      aria-hidden="true"
+      className="h-7 w-7 shrink-0"
+    />
+  );
+}
 
 const logos = [
   { name: "Troyes", src: "/logos/troyes.png", width: 130, className: "h-[24px] lg:h-[47px]" },
@@ -33,15 +53,18 @@ export default function HeroSection() {
           <div className="relative mx-auto grid w-full items-center gap-10 px-0 sm:px-4 lg:grid-cols-2 lg:gap-6">
             {/* Left — Text Content */}
             <div className="flex flex-col items-center gap-5 text-center md:gap-6 lg:items-start lg:text-left">
-              <span className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-3.5 py-1.5 text-[13px] font-medium text-white/70">
-                <span className="h-1.5 w-1.5 rounded-full bg-brand-green" />
-                AI accounts receivable
-              </span>
+              {reviewRating && (
+                <RatingBadge
+                  platform="G2"
+                  rating={reviewRating.rating}
+                  logo={<G2Mark />}
+                />
+              )}
               <h1 className="font-medium text-[34px] text-white leading-[1.15] tracking-tight sm:text-[40px] lg:text-[4.095rem] lg:leading-[1.2] lg:tracking-normal">
                 Automate your<br /><span className="xl:whitespace-nowrap">accounts receivable.</span><br />Get paid&nbsp;faster.
               </h1>
               <p className="max-w-md text-[16px] text-white/70 leading-[1.6] md:text-xl lg:w-[75%] lg:max-w-none">
-                Yonovo helps finance teams collect faster, automate every follow-up, and stay in control of their receivables, without adding headcount.
+                Yonovo helps teams spend less time on their receivables while maintaining strong customer relationships.
               </p>
               <div className="mt-1 md:mt-2">
                 <Link href="/book-demo">
@@ -56,6 +79,12 @@ export default function HeroSection() {
             <div className="w-full">
               <HeroCards />
             </div>
+          </div>
+
+          {/* Ask an AI assistant about Yonovo. Hidden on mobile: the bar wraps
+              to two rows there and pushes the social proof strip down. */}
+          <div className="hidden w-full justify-end md:flex">
+            <ExploreWithAI />
           </div>
 
           {/* Social Proof */}
