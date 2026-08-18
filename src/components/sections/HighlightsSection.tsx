@@ -4,24 +4,18 @@ import SectionBadge from "@/components/SectionBadge";
 const highlights = [
   {
     title: "Built for quick setup",
-    description:
-      "From signup to your first automated follow up in one day, not weeks or months.",
     colSpan: "",
-    image: "/images/highlight-quick-setup.png",
+    image: "/images/highlight-quick-setup-v2.png",
   },
   {
     title: "Designed for simplicity",
-    description:
-      "Your entire collections process on autopilot so your team never has to chase a payment again.",
     colSpan: "",
-    image: "/images/highlight-oversight.png",
+    image: "/images/highlight-simplicity-v2.png",
   },
   {
     title: "Engineered for human oversight",
-    description:
-      "Full control to review every message before it sends or step back and let it all run hands free.",
     colSpan: "md:col-span-2 lg:col-span-1",
-    image: "/images/highlight-human-oversight.png",
+    image: "/images/highlight-human-oversight-v2.png",
   },
 ];
 
@@ -38,8 +32,8 @@ export default function HighlightsSection() {
                 The complete platform for accounts receivable
               </h2>
               <p className="max-w-[600px] text-lg text-muted">
-                Yonovo is designed for finance teams that want to collect faster
-                without adding headcount or damaging customer relationships.
+                Yonovo is designed for finance teams that want to spend less
+                time on accounts receivable and more time on high-value work.
               </p>
             </div>
           </div>
@@ -49,7 +43,7 @@ export default function HighlightsSection() {
             {highlights.map((item) => (
               <div
                 key={item.title}
-                className={`relative flex flex-col overflow-hidden rounded-3xl border border-border bg-background transition-all duration-300 hover:border-secondary/40 ${item.colSpan}`}
+                className={`@container relative flex flex-col overflow-hidden rounded-3xl border border-border bg-background transition-all duration-300 hover:border-secondary/40 ${item.colSpan}`}
               >
                 {/* Image */}
                 <div className="relative aspect-[784/800] w-full overflow-hidden" style={{ backgroundColor: '#f5f4ef' }}>
@@ -58,6 +52,7 @@ export default function HighlightsSection() {
                       src={item.image}
                       alt={item.title}
                       fill
+                      sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw"
                       className="object-contain"
                     />
                   ) : (
@@ -66,11 +61,10 @@ export default function HighlightsSection() {
                     </div>
                   )}
                 </div>
-                <div className="space-y-2 px-6 pb-6">
-                  <h3 className="font-semibold text-xl text-foreground">
+                <div className="px-3 pt-4 pb-8">
+                  <h3 className="text-center font-semibold text-[clamp(1.0625rem,6.4cqw,1.625rem)] text-foreground leading-snug tracking-tight">
                     {item.title}
                   </h3>
-                  <p className="text-base text-muted">{item.description}</p>
                 </div>
               </div>
             ))}
