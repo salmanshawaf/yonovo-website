@@ -486,7 +486,7 @@ export default function DebtCollectionSoftwarePage() {
                   &ldquo;We were spending so much time just chasing invoices that we had no bandwidth left for anything strategic. It was the same routine every single day, and things were still slipping through the cracks.&rdquo;
                 </blockquote>
                 <figcaption className="text-sm text-secondary md:text-base">
-                  Mohammad Alshalabi, Director of Finance, TDG Inc. Within 90 days of switching to Yonovo, the numbers on the left happened.
+                  Mohammad Alshalabi, Director of Finance, TDG Inc. These stats are what the first 90 days on Yonovo looked like.
                 </figcaption>
               </figure>
             </div>

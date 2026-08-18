@@ -42,10 +42,6 @@ const switchRules = [
     title: "Day 30? Change the audience.",
     desc: "Go over your contact's head to someone senior. A decision maker often has no idea the invoice exists.",
   },
-  {
-    title: "Dispute or promise? Stop the sequence.",
-    desc: "The moment there is a dispute or a promise to pay, automation stops and a person takes over. Sequences collect, people resolve.",
-  },
 ];
 
 const stopConditions = [
@@ -240,7 +236,8 @@ export default function ARCollectionsSoftwarePage() {
                 ))}
               </div>
               <p className="max-w-3xl text-base text-secondary leading-normal tracking-tight">
-                The clock is not neutral. Per the Commercial Collection Agency Association, recovery odds sit around 73 percent at three months overdue and fall below 50 percent at six. Every week of delay costs real money, which you can put a number on with our{" "}
+                The clock is not neutral. The probability of collecting a delinquent account falls to 68.9 percent at three months past due and 51.3 percent at six months, per{" "}
+                <a href="https://commercialcollectionagenciesofamerica.com/resources/Documents/CollectabilityOverTime.pdf" target="_blank" rel="noopener noreferrer" className="text-brand-blue underline underline-offset-2">Commercial Collection Agencies of America</a>. Every week of delay costs real money, which you can put a number on with our{" "}
                 <Link href="/tools/dso-calculator" className="text-brand-blue underline underline-offset-2">DSO calculator</Link>.
               </p>
             </div>
@@ -248,9 +245,9 @@ export default function ARCollectionsSoftwarePage() {
             {/* Channel switch rules */}
             <div className="flex flex-col gap-6">
               <h3 className="font-medium text-2xl text-foreground tracking-tight md:text-3xl">
-                When to switch channels, and when to stop
+                When to switch channels
               </h3>
-              <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
+              <div className="grid grid-cols-1 gap-4 md:grid-cols-3">
                 {switchRules.map((rule) => (
                   <div key={rule.title} className="flex flex-col gap-2 rounded-2xl border border-border bg-background p-6 md:p-8">
                     <h4 className="font-medium text-lg text-foreground tracking-tight md:text-xl">{rule.title}</h4>
@@ -283,8 +280,11 @@ export default function ARCollectionsSoftwarePage() {
               <div className="flex flex-col gap-4">
                 <SectionBadge label="How Yonovo runs it" />
                 <h2 className="text-balance font-medium text-4xl text-foreground leading-tight tracking-tight md:text-[54px]">
-                  The timeline above, applied to every invoice
+                  How Yonovo runs the workflow
                 </h2>
+                <h3 className="font-medium text-2xl text-foreground tracking-tight md:text-3xl">
+                  The timeline above, applied to every invoice
+                </h3>
                 <p className="text-base text-secondary leading-normal tracking-tight md:text-lg">
                   You set the rules once: timing, tone, channels, and which accounts need approval before anything sends. Yonovo applies them to every invoice, every day, across email, SMS, phone, and WhatsApp. Key accounts can run a softer cadence than smaller ones. Nothing depends on who remembered to follow up.
                 </p>
@@ -306,7 +306,6 @@ export default function ARCollectionsSoftwarePage() {
 
             <div className="grid grid-cols-1 items-center gap-8 md:grid-cols-2 md:gap-16">
               <div className="order-1 flex flex-col gap-3 rounded-2xl border border-border bg-surface p-6 md:order-none md:p-8">
-                <span className="font-medium text-sm text-muted uppercase tracking-wide">The sequence stops when</span>
                 {stopConditions.map((c) => (
                   <div key={c} className="flex items-start gap-3 border-t border-border pt-3 first-of-type:border-t-0 first-of-type:pt-0">
                     <svg className="mt-0.5 h-5 w-5 shrink-0 text-brand-green" viewBox="0 0 20 20" fill="currentColor">
@@ -336,7 +335,7 @@ export default function ARCollectionsSoftwarePage() {
             <div className="flex max-w-3xl flex-col gap-4">
               <SectionBadge label="Reporting" />
               <h2 className="text-balance font-medium text-4xl text-foreground leading-tight tracking-tight md:text-[54px]">
-                You see what was sent and what came back
+                Reporting and visibility
               </h2>
               <p className="text-base text-secondary leading-normal tracking-tight md:text-xl">
                 Outstanding receivables, aging, DSO, recovery rate, at risk invoices, and customer payment behavior, all in one place. Plus a daily briefing in your inbox summarizing what went out and what was recovered.
@@ -382,8 +381,11 @@ export default function ARCollectionsSoftwarePage() {
             <div className="flex max-w-3xl flex-col gap-4">
               <SectionBadge label="Proof" />
               <h2 className="text-balance font-medium text-4xl text-foreground leading-tight tracking-tight md:text-[54px]">
-                Troyes had no collections process. Then it had one by dinner.
+                What changed for Troyes
               </h2>
+              <p className="text-balance text-base text-secondary leading-normal tracking-tight md:text-xl">
+                Troyes had no collections process at all. By the end of its first day on Yonovo, it had one.
+              </p>
             </div>
 
             <div className="grid grid-cols-1 gap-4 sm:grid-cols-3">
