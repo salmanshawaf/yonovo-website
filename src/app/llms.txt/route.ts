@@ -38,6 +38,18 @@ const INTEGRATIONS: { slug: string; name: string; description: string }[] = [
     description:
       "Connect Sage to reduce DSO with automated, relationship-safe collections workflows.",
   },
+  {
+    slug: "stripe",
+    name: "Stripe Billing Integration",
+    description:
+      "Automate accounts receivable for Stripe Billing with AI-powered follow-ups via email, SMS, and voice.",
+  },
+  {
+    slug: "bill",
+    name: "BILL (Bill.com) Integration",
+    description:
+      "Automate accounts receivable for BILL, formerly Bill.com, with AI-powered follow-ups via email, SMS, and voice, plus pay-now links.",
+  },
 ];
 
 export async function GET() {
