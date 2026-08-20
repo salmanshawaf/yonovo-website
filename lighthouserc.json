@@ -7,18 +7,35 @@
         "http://localhost:3000/solutions/quickbooks",
         "http://localhost:3000/blog/what-is-ar-automation"
       ],
-      "numberOfRuns": 1,
+      "numberOfRuns": 3,
       "settings": {
         "formFactor": "mobile",
         "throttlingMethod": "simulate",
-        "onlyCategories": ["performance"]
+        "onlyCategories": [
+          "performance"
+        ]
       }
     },
     "assert": {
       "assertions": {
-        "categories:performance": ["error", { "minScore": 0.75 }],
-        "largest-contentful-paint": ["error", { "maxNumericValue": 5500 }],
-        "total-blocking-time": ["warn", { "maxNumericValue": 300 }]
+        "categories:performance": [
+          "error",
+          {
+            "minScore": 0.75
+          }
+        ],
+        "largest-contentful-paint": [
+          "error",
+          {
+            "maxNumericValue": 5500
+          }
+        ],
+        "total-blocking-time": [
+          "warn",
+          {
+            "maxNumericValue": 300
+          }
+        ]
       }
     },
     "upload": {
