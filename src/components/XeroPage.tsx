@@ -174,6 +174,7 @@ export default function XeroPage() {
             <div className="flex flex-col gap-6 md:grid md:grid-cols-[2fr_3fr] md:gap-8">
               {/* Left — Video (square) */}
               <VideoPlayer
+                priority
                 src="/videos/quickbooks-sync.mp4"
                 poster="/videos/quickbooks-sync-poster.jpg"
                 className="aspect-square w-full overflow-hidden rounded-2xl bg-zinc-900 border border-white/10"
