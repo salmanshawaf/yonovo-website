@@ -1,0 +1,200 @@
+[
+  {
+    "path": "/",
+    "runs": 3,
+    "medians": {
+      "performance": 93,
+      "fcp": 1206.6782,
+      "lcp": 3152.570125,
+      "tbt": 18,
+      "cls": 0,
+      "si": 1206.6782,
+      "tti": 5286.909189999998
+    },
+    "lcpElement": "Automate your\naccounts receivable.\nGet paid faster. — div.relative > div.relative > div.flex > h1.font-medium",
+    "lcpPhases": "TTFB 453ms | Load Delay 0ms | Load Time 0ms | Render Delay 2699ms",
+    "renderBlocking": [
+      "http://localhost:3000/_next/static/chunks/58553af87ad12552.css (17 KiB, 453ms)",
+      "http://localhost:3000/_next/static/chunks/d41ba60faff93bff.css (1 KiB, 153ms)"
+    ],
+    "opportunities": [
+      "Reduce unused JavaScript: 360ms, 99 KiB",
+      "Serve images in next-gen formats: 150ms, 47 KiB",
+      "Avoid serving legacy JavaScript to modern browsers: 150ms, 13 KiB"
+    ],
+    "jsBytes": 387246,
+    "thirdParty": [
+      "www.googletagmanager.com (187 KiB)",
+      "i.ytimg.com (44 KiB)",
+      "ddwl4m2hdecbv.cloudfront.net (10 KiB)",
+      "analytics.ahrefs.com (3 KiB)",
+      "r2.leadsy.ai (1 KiB)",
+      "stats.g.doubleclick.net (1 KiB)",
+      "analytics.google.com (1 KiB)",
+      "www.google.ca (0 KiB)",
+      " (0 KiB)"
+    ]
+  },
+  {
+    "path": "/book-demo",
+    "runs": 3,
+    "medians": {
+      "performance": 97,
+      "fcp": 1055.5901,
+      "lcp": 2619.435,
+      "tbt": 20.5,
+      "cls": 0.001797848971960649,
+      "si": 1793.0715419609066,
+      "tti": 5821.750500000002
+    },
+    "lcpElement": "Book a discovery call with our team. We will walk you through how Yonovo automa… — div.mx-auto > div.grid > div.flex > p.text-base",
+    "lcpPhases": "TTFB 453ms | Load Delay 0ms | Load Time 0ms | Render Delay 2167ms",
+    "renderBlocking": [
+      "http://localhost:3000/_next/static/chunks/58553af87ad12552.css (17 KiB, 453ms)",
+      "http://localhost:3000/_next/static/chunks/d41ba60faff93bff.css (1 KiB, 153ms)"
+    ],
+    "opportunities": [
+      "Reduce unused JavaScript: 300ms, 97 KiB",
+      "Avoid serving legacy JavaScript to modern browsers: 150ms, 13 KiB"
+    ],
+    "jsBytes": 1775633,
+    "thirdParty": [
+      "app.cal.com (1806 KiB)",
+      "www.googletagmanager.com (187 KiB)",
+      "ddwl4m2hdecbv.cloudfront.net (10 KiB)",
+      "cal.com (5 KiB)",
+      "analytics.ahrefs.com (3 KiB)",
+      "r2.leadsy.ai (1 KiB)",
+      "stats.g.doubleclick.net (1 KiB)",
+      "analytics.google.com (1 KiB)",
+      "www.google.ca (0 KiB)"
+    ]
+  },
+  {
+    "path": "/solutions/sage",
+    "runs": 3,
+    "medians": {
+      "performance": 95,
+      "fcp": 1205.2718,
+      "lcp": 2915.5609,
+      "tbt": 17.5,
+      "cls": 0,
+      "si": 1205.2718,
+      "tti": 4931.024590000001
+    },
+    "lcpElement": "div.flex > div.flex > div.group > video.absolute — div.flex > div.flex > div.group > video.absolute",
+    "lcpPhases": "TTFB 453ms | Load Delay 1087ms | Load Time 68ms | Render Delay 1308ms",
+    "renderBlocking": [
+      "http://localhost:3000/_next/static/chunks/58553af87ad12552.css (17 KiB, 453ms)",
+      "http://localhost:3000/_next/static/chunks/d41ba60faff93bff.css (1 KiB, 153ms)"
+    ],
+    "opportunities": [
+      "Reduce unused JavaScript: 210ms, 98 KiB"
+    ],
+    "jsBytes": 394305,
+    "thirdParty": [
+      "www.googletagmanager.com (187 KiB)",
+      "ddwl4m2hdecbv.cloudfront.net (10 KiB)",
+      "analytics.ahrefs.com (3 KiB)",
+      "r2.leadsy.ai (1 KiB)",
+      "stats.g.doubleclick.net (1 KiB)",
+      "analytics.google.com (1 KiB)",
+      "www.google.ca (0 KiB)"
+    ]
+  },
+  {
+    "path": "/solutions/quickbooks",
+    "runs": 3,
+    "medians": {
+      "performance": 95,
+      "fcp": 1206.0394000000001,
+      "lcp": 2918.9796,
+      "tbt": 16.999999999999545,
+      "cls": 0,
+      "si": 1206.0394000000001,
+      "tti": 4954.158709999999
+    },
+    "lcpElement": "div.flex > div.flex > div.group > video.absolute — div.flex > div.flex > div.group > video.absolute",
+    "lcpPhases": "TTFB 454ms | Load Delay 1160ms | Load Time 303ms | Render Delay 1002ms",
+    "renderBlocking": [
+      "http://localhost:3000/_next/static/chunks/58553af87ad12552.css (17 KiB, 454ms)",
+      "http://localhost:3000/_next/static/chunks/d41ba60faff93bff.css (1 KiB, 154ms)"
+    ],
+    "opportunities": [
+      "Reduce unused JavaScript: 210ms, 98 KiB"
+    ],
+    "jsBytes": 394303,
+    "thirdParty": [
+      "www.googletagmanager.com (187 KiB)",
+      "ddwl4m2hdecbv.cloudfront.net (10 KiB)",
+      "analytics.ahrefs.com (3 KiB)",
+      "r2.leadsy.ai (1 KiB)",
+      "stats.g.doubleclick.net (1 KiB)",
+      "analytics.google.com (1 KiB)",
+      "www.google.ca (0 KiB)"
+    ]
+  },
+  {
+    "path": "/pricing",
+    "runs": 3,
+    "medians": {
+      "performance": 95,
+      "fcp": 1205.092,
+      "lcp": 2840.1925,
+      "tbt": 15.5,
+      "cls": 0,
+      "si": 1205.092,
+      "tti": 4756.722475
+    },
+    "lcpElement": "Pricing adapted to your needs. — section.w-full > div.mx-auto > div.flex > h1.max-w-[850px]",
+    "lcpPhases": "TTFB 453ms | Load Delay 0ms | Load Time 0ms | Render Delay 2387ms",
+    "renderBlocking": [
+      "http://localhost:3000/_next/static/chunks/58553af87ad12552.css (17 KiB, 453ms)",
+      "http://localhost:3000/_next/static/chunks/d41ba60faff93bff.css (1 KiB, 153ms)"
+    ],
+    "opportunities": [
+      "Reduce unused JavaScript: 300ms, 99 KiB",
+      "Avoid serving legacy JavaScript to modern browsers: 150ms, 13 KiB"
+    ],
+    "jsBytes": 387242,
+    "thirdParty": [
+      "www.googletagmanager.com (187 KiB)",
+      "ddwl4m2hdecbv.cloudfront.net (10 KiB)",
+      "analytics.ahrefs.com (3 KiB)",
+      "r2.leadsy.ai (1 KiB)",
+      "analytics.google.com (1 KiB)",
+      "stats.g.doubleclick.net (1 KiB)",
+      "www.google.ca (0 KiB)"
+    ]
+  },
+  {
+    "path": "/blog/best-ar-automation-software",
+    "runs": 3,
+    "medians": {
+      "performance": 98,
+      "fcp": 1204.7748,
+      "lcp": 2329.7748,
+      "tbt": 18.000000000000455,
+      "cls": 0,
+      "si": 1204.7748,
+      "tti": 5294.701400000001
+    },
+    "lcpElement": "Two laptops facing each other with gear and lightning bolt between them illustr… — main.min-h-screen > div.mx-auto > div.relative > img.object-cover",
+    "lcpPhases": "TTFB 452ms | Load Delay 798ms | Load Time 71ms | Render Delay 1008ms",
+    "renderBlocking": [
+      "http://localhost:3000/_next/static/chunks/58553af87ad12552.css (17 KiB, 452ms)",
+      "http://localhost:3000/_next/static/chunks/d41ba60faff93bff.css (1 KiB, 152ms)"
+    ],
+    "opportunities": [],
+    "jsBytes": 408257,
+    "thirdParty": [
+      "www.googletagmanager.com (187 KiB)",
+      "ddwl4m2hdecbv.cloudfront.net (10 KiB)",
+      "analytics.ahrefs.com (3 KiB)",
+      "r2.leadsy.ai (1 KiB)",
+      "stats.g.doubleclick.net (1 KiB)",
+      "analytics.google.com (1 KiB)",
+      "www.google.ca (0 KiB)"
+    ]
+  }
+]

@@ -1,0 +1,185 @@
+[
+  {
+    "path": "/",
+    "runs": 3,
+    "medians": {
+      "performance": 95,
+      "fcp": 1233.686,
+      "lcp": 2920.1399999999994,
+      "tbt": 14,
+      "cls": 0,
+      "si": 1233.686,
+      "tti": 4657.178100000001
+    },
+    "lcpElement": "Automate your\naccounts receivable.\nGet paid faster. — div.relative > div.relative > div.flex > h1.font-medium",
+    "lcpPhases": "TTFB 614ms | Load Delay 0ms | Load Time 0ms | Render Delay 2306ms",
+    "renderBlocking": [
+      "https://www.yonovo.com/_next/static/chunks/58553af87ad12552.css?dpl=dpl_B7DKWZE1Nsb4ktFdHH8bDaQsafqS (17 KiB, 307ms)"
+    ],
+    "opportunities": [
+      "Reduce unused JavaScript: 150ms, 99 KiB",
+      "Serve images in next-gen formats: 150ms, 47 KiB"
+    ],
+    "jsBytes": 395788,
+    "thirdParty": [
+      "www.googletagmanager.com (187 KiB)",
+      "i.ytimg.com (44 KiB)",
+      "ddwl4m2hdecbv.cloudfront.net (10 KiB)",
+      "analytics.ahrefs.com (3 KiB)",
+      "r2.leadsy.ai (1 KiB)",
+      "stats.g.doubleclick.net (1 KiB)",
+      "analytics.google.com (1 KiB)",
+      "www.google.ca (0 KiB)",
+      " (0 KiB)"
+    ]
+  },
+  {
+    "path": "/book-demo",
+    "runs": 3,
+    "medians": {
+      "performance": 100,
+      "fcp": 916.5875,
+      "lcp": 1217.8250000000003,
+      "tbt": 11.5,
+      "cls": 0.001797848971960649,
+      "si": 1704.227844099522,
+      "tti": 4699.504500000001
+    },
+    "lcpElement": "Book a discovery call with our team. We will walk you through how Yonovo automa… — div.mx-auto > div.grid > div.flex > p.text-base",
+    "lcpPhases": "TTFB 616ms | Load Delay 0ms | Load Time 0ms | Render Delay 602ms",
+    "renderBlocking": [
+      "https://www.yonovo.com/_next/static/chunks/58553af87ad12552.css?dpl=dpl_B7DKWZE1Nsb4ktFdHH8bDaQsafqS (17 KiB, 150ms)"
+    ],
+    "opportunities": [],
+    "jsBytes": 1784438,
+    "thirdParty": [
+      "app.cal.com (1806 KiB)",
+      "www.googletagmanager.com (187 KiB)",
+      "ddwl4m2hdecbv.cloudfront.net (10 KiB)",
+      "cal.com (5 KiB)",
+      "analytics.ahrefs.com (3 KiB)",
+      "r2.leadsy.ai (1 KiB)",
+      "stats.g.doubleclick.net (1 KiB)",
+      "analytics.google.com (1 KiB)",
+      "pro.ip-api.com (0 KiB)",
+      "www.google.ca (0 KiB)"
+    ]
+  },
+  {
+    "path": "/solutions/sage",
+    "runs": 3,
+    "medians": {
+      "performance": 99,
+      "fcp": 948.68,
+      "lcp": 2135.384,
+      "tbt": 19,
+      "cls": 0,
+      "si": 948.68,
+      "tti": 4029.3255
+    },
+    "lcpElement": "div.flex > div.flex > div.group > video.absolute — div.flex > div.flex > div.group > video.absolute",
+    "lcpPhases": "TTFB 615ms | Load Delay 579ms | Load Time 458ms | Render Delay 484ms",
+    "renderBlocking": [],
+    "opportunities": [
+      "Reduce unused JavaScript: 150ms, 97 KiB"
+    ],
+    "jsBytes": 402973,
+    "thirdParty": [
+      "www.googletagmanager.com (187 KiB)",
+      "ddwl4m2hdecbv.cloudfront.net (10 KiB)",
+      "analytics.ahrefs.com (3 KiB)",
+      "r2.leadsy.ai (1 KiB)",
+      "stats.g.doubleclick.net (1 KiB)",
+      "analytics.google.com (1 KiB)",
+      "www.google.ca (0 KiB)"
+    ]
+  },
+  {
+    "path": "/solutions/quickbooks",
+    "runs": 3,
+    "medians": {
+      "performance": 96,
+      "fcp": 948.3735,
+      "lcp": 2715.3735,
+      "tbt": 17.5,
+      "cls": 0,
+      "si": 948.3735,
+      "tti": 4359.5777
+    },
+    "lcpElement": "div.flex > div.flex > div.group > video.absolute — div.flex > div.flex > div.group > video.absolute",
+    "lcpPhases": "TTFB 615ms | Load Delay 0ms | Load Time 0ms | Render Delay 2100ms",
+    "renderBlocking": [],
+    "opportunities": [
+      "Reduce unused JavaScript: 150ms, 96 KiB"
+    ],
+    "jsBytes": 402956,
+    "thirdParty": [
+      "www.googletagmanager.com (187 KiB)",
+      "ddwl4m2hdecbv.cloudfront.net (10 KiB)",
+      "analytics.ahrefs.com (3 KiB)",
+      "r2.leadsy.ai (1 KiB)",
+      "stats.g.doubleclick.net (1 KiB)",
+      "analytics.google.com (1 KiB)",
+      "www.google.ca (0 KiB)"
+    ]
+  },
+  {
+    "path": "/pricing",
+    "runs": 3,
+    "medians": {
+      "performance": 99,
+      "fcp": 950.287,
+      "lcp": 1971.857,
+      "tbt": 24.999999999999773,
+      "cls": 0,
+      "si": 950.287,
+      "tti": 4085.6284
+    },
+    "lcpElement": "Pricing adapted to your needs. — section.w-full > div.mx-auto > div.flex > h1.max-w-[850px]",
+    "lcpPhases": "TTFB 613ms | Load Delay 0ms | Load Time 0ms | Render Delay 1359ms",
+    "renderBlocking": [],
+    "opportunities": [],
+    "jsBytes": 395709,
+    "thirdParty": [
+      "www.googletagmanager.com (187 KiB)",
+      "ddwl4m2hdecbv.cloudfront.net (10 KiB)",
+      "analytics.ahrefs.com (3 KiB)",
+      "r2.leadsy.ai (1 KiB)",
+      "stats.g.doubleclick.net (1 KiB)",
+      "analytics.google.com (1 KiB)",
+      "www.google.ca (0 KiB)"
+    ]
+  },
+  {
+    "path": "/blog/best-ar-automation-software",
+    "runs": 3,
+    "medians": {
+      "performance": 99,
+      "fcp": 1071.471,
+      "lcp": 2141.631,
+      "tbt": 23,
+      "cls": 0,
+      "si": 1071.471,
+      "tti": 4405.318799999999
+    },
+    "lcpElement": "Two laptops facing each other with gear and lightning bolt between them illustr… — main.min-h-screen > div.mx-auto > div.relative > img.object-cover",
+    "lcpPhases": "TTFB 613ms | Load Delay 690ms | Load Time 352ms | Render Delay 486ms",
+    "renderBlocking": [
+      "https://www.yonovo.com/_next/static/chunks/58553af87ad12552.css?dpl=dpl_B7DKWZE1Nsb4ktFdHH8bDaQsafqS (17 KiB, 150ms)"
+    ],
+    "opportunities": [
+      "Reduce unused JavaScript: 150ms, 98 KiB",
+      "Avoid serving legacy JavaScript to modern browsers: 90ms, 14 KiB"
+    ],
+    "jsBytes": 417163,
+    "thirdParty": [
+      "www.googletagmanager.com (187 KiB)",
+      "ddwl4m2hdecbv.cloudfront.net (10 KiB)",
+      "analytics.ahrefs.com (3 KiB)",
+      "r2.leadsy.ai (1 KiB)",
+      "analytics.google.com (1 KiB)",
+      "stats.g.doubleclick.net (1 KiB)",
+      "www.google.ca (0 KiB)"
+    ]
+  }
+]
