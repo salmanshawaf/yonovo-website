@@ -172,7 +172,7 @@ function FeatureCard({
             {renderContent ? (
               renderContent()
             ) : image ? (
-              <Image src={image} alt={title} fill className={`object-contain ${imageClassName || ''}`} />
+              <Image src={image} alt={title} fill sizes="(min-width: 768px) 50vw, 100vw" className={`object-contain ${imageClassName || ''}`} />
             ) : (
               <div className="flex h-full w-full items-center justify-center bg-surface">
                 <span className="text-muted text-sm">{title}</span>

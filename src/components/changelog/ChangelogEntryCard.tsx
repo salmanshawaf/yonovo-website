@@ -24,6 +24,7 @@ export default function ChangelogEntryCard({
             alt={entry.frontmatter.heroImageAlt}
             fill
             className="object-cover transition-transform duration-300 group-hover:scale-[1.02]"
+            sizes="(min-width: 896px) 848px, 100vw"
           />
         </div>
       </Link>

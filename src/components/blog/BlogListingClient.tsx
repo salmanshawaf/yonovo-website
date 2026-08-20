@@ -167,6 +167,7 @@ function ListingCard({ post }: { post: BlogPostMeta }) {
               alt={post.heroAlt}
               fill
               className="object-cover transition-all duration-200 ease-in-out"
+              sizes="(min-width: 1024px) 320px, (min-width: 768px) 45vw, 100vw"
             />
           </div>
         </div>

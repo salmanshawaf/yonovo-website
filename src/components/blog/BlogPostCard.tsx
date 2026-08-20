@@ -25,6 +25,7 @@ export default function BlogPostCard({
               fill
               className="object-cover transition-transform duration-300 group-hover:scale-[1.02]"
               priority
+              sizes="(min-width: 768px) 50vw, 100vw"
             />
           </div>
           <div className="p-6 md:p-8">
@@ -70,6 +71,7 @@ export default function BlogPostCard({
             alt={post.heroAlt}
             fill
             className="object-cover transition-transform duration-300 group-hover:scale-[1.02]"
+            sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
           />
         </div>
         <div className="flex flex-1 flex-col p-5">
