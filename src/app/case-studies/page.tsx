@@ -98,6 +98,7 @@ export default function CaseStudiesPage() {
                         alt={post.frontmatter.heroImageAlt || post.frontmatter.title}
                         fill
                         className="object-cover"
+                        sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
                       />
                     ) : (
                       <div className="flex h-full w-full items-center justify-center p-5">

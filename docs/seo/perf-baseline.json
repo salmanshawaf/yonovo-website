@@ -1,0 +1,184 @@
+[
+  {
+    "path": "/",
+    "runs": 3,
+    "medians": {
+      "performance": 93,
+      "fcp": 1225.537,
+      "lcp": 3201.0820000000003,
+      "tbt": 14,
+      "cls": 0,
+      "si": 1225.537,
+      "tti": 5468.3286499999995
+    },
+    "lcpElement": "Automate your\naccounts receivable.\nGet paid faster. — div.relative > div.relative > div.flex > h1.font-medium",
+    "lcpPhases": "TTFB 614ms | Load Delay 0ms | Load Time 0ms | Render Delay 2587ms",
+    "renderBlocking": [
+      "https://www.yonovo.com/_next/static/chunks/58553af87ad12552.css?dpl=dpl_42ZiSLT4T8uYDDxnTMcaFj4de3F7 (17 KiB, 304ms)"
+    ],
+    "opportunities": [],
+    "jsBytes": 395958,
+    "thirdParty": [
+      "www.googletagmanager.com (187 KiB)",
+      "i.ytimg.com (44 KiB)",
+      "ddwl4m2hdecbv.cloudfront.net (10 KiB)",
+      "analytics.ahrefs.com (3 KiB)",
+      "r2.leadsy.ai (1 KiB)",
+      "stats.g.doubleclick.net (1 KiB)",
+      "analytics.google.com (1 KiB)",
+      "www.google.ca (0 KiB)",
+      " (0 KiB)"
+    ]
+  },
+  {
+    "path": "/book-demo",
+    "runs": 3,
+    "medians": {
+      "performance": 100,
+      "fcp": 919.566,
+      "lcp": 1517.8490000000002,
+      "tbt": 18,
+      "cls": 0.001797848971960649,
+      "si": 1930.2456359910007,
+      "tti": 5055.147000000001
+    },
+    "lcpElement": "Book a discovery call with our team. We will walk you through how Yonovo automa… — div.mx-auto > div.grid > div.flex > p.text-base",
+    "lcpPhases": "TTFB 618ms | Load Delay 0ms | Load Time 0ms | Render Delay 900ms",
+    "renderBlocking": [
+      "https://www.yonovo.com/_next/static/chunks/58553af87ad12552.css?dpl=dpl_42ZiSLT4T8uYDDxnTMcaFj4de3F7 (17 KiB, 150ms)"
+    ],
+    "opportunities": [],
+    "jsBytes": 1784340,
+    "thirdParty": [
+      "app.cal.com (1806 KiB)",
+      "www.googletagmanager.com (187 KiB)",
+      "ddwl4m2hdecbv.cloudfront.net (10 KiB)",
+      "cal.com (5 KiB)",
+      "analytics.ahrefs.com (3 KiB)",
+      "r2.leadsy.ai (1 KiB)",
+      "stats.g.doubleclick.net (1 KiB)",
+      "analytics.google.com (1 KiB)",
+      "www.google.ca (0 KiB)",
+      "pro.ip-api.com (0 KiB)"
+    ]
+  },
+  {
+    "path": "/solutions/sage",
+    "runs": 3,
+    "medians": {
+      "performance": 83,
+      "fcp": 955.6795000000002,
+      "lcp": 4674.3295,
+      "tbt": 15.5,
+      "cls": 0.00006321231481389772,
+      "si": 955.6795000000002,
+      "tti": 6554.399500000001
+    },
+    "lcpElement": "div.flex > div.flex > div.group > video.absolute — div.flex > div.flex > div.group > video.absolute",
+    "lcpPhases": "TTFB 615ms | Load Delay 1366ms | Load Time 1756ms | Render Delay 937ms",
+    "renderBlocking": [],
+    "opportunities": [
+      "Reduce unused JavaScript: 150ms, 98 KiB",
+      "Serve images in next-gen formats: 150ms, 574 KiB",
+      "Avoid serving legacy JavaScript to modern browsers: 150ms, 14 KiB"
+    ],
+    "jsBytes": 403027,
+    "thirdParty": [
+      "www.googletagmanager.com (187 KiB)",
+      "ddwl4m2hdecbv.cloudfront.net (10 KiB)",
+      "analytics.ahrefs.com (3 KiB)",
+      "r2.leadsy.ai (1 KiB)",
+      "stats.g.doubleclick.net (1 KiB)",
+      "analytics.google.com (1 KiB)",
+      "www.google.ca (0 KiB)"
+    ]
+  },
+  {
+    "path": "/solutions/quickbooks",
+    "runs": 3,
+    "medians": {
+      "performance": 86,
+      "fcp": 953.942,
+      "lcp": 4216.3369999999995,
+      "tbt": 11.5,
+      "cls": 0,
+      "si": 953.942,
+      "tti": 6709.380049999999
+    },
+    "lcpElement": "div.flex > div.flex > div.group > video.absolute — div.flex > div.flex > div.group > video.absolute",
+    "lcpPhases": "TTFB 616ms | Load Delay 1376ms | Load Time 790ms | Render Delay 1434ms",
+    "renderBlocking": [],
+    "opportunities": [],
+    "jsBytes": 403186,
+    "thirdParty": [
+      "www.googletagmanager.com (187 KiB)",
+      "ddwl4m2hdecbv.cloudfront.net (10 KiB)",
+      "analytics.ahrefs.com (3 KiB)",
+      "r2.leadsy.ai (1 KiB)",
+      "stats.g.doubleclick.net (1 KiB)",
+      "analytics.google.com (1 KiB)",
+      "www.google.ca (0 KiB)"
+    ]
+  },
+  {
+    "path": "/pricing",
+    "runs": 3,
+    "medians": {
+      "performance": 99,
+      "fcp": 949.6755,
+      "lcp": 2042.862,
+      "tbt": 12.5,
+      "cls": 0,
+      "si": 949.6755,
+      "tti": 4392.516500000001
+    },
+    "lcpElement": "Pricing adapted to your needs. — section.w-full > div.mx-auto > div.flex > h1.max-w-[850px]",
+    "lcpPhases": "TTFB 618ms | Load Delay 0ms | Load Time 0ms | Render Delay 1425ms",
+    "renderBlocking": [],
+    "opportunities": [
+      "Reduce unused JavaScript: 150ms, 97 KiB",
+      "Avoid serving legacy JavaScript to modern browsers: 100ms, 14 KiB"
+    ],
+    "jsBytes": 395789,
+    "thirdParty": [
+      "www.googletagmanager.com (187 KiB)",
+      "ddwl4m2hdecbv.cloudfront.net (10 KiB)",
+      "analytics.ahrefs.com (3 KiB)",
+      "r2.leadsy.ai (1 KiB)",
+      "analytics.google.com (1 KiB)",
+      "stats.g.doubleclick.net (1 KiB)",
+      "www.google.ca (0 KiB)"
+    ]
+  },
+  {
+    "path": "/blog/best-ar-automation-software",
+    "runs": 3,
+    "medians": {
+      "performance": 99,
+      "fcp": 1065.2495,
+      "lcp": 2267.661,
+      "tbt": 16,
+      "cls": 0,
+      "si": 1065.2495,
+      "tti": 4504.177600000001
+    },
+    "lcpElement": "Two laptops facing each other with gear and lightning bolt between them illustr… — main.min-h-screen > div.mx-auto > div.relative > img.object-cover",
+    "lcpPhases": "TTFB 614ms | Load Delay 612ms | Load Time 426ms | Render Delay 616ms",
+    "renderBlocking": [
+      "https://www.yonovo.com/_next/static/chunks/58553af87ad12552.css?dpl=dpl_42ZiSLT4T8uYDDxnTMcaFj4de3F7 (17 KiB, 150ms)"
+    ],
+    "opportunities": [
+      "Reduce unused JavaScript: 150ms, 99 KiB"
+    ],
+    "jsBytes": 417153,
+    "thirdParty": [
+      "www.googletagmanager.com (187 KiB)",
+      "ddwl4m2hdecbv.cloudfront.net (10 KiB)",
+      "analytics.ahrefs.com (3 KiB)",
+      "r2.leadsy.ai (1 KiB)",
+      "stats.g.doubleclick.net (1 KiB)",
+      "analytics.google.com (1 KiB)",
+      "www.google.ca (0 KiB)"
+    ]
+  }
+]

@@ -1,4 +1,10 @@
 import Image from "next/image";
+import imgStripeStep1Portal from "../../public/images/stripe-step-1-portal.png";
+import imgHighlightOversight from "../../public/images/highlight-oversight.png";
+import imgQbStep2Stats from "../../public/images/qb-step-2-stats.png";
+import imgQbStep3Followup from "../../public/images/qb-step-3-followup.png";
+import imgQbStep4Learns from "../../public/images/qb-step-4-learns.png";
+import imgQbStep5Dashboard from "../../public/images/qb-step-5-dashboard.png";
 import Link from "next/link";
 import SectionBadge from "@/components/SectionBadge";
 import Button from "@/components/Button";
@@ -47,28 +53,28 @@ const timelineSteps = [
   {
     number: 1,
     text: "Bill your customers as usual from Stripe Billing.",
-    image: "/images/stripe-step-1-portal.png",
+    image: imgStripeStep1Portal,
   },
   {
     number: 2,
     text: "Yonovo connects in a few clicks and syncs your customers, invoices, and payments in real time.",
-    image: "/images/highlight-oversight.png",
-    overlay: "/images/qb-step-2-stats.png",
+    image: imgHighlightOversight,
+    overlay: imgQbStep2Stats,
   },
   {
     number: 3,
     text: "When an invoice goes overdue, Yonovo follows up by email, SMS, and AI-powered phone calls on your behalf.",
-    image: "/images/qb-step-3-followup.png",
+    image: imgQbStep3Followup,
   },
   {
     number: 4,
     text: "The AI adapts its approach over time, learning what works for each customer and escalating to your team when a human is needed.",
-    image: "/images/qb-step-4-learns.png",
+    image: imgQbStep4Learns,
   },
   {
     number: 5,
     text: "Monitor recovery rates, DSO, and at-risk invoices from your dashboard so you always know where your receivables stand.",
-    image: "/images/qb-step-5-dashboard.png",
+    image: imgQbStep5Dashboard,
   },
 ];
 
@@ -377,9 +383,9 @@ export default function StripePage() {
                 const imageBlock = step.image ? (
                   <div className={`relative aspect-[4/3] w-full overflow-hidden rounded-2xl bg-gradient-to-b from-zinc-100 to-zinc-50 border border-border flex flex-col justify-center gap-3 p-6 md:p-10 ${step.overlay ? "items-center" : "items-center"}`}>
                     {step.overlay && (
-                      <img src={step.overlay} alt="" aria-hidden="true" className="w-[90%] h-auto rounded-lg shadow-2xl border border-zinc-200/60" />
+                      <Image src={step.overlay} alt="" aria-hidden="true" sizes="(min-width: 768px) 400px, 90vw" className="w-[90%] h-auto rounded-lg shadow-2xl border border-zinc-200/60" />
                     )}
-                    <img src={step.image} alt={step.text} className="max-w-full max-h-full rounded-lg shadow-xl border border-zinc-200/60" />
+                    <Image src={step.image} alt={step.text} sizes="(min-width: 768px) 400px, 90vw" className="max-w-full max-h-full rounded-lg shadow-xl border border-zinc-200/60" />
                   </div>
                 ) : (
                   <div className="aspect-[4/3] w-full rounded-2xl bg-background border border-border" />

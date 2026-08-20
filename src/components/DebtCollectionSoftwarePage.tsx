@@ -1,4 +1,6 @@
 import Image from "next/image";
+import imgFeatureMultichannel from "../../public/images/feature-multichannel.png";
+import imgFeatureEscalation from "../../public/images/feature-escalation.png";
 import Link from "next/link";
 import SectionBadge from "@/components/SectionBadge";
 import Button from "@/components/Button";
@@ -53,12 +55,12 @@ const collectSteps = [
   {
     number: 2,
     text: "Overdue invoices enter a sequence that escalates with age. A friendly email first. Then SMS. Then a phone call. Timing and tone follow the rules you set.",
-    image: "/images/feature-multichannel.png",
+    image: imgFeatureMultichannel,
   },
   {
     number: 3,
     text: "Accounts that keep ignoring outreach escalate on your rules: a different contact, a firmer notice, or a handoff to your team for a personal conversation.",
-    image: "/images/feature-escalation.png",
+    image: imgFeatureEscalation,
   },
   {
     number: 4,
@@ -368,7 +370,7 @@ export default function DebtCollectionSoftwarePage() {
                 const isOdd = i % 2 === 0;
                 const imageBlock = step.image ? (
                   <div className="relative aspect-[4/3] w-full overflow-hidden rounded-2xl bg-gradient-to-b from-zinc-100 to-zinc-50 border border-border flex flex-col items-center justify-center gap-3 p-6 md:p-10">
-                    <img src={step.image} alt={step.text} className="max-w-full max-h-full rounded-lg shadow-xl border border-zinc-200/60" />
+                    <Image src={step.image} alt={step.text} sizes="(min-width: 768px) 400px, 90vw" className="max-w-full max-h-full rounded-lg shadow-xl border border-zinc-200/60" />
                   </div>
                 ) : (
                   <div className="flex aspect-[4/3] w-full items-center justify-center rounded-2xl bg-gradient-to-b from-zinc-100 to-zinc-50 border border-border p-10">

@@ -172,7 +172,7 @@ function FeatureCard({
             {renderContent ? (
               renderContent()
             ) : image ? (
-              <Image src={image} alt={title} fill className={`object-contain ${imageClassName || ''}`} />
+              <Image src={image} alt={title} fill sizes="(min-width: 768px) 50vw, 100vw" className={`object-contain ${imageClassName || ''}`} />
             ) : (
               <div className="flex h-full w-full items-center justify-center bg-surface">
                 <span className="text-muted text-sm">{title}</span>
@@ -197,7 +197,14 @@ function IntegrationPill({ name, logo, iconClassName, href }: { name: string; lo
   const pill = (
     <div className={`inline-flex h-10 shrink-0 items-center gap-2 rounded-full bg-surface p-1${href ? " transition-shadow hover:shadow-md" : ""}`}>
       <div className="flex h-8 w-8 items-center justify-center rounded-full border border-border bg-background">
-        <img src={logo} alt={name} className={iconClassName || "h-5 w-5 object-contain"} />
+        {/* SVG logos stay on a raw <img>: next/image cannot optimize them, and
+            they are ~1 KB each. Raster logos go through next/image so React does
+            not emit a high-priority preload for them during SSR. */}
+        {logo.endsWith(".svg") ? (
+          <img src={logo} alt={name} className={iconClassName || "h-5 w-5 object-contain"} />
+        ) : (
+          <Image src={logo} alt={name} width={28} height={28} className={iconClassName || "h-5 w-5 object-contain"} />
+        )}
       </div>
       <div className="pr-2 font-medium text-sm text-foreground">{name}</div>
     </div>

@@ -6,10 +6,15 @@ export default function VideoPlayer({
   src,
   poster,
   className,
+  priority = false,
 }: {
   src: string;
   poster?: string;
   className?: string;
+  /** Set on an above-the-fold player. The poster is then the LCP element, so
+   *  it needs a preload hint -- preload="none" on the <video> otherwise delays
+   *  its discovery until after hydration. */
+  priority?: boolean;
 }) {
   const videoRef = useRef<HTMLVideoElement>(null);
   const [isPlaying, setIsPlaying] = useState(true);
@@ -47,6 +52,12 @@ export default function VideoPlayer({
 
   return (
     <div className={`group relative ${className ?? ""}`}>
+      {/* React hoists this into <head>. Without it the poster is not requested
+          until the video element is reached, costing ~1.1s of LCP load delay. */}
+      {priority && poster && (
+        // eslint-disable-next-line @next/next/no-head-element
+        <link rel="preload" as="image" href={poster} fetchPriority="high" />
+      )}
       <video
         ref={videoRef}
         autoPlay

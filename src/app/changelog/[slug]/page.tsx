@@ -95,6 +95,7 @@ export default async function ChangelogEntryPage({ params }: Props) {
               fill
               className="object-cover"
               priority
+              sizes="(min-width: 896px) 848px, 100vw"
             />
           </div>
 

@@ -11,6 +11,7 @@
     "seo:qa": "node scripts/seo-audit.mjs",
     "seo:links": "linkinator http://localhost:3000 --recurse --silent",
     "seo:lh": "lhci autorun",
+    "perf:baseline": "node scripts/perf-baseline.mjs",
     "check:blog-links": "node scripts/check-blog-links.mjs"
   },
   "dependencies": {

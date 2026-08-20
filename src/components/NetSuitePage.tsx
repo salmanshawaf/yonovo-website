@@ -1,4 +1,10 @@
 import Image from "next/image";
+import imgNetsuiteStep1Invoice from "../../public/images/netsuite-step-1-invoice.png";
+import imgHighlightOversight from "../../public/images/highlight-oversight.png";
+import imgQbStep2Stats from "../../public/images/qb-step-2-stats.png";
+import imgQbStep3Followup from "../../public/images/qb-step-3-followup.png";
+import imgQbStep4Learns from "../../public/images/qb-step-4-learns.png";
+import imgQbStep5Dashboard from "../../public/images/qb-step-5-dashboard.png";
 import Link from "next/link";
 import SectionBadge from "@/components/SectionBadge";
 import Button from "@/components/Button";
@@ -48,28 +54,28 @@ const timelineSteps = [
   {
     number: 1,
     text: "Invoice your customers as usual, from NetSuite.",
-    image: "/images/netsuite-step-1-invoice.png",
+    image: imgNetsuiteStep1Invoice,
   },
   {
     number: 2,
     text: "Yonovo automatically syncs your invoices, contacts, and payment data.",
-    image: "/images/highlight-oversight.png",
-    overlay: "/images/qb-step-2-stats.png",
+    image: imgHighlightOversight,
+    overlay: imgQbStep2Stats,
   },
   {
     number: 3,
     text: "When an invoice goes overdue, Yonovo follows up by email, SMS, and AI-powered phone calls on your behalf.",
-    image: "/images/qb-step-3-followup.png",
+    image: imgQbStep3Followup,
   },
   {
     number: 4,
     text: "The AI adapts its approach over time, learning what works for each customer and escalating to your team when a human is needed.",
-    image: "/images/qb-step-4-learns.png",
+    image: imgQbStep4Learns,
   },
   {
     number: 5,
     text: "Monitor recovery rates, DSO, and at-risk invoices from your dashboard so you always know where your receivables stand.",
-    image: "/images/qb-step-5-dashboard.png",
+    image: imgQbStep5Dashboard,
   },
 ];
 
@@ -173,6 +179,7 @@ export default function NetSuitePage() {
             <div className="flex flex-col gap-6 md:grid md:grid-cols-[2fr_3fr] md:gap-8">
               {/* Left — Video (square) */}
               <VideoPlayer
+                priority
                 src="/videos/quickbooks-sync.mp4"
                 poster="/videos/quickbooks-sync-poster.jpg"
                 className="aspect-square w-full overflow-hidden rounded-2xl bg-zinc-900 border border-white/10"
@@ -289,8 +296,8 @@ export default function NetSuitePage() {
                 const isOdd = i % 2 === 0;
                 const imageBlock = step.image ? (
                   <div className={`relative aspect-[4/3] w-full overflow-hidden rounded-2xl bg-gradient-to-b from-zinc-100 to-zinc-50 border border-border flex flex-col justify-center gap-3 p-6 md:p-10 items-center`}>
-                    {step.overlay && (<img src={step.overlay} alt="" aria-hidden="true" className="w-[90%] h-auto rounded-lg shadow-2xl border border-zinc-200/60" />)}
-                    <img src={step.image} alt={step.text} className="max-w-full max-h-full rounded-lg shadow-xl border border-zinc-200/60" />
+                    {step.overlay && (<Image src={step.overlay} alt="" aria-hidden="true" sizes="(min-width: 768px) 400px, 90vw" className="w-[90%] h-auto rounded-lg shadow-2xl border border-zinc-200/60" />)}
+                    <Image src={step.image} alt={step.text} sizes="(min-width: 768px) 400px, 90vw" className="max-w-full max-h-full rounded-lg shadow-xl border border-zinc-200/60" />
                   </div>
                 ) : (<div className="aspect-[4/3] w-full rounded-2xl bg-background border border-border" />);
                 return (
