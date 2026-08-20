@@ -24,6 +24,19 @@ html {
   --color-border: #E5E7EB;
   --color-dark: #0A0A0A;
 
+  /* ── Product-mockup surfaces ── */
+  --color-surface-warm: #f5f4ef; /* cream canvas inside product mockups */
+  --color-chart-grid: #edeff2;
+
+  /* ── Status (product-UI pills and banners) ── */
+  --color-status-success: #2d8a4e;
+  --color-status-success-bg: #dcf5e0;
+  --color-status-danger: #c53030;
+  --color-status-danger-bg: #fce8e8;
+  --color-status-danger-surface: #fdf5f5;
+  --color-status-danger-border: #e8c4c4;
+  --color-status-amber-dot: #fbbf24;
+
   /* ── Gradient (Explore section) ── */
   --color-gradient-from: #FB923C;
   --color-gradient-via: #F472B6;
@@ -102,4 +115,19 @@ body {
   60% { transform: translate3d(2px, 0, 0) scale(1.002); }
   75% { transform: translate3d(-1px, -1px, 0) scale(0.998); }
   100% { transform: translate3d(0, 0, 0) scale(1); }
+}
+
+/* ── "How it works" panel build-ins ──
+   One-shot intros played when a panel mounts. All use `both` fill and settle on
+   the element's natural state, so disabling them renders the finished panel. */
+
+@keyframes yv-rise  { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: none; } }
+@keyframes yv-drop  { from { opacity: 0; transform: translateY(-8px); } to { opacity: 1; transform: none; } }
+@keyframes yv-pop   { from { opacity: 0; transform: scale(0.94);      } to { opacity: 1; transform: none; } }
+@keyframes yv-fade  { from { opacity: 0; } to { opacity: 1; } }
+@keyframes yv-draw  { from { stroke-dashoffset: 620; } to { stroke-dashoffset: 0; } }
+@keyframes yv-blink { 0%, 100% { opacity: 0.25; } 50% { opacity: 1; } }
+
+@media (prefers-reduced-motion: reduce) {
+  [data-yv-panel] * { animation: none !important; }
 }
