@@ -1,5 +1,7 @@
 "use client";
 
+import Image from "next/image";
+
 import { useState, type ReactNode } from "react";
 import SectionBadge from "@/components/SectionBadge";
 
@@ -244,12 +246,12 @@ function FitsInMockup() {
 
         {/* Top — QuickBooks */}
         <div className="absolute left-1/2 top-0 -translate-x-1/2 flex h-11 w-11 items-center justify-center rounded-full border border-[#e5e4e0] bg-white shadow-sm">
-          <img src="/logos/quickbooks-icon.png" alt="QuickBooks" className="h-6 w-6 object-contain" />
+          <Image src="/logos/quickbooks-icon.png" alt="QuickBooks" width={24} height={24} className="h-6 w-6 object-contain" />
         </div>
 
         {/* Bottom — Xero */}
         <div className="absolute left-1/2 bottom-0 -translate-x-1/2 flex h-11 w-11 items-center justify-center rounded-full border border-[#e5e4e0] bg-white shadow-sm">
-          <img src="/logos/xero.png" alt="Xero" className="h-6 w-6 object-contain" />
+          <Image src="/logos/xero.png" alt="Xero" width={24} height={24} className="h-6 w-6 object-contain" />
         </div>
 
         {/* Left — Sage */}

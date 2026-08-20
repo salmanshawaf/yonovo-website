@@ -1,3 +1,4 @@
+import Image from "next/image";
 /* Floating product-UI cards for the hero, recreated in code from real Yonovo screens. */
 
 const CARD_BASE =
@@ -181,7 +182,7 @@ function ClientAgentCard() {
         {/* Yonovo node — brand Y icon */}
         <div className="flex shrink-0 flex-col items-center gap-1">
           <div className="flex h-11 w-11 items-center justify-center overflow-hidden rounded-full border border-[#e5e4e0] bg-white shadow-sm">
-            <img src="/yonovo-icon.png" alt="Yonovo" className="h-[52px] w-[52px] max-w-none" />
+            <Image src="/yonovo-icon.png" alt="Yonovo" width={52} height={52} className="h-[52px] w-[52px] max-w-none" />
           </div>
           <span className="text-[8.5px] font-medium text-[#8a8a87]">Yonovo</span>
         </div>

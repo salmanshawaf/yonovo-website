@@ -1,5 +1,7 @@
 "use client";
 
+import Image from "next/image";
+
 import { useState } from "react";
 import Link from "next/link";
 
@@ -90,7 +92,7 @@ export default function Footer() {
         <div className="flex flex-col items-center md:hidden">
           {/* Logo */}
           <Link href="/">
-            <img src="/yonovo-logo-white.png" alt="Yonovo" className="h-4 w-auto" />
+            <Image src="/yonovo-logo-white.png" alt="Yonovo" width={103} height={16} className="h-4 w-auto" />
           </Link>
 
           {/* Copyright */}
@@ -171,7 +173,7 @@ export default function Footer() {
           {/* Left column */}
           <div className="flex flex-col items-start gap-8">
             <div className="flex flex-col items-start gap-4">
-              <Link href="/"><img src="/yonovo-logo-white.png" alt="Yonovo" className="h-4 w-auto" /></Link>
+              <Link href="/"><Image src="/yonovo-logo-white.png" alt="Yonovo" width={103} height={16} className="h-4 w-auto" /></Link>
               <p className="text-left font-medium text-zinc-400 leading-5">
                 &copy; 2026 Yonovo, Inc.
               </p>
