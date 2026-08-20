@@ -10,109 +10,96 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const staticPages: MetadataRoute.Sitemap = [
     {
       url: SITE_URL,
-      lastModified: new Date(),
       changeFrequency: "weekly",
       priority: 1,
     },
     {
       url: `${SITE_URL}/pricing`,
-      lastModified: new Date(),
       changeFrequency: "monthly",
       priority: 0.8,
     },
     {
       url: `${SITE_URL}/accounts-receivable-automation-software`,
-      lastModified: new Date(),
       changeFrequency: "weekly",
       priority: 0.8,
     },
     {
       url: `${SITE_URL}/debt-collection-software`,
-      lastModified: new Date(),
       changeFrequency: "weekly",
       priority: 0.8,
     },
     {
       url: `${SITE_URL}/ar-collections-software`,
-      lastModified: new Date(),
       changeFrequency: "weekly",
       priority: 0.8,
     },
     {
       url: `${SITE_URL}/dunning-management-software`,
-      lastModified: new Date(),
       changeFrequency: "weekly",
       priority: 0.8,
     },
     {
       url: `${SITE_URL}/accounts-receivable-statistics`,
-      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.8,
+    },
+    {
+      url: `${SITE_URL}/book-demo`,
       changeFrequency: "monthly",
       priority: 0.8,
     },
     {
       url: `${SITE_URL}/case-studies`,
-      lastModified: new Date(),
       changeFrequency: "weekly",
       priority: 0.7,
     },
     {
       url: `${SITE_URL}/blog`,
-      lastModified: new Date(),
       changeFrequency: "daily",
       priority: 0.9,
     },
     {
       url: `${SITE_URL}/solutions/quickbooks`,
-      lastModified: new Date(),
       changeFrequency: "monthly",
       priority: 0.7,
     },
     {
       url: `${SITE_URL}/solutions/xero`,
-      lastModified: new Date(),
       changeFrequency: "monthly",
       priority: 0.7,
     },
     {
       url: `${SITE_URL}/solutions/netsuite`,
-      lastModified: new Date(),
       changeFrequency: "monthly",
       priority: 0.7,
     },
     {
       url: `${SITE_URL}/solutions/odoo`,
-      lastModified: new Date(),
       changeFrequency: "monthly",
       priority: 0.7,
     },
     {
       url: `${SITE_URL}/solutions/sage`,
-      lastModified: new Date(),
       changeFrequency: "monthly",
       priority: 0.7,
     },
     {
       url: `${SITE_URL}/solutions/stripe`,
-      lastModified: new Date(),
       changeFrequency: "monthly",
       priority: 0.7,
     },
     {
       url: `${SITE_URL}/solutions/bill`,
-      lastModified: new Date(),
       changeFrequency: "monthly",
       priority: 0.7,
     },
     {
       url: `${SITE_URL}/changelog`,
-      lastModified: new Date(),
       changeFrequency: "weekly",
       priority: 0.6,
     },
     {
       url: `${SITE_URL}/tools/dso-calculator`,
-      lastModified: new Date(),
       changeFrequency: "monthly",
       priority: 0.7,
     },
@@ -127,7 +114,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "software-tech",
   ].map((slug) => ({
     url: `${SITE_URL}/industries/${slug}`,
-    lastModified: new Date(),
     changeFrequency: "monthly" as const,
     priority: 0.7,
   }));
@@ -139,7 +125,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "yonovo-vs-bill-com",
   ].map((slug) => ({
     url: `${SITE_URL}/${slug}`,
-    lastModified: new Date(),
     changeFrequency: "monthly" as const,
     priority: 0.8,
   }));
@@ -153,21 +138,19 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   const categoryPages: MetadataRoute.Sitemap = BLOG_CATEGORIES.map((cat) => ({
     url: `${SITE_URL}/blog/category/${cat.slug}`,
-    lastModified: new Date(),
     changeFrequency: "weekly" as const,
     priority: 0.6,
   }));
 
   const authorPages: MetadataRoute.Sitemap = Object.keys(authors).map((id) => ({
     url: `${SITE_URL}/blog/author/${id}`,
-    lastModified: new Date(),
     changeFrequency: "monthly" as const,
     priority: 0.5,
   }));
 
-  const caseStudyPages: MetadataRoute.Sitemap = Object.keys(caseStudies).map((slug) => ({
-    url: `${SITE_URL}/case-studies/${slug}`,
-    lastModified: new Date(),
+  const caseStudyPages: MetadataRoute.Sitemap = Object.values(caseStudies).map((cs) => ({
+    url: `${SITE_URL}/case-studies/${cs.slug}`,
+    lastModified: new Date(cs.hero.date),
     changeFrequency: "monthly" as const,
     priority: 0.7,
   }));
