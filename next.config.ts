@@ -5,6 +5,11 @@ const nextConfig: NextConfig = {
     localPatterns: [
       { pathname: "/**" },
     ],
+    // YouTube poster thumbnails. Serving them through the optimizer stops React
+    // from preloading the raw cross-origin JPEG during SSR.
+    remotePatterns: [
+      { protocol: "https", hostname: "i.ytimg.com", pathname: "/vi/**" },
+    ],
   },
 
   async redirects() {

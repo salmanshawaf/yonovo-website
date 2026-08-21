@@ -1,14 +1,19 @@
 "use client";
 
+import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 
 /**
  * Product video player.
  *
- * On load it autoplays a muted, looping preview (a silent background clip) with
- * a play button on top. Clicking swaps in the full privacy-enhanced
+ * Autoplays a muted, looping preview (a silent background clip) with a play
+ * button on top. Clicking swaps in the full privacy-enhanced
  * (youtube-nocookie.com) player, which restarts the video from the beginning
  * with sound.
+ *
+ * The preview is deferred until the player nears the viewport. It sits below
+ * the fold, and loading it eagerly pulled ~1.6 MB (player + video stream) into
+ * the initial desktop load before the user had scrolled to it.
  */
 export default function YouTubeEmbed({
   videoId,
@@ -20,8 +25,13 @@ export default function YouTubeEmbed({
   className?: string;
 }) {
   const [isPlaying, setIsPlaying] = useState(false);
-  const [autoPreview, setAutoPreview] = useState(false);
+  const [hoverCapable, setHoverCapable] = useState(false);
+  const [nearViewport, setNearViewport] = useState(false);
   const previewRef = useRef<HTMLIFrameElement>(null);
+  const containerRef = useRef<HTMLDivElement>(null);
+
+  // Only load the preview once the player is close to being seen.
+  const autoPreview = hoverCapable && nearViewport;
 
   // Mobile/touch browsers commonly block muted YouTube-iframe autoplay and fall
   // back to the player's interactive chrome (title, big play button) which can't
@@ -29,10 +39,34 @@ export default function YouTubeEmbed({
   // smaller/touch devices get a clean poster + play button instead.
   useEffect(() => {
     const mq = window.matchMedia("(min-width: 768px) and (hover: hover)");
-    const update = () => setAutoPreview(mq.matches);
+    const update = () => setHoverCapable(mq.matches);
     update();
     mq.addEventListener("change", update);
     return () => mq.removeEventListener("change", update);
+  }, []);
+
+  // Start the preview shortly before the section is reached. 200px is deliberate:
+  // on a 1280x720 desktop the player sits ~470px below the fold, so a larger
+  // margin fires on load and defeats the point. Falls back to loading
+  // immediately where IntersectionObserver is absent.
+  useEffect(() => {
+    const el = containerRef.current;
+    if (!el) return;
+    if (typeof IntersectionObserver === "undefined") {
+      setNearViewport(true);
+      return;
+    }
+    const io = new IntersectionObserver(
+      (entries) => {
+        if (entries.some((e) => e.isIntersecting)) {
+          setNearViewport(true);
+          io.disconnect();
+        }
+      },
+      { rootMargin: "200px 0px" },
+    );
+    io.observe(el);
+    return () => io.disconnect();
   }, []);
 
   // Muted, looping preview that autoplays on load (loop needs playlist=<id>).
@@ -67,6 +101,7 @@ export default function YouTubeEmbed({
 
   return (
     <div
+      ref={containerRef}
       className={`relative aspect-video w-full overflow-hidden rounded-2xl bg-black shadow-2xl ${className ?? ""}`}
     >
       {isPlaying ? (
@@ -80,11 +115,13 @@ export default function YouTubeEmbed({
       ) : (
         <>
           {/* Poster shown until the preview iframe paints */}
-          <img
+          <Image
             src={posterSrc}
             alt=""
             aria-hidden="true"
-            className="absolute inset-0 h-full w-full object-cover"
+            fill
+            sizes="(min-width: 1024px) 960px, 100vw"
+            className="object-cover"
           />
           {/* Muted, looping autoplay preview (desktop only).
               Scaled taller than 16:9 so the container crops YouTube's title bar
