@@ -8,6 +8,7 @@ import imgQbStep5Dashboard from "../../public/images/qb-step-5-dashboard.png";
 import Link from "next/link";
 import SectionBadge from "@/components/SectionBadge";
 import Button from "@/components/Button";
+import LedgerConnectAnimation from "@/components/LedgerConnectAnimation";
 import FAQAccordion from "@/components/FAQAccordion";
 import RelatedResources from "@/components/RelatedResources";
 
@@ -181,10 +182,12 @@ export default function StripePage() {
 
             {/* Media grid */}
             <div className="flex flex-col gap-6 md:grid md:grid-cols-[2fr_3fr] md:gap-8">
-              {/* Left — Stripe icon panel (square) */}
-              <div className="relative flex aspect-square w-full items-center justify-center overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-[#635BFF] to-[#4b45d6]">
-                <Image src="/logos/stripe-icon.svg" alt="Stripe" width={200} height={200} className="w-[42%] h-auto drop-shadow-2xl" />
-              </div>
+              {/* Left — Stripe connect animation (square) */}
+              <LedgerConnectAnimation
+                name="Stripe Billing"
+                logo="/logos/stripe-icon.svg"
+                className="aspect-square w-full overflow-hidden rounded-2xl border border-white/10"
+              />
               {/* Right — Stripe wordmark (desktop: landscape, mobile: square) */}
               <div className="relative hidden w-full items-center justify-center overflow-hidden rounded-2xl border border-white/10 bg-white/[0.03] md:flex md:aspect-[1.5]">
                 <Image src="/logos/stripe.svg" alt="Stripe Billing" width={320} height={134} className="w-[45%] h-auto" />

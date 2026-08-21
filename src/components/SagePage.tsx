@@ -9,7 +9,7 @@ import Link from "next/link";
 import SectionBadge from "@/components/SectionBadge";
 import Button from "@/components/Button";
 import FAQAccordion from "@/components/FAQAccordion";
-import VideoPlayer from "@/components/VideoPlayer";
+import LedgerConnectAnimation from "@/components/LedgerConnectAnimation";
 import RelatedResources from "@/components/RelatedResources";
 
 /* ── Data ── */
@@ -172,8 +172,12 @@ export default function SagePage() {
 
             {/* Media grid */}
             <div className="flex flex-col gap-6 md:grid md:grid-cols-[2fr_3fr] md:gap-8">
-              <VideoPlayer src="/videos/quickbooks-sync.mp4" priority
-                poster="/videos/quickbooks-sync-poster.jpg" className="aspect-square w-full overflow-hidden rounded-2xl bg-zinc-900 border border-white/10" />
+              {/* Left — Sage connect animation (square) */}
+              <LedgerConnectAnimation
+                name="Sage"
+                logo="/logos/sage-circle-icon.svg"
+                className="aspect-square w-full overflow-hidden rounded-2xl border border-white/10"
+              />
               <div className="relative hidden w-full items-center justify-center overflow-hidden rounded-2xl md:flex md:aspect-[1.5]">
                 <Image src="/images/sage_logo_inverted.png" alt="Sage" width={320} height={77} className="w-[40%] h-auto" />
               </div>

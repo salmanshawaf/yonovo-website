@@ -9,7 +9,7 @@ import Link from "next/link";
 import SectionBadge from "@/components/SectionBadge";
 import Button from "@/components/Button";
 import FAQAccordion from "@/components/FAQAccordion";
-import VideoPlayer from "@/components/VideoPlayer";
+import LedgerConnectAnimation from "@/components/LedgerConnectAnimation";
 import RelatedResources from "@/components/RelatedResources";
 
 /* ── Data ── */
@@ -182,12 +182,11 @@ export default function QuickBooksPage() {
 
             {/* Media grid */}
             <div className="flex flex-col gap-6 md:grid md:grid-cols-[2fr_3fr] md:gap-8">
-              {/* Left — Video (square) */}
-              <VideoPlayer
-                priority
-                src="/videos/quickbooks-sync.mp4"
-                poster="/videos/quickbooks-sync-poster.jpg"
-                className="aspect-square w-full overflow-hidden rounded-2xl bg-zinc-900 border border-white/10"
+              {/* Left — QuickBooks connect animation (square) */}
+              <LedgerConnectAnimation
+                name="QuickBooks"
+                logo="/logos/quickbooks-icon.png"
+                className="aspect-square w-full overflow-hidden rounded-2xl border border-white/10"
               />
               {/* Right — QuickBooks logo (desktop: landscape, mobile: square) */}
               <div className="relative hidden w-full items-center justify-center overflow-hidden rounded-2xl md:flex md:aspect-[1.5]">

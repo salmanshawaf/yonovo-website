@@ -8,6 +8,7 @@ import imgQbStep5Dashboard from "../../public/images/qb-step-5-dashboard.png";
 import Link from "next/link";
 import SectionBadge from "@/components/SectionBadge";
 import Button from "@/components/Button";
+import LedgerConnectAnimation from "@/components/LedgerConnectAnimation";
 import FAQAccordion from "@/components/FAQAccordion";
 import RelatedResources from "@/components/RelatedResources";
 
@@ -181,10 +182,12 @@ export default function BillPage() {
 
             {/* Media grid */}
             <div className="flex flex-col gap-6 md:grid md:grid-cols-[2fr_3fr] md:gap-8">
-              {/* Left — BILL icon panel (square) */}
-              <div className="relative flex aspect-square w-full items-center justify-center overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-[#FF5A0A] to-[#e04e08]">
-                <Image src="/logos/bill-icon.svg" alt="BILL" width={200} height={200} className="w-[42%] h-auto drop-shadow-2xl" />
-              </div>
+              {/* Left — BILL connect animation (square) */}
+              <LedgerConnectAnimation
+                name="BILL"
+                logo="/logos/bill-icon.svg"
+                className="aspect-square w-full overflow-hidden rounded-2xl border border-white/10"
+              />
               {/* Right — BILL logo (desktop: landscape, mobile: square) */}
               <div className="relative hidden w-full items-center justify-center overflow-hidden rounded-2xl border border-white/10 bg-white/[0.03] md:flex md:aspect-[1.5]">
                 <Image src="/logos/bill.svg" alt="BILL" width={320} height={211} className="w-[22%] h-auto" />
