@@ -1,0 +1,187 @@
+[
+  {
+    "path": "/",
+    "runs": 3,
+    "medians": {
+      "performance": 94,
+      "fcp": 1222.8574999999998,
+      "lcp": 3017.246,
+      "tbt": 15.000000000000455,
+      "cls": 0,
+      "si": 1222.8574999999998,
+      "tti": 4770.965
+    },
+    "lcpElement": "Automate your\naccounts receivable.\nGet paid faster. — div.relative > div.relative > div.flex > h1.font-medium",
+    "lcpPhases": "TTFB 617ms | Load Delay 0ms | Load Time 0ms | Render Delay 2400ms",
+    "renderBlocking": [
+      "https://www.yonovo.com/_next/static/chunks/58553af87ad12552.css?dpl=dpl_DPjC1hPJvvdKiyCMs4x59HuFhuUV (17 KiB, 300ms)"
+    ],
+    "opportunities": [
+      "Reduce unused JavaScript: 150ms, 98 KiB",
+      "Serve images in next-gen formats: 150ms, 21 KiB",
+      "Avoid serving legacy JavaScript to modern browsers: 150ms, 14 KiB"
+    ],
+    "jsBytes": 395958,
+    "thirdParty": [
+      "www.googletagmanager.com (187 KiB)",
+      "ddwl4m2hdecbv.cloudfront.net (10 KiB)",
+      "analytics.ahrefs.com (3 KiB)",
+      "r2.leadsy.ai (1 KiB)",
+      "stats.g.doubleclick.net (1 KiB)",
+      "analytics.google.com (1 KiB)",
+      "www.google.ca (0 KiB)",
+      " (0 KiB)"
+    ]
+  },
+  {
+    "path": "/book-demo",
+    "runs": 3,
+    "medians": {
+      "performance": 100,
+      "fcp": 915.8455,
+      "lcp": 1744.9840000000002,
+      "tbt": 9,
+      "cls": 0.001797848971960649,
+      "si": 1735.3595598866468,
+      "tti": 5203.294100000001
+    },
+    "lcpElement": "Book a discovery call with our team. We will walk you through how Yonovo automa… — div.mx-auto > div.grid > div.flex > p.text-base",
+    "lcpPhases": "TTFB 616ms | Load Delay 0ms | Load Time 0ms | Render Delay 1129ms",
+    "renderBlocking": [
+      "https://www.yonovo.com/_next/static/chunks/58553af87ad12552.css?dpl=dpl_DPjC1hPJvvdKiyCMs4x59HuFhuUV (17 KiB, 150ms)"
+    ],
+    "opportunities": [],
+    "jsBytes": 1788221,
+    "thirdParty": [
+      "app.cal.com (1811 KiB)",
+      "www.googletagmanager.com (187 KiB)",
+      "ddwl4m2hdecbv.cloudfront.net (10 KiB)",
+      "cal.com (5 KiB)",
+      "analytics.ahrefs.com (3 KiB)",
+      "r2.leadsy.ai (1 KiB)",
+      "stats.g.doubleclick.net (1 KiB)",
+      "analytics.google.com (1 KiB)",
+      "pro.ip-api.com (0 KiB)",
+      "www.google.ca (0 KiB)"
+    ]
+  },
+  {
+    "path": "/solutions/sage",
+    "runs": 3,
+    "medians": {
+      "performance": 95,
+      "fcp": 953.0070000000001,
+      "lcp": 2862.8325,
+      "tbt": 12,
+      "cls": 0,
+      "si": 998.0477839191442,
+      "tti": 4090.7419500000005
+    },
+    "lcpElement": "div.flex > div.flex > div.group > video.absolute — div.flex > div.flex > div.group > video.absolute",
+    "lcpPhases": "TTFB 613ms | Load Delay 1250ms | Load Time 691ms | Render Delay 310ms",
+    "renderBlocking": [],
+    "opportunities": [
+      "Reduce unused JavaScript: 150ms, 98 KiB"
+    ],
+    "jsBytes": 403166,
+    "thirdParty": [
+      "www.googletagmanager.com (187 KiB)",
+      "ddwl4m2hdecbv.cloudfront.net (10 KiB)",
+      "analytics.ahrefs.com (3 KiB)",
+      "r2.leadsy.ai (1 KiB)",
+      "analytics.google.com (1 KiB)",
+      "stats.g.doubleclick.net (1 KiB)",
+      "www.google.ca (0 KiB)"
+    ]
+  },
+  {
+    "path": "/solutions/quickbooks",
+    "runs": 3,
+    "medians": {
+      "performance": 81,
+      "fcp": 974.8985,
+      "lcp": 5115.100999999999,
+      "tbt": 21,
+      "cls": 0,
+      "si": 2457.549978125479,
+      "tti": 5135.736849999998
+    },
+    "lcpElement": "div.flex > div.flex > div.group > video.absolute — div.flex > div.flex > div.group > video.absolute",
+    "lcpPhases": "TTFB 615ms | Load Delay 375ms | Load Time 112ms | Render Delay 4014ms",
+    "renderBlocking": [],
+    "opportunities": [
+      "Reduce unused JavaScript: 640ms, 97 KiB",
+      "Preconnect to required origins: 250ms"
+    ],
+    "jsBytes": 403139,
+    "thirdParty": [
+      "www.googletagmanager.com (187 KiB)",
+      "ddwl4m2hdecbv.cloudfront.net (10 KiB)",
+      "analytics.ahrefs.com (3 KiB)",
+      "r2.leadsy.ai (1 KiB)",
+      "stats.g.doubleclick.net (1 KiB)",
+      "analytics.google.com (1 KiB)",
+      "pro.ip-api.com (0 KiB)",
+      "www.google.ca (0 KiB)"
+    ]
+  },
+  {
+    "path": "/pricing",
+    "runs": 3,
+    "medians": {
+      "performance": 99,
+      "fcp": 956.1850000000001,
+      "lcp": 2114.7619999999997,
+      "tbt": 15,
+      "cls": 0,
+      "si": 956.1850000000001,
+      "tti": 4049.8408499999996
+    },
+    "lcpElement": "Pricing adapted to your needs. — section.w-full > div.mx-auto > div.flex > h1.max-w-[850px]",
+    "lcpPhases": "TTFB 615ms | Load Delay 0ms | Load Time 0ms | Render Delay 1500ms",
+    "renderBlocking": [],
+    "opportunities": [],
+    "jsBytes": 395966,
+    "thirdParty": [
+      "www.googletagmanager.com (187 KiB)",
+      "ddwl4m2hdecbv.cloudfront.net (10 KiB)",
+      "analytics.ahrefs.com (3 KiB)",
+      "r2.leadsy.ai (1 KiB)",
+      "stats.g.doubleclick.net (1 KiB)",
+      "analytics.google.com (1 KiB)",
+      "www.google.ca (0 KiB)"
+    ]
+  },
+  {
+    "path": "/blog/best-ar-automation-software",
+    "runs": 3,
+    "medians": {
+      "performance": 96,
+      "fcp": 1089.311,
+      "lcp": 2715.389,
+      "tbt": 14,
+      "cls": 0,
+      "si": 1089.311,
+      "tti": 4236.571
+    },
+    "lcpElement": "Two laptops facing each other with gear and lightning bolt between them illustr… — main.min-h-screen > div.mx-auto > div.relative > img.object-cover",
+    "lcpPhases": "TTFB 615ms | Load Delay 784ms | Load Time 650ms | Render Delay 665ms",
+    "renderBlocking": [
+      "https://www.yonovo.com/_next/static/chunks/58553af87ad12552.css?dpl=dpl_DPjC1hPJvvdKiyCMs4x59HuFhuUV (17 KiB, 150ms)"
+    ],
+    "opportunities": [
+      "Reduce unused JavaScript: 150ms, 99 KiB",
+      "Avoid serving legacy JavaScript to modern browsers: 150ms, 14 KiB"
+    ],
+    "jsBytes": 417296,
+    "thirdParty": [
+      "www.googletagmanager.com (187 KiB)",
+      "ddwl4m2hdecbv.cloudfront.net (10 KiB)",
+      "analytics.ahrefs.com (3 KiB)",
+      "r2.leadsy.ai (1 KiB)",
+      "stats.g.doubleclick.net (1 KiB)",
+      "analytics.google.com (1 KiB)",
+      "www.google.ca (0 KiB)"
+    ]
+  }
+]
