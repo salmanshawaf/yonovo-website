@@ -50,6 +50,8 @@ function subscribeToReducedMotion(onChange: () => void) {
 export default function HowItWorksSection() {
   const [active, setActive] = useState(0);
   const [elapsed, setElapsed] = useState(0);
+  // Mirrors `elapsed` so the tick can read it without an impure state updater.
+  const elapsedRef = useRef(0);
   const [paused, setPaused] = useState(false);
   // Auto-advance only once the section has been scrolled into view, so the
   // build-in animations aren't spent before anyone can see them.
@@ -75,24 +77,31 @@ export default function HowItWorksSection() {
     return () => observer.disconnect();
   }, []);
 
+  // The tick reads elapsed time from a ref rather than from a setElapsed
+  // updater. React may call an updater more than once for a single update, so
+  // advancing the step from inside one would skip steps.
   useEffect(() => {
     if (paused || reducedMotion || !inView) return;
 
     const timer = setInterval(() => {
-      setElapsed((previous) => {
-        const next = previous + TICK;
-        if (next >= DURATIONS[active]) {
-          setActive((current) => (current + 1) % steps.length);
-          return 0;
-        }
-        return next;
-      });
+      const next = elapsedRef.current + TICK;
+
+      if (next >= DURATIONS[active]) {
+        elapsedRef.current = 0;
+        setElapsed(0);
+        setActive((current) => (current + 1) % steps.length);
+        return;
+      }
+
+      elapsedRef.current = next;
+      setElapsed(next);
     }, TICK);
 
     return () => clearInterval(timer);
   }, [active, paused, reducedMotion, inView]);
 
   const selectStep = useCallback((index: number) => {
+    elapsedRef.current = 0;
     setActive(index);
     setElapsed(0);
     setPaused(false);
