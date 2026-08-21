@@ -12,149 +12,24 @@
  * timeline and already carries the meaning.
  */
 
-import type { CSSProperties, ReactNode } from "react";
-
-/* ── Units: design pixels on the 1200-wide card to container-relative lengths ── */
-
-const u = (px: number) => `${(px / 1200) * 100}cqw`;
-
-/* ── Palette ── */
-
-const INK = "#0c2756";
-const MUTED = "#71717a";
-const FAINT = "#a1a1aa";
-const ZINC = "#52525b";
-const HAIR = "#e5e7eb";
-const RED = "#e13f3f";
-const GREEN = "#177a3c";
-const GREEN_BG = "#eefbf1";
-
-const dashed = `repeating-linear-gradient(#d4d4d8 0 ${u(8)}, transparent ${u(8)} ${u(16)})`;
-
-/* ── Shared shell ── */
-
-function Card({
-  children,
-  padding,
-  gap,
-}: {
-  children: ReactNode;
-  padding: string;
-  gap: number;
-}) {
-  return (
-    <div
-      aria-hidden="true"
-      style={{
-        containerType: "inline-size",
-        aspectRatio: "4 / 3",
-        width: "100%",
-      }}
-    >
-      <div
-        style={{
-          width: "100%",
-          height: "100%",
-          background: "#fff",
-          border: `1px solid ${HAIR}`,
-          borderRadius: u(24),
-          boxSizing: "border-box",
-          padding,
-          display: "flex",
-          flexDirection: "column",
-          justifyContent: "center",
-          gap: u(gap),
-          fontFamily: "inherit",
-        }}
-      >
-        {children}
-      </div>
-    </div>
-  );
-}
-
-function Pill({
-  children,
-  bg,
-  color,
-  fontSize,
-  padding,
-}: {
-  children: ReactNode;
-  bg: string;
-  color: string;
-  fontSize: number;
-  padding: string;
-}) {
-  return (
-    <div
-      style={{
-        display: "flex",
-        alignItems: "center",
-        gap: u(8),
-        padding,
-        borderRadius: "9999px",
-        background: bg,
-        color,
-        fontSize: u(fontSize),
-        fontWeight: 500,
-        whiteSpace: "nowrap",
-      }}
-    >
-      {children}
-    </div>
-  );
-}
-
-function Dot({ size, color }: { size: number; color: string }) {
-  return (
-    <div
-      style={{
-        width: u(size),
-        height: u(size),
-        borderRadius: "9999px",
-        background: color,
-        flex: "none",
-      }}
-    />
-  );
-}
-
-function Stroke({
-  d,
-  size = 38,
-  color = RED,
-  children,
-}: {
-  d?: string[];
-  size?: number;
-  color?: string;
-  children?: ReactNode;
-}) {
-  return (
-    <svg
-      width={u(size)}
-      height={u(size)}
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke={color}
-      strokeWidth={1.75}
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      style={{ flexShrink: 0 }}
-    >
-      {children ?? d?.map((p, i) => <path key={i} d={p} />)}
-    </svg>
-  );
-}
-
-const numeral = (fontSize: number): CSSProperties => ({
-  fontSize: u(fontSize),
-  fontWeight: 500,
-  color: INK,
-  letterSpacing: "-0.03em",
-  lineHeight: 1,
-});
+import type { ReactNode } from "react";
+import {
+  u,
+  INK,
+  MUTED,
+  FAINT,
+  ZINC,
+  HAIR,
+  RED,
+  GREEN,
+  GREEN_BG,
+  dashed,
+  Card,
+  Pill,
+  Dot,
+  Stroke,
+  numeral,
+} from "@/components/StepIllustrationKit";
 
 /* ── Step 2 — sync ── */
 

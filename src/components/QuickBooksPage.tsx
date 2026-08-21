@@ -1,6 +1,6 @@
 import Image from "next/image";
-import imgQbStep1Invoice from "../../public/images/qb-step-1-invoice.png";
 import Link from "next/link";
+import { Step1QuickBooksIllustration } from "@/components/Step1Illustrations";
 import {
   StepSyncIllustration,
   StepFollowUpIllustration,
@@ -55,7 +55,7 @@ const timelineSteps = [
   {
     number: 1,
     text: "Invoice your customers as usual, from QuickBooks.",
-    image: imgQbStep1Invoice,
+    illustration: Step1QuickBooksIllustration,
   },
   {
     number: 2,
@@ -384,15 +384,7 @@ export default function QuickBooksPage() {
               {timelineSteps.map((step, i) => {
                 const isOdd = i % 2 === 0;
                 const Illustration = step.illustration;
-                const imageBlock = Illustration ? (
-                  <Illustration />
-                ) : step.image ? (
-                  <div className="relative aspect-[4/3] w-full overflow-hidden rounded-2xl bg-gradient-to-b from-zinc-100 to-zinc-50 border border-border flex flex-col items-center justify-center gap-3 p-6 md:p-10">
-                    <Image src={step.image} alt={step.text} sizes="(min-width: 768px) 400px, 90vw" className="max-w-full max-h-full rounded-lg shadow-xl border border-zinc-200/60" />
-                  </div>
-                ) : (
-                  <div className="aspect-[4/3] w-full rounded-2xl bg-background border border-border" />
-                );
+                const imageBlock = <Illustration />;
 
                 return (
                   <div key={step.number} className="relative">

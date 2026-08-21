@@ -1,6 +1,6 @@
 import Image from "next/image";
-import sageStep1 from "../../public/images/sage-step-1-invoice.png";
 import Link from "next/link";
+import { Step1SageIllustration } from "@/components/Step1Illustrations";
 import {
   StepSyncIllustration,
   StepFollowUpIllustration,
@@ -55,7 +55,7 @@ const timelineSteps = [
   {
     number: 1,
     text: "Invoice your customers as usual, from Sage.",
-    image: sageStep1,
+    illustration: Step1SageIllustration,
   },
   {
     number: 2,
@@ -279,13 +279,7 @@ export default function SagePage() {
               {timelineSteps.map((step, i) => {
                 const isOdd = i % 2 === 0;
                 const Illustration = step.illustration;
-                const imageBlock = Illustration ? (
-                  <Illustration />
-                ) : step.image ? (
-                  <div className={`relative aspect-[4/3] w-full overflow-hidden rounded-2xl bg-gradient-to-b from-zinc-100 to-zinc-50 border border-border flex flex-col justify-center gap-3 p-6 md:p-10 items-center`}>
-                    <Image src={step.image} alt={step.text} sizes="(min-width: 768px) 400px, 90vw" className="max-w-full max-h-full rounded-lg shadow-xl border border-zinc-200/60" />
-                  </div>
-                ) : (<div className="aspect-[4/3] w-full rounded-2xl bg-background border border-border" />);
+                const imageBlock = <Illustration />;
                 return (
                   <div key={step.number} className="relative">
                     <div className="flex flex-col gap-4 md:hidden">
