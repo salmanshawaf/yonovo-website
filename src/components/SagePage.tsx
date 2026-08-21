@@ -1,11 +1,12 @@
 import Image from "next/image";
 import sageStep1 from "../../public/images/sage-step-1-invoice.png";
-import stepOversight from "../../public/images/highlight-oversight.png";
-import stepStats from "../../public/images/qb-step-2-stats.png";
-import stepFollowup from "../../public/images/qb-step-3-followup.png";
-import stepLearns from "../../public/images/qb-step-4-learns.png";
-import stepDashboard from "../../public/images/qb-step-5-dashboard.png";
 import Link from "next/link";
+import {
+  StepSyncIllustration,
+  StepFollowUpIllustration,
+  StepAdaptsIllustration,
+  StepDashboardIllustration,
+} from "@/components/StepIllustrations";
 import SectionBadge from "@/components/SectionBadge";
 import Button from "@/components/Button";
 import FAQAccordion from "@/components/FAQAccordion";
@@ -59,23 +60,22 @@ const timelineSteps = [
   {
     number: 2,
     text: "Yonovo automatically syncs your invoices, contacts, and payment data.",
-    image: stepOversight,
-    overlay: stepStats,
+    illustration: () => <StepSyncIllustration ledger="Sage" />,
   },
   {
     number: 3,
     text: "When an invoice goes overdue, Yonovo follows up by email, SMS, and AI-powered phone calls on your behalf.",
-    image: stepFollowup,
+    illustration: StepFollowUpIllustration,
   },
   {
     number: 4,
     text: "The AI adapts its approach over time, learning what works for each customer and escalating to your team when a human is needed.",
-    image: stepLearns,
+    illustration: StepAdaptsIllustration,
   },
   {
     number: 5,
     text: "Monitor recovery rates, DSO, and at-risk invoices from your dashboard so you always know where your receivables stand.",
-    image: stepDashboard,
+    illustration: StepDashboardIllustration,
   },
 ];
 
@@ -278,9 +278,11 @@ export default function SagePage() {
             <div className="flex flex-col gap-16 md:gap-24">
               {timelineSteps.map((step, i) => {
                 const isOdd = i % 2 === 0;
-                const imageBlock = step.image ? (
+                const Illustration = step.illustration;
+                const imageBlock = Illustration ? (
+                  <Illustration />
+                ) : step.image ? (
                   <div className={`relative aspect-[4/3] w-full overflow-hidden rounded-2xl bg-gradient-to-b from-zinc-100 to-zinc-50 border border-border flex flex-col justify-center gap-3 p-6 md:p-10 items-center`}>
-                    {step.overlay && (<Image src={step.overlay} alt="" aria-hidden="true" sizes="(min-width: 768px) 400px, 90vw" className="w-[90%] h-auto rounded-lg shadow-2xl border border-zinc-200/60" />)}
                     <Image src={step.image} alt={step.text} sizes="(min-width: 768px) 400px, 90vw" className="max-w-full max-h-full rounded-lg shadow-xl border border-zinc-200/60" />
                   </div>
                 ) : (<div className="aspect-[4/3] w-full rounded-2xl bg-background border border-border" />);
