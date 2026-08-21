@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import SectionBadge from "@/components/SectionBadge";
 import Button from "@/components/Button";
+import PromiseToPayAnimation from "@/components/PromiseToPayAnimation";
 import type { IndustryData } from "@/data/industries";
 import FAQAccordion from "@/components/FAQAccordion";
 import TestimonialsSection from "@/components/sections/TestimonialsSection";
@@ -91,20 +92,9 @@ export default function IndustryPageTemplate({ data }: { data: IndustryData }) {
                 </div>
               </div>
 
-              {/* Right — Dashboard Preview */}
+              {/* Right — Promise-to-pay thread */}
               <div className="w-full px-0 md:px-15">
-                <div className="relative aspect-[0.8] w-full overflow-hidden rounded-2xl">
-                  <video
-                    src="/industry-hero-video.mp4"
-                    poster="/industry-hero-poster.jpg"
-                    preload="none"
-                    autoPlay
-                    loop
-                    muted
-                    playsInline
-                    className="absolute inset-0 h-full w-full object-cover object-top"
-                  />
-                </div>
+                <PromiseToPayAnimation className="aspect-[0.8] w-full overflow-hidden rounded-2xl" />
               </div>
             </div>
 

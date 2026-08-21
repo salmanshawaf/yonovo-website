@@ -20,7 +20,15 @@
  */
 
 import Image from "next/image";
-import { useEffect, useRef, useState, type CSSProperties } from "react";
+import { type CSSProperties } from "react";
+import {
+  Easing,
+  animate,
+  clamp,
+  lerp,
+  fadeOut,
+  useCompositionClock,
+} from "@/components/compositionRuntime";
 
 /* ── Timeline ── */
 
@@ -42,46 +50,6 @@ const RED = "#e13f3f";
 /* ── Units: design pixels on the 1080 stage to container-relative lengths ── */
 
 const u = (px: number) => `${(px / 1080) * 100}cqw`;
-
-/* ── Interpolation helpers (ported from the composition engine) ── */
-
-const Easing = {
-  easeInQuad: (t: number) => t * t,
-  easeOutQuad: (t: number) => t * (2 - t),
-  easeOutCubic: (t: number) => --t * t * t + 1,
-  easeInOutCubic: (t: number) =>
-    t < 0.5 ? 4 * t * t * t : (t - 1) * (2 * t - 2) * (2 * t - 2) + 1,
-  easeOutBack: (t: number) => {
-    const c1 = 1.70158;
-    const c3 = c1 + 1;
-    return 1 + c3 * Math.pow(t - 1, 3) + c1 * Math.pow(t - 1, 2);
-  },
-};
-
-const clamp = (v: number, min: number, max: number) =>
-  Math.max(min, Math.min(max, v));
-
-const lerp = (from: number, to: number, t: number) => from + (to - from) * t;
-
-function animate({
-  from = 0,
-  to = 1,
-  start = 0,
-  end = 1,
-  ease = Easing.easeInOutCubic,
-}: {
-  from?: number;
-  to?: number;
-  start?: number;
-  end?: number;
-  ease?: (t: number) => number;
-}) {
-  return (t: number) => {
-    if (t <= start) return from;
-    if (t >= end) return to;
-    return from + (to - from) * ease((t - start) / (end - start));
-  };
-}
 
 /** The three motion helpers the composition uses. Nothing eases outside them. */
 const MOTION = {
@@ -106,9 +74,6 @@ const MOTION = {
   draw: (start: number, end: number) =>
     animate({ start, end, ease: Easing.easeInOutCubic }),
 };
-
-const fadeOut = (start: number, dur = 0.35) =>
-  animate({ from: 1, to: 0, start, end: start + dur, ease: Easing.easeInQuad });
 
 /* ── Icons ── */
 
@@ -641,63 +606,10 @@ export default function LedgerConnectAnimation({
   logoSize?: number;
   className?: string;
 }) {
-  const hostRef = useRef<HTMLDivElement>(null);
-  const [T, setT] = useState(START_T);
-
-  useEffect(() => {
-    const host = hostRef.current;
-    if (!host) return;
-    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
-
-    let raf = 0;
-    let last = 0;
-    let t = START_T;
-    let visible = false;
-
-    const tick = (now: number) => {
-      raf = requestAnimationFrame(tick);
-      if (last) {
-        // Cap the step so a backgrounded tab does not jump the timeline.
-        t = (t + Math.min((now - last) / 1000, 0.1)) % TOTAL;
-        setT(t);
-      }
-      last = now;
-    };
-
-    const start = () => {
-      if (raf) return;
-      last = 0;
-      raf = requestAnimationFrame(tick);
-    };
-    const stop = () => {
-      cancelAnimationFrame(raf);
-      raf = 0;
-    };
-
-    // Only burn frames while the piece is actually on screen and the tab is
-    // in front, the same policy the homepage preview uses.
-    const onVisibility = () => {
-      if (document.hidden) stop();
-      else if (visible) start();
-    };
-
-    const io = new IntersectionObserver(
-      ([entry]) => {
-        visible = entry.isIntersecting;
-        if (visible && !document.hidden) start();
-        else stop();
-      },
-      { rootMargin: "200px" },
-    );
-    io.observe(host);
-    document.addEventListener("visibilitychange", onVisibility);
-
-    return () => {
-      stop();
-      io.disconnect();
-      document.removeEventListener("visibilitychange", onVisibility);
-    };
-  }, []);
+  const { hostRef, T } = useCompositionClock({
+    total: TOTAL,
+    startAt: START_T,
+  });
 
   return (
     <div
