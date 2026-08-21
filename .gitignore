@@ -84,3 +84,7 @@ _to_delete/
 .claude/skills/tailwindcss/
 .claude/skills/ui-ux-pro-max/
 .vscode/
+
+# Design handoff bundles: reference prototypes for a build, not app source.
+# Matches the ignore glob in eslint.config.mjs.
+design_handoff_*/
