@@ -13,8 +13,9 @@
 
 import fs from "fs";
 import path from "path";
-import { execSync } from "child_process";
+import sharp from "sharp";
 
+const MODEL = process.env.GEMINI_IMAGE_MODEL || "gemini-3-pro-image";
 const API_KEY = process.env.GEMINI_API_KEY;
 if (!API_KEY) {
   console.error("Missing GEMINI_API_KEY in .env.local");
@@ -54,17 +55,17 @@ async function generateImage(slug: string, topicPrompt: string, composition: str
   console.log(`Composition: ${composition}`);
   console.log(`Topic: ${topicPrompt}\n`);
 
-  // Use Imagen 4.0 (correct 16:9 aspect ratio)
+  // Gemini image model (Imagen predict endpoints are no longer served on this key)
   const response = await fetch(
-    `https://generativelanguage.googleapis.com/v1beta/models/imagen-4.0-generate-001:predict?key=${API_KEY}`,
+    `https://generativelanguage.googleapis.com/v1beta/models/${MODEL}:generateContent?key=${API_KEY}`,
     {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
-        instances: [{ prompt: fullPrompt }],
-        parameters: {
-          sampleCount: 1,
-          aspectRatio: "16:9",
+        contents: [{ parts: [{ text: fullPrompt }] }],
+        generationConfig: {
+          responseModalities: ["IMAGE"],
+          imageConfig: { aspectRatio: "16:9" },
         },
       }),
     }
@@ -78,22 +79,13 @@ async function generateImage(slug: string, topicPrompt: string, composition: str
 
   const data = await response.json();
 
-  // Imagen 4.0 returns predictions array
-  const predictions = data.predictions;
-  if (!predictions || predictions.length === 0) {
-    console.error("No predictions in response");
+  const parts = data?.candidates?.[0]?.content?.parts ?? [];
+  const imagePart = parts.find((p: { inlineData?: { data?: string } }) => p.inlineData?.data);
+  if (!imagePart) {
+    console.error("No image data in response");
     console.error(JSON.stringify(data, null, 2).substring(0, 1000));
     process.exit(1);
   }
-
-  const imageData = predictions[0].bytesBase64Encoded;
-  if (!imageData) {
-    console.error("No image data in prediction");
-    console.error(JSON.stringify(predictions[0], null, 2).substring(0, 500));
-    process.exit(1);
-  }
-
-  const imagePart = { inlineData: { data: imageData } };
 
   // Save raw image first
   const outputDir = path.join(process.cwd(), "public", "images", "blog");
@@ -102,7 +94,8 @@ async function generateImage(slug: string, topicPrompt: string, composition: str
   }
 
   const outputPath = path.join(outputDir, `${slug}.png`);
-  const imageBuffer = Buffer.from(imagePart.inlineData.data, "base64");
+  const rawBuffer = Buffer.from(imagePart.inlineData.data, "base64");
+  const imageBuffer = await sharp(rawBuffer).png().toBuffer();
   fs.writeFileSync(outputPath, imageBuffer);
 
   const finalSize = imageBuffer.length;
