@@ -1,0 +1,166 @@
+---
+title: "Build vs. Buy AR Automation: What Building In-House Really Costs"
+seoTitle: "Build vs. Buy AR Automation: The Real Cost (2026)"
+description: "Your engineers can build an invoice chaser in a weekend. Shipping one that survives production takes a year. Here is the honest build vs. buy math for AR automation."
+slug: "build-vs-buy-ar-automation"
+author: "salman"
+category: "comparisons"
+tags: ["build vs buy", "AR automation", "accounts receivable", "finance operations", "engineering cost", "collections"]
+heroImage: "/images/blog/build-vs-buy-ar-automation.webp"
+heroImageAlt: "Illustration comparing an in-house build of tangled pipes, gears, and wrenches against a clean assembled AR automation panel, representing the build vs. buy decision"
+publishedAt: "2026-08-25"
+updatedAt: "2026-08-25"
+tldr: "A working invoice-reminder script takes a weekend. A production AR system that handles integrations, replies, disputes, cash application, deliverability, and audit trails takes roughly a year and a permanent engineering owner. Building only makes sense when collections is your product. For everyone else, the year of engineering time is the real cost, not the software fee."
+faqs:
+  - question: "How long does it take to build AR automation in-house?"
+    answer: "A basic reminder loop that reads overdue invoices and sends emails takes a few days to a few weeks. A production system takes roughly 9 to 12 months. The bulk of that time goes to accounting integrations (3 to 4 months), the workflow and rules engine (3 to 4 months), and the reply, dispute, and cash-application logic that has no natural end point. Most in-house AR projects do not fail at the prototype. They stall between the prototype and production."
+  - question: "What does it actually cost to build AR automation?"
+    answer: "Two senior engineers for nine to twelve months is roughly $250,000 to $400,000 in fully loaded salary before anything ships. Then you add ongoing costs: LLM inference for drafting and classifying replies, email and SMS delivery infrastructure, error monitoring, and hosting. The larger cost is permanent. Someone has to own the system forever, patch it every time QuickBooks or NetSuite changes an API, and stay on call when a reminder goes out to the wrong customer."
+  - question: "Is an LLM plus a payment webhook enough to automate AR?"
+    answer: "No, and this is the most common way in-house builds go wrong. A language model can draft a polite reminder, which is the easy part. It cannot match a lump-sum payment across seven invoices with a short-pay deduction, decide whether a reply is a dispute or a promise to pay, hold an account while a credit memo clears, or file an invoice into a customer AP portal. Those are workflow and state problems, not text-generation problems."
+  - question: "When does building AR automation in-house actually make sense?"
+    answer: "When collections is the product you sell. If you are a lending platform, a marketplace that underwrites receivables, or a factoring company, the chasing logic is your differentiation and you should own it. If you are a distributor, a manufacturer, an agency, or a software company, collections is critical infrastructure that no customer will ever buy you for. Owning that code buys you nothing your competitors do not already have from a vendor."
+  - question: "What if we already started building? Is that sunk cost worth finishing?"
+    answer: "Look at where you actually are. If you have a reminder scheduler running against one accounting system, you have finished the visible 20 percent and have not started the 80 percent that consumes the year. The honest test is whether your roadmap has room for AR integrations, deliverability, and dispute handling for the next three quarters. If a revenue feature would jump the queue, the AR build will quietly stall in that state forever, which is worse than either finishing or stopping."
+  - question: "How fast can you go live with a bought AR platform instead?"
+    answer: "Days, not quarters. Yonovo connects to QuickBooks Online, Xero, NetSuite, Odoo, and Sage over OAuth without IT involvement. Troyes went from a fully manual process to fully automated in a single day. The comparison that matters is not software fee versus zero, it is one day versus roughly a year of engineering time you could have spent on your actual product."
+keywords: ["build vs buy AR automation", "build accounts receivable automation", "in-house AR automation cost", "should we build AR automation", "AR automation engineering cost", "buy vs build collections software", "custom invoice chasing system"]
+featured: false
+---
+
+There is a moment in almost every growing finance org where someone in an engineering standup says the obvious thing: "This is just a cron job and an email template. Give me a weekend."
+
+They are not wrong about the weekend. You genuinely can wire an API call to your accounting system, pull the overdue invoices, drop them into a prompt, and send reminders. It will work. It will look impressive in a demo. With modern language models, the demo is easier to build now than it has ever been.
+
+The problem is that the demo is roughly 20 percent of the system, and it is the 20 percent everybody can see. The remaining 80 percent is the part that takes a year, and the reason in-house AR projects stall is that nobody scopes it until they are already six months in.
+
+This article lays out what actually sits behind that weekend prototype, what it costs, and the narrow set of cases where building is genuinely the right call.
+
+## What build vs. buy means for AR
+
+**Build** means your engineers own the system that chases your money. They write the scheduling logic, maintain the accounting integrations, handle inbound replies, manage the email reputation, build the reporting, and stay on call when it misfires at 2am against a customer who owes you $200,000.
+
+**Buy** means you run collections on a dedicated platform, configure the rules to match how your business works, and your engineers keep shipping the product your customers actually pay for.
+
+The decision is not really about software cost. It is about which of those two your engineering roadmap can absorb.
+
+## The weekend prototype and what it hides
+
+Here is what the prototype does: read overdue invoices, generate a message, send it, log that it was sent.
+
+Here is what it does not do:
+
+- Know that the customer replied "we paid this on the 14th" and stop chasing
+- Know that the payment which arrived was a lump sum covering seven invoices with a short-pay deduction on one of them
+- Know that this account is in an active dispute and every reminder makes it worse
+- Know that your biggest customer only accepts invoices filed through their AP portal, and email is a dead end
+- Know that the billing contact left the company three months ago and the address is bouncing
+- Know that sending 400 emails from a new domain will land the whole batch in spam
+
+Every one of those is a normal Tuesday in accounts receivable. Each one takes real engineering to handle. None of them show up in the demo.
+
+## Where in-house AR builds actually stall
+
+Three specific areas consume the bulk of the year, and all three are invisible from the prototype.
+
+### State management across the invoice lifecycle
+
+An invoice is not "open" or "paid." It is open, sent, viewed, reminded once, reminded twice, disputed, partially paid, promised for the 30th, promise broken, credit memo pending, escalated, or written off. Those states branch, overlap, and reverse.
+
+Getting this wrong is not a cosmetic bug. It is emailing a customer who already paid you, which costs you credibility with the exact person who signs off on your next invoice. Building a state machine that survives real-world messiness across thousands of invoices is not a weekend of work, and it is not something a language model does for you.
+
+### Orchestration and the rules engine
+
+Finance teams need to change how collections behave without filing a ticket. Different terms by customer tier. Different cadences by aging bucket. Hold rules for strategic accounts. Escalation thresholds. Quiet periods around renewals.
+
+That means a configurable rules engine with a UI, not hardcoded conditionals. The first version is hardcoded, finance asks for an exception in week two, and you spend the next three months building the configuration layer you should have designed up front.
+
+### Multi-channel delivery and deliverability
+
+Email alone is not enough. [Reaching people across email, SMS, voice, and WhatsApp](/blog/multi-channel-payment-chasing) meaningfully lifts response rates, and each channel is its own integration with its own compliance surface.
+
+Even email alone is harder than it looks. Sending domain warm-up, SPF and DKIM alignment, bounce and complaint handling, reply threading, and reputation monitoring are a specialty. Get it wrong and your entire AR function goes silently to spam, which you will discover from your DSO report a month later.
+
+## The honest timeline
+
+| Component | Realistic build time |
+|---|---|
+| Prototype: read invoices, send reminders | 1 to 3 weeks |
+| Accounting integrations (2 to 3 systems, sync + writeback) | 3 to 4 months |
+| Workflow and rules engine with a config UI | 3 to 4 months |
+| Inbound reply handling, classification, threading | 2 to 3 months |
+| Cash application and payment matching | 2 to 3 months |
+| Reporting, aging views, audit trail | 6 to 8 weeks |
+| Deliverability, monitoring, on-call hardening | Ongoing |
+| Customer portal filing | Effectively unbounded |
+
+Those overlap with parallel engineers, so the calendar answer lands around 9 to 12 months to something you would trust with your receivables. The last two rows never finish. They become a permanent line item on someone's plate.
+
+## What it costs
+
+Two senior engineers for a year is roughly $250,000 to $400,000 fully loaded, before a single invoice gets collected. Then the recurring costs start:
+
+- **LLM inference** for drafting and classifying at volume, typically a few thousand dollars a month once you are past the pilot
+- **Delivery infrastructure** across email, SMS, and voice providers
+- **Monitoring and error handling**, because a silent failure in AR is money that stops arriving
+- **Maintenance**, because QuickBooks, Xero, NetSuite, Odoo, and Sage all change their APIs on their own schedule and none of them ask you first
+
+The recurring cost is the one that gets underestimated. You have not bought a project. You have adopted an internal product with a permanent owner, and that owner becomes the only person who understands it. When they leave, you are maintaining a system nobody can explain.
+
+## Security, compliance, and the audit trail
+
+Your AR system touches billing contacts, payment terms, credit exposure, bank references, and in some cases stored portal credentials. That is a real surface area.
+
+It also sends outbound messages in your company's name to your customers, which makes it a spoofing and phishing target with direct financial consequence.
+
+And when a customer disputes what they were told and when, you need a complete, tamper-evident record of every message sent, on which channel, to whom, and what came back. Retrofitting an audit trail after the fact is painful. Designing one from the start adds months.
+
+A vendor arrives with that posture already built and independently reviewed. Building means you design it, defend it, and answer for it in every enterprise security review your sales team runs into.
+
+## When building genuinely makes sense
+
+There is a real answer here, and it is narrow.
+
+**Build when collections is your product.** If you are a lending platform, a factoring company, an AP/AR marketplace, or anyone whose differentiation is the chasing logic itself, own it. That code is your moat and you should not rent it.
+
+**Buy when collections is critical but undifferentiated.** If you are a [distributor](/industries/wholesale-distribution), a [manufacturer](/industries/manufacturing), an [agency](/industries/professional-services), or a [software company](/industries/software-tech), no customer will ever choose you because your dunning cadence is bespoke. It has to work. It does not have to be yours.
+
+A useful test: if this system worked perfectly, would a single prospect care? If the honest answer is no, it is infrastructure, not strategy.
+
+## The cost nobody puts in the spreadsheet
+
+The build-vs-buy debate usually gets framed as software fee versus engineering salary. That comparison misses the actual expense.
+
+The real cost is what those two engineers do not build for a year. Every quarter your best people spend on webhook retries and bounce handling is a quarter your product roadmap did not move. That opportunity cost does not show up anywhere in the finance model, and it is almost always larger than both line items being compared.
+
+## What buying looks like
+
+The practical version of "buy" for most teams:
+
+1. **Connect your accounting system.** [QuickBooks Online](/solutions/quickbooks), [Xero](/solutions/xero), [NetSuite](/solutions/netsuite), [Odoo](/solutions/odoo), or [Sage](/solutions/sage), over OAuth. No IT project.
+2. **Configure the workflow.** Cadence, tone, channels, escalation thresholds, and hold rules for the accounts you want handled carefully.
+3. **Go live.** Yonovo starts working your overdue invoices immediately, and a real person helps you tune it rather than handing you documentation.
+
+[TDG Inc.](/case-studies/tdg-inc) cut manual follow-ups by 80 percent and took 15 days off DSO. [Troyes](/case-studies/troyes) went from fully manual to fully automated in one day and saved 25-plus hours a month.
+
+Compare that to a year of engineering time and the decision usually answers itself.
+
+## The bottom line
+
+| | Build in-house | Buy a platform |
+|---|---|---|
+| **Time to a working demo** | 1 to 3 weeks | Same day |
+| **Time to production** | 9 to 12 months | Days |
+| **Upfront cost** | $250K to $400K in engineering | Subscription |
+| **Ongoing cost** | Permanent owner, LLM and delivery spend, API maintenance | Subscription |
+| **Integrations** | You build and maintain each one | Included and maintained |
+| **Deliverability** | Your problem to learn | Handled |
+| **Compliance and audit trail** | You design and defend it | Already built |
+| **Opportunity cost** | A year of your roadmap | None |
+| **Worth it when** | Collections is your product | Collections is infrastructure |
+
+Building AR automation is not technically hard in the way people assume. It is hard in the way that all long-tail operational software is hard: the first 20 percent is a weekend, and the last 80 percent is a year you did not plan for.
+
+If you are still weighing this, the cheapest next step is to look at what a finished version does with your real invoices before you commit engineers to rebuilding it. [Book a demo](/book-demo), or see [what it costs](/pricing) next to a year of salary.
+
+For the broader case against doing this by hand at all, see [AR automation vs. manual collections](/blog/ar-automation-vs-manual-collections) and [what AR automation actually is](/blog/what-is-ar-automation).
