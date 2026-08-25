@@ -69,10 +69,7 @@ export default async function BlogPostPage({ params }: Props) {
     .charAt(0)
     .toUpperCase() + post.frontmatter.category.slice(1).replace(/-/g, " ");
 
-  const date = new Date(post.frontmatter.publishedAt).toLocaleDateString(
-    "en-US",
-    { month: "short", day: "numeric", year: "numeric" }
-  );
+  const date = formatPostDate(post.frontmatter.publishedAt);
 
   return (
     <>
@@ -223,12 +220,10 @@ export default async function BlogPostPage({ params }: Props) {
 
 /* Keep reading card — dark theme, matches Chatbase's pattern using Yonovo design system */
 import type { BlogPostMeta } from "@/lib/blog-types";
+import { formatPostDate } from "@/lib/format-date";
 
 function KeepReadingCard({ post }: { post: BlogPostMeta }) {
-  const date = new Date(post.frontmatter.publishedAt).toLocaleDateString(
-    "en-US",
-    { month: "short", day: "numeric", year: "numeric" }
-  );
+  const date = formatPostDate(post.frontmatter.publishedAt);
 
   return (
     <div className="flex h-full flex-col justify-between rounded-md">

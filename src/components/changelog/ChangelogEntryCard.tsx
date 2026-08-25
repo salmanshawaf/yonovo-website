@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import type { ChangelogEntryMeta } from "@/lib/changelog-types";
+import { formatPostDate } from "@/lib/format-date";
 
 export default function ChangelogEntryCard({
   entry,
@@ -9,10 +10,7 @@ export default function ChangelogEntryCard({
   entry: ChangelogEntryMeta;
   contentHtml: string;
 }) {
-  const date = new Date(entry.frontmatter.publishedAt).toLocaleDateString(
-    "en-US",
-    { month: "short", day: "numeric", year: "numeric" }
-  );
+  const date = formatPostDate(entry.frontmatter.publishedAt);
 
   return (
     <article className="pb-16">

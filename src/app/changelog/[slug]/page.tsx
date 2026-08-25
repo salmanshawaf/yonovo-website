@@ -12,6 +12,7 @@ import ChangelogBackNav from "@/components/changelog/ChangelogBackNav";
 import BlogBottomCta from "@/components/blog/BlogBottomCta";
 
 import { getAllEntries, getEntryBySlug } from "@/lib/changelog";
+import { formatPostDate } from "@/lib/format-date";
 
 type Props = { params: Promise<{ slug: string }> };
 
@@ -47,10 +48,7 @@ export default async function ChangelogEntryPage({ params }: Props) {
   const entry = getEntryBySlug(slug);
   if (!entry) notFound();
 
-  const date = new Date(entry.frontmatter.publishedAt).toLocaleDateString(
-    "en-US",
-    { month: "short", day: "numeric", year: "numeric" }
-  );
+  const date = formatPostDate(entry.frontmatter.publishedAt);
 
   const jsonLd = {
     "@context": "https://schema.org",

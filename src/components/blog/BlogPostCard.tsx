@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import type { BlogPostMeta } from "@/lib/blog-types";
+import { formatPostDate } from "@/lib/format-date";
 
 export default function BlogPostCard({
   post,
@@ -9,10 +10,7 @@ export default function BlogPostCard({
   post: BlogPostMeta;
   featured?: boolean;
 }) {
-  const date = new Date(post.frontmatter.publishedAt).toLocaleDateString(
-    "en-US",
-    { month: "short", day: "numeric", year: "numeric" }
-  );
+  const date = formatPostDate(post.frontmatter.publishedAt);
 
   if (featured) {
     return (

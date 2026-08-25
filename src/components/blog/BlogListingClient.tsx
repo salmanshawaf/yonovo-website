@@ -4,6 +4,7 @@ import { useState, useMemo, useCallback } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import type { BlogPostMeta } from "@/lib/blog-types";
+import { formatPostDate } from "@/lib/format-date";
 
 const POSTS_PER_PAGE = 9;
 
@@ -152,10 +153,7 @@ export default function BlogListingClient({ posts, categories }: Props) {
 // ── Listing card ──
 
 function ListingCard({ post }: { post: BlogPostMeta }) {
-  const date = new Date(post.frontmatter.publishedAt).toLocaleDateString(
-    "en-US",
-    { month: "short", day: "numeric", year: "numeric" }
-  );
+  const date = formatPostDate(post.frontmatter.publishedAt);
 
   return (
     <div className="flex h-full flex-col justify-between rounded-md">
