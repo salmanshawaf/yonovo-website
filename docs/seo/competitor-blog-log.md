@@ -15,6 +15,19 @@ Newest last.
 | Run date | Competitor source post | Ahrefs signal at pick time | Yonovo post created | Status |
 |---|---|---|---|---|
 | 2026-08-26 | https://upflow.io/blog/cfo-reads/cash-flow-analysis | +539 US visits in 7d, 2,710/mo, #7 for "cash flow analysis" (52k/mo, KD 22) | [cash-flow-analysis](../../src/content/blog/cash-flow-analysis.mdx) | published |
+| 2026-09-01 | none scanned | Scan could not run. Ahrefs was reachable (upflow.io/blog prefix, US, 7d compare: top gainer `/blog/saas-finance` +60 visits; all gainers were established pages, no new posts surfaced). Ahrefs top-pages carries no publish date, so it cannot substitute for the index scan. | none | blocked: competitor sites unreachable |
+
+## Known blockers
+
+**2026-09-01: competitor domains blocked by network egress policy.** `upflow.io`, `chaserhq.com`,
+and `stuut.ai` all fail at the proxy CONNECT tunnel with 403 (via WebFetch and curl alike). The
+agent proxy itself is healthy and reports no relay failures, so this is the environment's egress
+allowlist, not a transient network fault. Ahrefs and GitHub are unaffected.
+
+The routine cannot run while this holds: publish dates can only be verified on the post pages, and
+Step 4 requires reading the winning post to model its structure. Ahrefs alone cannot fill either
+gap. Fix by adding the three domains to the remote environment's network allowlist
+(see https://code.claude.com/docs/en/claude-code-on-the-web). Until then every run will land here.
 
 ## Skip list
 
