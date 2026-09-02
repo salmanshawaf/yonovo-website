@@ -1,0 +1,145 @@
+---
+title: "Bilingual Collections: Running AR in French and English"
+seoTitle: "Bilingual AR Collections in Quebec: French Invoice Reminders (2026)"
+description: "If you invoice customers in Quebec or overseas, your payment reminders need to arrive in the right language. How to run bilingual collections without doubling the work."
+slug: "bilingual-collections-french-quebec"
+author: "salman"
+category: "guides"
+tags: ["bilingual collections", "Quebec", "Bill 96", "French invoicing", "multilingual AR", "accounts receivable", "collections"]
+publishedAt: "2026-09-02"
+updatedAt: "2026-09-02"
+heroImage: "/images/blog/bilingual-collections-french-quebec.webp"
+heroImageAlt: "Two speech bubbles containing an invoice document each, facing one another across a globe with a small envelope and clock between them, illustrating bilingual payment reminders"
+tldr: "If you invoice customers in Quebec, your collections communications should be available in French, and in practice sending them in French gets better responses. Bilingual AR does not mean running two processes. It means tagging each customer with a language preference and letting one sequence render in the right language. Set the preference at the customer record, not the invoice, and have a native speaker review the templates before they go live."
+faqs:
+  - question: "Do I need to send invoices and payment reminders in French in Quebec?"
+    answer: "Quebec's Charter of the French Language, significantly strengthened by Bill 96, requires businesses operating in the province to be able to conduct commercial communications in French, including invoices and related documents. The precise obligations depend on your business size, where you are established, and the nature of the relationship, so confirm your specific position with Quebec counsel. Operationally, the safe and effective default is to make French available to every Quebec customer."
+  - question: "Does a Quebec customer have to request French, or should it be the default?"
+    answer: "Treat French as the default for Quebec customers and let them opt into English, rather than the reverse. Beyond the compliance argument, it works better. A payment reminder that arrives in the recipient's working language is read faster and answered more often, and a reminder in the wrong language creates friction at exactly the moment you want none."
+  - question: "Can AR automation send payment reminders in multiple languages?"
+    answer: "Yes. The reminder sequence, timing, and escalation logic stay identical, while the message content renders from a language specific template set. The language is a property of the customer record, so once it is set every email, SMS, and voice call for that customer arrives in the right language automatically without anyone choosing per message."
+  - question: "Should AI translate the reminder templates or should a human write them?"
+    answer: "Have a native speaker write or review them. Collections language is unusually sensitive, because the difference between a polite nudge and an accusation can be one word choice, and machine translation of tone is where errors concentrate. Translate once, review once, and reuse. It is a few hours of work that protects every message you send afterwards."
+  - question: "What about the platform interface, does that need to be in French too?"
+    answer: "That depends on who uses it. If your AR team works in French, an English only interface is a daily friction and, for some Quebec employers, a consideration under provincial language of work requirements. Customer facing communication in French matters most and is easier to deliver, but ask any vendor whether the interface itself can be localized before you assume it can."
+  - question: "How do you handle a customer whose contacts prefer different languages?"
+    answer: "Set language at the contact level rather than only the customer level where your system allows it. A Montreal head office might have a francophone controller and an anglophone accounts payable clerk, and sending each of them the same message in one language guarantees one of them is served badly. Where only a customer level setting exists, default to French for Quebec accounts and note the exceptions."
+keywords: ["bilingual collections", "french payment reminders", "quebec bill 96 invoicing", "french invoice reminder", "multilingual accounts receivable", "collections in french", "quebec accounts receivable"]
+featured: false
+---
+
+The question comes up on nearly every call with a Montreal based business, usually near the end, phrased as a checkbox item.
+
+"You have a French version, right?"
+
+It is rarely a checkbox item. Depending on the business, it can be the thing that decides whether the tool is usable at all. If your AR rep works in French, your customers correspond in French, and Quebec law expects your commercial communications to be available in French, then an English only collections process is not a limitation you work around. It is a non starter.
+
+Here is how bilingual AR actually works, and where the effort really goes.
+
+## The compliance floor
+
+Quebec's Charter of the French Language has required French in commercial communications for decades. Bill 96, adopted in 2022 and phased in since, strengthened those requirements substantially and increased the consequences of ignoring them.
+
+The specifics of what applies to your business depend on where you are established, how many people you employ, and the nature of your customer relationships. That is a question for Quebec counsel, not for a software vendor, and any vendor who tells you confidently what your legal obligations are is overstepping.
+
+What we can say operationally is this: for a business invoicing Quebec customers, making French available is both the conservative compliance position and the one that works better commercially. The gap between "we can send French if asked" and "French is the default for Quebec accounts" is small in effort and meaningful in outcome.
+
+## The part that actually matters: response rates
+
+Set compliance aside for a moment, because there is a plainer argument.
+
+A payment reminder is a request for someone to take an action they were not planning to take today. Every point of friction between arrival and action reduces the chance of it happening. Landing in the wrong language is a large point of friction.
+
+The recipient has to translate it, or park it to deal with later, or forward it to a colleague who reads English. Each of those is a delay, and delay is the entire problem you are trying to solve. A reminder in the recipient's working language gets read on arrival and answered from the same screen.
+
+This holds beyond French. If you invoice in Latin America, Germany, or the Gulf, the same logic applies. Language preference is a collections lever, not just a compliance obligation.
+
+## Bilingual does not mean two processes
+
+The mistake teams make is assuming bilingual collections means maintaining two of everything: two sequences, two escalation ladders, two sets of rules, two reports.
+
+It does not. The structure stays identical. Only the rendered text changes.
+
+Your reminder cadence, your channel escalation, your timing thresholds, and your internal alerts are business logic. They have nothing to do with language. What varies is the content of the message at each step.
+
+So the architecture is:
+
+1. **One sequence**, defined once, with all your timing and escalation rules.
+2. **A template set per language**, with a version of each message in each language.
+3. **A language preference on the customer or contact record**, which selects the template set.
+
+Add a third language later and you add a template set. You do not rebuild the sequence.
+
+| Element | Language specific? |
+| --- | --- |
+| Reminder timing and cadence | No |
+| Channel escalation rules | No |
+| Internal alerts and thresholds | No |
+| Customer exclusions | No |
+| Email subject and body | Yes |
+| SMS content | Yes |
+| Voice call script | Yes |
+| Invoice document and payment instructions | Yes |
+
+## Set language on the contact, not the invoice
+
+This is the design detail that determines whether the setup holds up.
+
+Language is a property of the person receiving the message. It is not a property of the invoice, the project, or the transaction. An invoice does not have a language preference. A controller in Montreal does.
+
+Set it at the contact level where your system supports it, and at the customer level otherwise. The practical difference shows up in mixed environments, which are common: a Montreal head office with a francophone controller and an anglophone AP clerk, or a national account where the Quebec branch works in French and the Toronto branch does not. A customer level setting forces one language on both, and one of them is served badly.
+
+Once the preference is set, every email, SMS, and voice call for that contact renders in the right language automatically. Nobody makes a per message decision, which means nobody makes a per message mistake.
+
+## Translate the templates properly, once
+
+Do not machine translate your collections templates and ship them.
+
+Collections language is unusually sensitive. The gap between a polite nudge and something that reads as an accusation is often a single word choice, and tone is precisely where automated translation is least reliable. A reminder that reads as brusque in French does damage you will not find out about, because the customer will not tell you. They will just be slightly less inclined to prioritize your invoice.
+
+The good news is that this is a bounded, one time job. A collections sequence is maybe eight to twelve messages across email, SMS, and voice. Have a native speaker write or review them, get the escalation tone right at each stage, and you are done. Those templates then serve every French speaking customer indefinitely.
+
+Two things worth getting right specifically:
+
+**Formal versus informal address.** In French business correspondence, *vous* is correct for collections. This is not a stylistic preference, and getting it wrong reads as either careless or presumptuous depending on the reader.
+
+**Escalation vocabulary.** The words that signal firmness in English do not map one to one. Have your reviewer calibrate the ladder in French on its own terms rather than translating the English ladder word for word.
+
+## Voice calls in French
+
+If your sequence includes AI voice calls on significantly overdue invoices, those need the same treatment. The script is a template like any other, and it should be reviewed by the same native speaker.
+
+Current voice models handle French well. The practical constraint on AI collections calls is not language quality, it is that people frequently do not answer the phone at all, which is true in every language. We wrote about that honestly in [do AI phone calls actually work for collecting invoices](/blog/do-ai-phone-calls-work-for-collections).
+
+## The interface question
+
+Customer facing communication is the part that matters most and it is the easier half. The platform interface your own team uses is a separate question, and it is worth asking directly rather than assuming.
+
+Many AR platforms can send in any language while offering an English only interface. For a team that works in French daily, that is a real friction, and for some Quebec employers it touches on language of work considerations that go beyond preference.
+
+Ask any vendor two separate questions:
+
+- Can you send customer communications in French?
+- Can the interface our team uses be in French?
+
+The answers are often different. At Yonovo, French communication is straightforward and we already run other languages. The interface itself is something we localize on request rather than something that ships in French by default, and we would rather say that plainly than let it surface after a contract is signed.
+
+## A short checklist
+
+If you are setting up bilingual collections, in order:
+
+1. Confirm your actual obligations with Quebec counsel if you invoice into the province.
+2. Decide the default. For Quebec accounts, French with an English opt out is the safer and better performing choice.
+3. Add a language field to your customer or, preferably, contact records.
+4. Backfill it. Most teams already know which accounts work in French.
+5. Have a native speaker write or review the full template set including SMS and voice.
+6. Verify the invoice document and payment instructions are also available in French, not just the reminders.
+7. Ask your vendor about interface localization separately.
+
+None of this is a large project. It is a few hours of translation work and a data field, and it removes a source of friction on every message you send to a substantial part of your customer base.
+
+> Across our customer base, automating follow-ups recovers an average of 15 hours per week. One Yonovo customer brought DSO down from 65 days to 41.
+
+For the reminder content itself, [invoice reminder templates and best practices](/blog/invoice-reminder-best-practices) covers timing and tone by aging stage. If your Quebec customers are in construction, [how AR automation handles construction retainage and holdback](/blog/ar-automation-construction-retainage-holdback) covers the other thing that decides whether automation fits.
+
+If you need French collections running and want to see what the templates look like, [book a demo](/book-demo) and we can walk through it.
