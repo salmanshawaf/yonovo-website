@@ -16,6 +16,7 @@ Newest last.
 |---|---|---|---|---|
 | 2026-08-26 | https://upflow.io/blog/cfo-reads/cash-flow-analysis | +539 US visits in 7d, 2,710/mo, #7 for "cash flow analysis" (52k/mo, KD 22) | [cash-flow-analysis](../../src/content/blog/cash-flow-analysis.mdx) | published |
 | 2026-09-01 | none scanned | Scan could not run. Ahrefs was reachable (upflow.io/blog prefix, US, 7d compare: top gainer `/blog/saas-finance` +60 visits; all gainers were established pages, no new posts surfaced). Ahrefs top-pages carries no publish date, so it cannot substitute for the index scan. | none | blocked: competitor sites unreachable |
+| 2026-09-03 | none scanned | Scan could not run. Same egress blocker as 2026-09-01: `upflow.io`, `chaserhq.com`, `stuut.ai` all return EGRESS_BLOCKED via WebFetch. Proxy itself healthy (`recentRelayFailures: []`, enabled), so this is the environment allowlist, not a transient fault. Ahrefs alone cannot verify publish dates or supply a post to model. | none | blocked: competitor sites unreachable |
 
 ## Known blockers
 
