@@ -18,15 +18,22 @@ Newest last.
 | 2026-09-01 | none scanned | Scan could not run. Ahrefs was reachable (upflow.io/blog prefix, US, 7d compare: top gainer `/blog/saas-finance` +60 visits; all gainers were established pages, no new posts surfaced). Ahrefs top-pages carries no publish date, so it cannot substitute for the index scan. | none | blocked: competitor sites unreachable |
 | 2026-09-03 | none scanned | Scan could not run. Same egress blocker as 2026-09-01: `upflow.io`, `chaserhq.com`, `stuut.ai` all return EGRESS_BLOCKED via WebFetch. Proxy itself healthy (`recentRelayFailures: []`, enabled), so this is the environment allowlist, not a transient fault. Ahrefs alone cannot verify publish dates or supply a post to model. | none | blocked: competitor sites unreachable |
 | 2026-09-05 | none scanned | Scan could not run, third consecutive time. Ahrefs `upflow.io/blog` prefix (US, 2026-09-05 vs 2026-08-29, `traffic_diff:desc`) returned 15 gainers, **all `status: "both"`**, i.e. established pages. Zero new pages surfaced. Top gainer is still `/blog/cfo-reads/cash-flow-analysis` (+769 to 2,029 US visits, "cash flow analysis" 51k/mo, pos 6), already cloned on 2026-08-26, so the log correctly suppressed a repeat. `chaserhq.com/blog` prefix returned zero rows (they serve from `www.`; not retried, run was blocked regardless). New this run: WebSearch **does** reach competitor domains, so titles and URLs are obtainable, but it returns no verifiable publish dates and cannot supply post bodies. | none | blocked: competitor sites unreachable |
+| 2026-09-07 | none scanned | Scan could not run, fourth consecutive time. Blocker re-verified from a fresh container: proxy status clean (`enabled: true`, `recentRelayFailures: []`), yet `upflow.io`, `www.chaserhq.com` and `stuut.ai` all fail identically via WebFetch (`EGRESS_BLOCKED`) and curl (`CONNECT tunnel failed, response 403`). A clean proxy with exactly these three hosts refused confirms an allowlist denial, not a transient fault or poisoned proxy state. Ahrefs `upflow.io/blog/` prefix (US, 2026-09-07 vs 2026-08-31, `traffic_diff:desc`, 20 rows) again returned **every row `status: "both"`**, zero new pages. Top gainer remains `/blog/cfo-reads/cash-flow-analysis` (+87 to 1,347 US visits), already cloned 2026-08-26, so the log suppressed a repeat as designed. Next gainers (`/ar-collections/late-fee` +54, `/reduce-dso/days-sales-in-accounts-receivable` +40) are long-established pages, not last-14-days posts. | none | blocked: competitor sites unreachable |
 
 ## Known blockers
 
-**2026-09-01 (still open as of 2026-09-05, 3 runs lost): competitor domains blocked by network
-egress policy.** `upflow.io`, `chaserhq.com`, and `stuut.ai` all fail at the proxy CONNECT tunnel
-with 403 (via WebFetch and curl alike). The agent proxy itself is healthy and enabled; its
-`recentRelayFailures` now name these three hosts explicitly with
-`"gateway answered 403 to CONNECT (policy denial or upstream failure)"`. So this is the
-environment's egress allowlist, not a transient network fault. Ahrefs and GitHub are unaffected.
+**2026-09-01 (still open as of 2026-09-07, 4 runs lost, 8 days with no post shipped): competitor
+domains blocked by network egress policy.** `upflow.io`, `chaserhq.com`, and `stuut.ai` all fail at
+the proxy CONNECT tunnel with 403 (via WebFetch and curl alike). The agent proxy itself is healthy
+and enabled. On 2026-09-01 its `recentRelayFailures` named these three hosts explicitly with
+`"gateway answered 403 to CONNECT (policy denial or upstream failure)"`; on 2026-09-07, from a
+fresh container with `recentRelayFailures: []`, the same three hosts were refused identically. A
+clean proxy that still refuses exactly these hosts is the clearest signal yet that this is the
+environment's egress allowlist, not a transient fault or accumulated proxy state. Ahrefs and
+GitHub are unaffected.
+
+**This blocker does not self-resolve.** Every run until the allowlist changes will land here and
+cost another 2 days of publishing cadence. It needs Salman to act.
 
 **Fix:** add `upflow.io`, `chaserhq.com` (and `www.chaserhq.com`), and `stuut.ai` to the remote
 environment's network allowlist. See https://code.claude.com/docs/en/claude-code-on-the-web.
@@ -36,7 +43,8 @@ Until then every run lands here.
 
 - **Ahrefs as a substitute for the index scan.** Ahrefs top-pages carries no publish date, and new
   posts have no traffic yet by definition, so they never surface as gainers. Confirmed again on
-  2026-09-05: all 15 Upflow gainers were `status: "both"` (established pages).
+  2026-09-05 (all 15 Upflow gainers `status: "both"`) and on 2026-09-07 (all 20 gainers
+  `status: "both"`). Two independent runs, zero new pages: this avenue is closed, not unlucky.
 - **WebSearch as a substitute.** WebSearch is *not* egress-proxied and does reach these domains,
   returning titles and URLs. It is still not enough for two reasons: it surfaces no publish date
   that can be verified (Step 2 requires confirming the date on the post page itself), and it
