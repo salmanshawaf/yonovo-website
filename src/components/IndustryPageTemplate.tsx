@@ -6,6 +6,7 @@ import type { IndustryData } from "@/data/industries";
 import FAQAccordion from "@/components/FAQAccordion";
 import TestimonialsSection from "@/components/sections/TestimonialsSection";
 import RelatedResources from "@/components/RelatedResources";
+import { CARD_LIGHT, CARD_LIGHT_BASE, ClientAgentCard, ReplyCard } from "@/components/AgentCards";
 
 const logos = [
   { name: "Troyes", src: "/logos/troyes.png", width: 130, className: "h-[28px] lg:h-[47px]" },
@@ -91,19 +92,13 @@ export default function IndustryPageTemplate({ data }: { data: IndustryData }) {
                 </div>
               </div>
 
-              {/* Right — Dashboard Preview */}
-              <div className="w-full px-0 md:px-15">
-                <div className="relative aspect-[0.8] w-full overflow-hidden rounded-2xl">
-                  <video
-                    src="/industry-hero-video.mp4"
-                    poster="/industry-hero-poster.jpg"
-                    preload="none"
-                    autoPlay
-                    loop
-                    muted
-                    playsInline
-                    className="absolute inset-0 h-full w-full object-cover object-top"
-                  />
+              {/* Right — Product cards */}
+              <div className="mx-auto flex w-full max-w-md flex-col gap-4">
+                <div className={CARD_LIGHT}>
+                  <ClientAgentCard />
+                </div>
+                <div className={`${CARD_LIGHT_BASE} flex min-h-[320px] flex-col p-5`}>
+                  <ReplyCard {...data.hero.reply} />
                 </div>
               </div>
             </div>

@@ -1,3 +1,5 @@
+import type { ReplyCardContent } from "@/components/AgentCards";
+
 export type IndustryData = {
   slug: string;
   meta: {
@@ -9,6 +11,8 @@ export type IndustryData = {
     headline: string;
     description: string;
     cta: string;
+    /* Copy for the hero's customer-reply card. Falls back to the home page copy when omitted. */
+    reply?: ReplyCardContent;
   };
   problems: {
     badge: string;
@@ -56,6 +60,14 @@ export const industries: Record<string, IndustryData> = {
       description:
         "Yonovo automates your accounts receivable with personalized follow ups across email, SMS, and voice. Built for the long payment cycles and high-value relationships of wholesale distribution.",
       cta: "Book Demo",
+      reply: {
+        customer: "Westfield Retail Group",
+        incoming:
+          "Perfect. Once the invoice shows the PO number for that shipment we can release the full balance on Friday.",
+        draft:
+          "All set. I have added PO #4417 to invoice #2041 and attached the corrected copy, so you are clear to release payment Friday.",
+        attachment: "Invoice #2041 (updated).pdf",
+      },
     },
     problems: {
       badge: "Problem",
@@ -229,6 +241,14 @@ export const industries: Record<string, IndustryData> = {
       description:
         "Yonovo automates your accounts receivable with personalized follow ups across email, SMS, and voice. Built for the extended payment cycles and high-value contracts of manufacturing.",
       cta: "Book Demo",
+      reply: {
+        customer: "Corbin Industrial",
+        incoming:
+          "We can only pay once the invoice matches the PO and the packing slip on our side.",
+        draft:
+          "Done. Invoice #3188 now references PO #8802 and the packing slip for that run, and the corrected copy is attached.",
+        attachment: "Invoice #3188 (updated).pdf",
+      },
     },
     problems: {
       badge: "Problem",
@@ -402,6 +422,14 @@ export const industries: Record<string, IndustryData> = {
       description:
         "Yonovo automates your accounts receivable with personalized follow ups across email, SMS, and voice. Built for the project-based billing and long client relationships of professional services.",
       cta: "Book Demo",
+      reply: {
+        customer: "Halstead & Finch",
+        incoming:
+          "Our AP team will not process this without the PO number for the engagement on the invoice.",
+        draft:
+          "Sorted. I have added PO #6120 for the engagement to invoice #1974 and attached the updated copy for your AP team.",
+        attachment: "Invoice #1974 (updated).pdf",
+      },
     },
     problems: {
       badge: "Problem",
@@ -575,6 +603,14 @@ export const industries: Record<string, IndustryData> = {
       description:
         "Yonovo automates your accounts receivable with personalized follow ups across email, SMS, and voice. Built for the recurring billing and tenant relationships of property management.",
       cta: "Book Demo",
+      reply: {
+        customer: "Brookline Dental Group",
+        incoming:
+          "We can approve this once the invoice lists our suite and the PO number from our lease renewal.",
+        draft:
+          "All set. Invoice #5206 now lists Suite 320 and PO #2254, and the corrected copy is attached for approval.",
+        attachment: "Invoice #5206 (updated).pdf",
+      },
     },
     problems: {
       badge: "Problem",
@@ -748,6 +784,14 @@ export const industries: Record<string, IndustryData> = {
       description:
         "Yonovo automates your accounts receivable with personalized follow ups across email, SMS, and voice. Built for the recurring billing and member relationships of gyms and fitness businesses.",
       cta: "Book Demo",
+      reply: {
+        customer: "Northgate Health Partners",
+        incoming:
+          "Finance needs the PO number on the corporate membership invoice before they can release payment.",
+        draft:
+          "Done. I have added PO #7731 to invoice #4082 for your corporate memberships and attached the updated copy.",
+        attachment: "Invoice #4082 (updated).pdf",
+      },
     },
     problems: {
       badge: "Problem",
@@ -921,6 +965,14 @@ export const industries: Record<string, IndustryData> = {
       description:
         "Yonovo automates your accounts receivable with personalized follow ups across email, SMS, and voice. Built for the recurring billing, enterprise contracts, and global customer base of software and tech companies.",
       cta: "Book Demo",
+      reply: {
+        customer: "Vantiq Systems",
+        incoming:
+          "Procurement will not release the renewal until the invoice carries our PO number.",
+        draft:
+          "All set. Renewal invoice #9315 now carries PO #5548 and the corrected copy is attached, so procurement can release it.",
+        attachment: "Invoice #9315 (updated).pdf",
+      },
     },
     problems: {
       badge: "Problem",
