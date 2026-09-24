@@ -24,9 +24,10 @@ function G2Mark() {
 }
 
 const logos = [
-  { name: "Troyes", src: "/logos/troyes.png", width: 130, className: "h-[24px] lg:h-[47px]" },
-  { name: "TDG Inc", src: "/logos/tdg-inc.svg", width: 200, className: "h-[52px] lg:h-[120px]" },
-  { name: "SBC", src: "/logos/sbc.png", width: 200, className: "h-[40px] lg:h-[95px]" },
+  { name: "Conveyor", src: "/logos/conveyor.svg", width: 145, className: "h-[26px] lg:h-[32px]" },
+  { name: "Lawazim", src: "/logos/lawazim.svg", width: 156, className: "h-[13px] lg:h-[16px]" },
+  { name: "Troyes", src: "/logos/troyes.png", width: 130, className: "h-[36px] lg:h-[47px]" },
+  { name: "SBC", src: "/logos/sbc.png", width: 200, className: "h-[80px] lg:h-[95px]" },
 ];
 
 export default function HeroSection() {
@@ -92,17 +93,18 @@ export default function HeroSection() {
             <p className="text-center font-medium text-[15px] text-zinc-500 md:text-base">
               Trusted by teams who hate chasing payments
             </p>
-            <div className="w-full -mt-2 md:-mt-5">
-              <div className="flex items-center justify-center gap-6 md:gap-10">
+            <div className="w-full mt-4 md:mt-6">
+              <div className="grid grid-cols-2 border-l border-t border-border md:grid-cols-4">
                 {logos.map((logo) => (
-                  <Image
-                    key={logo.name}
-                    src={logo.src}
-                    alt={logo.name}
-                    width={logo.width}
-                    height={48}
-                    className={`w-auto grayscale opacity-60 ${logo.className}`}
-                  />
+                  <div key={logo.name} className="flex h-24 items-center justify-center border-b border-r border-border md:h-28">
+                    <Image
+                      src={logo.src}
+                      alt={logo.name}
+                      width={logo.width}
+                      height={48}
+                      className={`w-auto grayscale opacity-60 ${logo.className}`}
+                    />
+                  </div>
                 ))}
               </div>
             </div>
