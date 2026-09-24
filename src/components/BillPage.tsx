@@ -1,13 +1,15 @@
 import Image from "next/image";
 import imgBillStep1Connect from "../../public/images/bill-step-1-connect.png";
-import imgHighlightOversight from "../../public/images/highlight-oversight.png";
-import imgQbStep2Stats from "../../public/images/qb-step-2-stats.png";
-import imgQbStep3Followup from "../../public/images/qb-step-3-followup.png";
-import imgQbStep4Learns from "../../public/images/qb-step-4-learns.png";
-import imgQbStep5Dashboard from "../../public/images/qb-step-5-dashboard.png";
 import Link from "next/link";
+import {
+  StepSyncIllustration,
+  StepFollowUpIllustration,
+  StepAdaptsIllustration,
+  StepDashboardIllustration,
+} from "@/components/StepIllustrations";
 import SectionBadge from "@/components/SectionBadge";
 import Button from "@/components/Button";
+import LedgerConnectAnimation from "@/components/LedgerConnectAnimation";
 import FAQAccordion from "@/components/FAQAccordion";
 import RelatedResources from "@/components/RelatedResources";
 
@@ -58,23 +60,22 @@ const timelineSteps = [
   {
     number: 2,
     text: "Yonovo runs a historical sync and imports your BILL customers, invoices, and received payments in real time.",
-    image: imgHighlightOversight,
-    overlay: imgQbStep2Stats,
+    illustration: () => <StepSyncIllustration ledger="BILL" />,
   },
   {
     number: 3,
     text: "When an invoice goes overdue, Yonovo follows up by email, SMS, and AI-powered phone calls, with the BILL payment link included so customers can pay from the reminder.",
-    image: imgQbStep3Followup,
+    illustration: StepFollowUpIllustration,
   },
   {
     number: 4,
     text: "When a customer schedules payment in BILL, Yonovo automatically pauses follow-ups and resumes only if the payment fails, is cancelled, or lapses.",
-    image: imgQbStep4Learns,
+    illustration: StepAdaptsIllustration,
   },
   {
     number: 5,
     text: "Monitor recovery rates, DSO, and at-risk invoices from your dashboard so you always know where your receivables stand.",
-    image: imgQbStep5Dashboard,
+    illustration: StepDashboardIllustration,
   },
 ];
 
@@ -182,10 +183,12 @@ export default function BillPage() {
 
             {/* Media grid */}
             <div className="flex flex-col gap-6 md:grid md:grid-cols-[2fr_3fr] md:gap-8">
-              {/* Left — BILL icon panel (square) */}
-              <div className="relative flex aspect-square w-full items-center justify-center overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-[#FF5A0A] to-[#e04e08]">
-                <Image src="/logos/bill-icon.svg" alt="BILL" width={200} height={200} className="w-[42%] h-auto drop-shadow-2xl" />
-              </div>
+              {/* Left — BILL connect animation (square) */}
+              <LedgerConnectAnimation
+                name="BILL"
+                logo="/logos/bill-icon.svg"
+                className="aspect-square w-full overflow-hidden rounded-2xl border border-white/10"
+              />
               {/* Right — BILL logo (desktop: landscape, mobile: square) */}
               <div className="relative hidden w-full items-center justify-center overflow-hidden rounded-2xl border border-white/10 bg-white/[0.03] md:flex md:aspect-[1.5]">
                 <Image src="/logos/bill.svg" alt="BILL" width={320} height={211} className="w-[22%] h-auto" />
@@ -381,11 +384,11 @@ export default function BillPage() {
             <div className="flex flex-col gap-16 md:gap-24">
               {timelineSteps.map((step, i) => {
                 const isOdd = i % 2 === 0;
-                const imageBlock = step.image ? (
-                  <div className={`relative aspect-[4/3] w-full overflow-hidden rounded-2xl bg-gradient-to-b from-zinc-100 to-zinc-50 border border-border flex flex-col justify-center gap-3 p-6 md:p-10 ${step.overlay ? "items-center" : "items-center"}`}>
-                    {step.overlay && (
-                      <Image src={step.overlay} alt="" aria-hidden="true" sizes="(min-width: 768px) 400px, 90vw" className="w-[90%] h-auto rounded-lg shadow-2xl border border-zinc-200/60" />
-                    )}
+                const Illustration = step.illustration;
+                const imageBlock = Illustration ? (
+                  <Illustration />
+                ) : step.image ? (
+                  <div className="relative aspect-[4/3] w-full overflow-hidden rounded-2xl bg-gradient-to-b from-zinc-100 to-zinc-50 border border-border flex flex-col items-center justify-center gap-3 p-6 md:p-10">
                     <Image src={step.image} alt={step.text} sizes="(min-width: 768px) 400px, 90vw" className="max-w-full max-h-full rounded-lg shadow-xl border border-zinc-200/60" />
                   </div>
                 ) : (

@@ -1,15 +1,16 @@
 import Image from "next/image";
-import sageStep1 from "../../public/images/sage-step-1-invoice.png";
-import stepOversight from "../../public/images/highlight-oversight.png";
-import stepStats from "../../public/images/qb-step-2-stats.png";
-import stepFollowup from "../../public/images/qb-step-3-followup.png";
-import stepLearns from "../../public/images/qb-step-4-learns.png";
-import stepDashboard from "../../public/images/qb-step-5-dashboard.png";
 import Link from "next/link";
+import { Step1SageIllustration } from "@/components/Step1Illustrations";
+import {
+  StepSyncIllustration,
+  StepFollowUpIllustration,
+  StepAdaptsIllustration,
+  StepDashboardIllustration,
+} from "@/components/StepIllustrations";
 import SectionBadge from "@/components/SectionBadge";
 import Button from "@/components/Button";
 import FAQAccordion from "@/components/FAQAccordion";
-import VideoPlayer from "@/components/VideoPlayer";
+import LedgerConnectAnimation from "@/components/LedgerConnectAnimation";
 import RelatedResources from "@/components/RelatedResources";
 
 /* ── Data ── */
@@ -54,28 +55,27 @@ const timelineSteps = [
   {
     number: 1,
     text: "Invoice your customers as usual, from Sage.",
-    image: sageStep1,
+    illustration: Step1SageIllustration,
   },
   {
     number: 2,
     text: "Yonovo automatically syncs your invoices, contacts, and payment data.",
-    image: stepOversight,
-    overlay: stepStats,
+    illustration: () => <StepSyncIllustration ledger="Sage" />,
   },
   {
     number: 3,
     text: "When an invoice goes overdue, Yonovo follows up by email, SMS, and AI-powered phone calls on your behalf.",
-    image: stepFollowup,
+    illustration: StepFollowUpIllustration,
   },
   {
     number: 4,
     text: "The AI adapts its approach over time, learning what works for each customer and escalating to your team when a human is needed.",
-    image: stepLearns,
+    illustration: StepAdaptsIllustration,
   },
   {
     number: 5,
     text: "Monitor recovery rates, DSO, and at-risk invoices from your dashboard so you always know where your receivables stand.",
-    image: stepDashboard,
+    illustration: StepDashboardIllustration,
   },
 ];
 
@@ -173,8 +173,12 @@ export default function SagePage() {
 
             {/* Media grid */}
             <div className="flex flex-col gap-6 md:grid md:grid-cols-[2fr_3fr] md:gap-8">
-              <VideoPlayer src="/videos/quickbooks-sync.mp4" priority
-                poster="/videos/quickbooks-sync-poster.jpg" className="aspect-square w-full overflow-hidden rounded-2xl bg-zinc-900 border border-white/10" />
+              {/* Left — Sage connect animation (square) */}
+              <LedgerConnectAnimation
+                name="Sage"
+                logo="/logos/sage-circle-icon.svg"
+                className="aspect-square w-full overflow-hidden rounded-2xl border border-white/10"
+              />
               <div className="relative hidden w-full items-center justify-center overflow-hidden rounded-2xl md:flex md:aspect-[1.5]">
                 <Image src="/images/sage_logo_inverted.png" alt="Sage" width={320} height={77} className="w-[40%] h-auto" />
               </div>
@@ -277,12 +281,8 @@ export default function SagePage() {
             <div className="flex flex-col gap-16 md:gap-24">
               {timelineSteps.map((step, i) => {
                 const isOdd = i % 2 === 0;
-                const imageBlock = step.image ? (
-                  <div className={`relative aspect-[4/3] w-full overflow-hidden rounded-2xl bg-gradient-to-b from-zinc-100 to-zinc-50 border border-border flex flex-col justify-center gap-3 p-6 md:p-10 items-center`}>
-                    {step.overlay && (<Image src={step.overlay} alt="" aria-hidden="true" sizes="(min-width: 768px) 400px, 90vw" className="w-[90%] h-auto rounded-lg shadow-2xl border border-zinc-200/60" />)}
-                    <Image src={step.image} alt={step.text} sizes="(min-width: 768px) 400px, 90vw" className="max-w-full max-h-full rounded-lg shadow-xl border border-zinc-200/60" />
-                  </div>
-                ) : (<div className="aspect-[4/3] w-full rounded-2xl bg-background border border-border" />);
+                const Illustration = step.illustration;
+                const imageBlock = <Illustration />;
                 return (
                   <div key={step.number} className="relative">
                     <div className="flex flex-col gap-4 md:hidden">
