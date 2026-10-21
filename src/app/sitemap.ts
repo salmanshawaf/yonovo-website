@@ -2,6 +2,7 @@ import type { MetadataRoute } from "next";
 import { getAllPosts, BLOG_CATEGORIES } from "@/lib/blog";
 import { authors } from "@/content/authors";
 import { caseStudies } from "@/data/caseStudies";
+import { jobs } from "@/data/jobs";
 import { SITE_URL } from "@/lib/site-config";
 
 export default function sitemap(): MetadataRoute.Sitemap {
@@ -103,7 +104,19 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "monthly",
       priority: 0.7,
     },
+    {
+      url: `${SITE_URL}/careers`,
+      changeFrequency: "weekly",
+      priority: 0.5,
+    },
   ];
+
+  const jobPages: MetadataRoute.Sitemap = jobs.map((job) => ({
+    url: `${SITE_URL}/careers/${job.slug}`,
+    lastModified: new Date(job.datePosted),
+    changeFrequency: "weekly" as const,
+    priority: 0.6,
+  }));
 
   const industryPages: MetadataRoute.Sitemap = [
     "wholesale-distribution",
@@ -158,6 +171,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   return [
     ...staticPages,
     ...caseStudyPages,
+    ...jobPages,
     ...industryPages,
     ...comparisonPages,
     ...blogPosts,
