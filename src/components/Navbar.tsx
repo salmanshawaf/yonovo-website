@@ -155,6 +155,16 @@ const quickLinks = [
   {
     icon: (
       <svg className="h-5 w-5" fill="none" stroke="currentColor" strokeWidth={1.5} viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" d="M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0018 18a8.967 8.967 0 00-6 2.292m0-14.25v14.25" />
+      </svg>
+    ),
+    title: "AR Glossary",
+    description: "DSO, aging, turnover, and collection letter templates",
+    href: "/glossary",
+  },
+  {
+    icon: (
+      <svg className="h-5 w-5" fill="none" stroke="currentColor" strokeWidth={1.5} viewBox="0 0 24 24">
         <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 14.25v-2.625a3.375 3.375 0 00-3.375-3.375h-1.5A1.125 1.125 0 0113.5 7.125v-1.5a3.375 3.375 0 00-3.375-3.375H8.25m0 12.75h7.5m-7.5 3H12M10.5 2.25H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 00-9-9z" />
       </svg>
     ),
@@ -530,7 +540,7 @@ export default function Navbar({ defaultMode = "dark", latestChangelog }: { defa
               <path d="M6 9l6 6 6-6" />
             </svg>
           </button>
-          <div className={`overflow-hidden transition-all duration-300 ${mobileAccordion === "Resources" ? "max-h-[500px] pb-4" : "max-h-0"}`}>
+          <div className={`overflow-hidden transition-all duration-300 ${mobileAccordion === "Resources" ? "max-h-[720px] pb-4" : "max-h-0"}`}>
             <div className="flex flex-col gap-1">
               {quickLinks.map((item) => (
                 <Link

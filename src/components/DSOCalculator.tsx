@@ -14,7 +14,9 @@ const fmtUSD = (n: number) =>
   }).format(Number.isFinite(n) ? n : 0);
 
 const fmtDays = (n: number) =>
-  Number.isFinite(n) ? `${Math.round(n * 10) / 10}` : "0";
+  Number.isFinite(n)
+    ? (Math.round(n * 100) / 100).toLocaleString("en-US", { maximumFractionDigits: 2 })
+    : "0";
 
 function benchmark(dso: number): { label: string; tone: string } {
   if (!Number.isFinite(dso) || dso <= 0) return { label: "Enter your numbers", tone: "text-white/60" };
@@ -47,11 +49,21 @@ function Field({ label, value, onChange, prefix, suffix, hint }: NumField) {
   );
 }
 
-export default function DSOCalculator() {
-  const [ar, setAr] = useState("420000");
-  const [sales, setSales] = useState("3000000");
-  const [days, setDays] = useState("365");
-  const [targetDso, setTargetDso] = useState("40");
+export default function DSOCalculator({
+  initialAr = "420000",
+  initialSales = "3000000",
+  initialDays = "365",
+  initialTarget = "40",
+}: {
+  initialAr?: string;
+  initialSales?: string;
+  initialDays?: string;
+  initialTarget?: string;
+}) {
+  const [ar, setAr] = useState(initialAr);
+  const [sales, setSales] = useState(initialSales);
+  const [days, setDays] = useState(initialDays);
+  const [targetDso, setTargetDso] = useState(initialTarget);
 
   const { dso, dailySales, cashFreed, annualInterest } = useMemo(() => {
     const arN = parseFloat(ar) || 0;

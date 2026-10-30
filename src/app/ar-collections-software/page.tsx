@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { SITE_URL, SITE_NAME } from "@/lib/site-config";
-import { breadcrumbSchema, faqSchema } from "@/lib/schemas";
+import { articleSchema, breadcrumbSchema, faqSchema } from "@/lib/schemas";
 import JsonLd from "@/components/JsonLd";
 import NavbarWrapper from "@/components/NavbarWrapper";
 import Footer from "@/components/Footer";
@@ -9,7 +9,7 @@ import ARCollectionsSoftwarePage, { faqs } from "@/components/ARCollectionsSoftw
 const PAGE_URL = `${SITE_URL}/ar-collections-software`;
 const TITLE = "Accounts Receivable Collections Software";
 const DESCRIPTION =
-  "AR collections software for aging buckets, reminder timing, channel switches, and escalation. See how Yonovo runs the workflow.";
+  "Accounts receivable collections software for CFOs and controllers. Automate reminders, aging, and escalation on unpaid invoices.";
 
 export const metadata: Metadata = {
   title: TITLE,
@@ -56,6 +56,19 @@ export default function Page() {
       <JsonLd data={[
         breadcrumbSchema([{ name: "Home", href: "/" }, { name: TITLE }]),
         softwareSchema,
+        articleSchema({
+          headline: TITLE,
+          description: DESCRIPTION,
+          url: PAGE_URL,
+          datePublished: "2026-10-30",
+          dateModified: "2026-10-30",
+          keywords: [
+            "accounts receivable collections software",
+            "collections software",
+            "ar collections software",
+            "accounts receivable software",
+          ],
+        }),
         faqSchema(faqs),
       ]} />
       <NavbarWrapper defaultMode="dark" />
