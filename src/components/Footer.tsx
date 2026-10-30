@@ -33,6 +33,7 @@ const resourceLinks = [
   { label: "Pricing", href: "/pricing" },
   { label: "AR Statistics", href: "/accounts-receivable-statistics" },
   { label: "DSO Calculator", href: "/tools/dso-calculator" },
+  { label: "AR Glossary", href: "/glossary" },
   { label: "Changelog", href: "/changelog" },
 ];
 

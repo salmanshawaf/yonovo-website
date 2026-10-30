@@ -43,6 +43,13 @@ function buildRealRoutes() {
   // Comparison pages: slug fields in src/data/comparisons.ts (root-level routes)
   const cmp = fs.readFileSync(path.join(ROOT, "src/data/comparisons.ts"), "utf8");
   for (const m of cmp.matchAll(/slug:\s*"([a-z0-9-]+)"/g)) real.add(`/${m[1]}`);
+  // Glossary: index plus slugs in src/data/glossary.ts
+  real.add("/glossary");
+  const glossaryFile = path.join(ROOT, "src/data/glossary.ts");
+  if (fs.existsSync(glossaryFile)) {
+    const gloss = fs.readFileSync(glossaryFile, "utf8");
+    for (const m of gloss.matchAll(/slug:\s*"([a-z0-9-]+)"/g)) real.add(`/glossary/${m[1]}`);
+  }
   // Blog posts: mdx slugs
   for (const f of fs.readdirSync(BLOG_DIR)) if (f.endsWith(".mdx")) real.add(`/blog/${f.replace(/\.mdx$/, "")}`);
   // Case studies: object keys in src/data/caseStudies.ts

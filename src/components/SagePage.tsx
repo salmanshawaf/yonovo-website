@@ -362,6 +362,7 @@ export default function SagePage() {
       {/* ── Related Resources ── */}
       <RelatedResources background="background" items={[
         { label: "Accounts Receivable Automation Software", href: "/accounts-receivable-automation-software", description: "The full category guide: ten AR platforms compared side by side." },
+        { label: "Accounts Receivable Glossary", href: "/glossary", description: "DSO formula, collection period, turnover, aging, and letter templates." },
         { label: "Debt Collection Software for B2B Invoices", href: "/debt-collection-software", description: "Collections on overdue B2B invoices that stays under your brand." },
         { label: "Case Studies", href: "/case-studies", description: "See how real teams automate AR collections and reduce DSO with Yonovo." },
         { label: "Best AR Automation Software (2026)", href: "/blog/best-ar-automation-software", description: "Side-by-side comparison of 10 AR platforms on features, pricing, and setup time." },

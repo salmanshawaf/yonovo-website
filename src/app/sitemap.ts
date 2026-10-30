@@ -4,6 +4,7 @@ import { authors } from "@/content/authors";
 import { caseStudies } from "@/data/caseStudies";
 import { jobs } from "@/data/jobs";
 import { getAllEntries } from "@/lib/changelog";
+import { glossaryTerms } from "@/data/glossary";
 import { SITE_URL } from "@/lib/site-config";
 
 /**
@@ -64,6 +65,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     page(`${SITE_URL}/solutions/bill`, SEO_UPDATED, "monthly", 0.7),
     page(`${SITE_URL}/changelog`, SEO_UPDATED, "weekly", 0.6),
     page(`${SITE_URL}/tools/dso-calculator`, SEO_UPDATED, "monthly", 0.7),
+    page(`${SITE_URL}/glossary`, SEO_UPDATED, "monthly", 0.7),
     page(`${SITE_URL}/careers`, SEO_UPDATED, "weekly", 0.5),
     page(`${SITE_URL}/privacy-policy`, LEGAL_UPDATED, "yearly", 0.3),
     page(`${SITE_URL}/terms-of-service`, LEGAL_UPDATED, "yearly", 0.3),
@@ -128,8 +130,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ),
   );
 
+  const glossaryPages: MetadataRoute.Sitemap = glossaryTerms.map((term) =>
+    page(`${SITE_URL}/glossary/${term.slug}`, SEO_UPDATED, "monthly", 0.7),
+  );
+
   return [
     ...staticPages,
+    ...glossaryPages,
     ...caseStudyPages,
     ...jobPages,
     ...industryPages,

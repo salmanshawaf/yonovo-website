@@ -609,6 +609,7 @@ export default function DebtCollectionSoftwarePage() {
       <RelatedResources items={[
         { label: "Accounts Receivable Automation Software", href: "/accounts-receivable-automation-software", description: "The full category guide: what AR automation does and how ten platforms compare." },
         { label: "Accounts Receivable Collections Software", href: "/ar-collections-software", description: "The full collections workflow, from aging buckets to escalation rules." },
+        { label: "Collection Letter", href: "/glossary/collection-letter", description: "What a B2B collection letter is, and two samples you can adapt." },
         { label: "Accounts Receivable Statistics", href: "/accounts-receivable-statistics", description: "Verified figures on late payments, DSO, and collections effort, every one linked to its original source." },
         { label: "Case Study: TDG Inc", href: "/case-studies/tdg-inc", description: "80 percent fewer manual follow ups and 15 days off DSO in 90 days." },
         { label: "Case Study: Troyes Canada", href: "/case-studies/troyes", description: "From fully manual to fully automated collections in a single day." },

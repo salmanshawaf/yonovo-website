@@ -1,0 +1,3 @@
+Customer,Invoice number,Invoice date,Due date,Amount,Current,1 to 30,31 to 60,61 to 90,90 plus,Notes
+EXAMPLE Northwind Supply,INV-1042,2026-09-01,2026-10-01,4200,,4200,,,,Replace this row. Sample only.
+EXAMPLE Harbor Clinic,INV-1048,2026-07-15,2026-08-14,1800,,,,1800,,Replace this row. Sample only.

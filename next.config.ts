@@ -51,6 +51,13 @@ const nextConfig: NextConfig = {
         destination: "/yonovo-vs-bill-com",
         permanent: true,
       },
+      // The short AR glossary post now lives at /glossary.
+      // permanent: true is a 308 in Next.js.
+      {
+        source: "/blog/ar-glossary",
+        destination: "/glossary",
+        permanent: true,
+      },
     ];
   },
 };

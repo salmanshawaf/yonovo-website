@@ -101,7 +101,8 @@ export default function DSOCalculatorPage() {
               DSO Calculator
             </h1>
             <p className="text-base text-secondary leading-relaxed md:text-xl">
-              Calculate your days sales outstanding, benchmark it against healthy ranges, and see exactly how much working capital a lower DSO would free up. No sign-up, no email required.
+              Calculate your days sales outstanding, benchmark it against healthy ranges, and see exactly how much working capital a lower DSO would free up. No sign-up, no email required. The formula and a worked example are in the{" "}
+              <Link href="/glossary/days-sales-outstanding" className="text-brand-blue underline underline-offset-2">days sales outstanding</Link> guide.
             </p>
           </div>
           <div className="mt-12">
@@ -121,7 +122,8 @@ export default function DSOCalculatorPage() {
               </p>
             </div>
             <p className="text-base text-secondary leading-relaxed">
-              Days sales outstanding measures the average time between making a sale on credit and collecting the cash. Use 365 days for an annual figure, 90 for a quarter, or 30 for a month. A DSO that runs well above your payment terms is a sign that customers are paying late and cash is sitting in receivables instead of your bank account.
+              Days sales outstanding measures the average time between making a sale on credit and collecting the cash. Use 365 days for an annual figure, 90 for a quarter, or 30 for a month. A DSO that runs well above your payment terms is a sign that customers are paying late and cash is sitting in receivables instead of your bank account. The definition, a worked example, and how to bring the number down are in the{" "}
+              <Link href="/glossary/days-sales-outstanding" className="text-brand-blue underline underline-offset-2">days sales outstanding</Link> guide.
             </p>
             <p className="text-base text-secondary leading-relaxed">
               The headline number to watch is the cash you free up by lowering DSO. Every day you shave off DSO releases roughly one day of credit sales back into working capital. For a deeper model of when each invoice will actually be paid, read our{" "}

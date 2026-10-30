@@ -1,3 +1,4 @@
+import { authors } from "@/content/authors";
 import { SITE_URL, SITE_NAME, YONOVO_INTEGRATION_LIST } from "./site-config";
 
 /**
@@ -231,6 +232,68 @@ export function softwareApplicationSchema(opts: {
 // Uses SoftwareApplication instead of Product to avoid triggering Google's
 // Merchant listings evaluation (which expects image, shippingDetails,
 // hasMerchantReturnPolicy — none of which apply to SaaS).
+
+// ── Article (glossary and other editorial pages) ──
+
+export function articleSchema(opts: {
+  headline: string;
+  description: string;
+  url: string;
+  datePublished: string;
+  dateModified: string;
+  keywords?: string[];
+}) {
+  const author = authors.salman;
+  return {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline: opts.headline,
+    description: opts.description,
+    image: `${SITE_URL}/og-default.png`,
+    author: {
+      "@type": "Person",
+      name: author.name,
+      url: `${SITE_URL}/blog/author/${author.id}`,
+      jobTitle: author.role,
+      ...(author.linkedin ? { sameAs: [author.linkedin] } : {}),
+    },
+    publisher: {
+      "@type": "Organization",
+      name: SITE_NAME,
+      logo: {
+        "@type": "ImageObject",
+        url: `${SITE_URL}/yonovo-logo.png`,
+      },
+    },
+    datePublished: opts.datePublished,
+    dateModified: opts.dateModified,
+    mainEntityOfPage: opts.url,
+    inLanguage: "en",
+    ...(opts.keywords && opts.keywords.length > 0
+      ? { keywords: opts.keywords.join(", ") }
+      : {}),
+  };
+}
+
+// ── WebApplication (free calculators) ──
+
+export function financeCalculatorSchema(opts: {
+  name: string;
+  description: string;
+  url: string;
+}) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    name: opts.name,
+    applicationCategory: "FinanceApplication",
+    operatingSystem: "Web",
+    url: opts.url,
+    description: opts.description,
+    offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
+    publisher: { "@type": "Organization", name: SITE_NAME, url: SITE_URL },
+  };
+}
 
 export function pricingSchema() {
   return {

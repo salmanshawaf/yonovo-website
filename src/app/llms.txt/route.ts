@@ -1,6 +1,7 @@
 import { getAllPosts } from "@/lib/blog";
 import { industries } from "@/data/industries";
 import { caseStudies } from "@/data/caseStudies";
+import { glossaryPath, glossaryTerms } from "@/data/glossary";
 import { SITE_URL, YONOVO_INTEGRATION_LIST } from "@/lib/site-config";
 
 // How many of the most recent blog posts to surface in llms.txt.
@@ -122,6 +123,13 @@ export async function GET() {
     )
     .join("\n");
 
+  const glossaryLinks = [
+    `- [Accounts Receivable Glossary](${SITE_URL}/glossary): Definitions for accounts receivable terms, including DSO, collection period, turnover, aging, and collection letters. Dunning letters: ${SITE_URL}/blog/dunning-letter. Past due invoice emails: ${SITE_URL}/blog/invoice-reminder-best-practices#past-due-invoice-email-templates.`,
+    ...glossaryTerms.map(
+      (term) => `- [${term.h1}](${SITE_URL}${glossaryPath(term.slug)}): ${term.summary}`,
+    ),
+  ].join("\n");
+
   const comparisonLinks = COMPARISONS.map(
     (c) => `- [${c.name}](${SITE_URL}/${c.slug}): Side-by-side comparison of Yonovo and ${c.name.replace("Yonovo vs ", "")} for accounts receivable automation.`,
   ).join("\n");
@@ -142,6 +150,9 @@ ${comparisonLinks}
 
 ## Guides
 ${guideLinks}
+
+## Glossary
+${glossaryLinks}
 
 ## Integrations
 ${integrationLinks}

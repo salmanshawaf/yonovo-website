@@ -61,6 +61,43 @@ const reportingMetrics = [
   "Daily briefing",
 ];
 
+const audience = [
+  { role: "CFO", text: "You need DSO, aging, and a cash figure you can defend in a forecast review." },
+  { role: "VP or Head of Finance", text: "You need the process to run the same way when the AR seat is empty." },
+  { role: "Controller", text: "You need the ledger and the follow up to agree, including partial payments and disputes." },
+  { role: "AR manager", text: "You need a cadence that does not depend on who remembered to send the email." },
+];
+
+const features = [
+  { title: "Every channel", text: "Email, SMS, WhatsApp, and voice. The channel changes when the last one is ignored." },
+  { title: "Workflows you set", text: "Timing, tone, and which accounts need a person to approve a message before it sends." },
+  { title: "It stops on purpose", text: "Paid, disputed, promised, or flagged sensitive. The ledger is checked before every message." },
+  { title: "Customer context", text: "Payment history sits on the account, so a key customer can run a softer cadence than a small one." },
+  { title: "Your domain", text: "Messages go out from your email, under your name, not from an outside collector." },
+  { title: "Reporting", text: "Outstanding receivables, aging, DSO, recovery rate, at risk invoices, collection activity, and a daily briefing." },
+];
+
+const linkedIntegrations = [
+  { name: "QuickBooks Online", href: "/solutions/quickbooks" },
+  { name: "Xero", href: "/solutions/xero" },
+  { name: "NetSuite", href: "/solutions/netsuite" },
+  { name: "Sage Intacct", href: "/solutions/sage" },
+  { name: "Odoo", href: "/solutions/odoo" },
+  { name: "Stripe Billing", href: "/solutions/stripe" },
+  { name: "BILL", href: "/solutions/bill" },
+];
+
+const namedIntegrations = ["FreshBooks", "Salesforce", "HubSpot", "SAP", "WhatsApp"];
+
+const howItWorks = [
+  { step: "1", title: "Connect the accounting system", text: "QuickBooks Online, Xero, NetSuite, Sage Intacct, Odoo, Stripe Billing, BILL, FreshBooks, Salesforce, HubSpot, SAP, or WhatsApp." },
+  { step: "2", title: "Import receivables", text: "Invoices, customers, and aging come in. Payment status stays current so a paid invoice is not chased." },
+  { step: "3", title: "Set the rules", text: "Timing, tone, channels, and which accounts need approval before anything goes out." },
+  { step: "4", title: "Follow up on a schedule", text: "As invoices age, outreach moves across email, SMS, phone, and WhatsApp, under your name." },
+  { step: "5", title: "Judgment calls come back", text: "Disputes, partial payments, and sensitive accounts pause or land with your team, with the history attached." },
+  { step: "6", title: "Watch it from the dashboard", text: "DSO, aging, recovery, and what was sent today. A daily briefing summarizes what went out and what was recovered." },
+];
+
 const troyesStats = [
   { value: "1 day", label: "from zero to fully automated" },
   { value: "25+ hrs", label: "saved per month" },
@@ -108,6 +145,21 @@ export const faqs = [
     answer:
       "It checks your accounting system before every message. Payments, partial payments, and status changes sync from your ledger, so a customer who paid this morning does not get chased this afternoon.",
   },
+  {
+    question: "What is collections software?",
+    answer:
+      "Collections software runs follow up on unpaid invoices. In B2B, accounts receivable collections software tracks aging, sends reminders, switches channels, and stops when an invoice is paid or disputed. It is not consumer debt collection and it is not a third party agency.",
+  },
+  {
+    question: "Who is this collections software for?",
+    answer:
+      "CFOs, vice presidents and heads of finance, and controllers at B2B companies in the United States and Canada. An AR manager is usually the person who runs the cadence day to day.",
+  },
+  {
+    question: "Which systems does Yonovo connect to?",
+    answer:
+      "QuickBooks Online, Xero, NetSuite, Sage Intacct, Odoo, Stripe Billing, BILL, FreshBooks, Salesforce, HubSpot, SAP, and WhatsApp. Follow ups go out by email, SMS, phone, and WhatsApp.",
+  },
 ];
 
 const heroLogos: { name: string; src: string; width: number; className: string; noFilter?: boolean }[] = [
@@ -133,7 +185,7 @@ export default function ARCollectionsSoftwarePage() {
               </h1>
               <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
                 <p className="text-balance text-base text-zinc-400 tracking-tight md:text-xl">
-                  A collections workflow is a set of decisions. When the first reminder goes out. When email stops working and you pick up the phone. When an invoice needs a person instead of a sequence. This page lays that workflow out day by day, then shows how Yonovo runs it for you.
+                  Accounts receivable collections software collects unpaid B2B invoices. It is for CFOs, heads of finance, and controllers in the United States and Canada. Below: who it is for, the features, the systems it connects to, and the day by day workflow Yonovo runs.
                 </p>
                 <div className="flex w-full shrink-0 flex-col items-center gap-3 sm:w-auto sm:flex-row sm:gap-6">
                   <Link href="/book-demo" className="w-full sm:w-auto">
@@ -179,9 +231,127 @@ export default function ARCollectionsSoftwarePage() {
             </h2>
             <div className="rounded-2xl border border-border bg-surface p-6 md:p-10">
               <p className="text-lg text-foreground leading-relaxed md:text-xl">
-                Accounts receivable collections software runs the follow up workflow on unpaid invoices. It tracks how overdue each invoice is, sends payment reminders on a schedule, switches to a new channel when one is ignored, escalates accounts that need human attention, and stops the moment an invoice is paid or disputed. The goal is a collections process that runs the same way every day, whoever is at their desk.
+                Accounts receivable collections software, also called collections software or AR collections software, runs the follow up workflow on unpaid invoices. It tracks how overdue each invoice is, sends payment reminders on a schedule, switches to a new channel when one is ignored, escalates accounts that need human attention, and stops the moment an invoice is paid or disputed. The broader automation category is covered on the{" "}
+                <Link href="/accounts-receivable-automation-software" className="text-brand-blue underline underline-offset-2">accounts receivable automation software</Link> page. The goal is a collections process that runs the same way every day, whoever is at their desk.
+              </p>
+              <p className="text-sm text-muted">
+                Updated October 30, 2026. Written by{" "}
+                <Link href="/blog/author/salman" className="text-brand-blue underline underline-offset-2">
+                  Salman Shawaf
+                </Link>
+                , Co-founder, Yonovo.
               </p>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ── Who it is for ── */}
+      <section className="w-full bg-surface py-16 md:py-24">
+        <div className="mx-auto max-w-(--container-max-width) px-6">
+          <div className="flex flex-col gap-10">
+            <div className="flex max-w-3xl flex-col gap-4">
+              <SectionBadge label="Who it is for" />
+              <h2 className="text-balance font-medium text-4xl text-foreground leading-tight tracking-tight md:text-[54px]">
+                Who collections software is for
+              </h2>
+              <p className="text-base text-secondary leading-normal tracking-tight md:text-xl">
+                Yonovo is for the finance leader who owns cash at a B2B company. It is not consumer debt collection, and it is not a third party agency. That line is drawn on the{" "}
+                <Link href="/debt-collection-software" className="text-brand-blue underline underline-offset-2">debt collection software</Link> page.
+              </p>
+            </div>
+            <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
+              {audience.map((item) => (
+                <div key={item.role} className="flex flex-col gap-2 rounded-2xl border border-border bg-background p-6">
+                  <h3 className="font-medium text-xl text-foreground">{item.role}</h3>
+                  <p className="text-base text-secondary leading-relaxed">{item.text}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ── Features ── */}
+      <section className="w-full bg-background py-16 md:py-24">
+        <div className="mx-auto max-w-(--container-max-width) px-6">
+          <div className="flex flex-col gap-10">
+            <div className="flex max-w-3xl flex-col gap-4">
+              <SectionBadge label="Features" />
+              <h2 className="text-balance font-medium text-4xl text-foreground leading-tight tracking-tight md:text-[54px]">
+                What the software actually does
+              </h2>
+              <p className="text-base text-secondary leading-normal tracking-tight md:text-xl">
+                The same capabilities described on the Yonovo homepage and product pages. Nothing here is a roadmap item.
+              </p>
+            </div>
+            <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
+              {features.map((item) => (
+                <div key={item.title} className="flex flex-col gap-2 rounded-2xl border border-border bg-surface p-6">
+                  <h3 className="font-medium text-lg text-foreground">{item.title}</h3>
+                  <p className="text-sm text-secondary leading-relaxed md:text-base">{item.text}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ── Integrations ── */}
+      <section className="w-full bg-surface py-16 md:py-24">
+        <div className="mx-auto max-w-(--container-max-width) px-6">
+          <div className="flex max-w-3xl flex-col gap-4">
+            <SectionBadge label="Integrations" />
+            <h2 className="text-balance font-medium text-4xl text-foreground leading-tight tracking-tight md:text-[54px]">
+              Systems it connects to
+            </h2>
+            <p className="text-base text-secondary leading-normal tracking-tight md:text-xl">
+              Yonovo reads invoices, customers, and payments from the ledger, and it checks that ledger before every message. Follow ups go out by email, SMS, phone, and WhatsApp.
+            </p>
+          </div>
+          <ul className="mt-8 flex flex-wrap gap-3">
+            {linkedIntegrations.map((item) => (
+              <li key={item.name}>
+                <Link href={item.href} className="inline-flex rounded-full border border-border bg-background px-4 py-2 text-sm font-medium text-foreground underline-offset-2 hover:text-brand-blue hover:underline">
+                  {item.name}
+                </Link>
+              </li>
+            ))}
+            {namedIntegrations.map((name) => (
+              <li key={name} className="inline-flex rounded-full border border-border bg-background px-4 py-2 text-sm font-medium text-foreground">
+                {name}
+              </li>
+            ))}
+          </ul>
+          <p className="mt-6 max-w-3xl text-sm text-secondary leading-relaxed">
+            QuickBooks Online, Xero, NetSuite, Sage Intacct, Odoo, Stripe Billing, and BILL each have a page. FreshBooks, Salesforce, HubSpot, SAP, and WhatsApp are supported and named on the site. They do not have their own solution page yet.
+          </p>
+        </div>
+      </section>
+
+      {/* ── How it works ── */}
+      <section className="w-full bg-background py-16 md:py-24">
+        <div className="mx-auto max-w-(--container-max-width) px-6">
+          <div className="flex flex-col gap-10">
+            <div className="flex max-w-3xl flex-col gap-4">
+              <SectionBadge label="How it works" />
+              <h2 className="text-balance font-medium text-4xl text-foreground leading-tight tracking-tight md:text-[54px]">
+                How accounts receivable collections software works
+              </h2>
+            </div>
+            <ol className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
+              {howItWorks.map((step) => (
+                <li key={step.title} className="flex flex-col gap-2 rounded-2xl border border-border bg-surface p-6">
+                  <span className="text-sm font-medium text-muted">Step {step.step}</span>
+                  <h3 className="font-medium text-lg text-foreground">{step.title}</h3>
+                  <p className="text-sm text-secondary leading-relaxed">{step.text}</p>
+                </li>
+              ))}
+            </ol>
+            <p className="max-w-3xl text-base text-secondary leading-relaxed">
+              The next section is that same sequence on a calendar. Formulas for the number you will be asked about in a forecast review are in the{" "}
+              <Link href="/glossary/days-sales-outstanding" className="text-brand-blue underline underline-offset-2">DSO glossary</Link>.
+            </p>
           </div>
         </div>
       </section>
@@ -438,6 +608,10 @@ export default function ARCollectionsSoftwarePage() {
         { label: "Debt Collection Software for B2B Invoices", href: "/debt-collection-software", description: "Collecting seriously overdue invoices under your brand, without an agency." },
         { label: "Dunning Management Software", href: "/dunning-management-software", description: "The written reminder layer of collections, stage by stage." },
         { label: "Accounts Receivable Statistics", href: "/accounts-receivable-statistics", description: "Verified figures on late payments, DSO, and collections effort, every one linked to its original source." },
+        { label: "DSO Formula and Calculator", href: "/glossary/days-sales-outstanding", description: "What days sales outstanding is, the formula, a worked example, and a calculator." },
+        { label: "AR Aging Report", href: "/glossary/accounts-receivable-aging-report", description: "The buckets behind the average, plus a template you can copy." },
+        { label: "Past Due Invoice Email Templates", href: "/blog/invoice-reminder-best-practices#past-due-invoice-email-templates", description: "Three emails for an invoice that is already late." },
+        { label: "Accounts Receivable Glossary", href: "/glossary", description: "DSO, collection period, turnover, aging, and letter templates in one index." },
         { label: "DSO Calculator", href: "/tools/dso-calculator", description: "Put a dollar figure on your days sales outstanding and what a reduction frees up." },
         { label: "How to Reduce DSO", href: "/blog/how-to-reduce-dso", description: "Seven ways finance teams shorten days sales outstanding and free up cash." },
         { label: "Invoice Reminder Best Practices", href: "/blog/invoice-reminder-best-practices", description: "Copy ready templates and timing rules for every reminder stage." },

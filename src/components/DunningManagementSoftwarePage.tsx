@@ -381,6 +381,7 @@ export default function DunningManagementSoftwarePage() {
         { label: "DSO Calculator", href: "/tools/dso-calculator", description: "Calculate days sales outstanding and the working capital a lower DSO frees up." },
         { label: "How to Reduce DSO", href: "/blog/how-to-reduce-dso", description: "Seven ways finance teams shorten days sales outstanding and free up cash." },
         { label: "Dunning Letters: Meaning, Templates, and Timing", href: "/blog/dunning-letter", description: "Copy ready dunning letters for every stage, plus legal considerations." },
+        { label: "Past Due Invoice Email Templates", href: "/blog/invoice-reminder-best-practices#past-due-invoice-email-templates", description: "Three emails for an invoice that is already late." },
         { label: "Invoice Reminder Best Practices", href: "/blog/invoice-reminder-best-practices", description: "The day level timing and tone rules behind an effective sequence." },
         { label: "Yonovo for QuickBooks", href: "/solutions/quickbooks", description: "Dunning that runs straight from your QuickBooks ledger." },
         { label: "Yonovo for Stripe Billing", href: "/solutions/stripe", description: "Automated reminders for invoices raised in Stripe." },
