@@ -66,7 +66,6 @@ export default function Page() {
             "accounts receivable collections software",
             "collections software",
             "ar collections software",
-            "accounts receivable software",
           ],
         }),
         faqSchema(faqs),

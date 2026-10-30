@@ -6,12 +6,11 @@ import Footer from "@/components/Footer";
 import Breadcrumbs from "@/components/blog/Breadcrumbs";
 import FAQAccordion from "@/components/FAQAccordion";
 import Button from "@/components/Button";
+import GlossaryIndexTerms from "@/components/glossary/GlossaryIndexTerms";
 import {
   GLOSSARY_DATE,
   GLOSSARY_DATE_DISPLAY,
   glossaryIndex,
-  glossaryPath,
-  glossaryTerms,
 } from "@/data/glossary";
 import { articleSchema, breadcrumbSchema, faqSchema } from "@/lib/schemas";
 import { SITE_NAME, SITE_URL } from "@/lib/site-config";
@@ -59,7 +58,7 @@ export default function GlossaryIndexPage() {
             url,
             datePublished: GLOSSARY_DATE,
             dateModified: GLOSSARY_DATE,
-            keywords: ["accounts receivable glossary", "dso formula", "ar aging report", "dunning letter"],
+            keywords: ["accounts receivable glossary", "dso formula", "ar aging report", "collection letter"],
           }),
           faqSchema(glossaryIndex.faqs),
           breadcrumbSchema([
@@ -87,31 +86,22 @@ export default function GlossaryIndexPage() {
 
           <div className="rounded-2xl border border-border bg-surface p-6 md:p-8">
             <p className="text-lg text-foreground leading-relaxed">
-              Short definitions for the metrics and documents a CFO, controller, or head of finance uses to collect B2B invoices. Each page answers the question first, then shows the formula or the template.
+              Definitions for the accounts receivable terms finance teams use, carried over from the glossary guide. Where a longer page exists, the entry links to it.
             </p>
           </div>
 
           <section className="flex flex-col gap-4">
             <h2 className="font-medium text-2xl text-foreground tracking-tight md:text-3xl">Terms</h2>
-            <ul className="flex flex-col gap-3">
-              {glossaryTerms.map((term) => (
-                <li key={term.slug}>
-                  <Link
-                    href={glossaryPath(term.slug)}
-                    className="flex flex-col gap-1 rounded-2xl border border-border p-5 transition-shadow hover:shadow-md"
-                  >
-                    <span className="font-medium text-foreground">{term.h1}</span>
-                    <span className="text-sm text-secondary leading-relaxed">{term.summary}</span>
-                  </Link>
-                </li>
-              ))}
-            </ul>
+            <GlossaryIndexTerms />
           </section>
 
           <section className="flex flex-col gap-4">
             <h2 className="font-medium text-2xl text-foreground tracking-tight md:text-3xl">How the metrics fit</h2>
             <p className="text-base text-secondary leading-relaxed">
-              Days sales outstanding and the average collection period are the same day count when the inputs match. Receivable turnover is that speed stated as a rate. The aging report is the list of invoices behind the average. Dunning letters, collection letters, and past due emails are what you send while you work that list.
+              Days sales outstanding and the average collection period are the same day count when the inputs match. Receivable turnover is that speed stated as a rate. The aging report is the list of invoices behind the average. The notices you send while you work that list are a{" "}
+              <Link href="/blog/dunning-letter" className="text-brand-blue underline underline-offset-2">dunning letter</Link>, a{" "}
+              <Link href="/glossary/collection-letter" className="text-brand-blue underline underline-offset-2">collection letter</Link>, or a{" "}
+              <Link href="/blog/invoice-reminder-best-practices#past-due-invoice-email-templates" className="text-brand-blue underline underline-offset-2">past due invoice email</Link>.
             </p>
           </section>
 

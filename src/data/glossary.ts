@@ -35,7 +35,7 @@ export const glossaryIndex = {
     {
       question: "What is this glossary?",
       answer:
-        "It is a short reference for the accounts receivable metrics and documents finance teams use to collect faster. Each page leads with a definition, then the formula or template, a worked example where the math matters, and an FAQ.",
+        "It is a short reference for the accounts receivable terms finance teams use. Some entries link to a longer page with a formula, a worked example, or templates.",
     },
     {
       question: "How do DSO, average collection period, and receivable turnover relate?",
@@ -45,7 +45,7 @@ export const glossaryIndex = {
     {
       question: "Where are the letter templates?",
       answer:
-        "Dunning letter, collection letter, and past due invoice email each have copy you can adapt. They are examples for businesses collecting their own invoices. They are not legal advice and they are not for consumer debt disputes.",
+        "Dunning letters are on the dunning letter guide. Collection letter samples are on the collection letter page. Past due invoice emails are a section of the invoice reminder guide. They are examples for businesses collecting their own invoices, not legal advice, and not for consumer debt disputes.",
     },
   ] satisfies Faq[],
 };
@@ -60,12 +60,6 @@ const automation: ResourceLink = {
   label: "Accounts Receivable Automation Software",
   href: "/accounts-receivable-automation-software",
   description: "What AR automation software does, and how Yonovo compares with other platforms.",
-};
-
-const dunningSoftware: ResourceLink = {
-  label: "Dunning Management Software",
-  href: "/dunning-management-software",
-  description: "What dunning is, the stage sequence, and how automated dunning adapts per customer.",
 };
 
 const debt: ResourceLink = {
@@ -110,17 +104,15 @@ export const glossaryTerms: GlossaryTerm[] = [
     h1: "Days Sales Outstanding (DSO)",
     seoTitle: "DSO Formula: Days Sales Outstanding",
     description:
-      "Days sales outstanding (DSO) is how long credit sales take to become cash. See the formula, a worked example, and a free calculator.",
+      "Days sales outstanding (DSO) is how long credit sales take to become cash. The formula, how to calculate it, and a worked example.",
     breadcrumb: "Days Sales Outstanding",
     keywords: [
       "dso formula",
+      "what is dso",
       "days sales outstanding",
       "how to calculate dso",
-      "what is dso",
-      "dso calculator",
-      "days sales outstanding formula",
     ],
-    summary: "The average days it takes to collect a credit sale, with the formula and a calculator.",
+    summary: "The average days it takes to collect a credit sale, with the formula and a worked example.",
     relatedSlugs: [
       "average-collection-period",
       "accounts-receivable-turnover",
@@ -128,9 +120,9 @@ export const glossaryTerms: GlossaryTerm[] = [
     ],
     resources: [collections, automation, dsoTool, reduceDso, stats, quickbooks],
     calculator: {
-      name: "Yonovo DSO Calculator",
+      name: "Days sales outstanding formula",
       description:
-        "Free calculator for days sales outstanding. Enter receivables, credit sales, and the number of days in the period.",
+        "Apply the days sales outstanding formula from receivables, credit sales, and the days in the period.",
     },
     faqs: [
       {
@@ -290,8 +282,8 @@ export const glossaryTerms: GlossaryTerm[] = [
     summary: "Open invoices sorted into current, 1 to 30, 31 to 60, 61 to 90, and 90 plus.",
     relatedSlugs: [
       "days-sales-outstanding",
-      "dunning-letter",
-      "past-due-invoice-email",
+      "accounts-receivable-turnover",
+      "collection-letter",
     ],
     resources: [collections, debt, stats, reminders],
     faqs: [
@@ -323,56 +315,11 @@ export const glossaryTerms: GlossaryTerm[] = [
     ],
   },
   {
-    slug: "dunning-letter",
-    h1: "Dunning Letter",
-    seoTitle: "What Is a Dunning Letter?",
-    description:
-      "A dunning letter asks a customer to pay an overdue invoice. Definition, when to send one, and three sample templates.",
-    breadcrumb: "Dunning Letter",
-    keywords: [
-      "dunning letter",
-      "what is a dunning letter",
-      "dunning letter template",
-      "what does dunning mean",
-      "dunning letter example",
-    ],
-    summary: "A written notice asking for an overdue invoice, sent as a sequence that gets firmer.",
-    relatedSlugs: ["collection-letter", "past-due-invoice-email", "accounts-receivable-aging-report"],
-    resources: [dunningSoftware, collections, reminders, debt],
-    faqs: [
-      {
-        question: "What is a dunning letter?",
-        answer:
-          "A dunning letter is a written notice asking a customer to pay an invoice that is already overdue. One letter rarely collects on its own. Dunning is the sequence: a polite first note, a firmer follow up, and a final notice that states what happens next.",
-      },
-      {
-        question: "What does dunning mean?",
-        answer:
-          "Dunning means persisting in a request for payment. The word comes from the old English verb dun, to demand a debt. In accounts receivable software, a dunning sequence is the scheduled series of reminders tied to invoice age.",
-      },
-      {
-        question: "When should you send a dunning letter?",
-        answer:
-          "Send the first one within a week of the due date, after a courtesy reminder that went out before the invoice was due. Move to a firmer letter around 30 days past due, and to a final notice once the invoice is in the 60 to 90 day range and earlier notes have had no reply. Match the tone to the aging bucket, not to your mood that day.",
-      },
-      {
-        question: "How is a dunning letter different from a collection letter?",
-        answer:
-          "A collection letter is a single written demand for a past due balance. A dunning letter is one step in a planned series. Teams often use the words interchangeably. The useful distinction is sequence versus a one off letter.",
-      },
-      {
-        question: "Are these dunning templates legal advice?",
-        answer:
-          "No. They are examples for a business collecting its own B2B invoices. They are not a filing, and they are not for consumer debt. Have counsel review any letter that threatens legal action or that you will send on a large or disputed balance.",
-      },
-    ],
-  },
-  {
     slug: "collection-letter",
     h1: "Collection Letter",
     seoTitle: "Collection Letter: Meaning and Samples",
     description:
-      "A collection letter is a written demand for a past due B2B invoice. How it differs from dunning, plus samples.",
+      "A collection letter is a written demand for a past due B2B invoice. What to include, plus two samples.",
     breadcrumb: "Collection Letter",
     keywords: [
       "collection letter",
@@ -382,18 +329,26 @@ export const glossaryTerms: GlossaryTerm[] = [
       "b2b collection letter",
     ],
     summary: "A written demand for a past due B2B invoice, sent by the company that is owed the money.",
-    relatedSlugs: ["dunning-letter", "past-due-invoice-email", "accounts-receivable-aging-report"],
-    resources: [debt, collections, dunningSoftware, reminders],
+    relatedSlugs: ["accounts-receivable-aging-report", "days-sales-outstanding"],
+    resources: [
+      debt,
+      collections,
+      {
+        label: "Dunning letter guide",
+        href: "/blog/dunning-letter",
+        description: "The escalating notice sequence, with templates for each stage.",
+      },
+      {
+        label: "Past due invoice email templates",
+        href: "/blog/invoice-reminder-best-practices#past-due-invoice-email-templates",
+        description: "Three emails for an invoice that is already late.",
+      },
+    ],
     faqs: [
       {
         question: "What is a collection letter?",
         answer:
           "A collection letter is a written request for payment of a specific past due invoice. On this page it means a letter from the company that issued the invoice, sent to its own customer. It is not a letter from a third party collection agency, and it is not a letter a consumer sends to dispute a debt.",
-      },
-      {
-        question: "How is a collection letter different from a dunning letter?",
-        answer:
-          "A collection letter is one document. Dunning is the series of documents, each a bit firmer, tied to how late the invoice is. You can send a collection letter as one step inside a dunning sequence.",
       },
       {
         question: "What should a collection letter include?",
@@ -409,51 +364,6 @@ export const glossaryTerms: GlossaryTerm[] = [
         question: "How many collection letters should you send?",
         answer:
           "Most B2B teams send a short sequence over the first 90 days, then decide: payment plan, credit hold, or a referral you have already described in the final letter. The number matters less than sending them on a schedule and stopping when the invoice is paid or disputed.",
-      },
-    ],
-  },
-  {
-    slug: "past-due-invoice-email",
-    h1: "Past Due Invoice Email",
-    seoTitle: "Past Due Invoice Email Templates",
-    description:
-      "A past due invoice email asks for payment that is already late. Three templates with subject lines you can adapt.",
-    breadcrumb: "Past Due Invoice Email",
-    keywords: [
-      "past due invoice email",
-      "past due invoice email template",
-      "overdue invoice email",
-      "past due notice email",
-      "invoice reminder email",
-    ],
-    summary: "Email copy for an invoice that is already late, from a first note to a final notice.",
-    relatedSlugs: ["dunning-letter", "collection-letter", "accounts-receivable-aging-report"],
-    resources: [collections, reminders, dunningSoftware, quickbooks],
-    faqs: [
-      {
-        question: "What is a past due invoice email?",
-        answer:
-          "A past due invoice email tells a customer that an invoice is overdue and asks them to pay it. It should name the invoice, the open amount, the due date, and a way to pay. A reminder sent before the due date is not a past due email.",
-      },
-      {
-        question: "What should a past due invoice email include?",
-        answer:
-          "Subject line with the invoice number and amount, a short statement that the invoice is past due, the original due date, the open balance, a payment link, and a line that invites them to reply if something on the invoice is wrong. Send it from a person at your company, not from a no reply address.",
-      },
-      {
-        question: "When should you send a past due invoice email?",
-        answer:
-          "Send a courtesy note about 7 days before the due date, then a past due email on the due date or within a week after it. Add a second channel around 14 days overdue if email gets no reply. Escalate the audience around day 30. That cadence is the one Yonovo documents for collections.",
-      },
-      {
-        question: "What is a good subject line for a past due invoice?",
-        answer:
-          "Use the invoice number, the amount, and the status. Examples: 'Invoice 1042 for $4,200 is past due' or 'Second notice: Invoice 1042, 21 days past due.' Vague subjects get buried. Do not use all caps or fake urgency.",
-      },
-      {
-        question: "Should a past due email come from a person?",
-        answer:
-          "Yes. Customers pay a name they recognize. Yonovo sends follow up from the client's own email domain so the message looks like the company the customer already bought from, not like an outside collector.",
       },
     ],
   },

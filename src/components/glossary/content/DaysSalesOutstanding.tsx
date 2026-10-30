@@ -34,9 +34,13 @@ export default function DaysSalesOutstanding() {
         </P>
       </GlossarySection>
 
-      <GlossarySection id="dso-calculator" title="DSO calculator">
+      <GlossarySection id="estimate" title="Estimate it">
         <P>
-          Enter receivables, credit sales, and the length of the period. The starting figures match the example below. The 10 percent line is an illustration of what that freed cash might cost to carry. It is not a market interest rate.
+          The full{" "}
+          <Link href="/tools/dso-calculator" className={textLink}>
+            DSO calculator
+          </Link>{" "}
+          is the tool to bookmark. The fields below are a short version of the same formula, loaded with the example that follows. The 10 percent line is an illustration of carrying cost, not a market rate.
         </P>
         <DSOCalculator initialAr="180000" initialSales="1200000" initialDays="365" initialTarget="40" />
       </GlossarySection>

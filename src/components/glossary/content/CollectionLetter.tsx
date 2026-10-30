@@ -20,10 +20,9 @@ export default function CollectionLetter() {
           . Do not adapt the samples below for that.
         </P>
         <P>
-          A collection letter is one document.{" "}
-          <Link href="/glossary/dunning-letter" className={textLink}>Dunning</Link>{" "}
-          is the series: first notice, second notice, final notice. You can use a collection letter as the firmer step in that series. Email versions are on the{" "}
-          <Link href="/glossary/past-due-invoice-email" className={textLink}>past due invoice email</Link> page. These samples are examples, not legal advice.
+          A collection letter is one document. The series of notices that gets firmer as an invoice ages is covered in the{" "}
+          <Link href="/blog/dunning-letter" className={textLink}>dunning letter</Link> guide. Email versions are in the{" "}
+          <Link href="/blog/invoice-reminder-best-practices#past-due-invoice-email-templates" className={textLink}>past due invoice email templates</Link>. These samples are examples, not legal advice.
         </P>
       </GlossarySection>
 

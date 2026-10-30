@@ -101,7 +101,8 @@ export default function DSOCalculatorPage() {
               DSO Calculator
             </h1>
             <p className="text-base text-secondary leading-relaxed md:text-xl">
-              Calculate your days sales outstanding, benchmark it against healthy ranges, and see exactly how much working capital a lower DSO would free up. No sign-up, no email required.
+              Calculate your days sales outstanding, benchmark it against healthy ranges, and see exactly how much working capital a lower DSO would free up. No sign-up, no email required. The formula and a worked example are in the{" "}
+              <Link href="/glossary/days-sales-outstanding" className="text-brand-blue underline underline-offset-2">days sales outstanding</Link> guide.
             </p>
           </div>
           <div className="mt-12">

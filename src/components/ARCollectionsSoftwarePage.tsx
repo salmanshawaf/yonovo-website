@@ -151,11 +151,6 @@ export const faqs = [
       "Collections software runs follow up on unpaid invoices. In B2B, accounts receivable collections software tracks aging, sends reminders, switches channels, and stops when an invoice is paid or disputed. It is not consumer debt collection and it is not a third party agency.",
   },
   {
-    question: "Is accounts receivable collections software the same as accounts receivable software?",
-    answer:
-      "Accounts receivable software is the broader category: invoicing, cash application, and collections. Accounts receivable collections software is the part that gets invoices paid. Yonovo focuses on that collections workflow and connects to the accounting system you already use.",
-  },
-  {
     question: "Who is this collections software for?",
     answer:
       "CFOs, vice presidents and heads of finance, and controllers at B2B companies in the United States and Canada. An AR manager is usually the person who runs the cadence day to day.",
@@ -236,7 +231,8 @@ export default function ARCollectionsSoftwarePage() {
             </h2>
             <div className="rounded-2xl border border-border bg-surface p-6 md:p-10">
               <p className="text-lg text-foreground leading-relaxed md:text-xl">
-                Accounts receivable collections software, also called collections software or AR collections software, runs the follow up workflow on unpaid invoices. It is the collections part of accounts receivable software: it tracks how overdue each invoice is, sends payment reminders on a schedule, switches to a new channel when one is ignored, escalates accounts that need human attention, and stops the moment an invoice is paid or disputed. The goal is a collections process that runs the same way every day, whoever is at their desk.
+                Accounts receivable collections software, also called collections software or AR collections software, runs the follow up workflow on unpaid invoices. It tracks how overdue each invoice is, sends payment reminders on a schedule, switches to a new channel when one is ignored, escalates accounts that need human attention, and stops the moment an invoice is paid or disputed. The broader automation category is covered on the{" "}
+                <Link href="/accounts-receivable-automation-software" className="text-brand-blue underline underline-offset-2">accounts receivable automation software</Link> page. The goal is a collections process that runs the same way every day, whoever is at their desk.
               </p>
               <p className="text-sm text-muted">
                 Updated October 30, 2026. Written by{" "}
@@ -614,7 +610,7 @@ export default function ARCollectionsSoftwarePage() {
         { label: "Accounts Receivable Statistics", href: "/accounts-receivable-statistics", description: "Verified figures on late payments, DSO, and collections effort, every one linked to its original source." },
         { label: "DSO Formula and Calculator", href: "/glossary/days-sales-outstanding", description: "What days sales outstanding is, the formula, a worked example, and a calculator." },
         { label: "AR Aging Report", href: "/glossary/accounts-receivable-aging-report", description: "The buckets behind the average, plus a template you can copy." },
-        { label: "Past Due Invoice Email", href: "/glossary/past-due-invoice-email", description: "Three email templates for an invoice that is already late." },
+        { label: "Past Due Invoice Email Templates", href: "/blog/invoice-reminder-best-practices#past-due-invoice-email-templates", description: "Three emails for an invoice that is already late." },
         { label: "Accounts Receivable Glossary", href: "/glossary", description: "DSO, collection period, turnover, aging, and letter templates in one index." },
         { label: "DSO Calculator", href: "/tools/dso-calculator", description: "Put a dollar figure on your days sales outstanding and what a reduction frees up." },
         { label: "How to Reduce DSO", href: "/blog/how-to-reduce-dso", description: "Seven ways finance teams shorten days sales outstanding and free up cash." },

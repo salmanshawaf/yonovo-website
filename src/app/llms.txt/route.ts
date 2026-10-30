@@ -124,7 +124,7 @@ export async function GET() {
     .join("\n");
 
   const glossaryLinks = [
-    `- [Accounts Receivable Glossary](${SITE_URL}/glossary): Definitions, formulas, and templates for DSO, collection period, turnover, aging, dunning letters, collection letters, and past due invoice emails.`,
+    `- [Accounts Receivable Glossary](${SITE_URL}/glossary): Definitions for accounts receivable terms, including DSO, collection period, turnover, aging, and collection letters. Dunning letters: ${SITE_URL}/blog/dunning-letter. Past due invoice emails: ${SITE_URL}/blog/invoice-reminder-best-practices#past-due-invoice-email-templates.`,
     ...glossaryTerms.map(
       (term) => `- [${term.h1}](${SITE_URL}${glossaryPath(term.slug)}): ${term.summary}`,
     ),

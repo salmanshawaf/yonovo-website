@@ -66,11 +66,11 @@ export default function AgingReport() {
         </P>
         <AgingTemplate />
         <P>
-          Yonovo builds this view from the accounting system instead of a monthly export. It pulls invoices and payments from QuickBooks Online, Xero, NetSuite, Sage Intacct, Odoo, Stripe Billing, BILL, FreshBooks, Salesforce, HubSpot, and SAP, then follows up by email, SMS, phone, and WhatsApp based on the bucket. The day by day actions are on{" "}
+          Yonovo builds this view from the accounting system instead of a monthly export. It pulls invoices and payments from QuickBooks Online, Xero, NetSuite, Sage Intacct, Odoo, Stripe Billing, BILL, FreshBooks, Salesforce, HubSpot, and SAP,           then follows up by email, SMS, phone, and WhatsApp based on the bucket. The day by day actions are on{" "}
           <Link href="/ar-collections-software" className={textLink}>accounts receivable collections software</Link>.
           {" "}Copy for each stage is in the{" "}
-          <Link href="/glossary/dunning-letter" className={textLink}>dunning letter</Link> and{" "}
-          <Link href="/glossary/past-due-invoice-email" className={textLink}>past due invoice email</Link> pages.
+          <Link href="/blog/dunning-letter" className={textLink}>dunning letter</Link> guide and the{" "}
+          <Link href="/blog/invoice-reminder-best-practices#past-due-invoice-email-templates" className={textLink}>past due invoice email templates</Link>.
         </P>
       </GlossarySection>
     </>
