@@ -439,6 +439,7 @@ export default function ARCollectionsSoftwarePage() {
         { label: "Dunning Management Software", href: "/dunning-management-software", description: "The written reminder layer of collections, stage by stage." },
         { label: "Accounts Receivable Statistics", href: "/accounts-receivable-statistics", description: "Verified figures on late payments, DSO, and collections effort, every one linked to its original source." },
         { label: "DSO Calculator", href: "/tools/dso-calculator", description: "Put a dollar figure on your days sales outstanding and what a reduction frees up." },
+        { label: "How to Reduce DSO", href: "/blog/how-to-reduce-dso", description: "Seven ways finance teams shorten days sales outstanding and free up cash." },
         { label: "Invoice Reminder Best Practices", href: "/blog/invoice-reminder-best-practices", description: "Copy ready templates and timing rules for every reminder stage." },
         { label: "Case Study: Troyes Canada", href: "/case-studies/troyes", description: "From no collections process to a fully automated one in a single day." },
       ]} />

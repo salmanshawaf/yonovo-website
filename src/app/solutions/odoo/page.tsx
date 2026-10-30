@@ -9,7 +9,7 @@ import OdooPage, { faqs } from "@/components/OdooPage";
 export const metadata: Metadata = {
   title: "Odoo AR Automation | Automate Collections for Odoo",
   description:
-    "Automate accounts receivable for Odoo Community, Enterprise, and Online. Multi-channel follow-ups via email, SMS, and voice. Go live in one day.",
+    "Automate accounts receivable for Odoo Community, Enterprise, and Online. Multi-channel follow-ups via email, SMS, voice, and WhatsApp. Go live in one day.",
   alternates: {
     canonical: `${SITE_URL}/solutions/odoo`,
   },
@@ -17,7 +17,7 @@ export const metadata: Metadata = {
     type: "website",
     title: `Odoo AR Automation | ${SITE_NAME}`,
     description:
-      "Automate accounts receivable for Odoo. Multi-channel follow-ups via email, SMS, and voice. Go live in one day.",
+      "Automate accounts receivable for Odoo. Multi-channel follow-ups via email, SMS, voice, and WhatsApp. Go live in one day.",
     url: `${SITE_URL}/solutions/odoo`,
     siteName: SITE_NAME,
     images: [{ url: "/og-default.png", width: 1200, height: 630, alt: "Odoo AR Automation | Automate Collections for Odoo" }],
@@ -27,7 +27,7 @@ export const metadata: Metadata = {
     images: ["/og-default.png"],
     title: `Odoo AR Automation | ${SITE_NAME}`,
     description:
-      "Automate accounts receivable for Odoo. Multi-channel follow-ups via email, SMS, and voice.",
+      "Automate accounts receivable for Odoo. Multi-channel follow-ups via email, SMS, voice, and WhatsApp.",
   },
 };
 
@@ -35,8 +35,8 @@ export default function Page() {
   return (
     <>
       <JsonLd data={[
-        breadcrumbSchema([{ name: "Home", href: "/" }, { name: "Solutions", href: "/solutions/odoo" }, { name: "Odoo" }]),
-        softwareApplicationSchema({ integrationName: "Odoo", description: "Automate accounts receivable for Odoo Community, Enterprise, and Online. Multi-channel follow-ups via email, SMS, voice, and WhatsApp.", url: "/solutions/odoo" }),
+        breadcrumbSchema([{ name: "Home", href: "/" }, { name: "Odoo" }]),
+        softwareApplicationSchema({ integrationName: "Odoo", description: "Automate accounts receivable for Odoo Community, Enterprise, and Online. Multi-channel follow-ups via email, SMS, voice, and WhatsApp. Go live in one day.", url: "/solutions/odoo" }),
         faqSchema(faqs),
       ]} />
       <NavbarWrapper defaultMode="dark" />

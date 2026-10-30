@@ -9,6 +9,8 @@ import Breadcrumbs from "@/components/blog/Breadcrumbs";
 import { authors } from "@/content/authors";
 import { getAllPosts, postToMeta } from "@/lib/blog";
 import { SITE_URL, SITE_NAME } from "@/lib/site-config";
+import JsonLd from "@/components/JsonLd";
+import { breadcrumbSchema } from "@/lib/schemas";
 
 type Props = { params: Promise<{ slug: string }> };
 
@@ -73,9 +75,14 @@ export default async function AuthorPage({ params }: Props) {
 
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(personJsonLd) }}
+      <JsonLd
+        data={[
+          personJsonLd,
+          breadcrumbSchema([
+            { name: "Blog", href: "/blog" },
+            { name: author.name },
+          ]),
+        ]}
       />
 
       <NavbarWrapper defaultMode="light" />

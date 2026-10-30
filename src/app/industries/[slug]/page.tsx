@@ -1,7 +1,7 @@
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import { SITE_URL, SITE_NAME } from "@/lib/site-config";
-import { breadcrumbSchema } from "@/lib/schemas";
+import { breadcrumbSchema, faqSchema } from "@/lib/schemas";
 import JsonLd from "@/components/JsonLd";
 import NavbarWrapper from "@/components/NavbarWrapper";
 import Footer from "@/components/Footer";
@@ -51,7 +51,12 @@ export default async function IndustryPage({ params }: Props) {
 
   return (
     <>
-      <JsonLd data={breadcrumbSchema([{ name: "Home", href: "/" }, { name: "Industries", href: `/industries/${slug}` }, { name: industryName }])} />
+      <JsonLd
+        data={[
+          breadcrumbSchema([{ name: "Home", href: "/" }, { name: industryName }]),
+          faqSchema(data.faqs),
+        ]}
+      />
       <NavbarWrapper defaultMode="light" />
       <main className="pt-16 min-h-screen">
         <IndustryPageTemplate data={data} />

@@ -9,7 +9,7 @@ import ARAutomationSoftwarePage, { faqs } from "@/components/ARAutomationSoftwar
 const PAGE_URL = `${SITE_URL}/accounts-receivable-automation-software`;
 const TITLE = "Accounts Receivable Automation Software";
 const DESCRIPTION =
-  "Compare the top accounts receivable automation platforms on setup time, channels, integrations, and pricing. See how Yonovo runs collections for you across email, SMS, phone, and WhatsApp.";
+  "Compare accounts receivable automation software on setup, channels, and pricing. Yonovo collects across email, SMS, phone, and WhatsApp.";
 
 export const metadata: Metadata = {
   title: TITLE,

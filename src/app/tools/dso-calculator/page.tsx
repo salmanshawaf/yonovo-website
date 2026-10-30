@@ -13,25 +13,26 @@ import DSOCalculator from "@/components/DSOCalculator";
 const url = `${SITE_URL}/tools/dso-calculator`;
 const ogImage = "/og-default.png";
 
+const TITLE = "Days Sales Outstanding Calculator";
+const DESCRIPTION =
+  "Free DSO calculator. Enter receivables and credit sales to get days sales outstanding and the cash a lower DSO frees up.";
+
 export const metadata: Metadata = {
-  title: "DSO Calculator",
-  description:
-    "Free DSO calculator. Enter your receivables and credit sales to get your days sales outstanding, benchmark it, and see how much cash a lower DSO frees up.",
+  title: TITLE,
+  description: DESCRIPTION,
   alternates: { canonical: url },
   openGraph: {
     type: "website",
-    title: "Free DSO Calculator (Days Sales Outstanding)",
-    description:
-      "Calculate your days sales outstanding and see how much working capital a lower DSO frees up.",
+    title: `${TITLE} | ${SITE_NAME}`,
+    description: DESCRIPTION,
     url,
     siteName: SITE_NAME,
     images: [{ url: ogImage, width: 1200, height: 630, alt: "Yonovo DSO Calculator" }],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Free DSO Calculator (Days Sales Outstanding)",
-    description:
-      "Calculate your days sales outstanding and see how much working capital a lower DSO frees up.",
+    title: `${TITLE} | ${SITE_NAME}`,
+    description: DESCRIPTION,
     images: [ogImage],
   },
 };
@@ -84,7 +85,6 @@ export default function DSOCalculatorPage() {
         data={[
           breadcrumbSchema([
             { name: "Home", href: "/" },
-            { name: "Tools", href: "/tools/dso-calculator" },
             { name: "DSO Calculator" },
           ]),
           webAppSchema,
@@ -130,7 +130,8 @@ export default function DSOCalculatorPage() {
             </p>
             <p className="text-base text-secondary leading-relaxed">
               A stubbornly high DSO is usually a follow up problem. See how{" "}
-              <Link href="/ar-collections-software" className="text-brand-blue underline underline-offset-2">accounts receivable collections software</Link> runs the reminder timeline for you, or benchmark your number against the industry data on our{" "}
+              <Link href="/accounts-receivable-automation-software" className="text-brand-blue underline underline-offset-2">accounts receivable automation software</Link> and{" "}
+              <Link href="/ar-collections-software" className="text-brand-blue underline underline-offset-2">accounts receivable collections software</Link> run the reminder timeline, or benchmark your number against the industry data on our{" "}
               <Link href="/accounts-receivable-statistics" className="text-brand-blue underline underline-offset-2">accounts receivable statistics</Link> page.
             </p>
           </div>
@@ -153,7 +154,7 @@ export default function DSOCalculatorPage() {
               Stop chasing payments by hand
             </h2>
             <p className="max-w-xl text-base text-white/70 md:text-lg">
-              Yonovo follows up on every overdue invoice across email, SMS, and voice, so you collect faster and bring your DSO down without adding headcount.
+              Yonovo follows up on every overdue invoice across email, SMS, voice, and WhatsApp, so you collect faster and bring your DSO down without adding headcount.
             </p>
             <Link href="/book-demo">
               <Button variant="brand" size="lg" className="font-medium">

@@ -61,7 +61,7 @@ const topFeatures = [
   {
     title: "Reach customers on every channel",
     description:
-      "Follow up on overdue invoices by email, SMS, and AI powered voice calls automatically. Each channel escalates based on your rules so no invoice gets forgotten.",
+      "Follow up on overdue invoices by email, SMS, WhatsApp, and AI powered voice calls automatically. Each channel escalates based on your rules so no invoice gets forgotten.",
     imageRatio: "aspect-[1216/696]",
     image: "/images/feature-multichannel.png",
     imageClassName: "scale-[1.02]",
@@ -107,10 +107,12 @@ const integrations = [
   { name: "Sage", logo: "/logos/sage-icon.svg", href: "/solutions/sage" },
   { name: "Odoo", logo: "/logos/odoo-icon.svg", href: "/solutions/odoo" },
   { name: "FreshBooks", logo: "/logos/freshbooks-icon.png" },
+  { name: "Stripe", logo: "/logos/stripe-icon.svg", href: "/solutions/stripe" },
 ];
 
 const integrations2 = [
   { name: "NetSuite", logo: "/logos/netsuite-icon.svg", href: "/solutions/netsuite" },
+  { name: "BILL", logo: "/logos/bill-icon.svg", href: "/solutions/bill" },
   { name: "Salesforce", logo: "/logos/salesforce-icon.webp" },
   { name: "HubSpot", logo: "/logos/hubspot-icon.png" },
   { name: "SAP", logo: "/logos/sap-icon.webp" },

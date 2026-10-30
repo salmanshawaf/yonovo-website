@@ -280,7 +280,7 @@ const advantages = [
   {
     title: "Actually does the work",
     description:
-      "Traditional AR software gives you dashboards. Yonovo gives you results. Complete workflows executed across email, SMS, and voice without manual effort.",
+      "Traditional AR software gives you dashboards. Yonovo gives you results. Complete workflows executed across email, SMS, voice, and WhatsApp without manual effort.",
     renderContent: () => <ActuallyDoesTheWorkMockup />,
   },
   {

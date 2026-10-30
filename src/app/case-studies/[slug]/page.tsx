@@ -5,6 +5,32 @@ import Footer from "@/components/Footer";
 import CaseStudyPageTemplate from "@/components/CaseStudyPageTemplate";
 import { caseStudies } from "@/data/caseStudies";
 import { SITE_URL, SITE_NAME } from "@/lib/site-config";
+import JsonLd from "@/components/JsonLd";
+import { breadcrumbSchema, caseStudyArticleSchema } from "@/lib/schemas";
+
+const MONTHS: Record<string, string> = {
+  january: "01",
+  february: "02",
+  march: "03",
+  april: "04",
+  may: "05",
+  june: "06",
+  july: "07",
+  august: "08",
+  september: "09",
+  october: "10",
+  november: "11",
+  december: "12",
+};
+
+/** "March 11, 2026" -> "2026-03-11". Returns the original string if it does not match. */
+function visibleDateToIso(display: string): string {
+  const match = display.match(/^([A-Za-z]+)\s+(\d{1,2}),\s+(\d{4})$/);
+  if (!match) return display;
+  const month = MONTHS[match[1].toLowerCase()];
+  if (!month) return display;
+  return `${match[3]}-${month}-${match[2].padStart(2, "0")}`;
+}
 
 type Props = { params: Promise<{ slug: string }> };
 
@@ -47,8 +73,27 @@ export default async function CaseStudyPage({ params }: Props) {
   const data = caseStudies[slug];
   if (!data) notFound();
 
+  const url = `${SITE_URL}/case-studies/${slug}`;
+  const published = visibleDateToIso(data.hero.date);
+
   return (
     <>
+      <JsonLd
+        data={[
+          breadcrumbSchema([
+            { name: "Home", href: "/" },
+            { name: "Case Studies", href: "/case-studies" },
+            { name: data.card.companyName },
+          ]),
+          caseStudyArticleSchema({
+            headline: data.card.title,
+            description: data.card.summary,
+            url,
+            datePublished: published,
+            companyName: data.card.companyName,
+          }),
+        ]}
+      />
       <NavbarWrapper defaultMode="light" />
       <main className="pt-16 min-h-screen bg-background">
         <CaseStudyPageTemplate data={data} />

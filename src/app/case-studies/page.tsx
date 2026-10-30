@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
 import { SITE_URL, SITE_NAME } from "@/lib/site-config";
-import { breadcrumbSchema } from "@/lib/schemas";
+import { breadcrumbSchema, collectionPageSchema } from "@/lib/schemas";
 import JsonLd from "@/components/JsonLd";
 import NavbarWrapper from "@/components/NavbarWrapper";
 import Footer from "@/components/Footer";
@@ -12,16 +12,19 @@ import CaseStudyCard from "@/components/CaseStudyCard";
 import { caseStudies } from "@/data/caseStudies";
 import { getAllPosts } from "@/lib/blog";
 
+const DESCRIPTION =
+  "Case studies on accounts receivable automation: how finance teams collect faster and reduce DSO with Yonovo.";
+
 export const metadata: Metadata = {
   title: "Case Studies",
-  description: "See how real teams use Yonovo to automate collections, reduce DSO, and improve cash flow.",
+  description: DESCRIPTION,
   alternates: {
     canonical: `${SITE_URL}/case-studies`,
   },
   openGraph: {
     type: "website",
     title: `Case Studies | ${SITE_NAME}`,
-    description: "See how real teams use Yonovo to automate collections, reduce DSO, and improve cash flow.",
+    description: DESCRIPTION,
     url: `${SITE_URL}/case-studies`,
     siteName: SITE_NAME,
     images: [{ url: "/og-default.png", width: 1200, height: 630, alt: SITE_NAME }],
@@ -30,7 +33,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     images: ["/og-default.png"],
     title: `Case Studies | ${SITE_NAME}`,
-    description: "See how real teams use Yonovo to automate collections, reduce DSO, and improve cash flow.",
+    description: DESCRIPTION,
   },
 };
 
@@ -40,7 +43,20 @@ export default function CaseStudiesPage() {
 
   return (
     <>
-      <JsonLd data={breadcrumbSchema([{ name: "Home", href: "/" }, { name: "Case Studies" }])} />
+      <JsonLd
+        data={[
+          breadcrumbSchema([{ name: "Home", href: "/" }, { name: "Case Studies" }]),
+          collectionPageSchema({
+            name: `Case Studies | ${SITE_NAME}`,
+            description: DESCRIPTION,
+            url: `${SITE_URL}/case-studies`,
+            items: studies.map((study) => ({
+              name: study.card.companyName,
+              url: `${SITE_URL}/case-studies/${study.slug}`,
+            })),
+          }),
+        ]}
+      />
       <NavbarWrapper defaultMode="light" />
       <main className="pt-16 min-h-screen bg-background">
         {/* ── Hero ── */}

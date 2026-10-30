@@ -156,7 +156,7 @@ export const faqs = [
   {
     question: "What is B2B debt collection software?",
     answer:
-      "B2B debt collection software helps a business collect its own unpaid invoices from other businesses. It connects to your accounting system, follows up on overdue invoices across channels like email, SMS, and phone, and escalates the accounts that need attention. The messages come from your business, not from an outside party.",
+      "B2B debt collection software helps a business collect its own unpaid invoices from other businesses. It connects to your accounting system, follows up on overdue invoices across channels like email, SMS, phone, and WhatsApp, and escalates the accounts that need attention. The messages come from your business, not from an outside party.",
   },
   {
     question: "Is this the same as hiring a collection agency?",

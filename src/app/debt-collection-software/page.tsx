@@ -9,7 +9,7 @@ import DebtCollectionSoftwarePage, { faqs } from "@/components/DebtCollectionSof
 const PAGE_URL = `${SITE_URL}/debt-collection-software`;
 const TITLE = "Debt Collection Software for B2B Invoices";
 const DESCRIPTION =
-  "Software for businesses collecting their own unpaid B2B invoices. Yonovo follows up by email, SMS, phone, and WhatsApp under your brand. Not an agency, and no cut of what you recover.";
+  "Debt collection software for your own unpaid B2B invoices. Yonovo follows up by email, SMS, phone, and WhatsApp under your brand, not as an agency.";
 
 export const metadata: Metadata = {
   title: TITLE,

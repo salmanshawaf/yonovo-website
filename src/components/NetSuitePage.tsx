@@ -64,7 +64,7 @@ const timelineSteps = [
   },
   {
     number: 3,
-    text: "When an invoice goes overdue, Yonovo follows up by email, SMS, and AI-powered phone calls on your behalf.",
+    text: "When an invoice goes overdue, Yonovo follows up by email, SMS, WhatsApp, and AI-powered phone calls on your behalf.",
     illustration: StepFollowUpIllustration,
   },
   {
@@ -266,7 +266,7 @@ export default function NetSuitePage() {
               {[
                 { icon: (<svg className="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" /></svg>), title: "Instant sync", desc: "Invoices, contacts, and aging data stay current in real time. No exports or manual imports." },
                 { icon: (<svg className="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round"><path d="M9 12l2 2 4-4" /><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z" /></svg>), title: "Always on brand", desc: "Messages go out under your company name, email, and voice. Customers only see you." },
-                { icon: (<svg className="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round"><rect x="3" y="3" width="7" height="7" rx="1" /><rect x="14" y="3" width="7" height="7" rx="1" /><rect x="3" y="14" width="7" height="7" rx="1" /><rect x="14" y="14" width="7" height="7" rx="1" /></svg>), title: "Multi-channel", desc: "Reach customers across email, SMS, and phone so no single ignored channel holds up a payment." },
+                { icon: (<svg className="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round"><rect x="3" y="3" width="7" height="7" rx="1" /><rect x="14" y="3" width="7" height="7" rx="1" /><rect x="3" y="14" width="7" height="7" rx="1" /><rect x="14" y="14" width="7" height="7" rx="1" /></svg>), title: "Multi-channel", desc: "Reach customers across email, SMS, phone, and WhatsApp so no single ignored channel holds up a payment." },
                 { icon: (<svg className="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2" /><circle cx="9" cy="7" r="4" /><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75" /></svg>), title: "Smart escalation", desc: "Accounts that need a human touch get routed to the right person with full context." },
                 { icon: (<svg className="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10" /><polyline points="12 6 12 12 16 14" /></svg>), title: "Reduce DSO", desc: "Consistent outreach closes the gap between invoicing and payment so cash arrives sooner." },
                 { icon: (<svg className="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round"><path d="M22 11.08V12a10 10 0 11-5.93-9.14" /><polyline points="22 4 12 14.01 9 11.01" /></svg>), title: "Better relationships", desc: "Professional reminders replace awkward one-off emails. Customers respond better and stay happy." },

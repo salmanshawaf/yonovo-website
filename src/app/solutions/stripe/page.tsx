@@ -9,7 +9,7 @@ import StripePage, { faqs } from "@/components/StripePage";
 export const metadata: Metadata = {
   title: "Stripe Billing AR Automation",
   description:
-    "Automate accounts receivable for Stripe Billing. AI-powered follow-ups via email, SMS, and voice. Go live in one day and reduce DSO.",
+    "Automate accounts receivable for Stripe Billing. AI-powered follow-ups via email, SMS, voice, and WhatsApp. Go live in one day and reduce DSO.",
   alternates: {
     canonical: `${SITE_URL}/solutions/stripe`,
   },
@@ -17,7 +17,7 @@ export const metadata: Metadata = {
     type: "website",
     title: `Stripe Billing AR Automation | ${SITE_NAME}`,
     description:
-      "Automate accounts receivable for Stripe Billing. AI-powered follow-ups via email, SMS, and voice. Go live in one day.",
+      "Automate accounts receivable for Stripe Billing. AI-powered follow-ups via email, SMS, voice, and WhatsApp. Go live in one day.",
     url: `${SITE_URL}/solutions/stripe`,
     siteName: SITE_NAME,
     images: [{ url: "/og-default.png", width: 1200, height: 630, alt: "Stripe Billing AR Automation" }],
@@ -27,7 +27,7 @@ export const metadata: Metadata = {
     images: ["/og-default.png"],
     title: `Stripe Billing AR Automation | ${SITE_NAME}`,
     description:
-      "Automate accounts receivable for Stripe Billing. AI-powered follow-ups via email, SMS, and voice.",
+      "Automate accounts receivable for Stripe Billing. AI-powered follow-ups via email, SMS, voice, and WhatsApp.",
   },
 };
 
@@ -35,8 +35,8 @@ export default function Page() {
   return (
     <>
       <JsonLd data={[
-        breadcrumbSchema([{ name: "Home", href: "/" }, { name: "Solutions", href: "/solutions/stripe" }, { name: "Stripe Billing" }]),
-        softwareApplicationSchema({ integrationName: "Stripe Billing", description: "Automate accounts receivable for Stripe Billing. AI-powered follow-ups via email, SMS, voice, and WhatsApp.", url: "/solutions/stripe" }),
+        breadcrumbSchema([{ name: "Home", href: "/" }, { name: "Stripe Billing" }]),
+        softwareApplicationSchema({ integrationName: "Stripe Billing", description: "Automate accounts receivable for Stripe Billing. AI-powered follow-ups via email, SMS, voice, and WhatsApp. Go live in one day and reduce DSO.", url: "/solutions/stripe" }),
         faqSchema(faqs),
       ]} />
       <NavbarWrapper defaultMode="dark" />

@@ -9,7 +9,7 @@ import BillPage, { faqs } from "@/components/BillPage";
 export const metadata: Metadata = {
   title: "BILL (Bill.com) AR Automation",
   description:
-    "Automate accounts receivable for BILL (formerly Bill.com). AI-powered follow-ups via email, SMS, and voice with pay-now links. Go live in one day and reduce DSO.",
+    "Automate accounts receivable for BILL (formerly Bill.com) with email, SMS, voice, and WhatsApp follow-ups and pay-now links. Go live in one day.",
   alternates: {
     canonical: `${SITE_URL}/solutions/bill`,
   },
@@ -35,8 +35,8 @@ export default function Page() {
   return (
     <>
       <JsonLd data={[
-        breadcrumbSchema([{ name: "Home", href: "/" }, { name: "Solutions", href: "/solutions/bill" }, { name: "BILL" }]),
-        softwareApplicationSchema({ integrationName: "BILL", description: "Automate accounts receivable for BILL (formerly Bill.com). AI-powered follow-ups via email, SMS, voice, and WhatsApp with pay-now links.", url: "/solutions/bill" }),
+        breadcrumbSchema([{ name: "Home", href: "/" }, { name: "BILL" }]),
+        softwareApplicationSchema({ integrationName: "BILL", description: "Automate accounts receivable for BILL (formerly Bill.com) with email, SMS, voice, and WhatsApp follow-ups and pay-now links. Go live in one day.", url: "/solutions/bill" }),
         faqSchema(faqs),
       ]} />
       <NavbarWrapper defaultMode="dark" />

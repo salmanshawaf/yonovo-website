@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { SITE_URL, SITE_NAME } from "@/lib/site-config";
-import { organizationSchema, webSiteSchema } from "@/lib/schemas";
+import { homeProductSchema } from "@/lib/schemas";
+import JsonLd from "@/components/JsonLd";
 import NavbarWrapper from "@/components/NavbarWrapper";
 import Footer from "@/components/Footer";
 import HeroSection from "@/components/sections/HeroSection";
@@ -14,18 +15,21 @@ import TestimonialsSection from "@/components/sections/TestimonialsSection";
 import SecuritySection from "@/components/sections/SecuritySection";
 import CTASection from "@/components/sections/CTASection";
 
+const HOME_TITLE = `${SITE_NAME} | AI-Powered Accounts Receivable Automation`;
+const HOME_DESCRIPTION =
+  "Accounts receivable automation for finance teams. Yonovo follows up on unpaid invoices by email, SMS, voice, and WhatsApp so you get paid faster.";
+
 export const metadata: Metadata = {
-  title: `${SITE_NAME} | AI-Powered Accounts Receivable Automation`,
-  description:
-    "Automate invoice follow-ups across email, SMS, and voice. Yonovo connects to your accounting system and collects overdue invoices so you get paid faster.",
+  // absolute: the root layout template would otherwise append a second "| Yonovo".
+  title: { absolute: HOME_TITLE },
+  description: HOME_DESCRIPTION,
   alternates: {
     canonical: `${SITE_URL}/`,
   },
   openGraph: {
     type: "website",
-    title: `${SITE_NAME} | AI-Powered Accounts Receivable Automation`,
-    description:
-      "Automate invoice follow-ups across email, SMS, and voice. Yonovo handles AR collections so your team can focus on growth.",
+    title: HOME_TITLE,
+    description: HOME_DESCRIPTION,
     url: `${SITE_URL}/`,
     siteName: SITE_NAME,
     images: [{ url: "/og-default.png", width: 1200, height: 630, alt: SITE_NAME }],
@@ -33,20 +37,15 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     images: ["/og-default.png"],
-    title: `${SITE_NAME} | AI-Powered Accounts Receivable Automation`,
-    description:
-      "Automate invoice follow-ups across email, SMS, and voice. Yonovo handles AR collections so your team can focus on growth.",
+    title: HOME_TITLE,
+    description: HOME_DESCRIPTION,
   },
 };
 
 export default function Home() {
-  const orgSchema = organizationSchema();
-  const siteSchema = webSiteSchema();
-
   return (
     <>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(orgSchema) }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(siteSchema) }} />
+      <JsonLd data={homeProductSchema()} />
       <NavbarWrapper />
       <main className="pt-16 min-h-screen">
         <HeroSection />

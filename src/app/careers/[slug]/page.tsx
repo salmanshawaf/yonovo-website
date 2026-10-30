@@ -5,6 +5,7 @@ import NavbarWrapper from "@/components/NavbarWrapper";
 import Footer from "@/components/Footer";
 import Button from "@/components/Button";
 import JsonLd from "@/components/JsonLd";
+import { breadcrumbSchema } from "@/lib/schemas";
 import { jobs, getJob, applyHref, type Job, type JobBlock, type JobItem } from "@/data/jobs";
 import { SITE_URL, SITE_NAME } from "@/lib/site-config";
 
@@ -21,7 +22,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const job = getJob(slug);
   if (!job) return {};
   const url = `${SITE_URL}/careers/${job.slug}`;
-  const title = `${job.title} | Careers at ${SITE_NAME}`;
+  const title = `${job.shortTitle} | Careers at ${SITE_NAME}`;
   const ogImage = "/og-default.png";
   return {
     title: { absolute: title },
@@ -191,7 +192,16 @@ export default async function JobPage({ params }: Props) {
 
   return (
     <>
-      <JsonLd data={jobPostingSchema(job)} />
+      <JsonLd
+        data={[
+          breadcrumbSchema([
+            { name: "Home", href: "/" },
+            { name: "Careers", href: "/careers" },
+            { name: job.title },
+          ]),
+          jobPostingSchema(job),
+        ]}
+      />
       <NavbarWrapper defaultMode="light" />
       <main className="flex flex-col pt-[var(--navbar-height)] bg-background">
         <article className="mx-auto flex w-full max-w-3xl flex-col px-6 pt-28 pb-24">

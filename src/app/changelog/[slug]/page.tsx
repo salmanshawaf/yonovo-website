@@ -13,6 +13,9 @@ import BlogBottomCta from "@/components/blog/BlogBottomCta";
 
 import { getAllEntries, getEntryBySlug } from "@/lib/changelog";
 import { formatPostDate } from "@/lib/format-date";
+import JsonLd from "@/components/JsonLd";
+import { breadcrumbSchema } from "@/lib/schemas";
+import { SITE_URL, SITE_NAME } from "@/lib/site-config";
 
 type Props = { params: Promise<{ slug: string }> };
 
@@ -26,19 +29,28 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const entry = getEntryBySlug(slug);
   if (!entry) return {};
 
+  const title = `${entry.frontmatter.title} | Yonovo Changelog`;
+  const url = `${SITE_URL}/changelog/${slug}`;
+
   return {
-    title: { absolute: `${entry.frontmatter.title} | Yonovo Changelog` },
+    title: { absolute: title },
     description: entry.frontmatter.description,
     openGraph: {
-      title: `${entry.frontmatter.title} | Yonovo Changelog`,
+      title,
       description: entry.frontmatter.description,
-      url: `https://www.yonovo.com/changelog/${slug}`,
+      url,
       type: "article",
       publishedTime: entry.frontmatter.publishedAt,
-      images: [{ url: entry.frontmatter.heroImage, width: 1200, height: 630 }],
+      images: [{ url: entry.frontmatter.heroImage, width: 1200, height: 630, alt: entry.frontmatter.heroImageAlt }],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title,
+      description: entry.frontmatter.description,
+      images: [entry.frontmatter.heroImage],
     },
     alternates: {
-      canonical: `https://www.yonovo.com/changelog/${slug}`,
+      canonical: url,
     },
   };
 }
@@ -50,32 +62,45 @@ export default async function ChangelogEntryPage({ params }: Props) {
 
   const date = formatPostDate(entry.frontmatter.publishedAt);
 
+  const pageUrl = `${SITE_URL}/changelog/${slug}`;
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "Article",
     headline: entry.frontmatter.title,
     description: entry.frontmatter.description,
+    image: entry.frontmatter.heroImage.startsWith("http")
+      ? entry.frontmatter.heroImage
+      : `${SITE_URL}${entry.frontmatter.heroImage}`,
     datePublished: entry.frontmatter.publishedAt,
+    dateModified: entry.frontmatter.publishedAt,
     author: {
       "@type": "Person",
       name: entry.author.name,
+      url: `${SITE_URL}/blog/author/${entry.author.id}`,
     },
     publisher: {
       "@type": "Organization",
-      name: "Yonovo",
-      url: "https://www.yonovo.com",
+      name: SITE_NAME,
+      url: SITE_URL,
+      logo: {
+        "@type": "ImageObject",
+        url: `${SITE_URL}/yonovo-logo.png`,
+      },
     },
-    mainEntityOfPage: {
-      "@type": "WebPage",
-      "@id": `https://www.yonovo.com/changelog/${slug}`,
-    },
+    mainEntityOfPage: pageUrl,
   };
 
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      <JsonLd
+        data={[
+          breadcrumbSchema([
+            { name: "Home", href: "/" },
+            { name: "Changelog", href: "/changelog" },
+            { name: entry.frontmatter.title },
+          ]),
+          jsonLd,
+        ]}
       />
 
       <NavbarWrapper defaultMode="light" />

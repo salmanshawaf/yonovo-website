@@ -1,11 +1,29 @@
 import type { Metadata } from "next";
 import NavbarWrapper from "@/components/NavbarWrapper";
 import Footer from "@/components/Footer";
+import { SITE_URL, SITE_NAME } from "@/lib/site-config";
+
+const DESCRIPTION =
+  "Yonovo Privacy Policy. Learn how we collect, use, and protect your data.";
 
 export const metadata: Metadata = {
   title: "Privacy Policy",
-  description:
-    "Yonovo Privacy Policy. Learn how we collect, use, and protect your data.",
+  description: DESCRIPTION,
+  alternates: { canonical: `${SITE_URL}/privacy-policy` },
+  openGraph: {
+    type: "website",
+    title: `Privacy Policy | ${SITE_NAME}`,
+    description: DESCRIPTION,
+    url: `${SITE_URL}/privacy-policy`,
+    siteName: SITE_NAME,
+    images: [{ url: "/og-default.png", width: 1200, height: 630, alt: SITE_NAME }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: `Privacy Policy | ${SITE_NAME}`,
+    description: DESCRIPTION,
+    images: ["/og-default.png"],
+  },
 };
 
 export default function PrivacyPolicyPage() {
@@ -162,7 +180,7 @@ export default function PrivacyPolicyPage() {
           </p>
           <p>
             Our Services enable automated follow-ups with your customers&apos;
-            debtors via email, SMS, and voice calls. These communications are
+            debtors via email, SMS, voice, and WhatsApp. These communications are
             sent on behalf of our customers and under their direction. Yonovo
             does not independently initiate contact with end debtors. All
             communication content, frequency, and recipients are determined by

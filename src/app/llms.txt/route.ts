@@ -1,11 +1,28 @@
 import { getAllPosts } from "@/lib/blog";
 import { industries } from "@/data/industries";
 import { caseStudies } from "@/data/caseStudies";
-import { SITE_URL } from "@/lib/site-config";
+import { SITE_URL, YONOVO_INTEGRATION_LIST } from "@/lib/site-config";
 
 // How many of the most recent blog posts to surface in llms.txt.
 // Capped to keep the file high-signal; the full archive lives at /blog.
 const MAX_BLOG_POSTS = 15;
+
+// Evergreen guides worth citing even when they fall out of the recent list.
+const KEY_GUIDE_SLUGS = [
+  "what-is-ar-automation",
+  "how-to-reduce-dso",
+  "invoice-reminder-best-practices",
+  "dunning-letter",
+  "cash-collections-formula",
+  "best-ar-automation-software",
+];
+
+const COMPARISONS: { slug: string; name: string }[] = [
+  { slug: "yonovo-vs-upflow", name: "Yonovo vs Upflow" },
+  { slug: "yonovo-vs-chaser", name: "Yonovo vs Chaser" },
+  { slug: "yonovo-vs-invoiced", name: "Yonovo vs Invoiced" },
+  { slug: "yonovo-vs-bill-com", name: "Yonovo vs Bill.com" },
+];
 
 const INTEGRATIONS: { slug: string; name: string; description: string }[] = [
   {
@@ -24,7 +41,7 @@ const INTEGRATIONS: { slug: string; name: string; description: string }[] = [
     slug: "netsuite",
     name: "NetSuite Integration",
     description:
-      "Automate AR for NetSuite finance teams with personalized follow-ups across email, SMS, and voice.",
+      "Automate AR for NetSuite finance teams with personalized follow-ups across email, SMS, voice, and WhatsApp.",
   },
   {
     slug: "odoo",
@@ -42,18 +59,23 @@ const INTEGRATIONS: { slug: string; name: string; description: string }[] = [
     slug: "stripe",
     name: "Stripe Billing Integration",
     description:
-      "Automate accounts receivable for Stripe Billing with AI-powered follow-ups via email, SMS, and voice.",
+      "Automate accounts receivable for Stripe Billing with AI-powered follow-ups via email, SMS, voice, and WhatsApp.",
   },
   {
     slug: "bill",
     name: "BILL (Bill.com) Integration",
     description:
-      "Automate accounts receivable for BILL, formerly Bill.com, with AI-powered follow-ups via email, SMS, and voice, plus pay-now links.",
+      "Automate accounts receivable for BILL, formerly Bill.com, with AI-powered follow-ups via email, SMS, voice, and WhatsApp, plus pay-now links.",
   },
 ];
 
 export async function GET() {
-  const posts = getAllPosts().slice(0, MAX_BLOG_POSTS);
+  const allPosts = getAllPosts();
+  const posts = allPosts.slice(0, MAX_BLOG_POSTS);
+  const keyGuides = KEY_GUIDE_SLUGS.flatMap((slug) => {
+    const post = allPosts.find((p) => p.frontmatter.slug === slug);
+    return post ? [post] : [];
+  });
 
   const productLinks = [
     `- [Yonovo Homepage](${SITE_URL}): Overview of the Yonovo accounts receivable automation platform.`,
@@ -93,12 +115,33 @@ export async function GET() {
     )
     .join("\n");
 
+  const guideLinks = keyGuides
+    .map(
+      (p) =>
+        `- [${p.frontmatter.title}](${SITE_URL}/blog/${p.frontmatter.slug}): ${p.frontmatter.description}`,
+    )
+    .join("\n");
+
+  const comparisonLinks = COMPARISONS.map(
+    (c) => `- [${c.name}](${SITE_URL}/${c.slug}): Side-by-side comparison of Yonovo and ${c.name.replace("Yonovo vs ", "")} for accounts receivable automation.`,
+  ).join("\n");
+
   const content = `# Yonovo
 
-> Yonovo is an accounts receivable automation platform that helps finance teams collect payments faster while keeping customer relationships intact. It automates personalized follow-ups across email, SMS, and voice, and integrates with QuickBooks, Xero, NetSuite, Odoo, and Sage.
+> Yonovo is accounts receivable automation software for finance teams, including CFOs, controllers, and heads of finance at B2B companies in the United States and Canada. It connects to the accounting system and follows up on unpaid invoices so companies collect faster without sending accounts to a collection agency.
+
+Yonovo covers the collections side of invoice-to-cash: reminders, dunning sequences, escalation, and days sales outstanding (DSO). It does not publish a dollar price. Plans are Discover (analytics and benchmarking, including free analytics), Grow (up to $10M ARR), and Scale ($10M to $50M ARR). Quotes are custom.
+
+Follow-ups go out by email, SMS, voice, and WhatsApp. Yonovo integrates with ${YONOVO_INTEGRATION_LIST}.
 
 ## Product
 ${productLinks}
+
+## Comparisons
+${comparisonLinks}
+
+## Guides
+${guideLinks}
 
 ## Integrations
 ${integrationLinks}
