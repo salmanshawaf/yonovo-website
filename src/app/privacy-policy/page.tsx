@@ -180,7 +180,7 @@ export default function PrivacyPolicyPage() {
           </p>
           <p>
             Our Services enable automated follow-ups with your customers&apos;
-            debtors via email, SMS, and voice calls. These communications are
+            debtors via email, SMS, voice, and WhatsApp. These communications are
             sent on behalf of our customers and under their direction. Yonovo
             does not independently initiate contact with end debtors. All
             communication content, frequency, and recipients are determined by

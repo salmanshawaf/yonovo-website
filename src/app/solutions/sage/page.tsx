@@ -9,7 +9,7 @@ import SagePage, { faqs } from "@/components/SagePage";
 export const metadata: Metadata = {
   title: "Sage AR Automation | Automate Collections for Sage",
   description:
-    "Automate accounts receivable for Sage. Sync invoices, send follow-ups via email, SMS, and voice, and reduce DSO. Go live in one day.",
+    "Automate accounts receivable for Sage. Sync invoices, send follow-ups via email, SMS, voice, and WhatsApp, and reduce DSO. Go live in one day.",
   alternates: {
     canonical: `${SITE_URL}/solutions/sage`,
   },
@@ -17,7 +17,7 @@ export const metadata: Metadata = {
     type: "website",
     title: `Sage AR Automation | ${SITE_NAME}`,
     description:
-      "Automate accounts receivable for Sage. Sync invoices, send follow-ups via email, SMS, and voice, and reduce DSO.",
+      "Automate accounts receivable for Sage. Sync invoices, send follow-ups via email, SMS, voice, and WhatsApp, and reduce DSO.",
     url: `${SITE_URL}/solutions/sage`,
     siteName: SITE_NAME,
     images: [{ url: "/og-default.png", width: 1200, height: 630, alt: "Sage AR Automation | Automate Collections for Sage" }],
@@ -27,7 +27,7 @@ export const metadata: Metadata = {
     images: ["/og-default.png"],
     title: `Sage AR Automation | ${SITE_NAME}`,
     description:
-      "Automate accounts receivable for Sage. Sync invoices, send follow-ups via email, SMS, and voice.",
+      "Automate accounts receivable for Sage. Sync invoices, send follow-ups via email, SMS, voice, and WhatsApp.",
   },
 };
 
@@ -36,7 +36,7 @@ export default function Page() {
     <>
       <JsonLd data={[
         breadcrumbSchema([{ name: "Home", href: "/" }, { name: "Sage" }]),
-        softwareApplicationSchema({ integrationName: "Sage", description: "Automate accounts receivable for Sage. Sync invoices, send follow-ups via email, SMS, and voice, and reduce DSO. Go live in one day.", url: "/solutions/sage" }),
+        softwareApplicationSchema({ integrationName: "Sage", description: "Automate accounts receivable for Sage. Sync invoices, send follow-ups via email, SMS, voice, and WhatsApp, and reduce DSO. Go live in one day.", url: "/solutions/sage" }),
         faqSchema(faqs),
       ]} />
       <NavbarWrapper defaultMode="dark" />

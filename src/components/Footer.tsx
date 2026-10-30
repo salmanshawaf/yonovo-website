@@ -8,9 +8,16 @@ import Link from "next/link";
 const integrationLinks = [
   { label: "QuickBooks", href: "/solutions/quickbooks" },
   { label: "Xero", href: "/solutions/xero" },
-  { label: "Odoo", href: "/solutions/odoo" },
   { label: "NetSuite", href: "/solutions/netsuite" },
   { label: "Sage Intacct", href: "/solutions/sage" },
+  { label: "Odoo", href: "/solutions/odoo" },
+  { label: "Stripe Billing", href: "/solutions/stripe" },
+  { label: "BILL", href: "/solutions/bill" },
+  { label: "FreshBooks", href: "/accounts-receivable-automation-software#integrations" },
+  { label: "Salesforce", href: "/accounts-receivable-automation-software#integrations" },
+  { label: "HubSpot", href: "/accounts-receivable-automation-software#integrations" },
+  { label: "SAP", href: "/accounts-receivable-automation-software#integrations" },
+  { label: "WhatsApp", href: "/accounts-receivable-automation-software#integrations" },
 ];
 
 const optimizeLinks = [

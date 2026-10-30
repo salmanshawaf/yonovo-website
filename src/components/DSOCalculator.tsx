@@ -118,7 +118,7 @@ export default function DSOCalculator() {
               See how Yonovo cuts your DSO
             </Button>
           </Link>
-          <span className="text-center text-xs text-white/50">Yonovo automates follow-ups across email, SMS, and voice to collect faster.</span>
+          <span className="text-center text-xs text-white/50">Yonovo automates follow-ups across email, SMS, voice, and WhatsApp to collect faster.</span>
         </div>
       </div>
     </div>

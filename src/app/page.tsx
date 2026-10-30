@@ -17,7 +17,7 @@ import CTASection from "@/components/sections/CTASection";
 
 const HOME_TITLE = `${SITE_NAME} | AI-Powered Accounts Receivable Automation`;
 const HOME_DESCRIPTION =
-  "Accounts receivable automation for finance teams. Yonovo follows up on unpaid invoices by email, SMS, and voice so you get paid faster.";
+  "Accounts receivable automation for finance teams. Yonovo follows up on unpaid invoices by email, SMS, voice, and WhatsApp so you get paid faster.";
 
 export const metadata: Metadata = {
   // absolute: the root layout template would otherwise append a second "| Yonovo".

@@ -105,7 +105,7 @@ export const faqs = [
   {
     question: "Does Yonovo handle dunning for invoices raised in Stripe?",
     answer:
-      "Yes. Yonovo connects to Stripe Billing as well as accounting systems like QuickBooks Online, Xero, NetSuite, Sage Intacct, and Odoo. Invoices sync in, the dunning sequence runs across email, SMS, phone, and WhatsApp, and payment status syncs back.",
+      "Yes. Yonovo integrates with QuickBooks Online, Xero, NetSuite, Sage Intacct, Odoo, Stripe Billing, BILL, FreshBooks, Salesforce, HubSpot, SAP, and WhatsApp. Invoices sync in, the dunning sequence runs across email, SMS, phone, and WhatsApp, and payment status syncs back.",
   },
 ];
 

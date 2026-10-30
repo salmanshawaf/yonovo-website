@@ -120,7 +120,7 @@ export const comparisons: Record<string, ComparisonData> = {
       {
         heading: "Integrations",
         body: [
-          "Both cover the major accounting systems. Upflow integrates with QuickBooks, Xero, NetSuite, Sage, and Stripe (a core integration given the SaaS focus), plus a public API. Yonovo integrates with [QuickBooks Online](/solutions/quickbooks), [Xero](/solutions/xero), [Odoo](/solutions/odoo), [NetSuite](/solutions/netsuite), [Sage Intacct](/solutions/sage), FreshBooks, Salesforce, HubSpot, and SAP, with real-time two-way sync and a check before every reminder so paid invoices are not chased. If your stack is Stripe plus NetSuite and you value API extensibility, Upflow has the stronger developer story; if it includes Odoo, FreshBooks, Salesforce, HubSpot, or SAP, Yonovo is the more direct path.",
+          "Both cover the major accounting systems. Upflow integrates with QuickBooks, Xero, NetSuite, Sage, and Stripe (a core integration given the SaaS focus), plus a public API. Yonovo integrates with [QuickBooks Online](/solutions/quickbooks), [Xero](/solutions/xero), [Odoo](/solutions/odoo), [NetSuite](/solutions/netsuite), [Sage Intacct](/solutions/sage), Stripe Billing, BILL, FreshBooks, Salesforce, HubSpot, SAP, and WhatsApp, with real-time two-way sync and a check before every reminder so paid invoices are not chased. If your stack is Stripe plus NetSuite and you value API extensibility, Upflow has the stronger developer story; if it includes Odoo, FreshBooks, Salesforce, HubSpot, or SAP, Yonovo is the more direct path.",
         ],
       },
     ],
@@ -163,7 +163,7 @@ export const comparisons: Record<string, ComparisonData> = {
       {
         question: "Which accounting systems do Upflow and Yonovo integrate with?",
         answer:
-          "Upflow integrates with QuickBooks, Xero, NetSuite, Sage, and Stripe, plus a public API. Yonovo integrates with QuickBooks Online, Xero, Odoo, NetSuite, Sage Intacct, FreshBooks, Salesforce, HubSpot, and SAP. Both support two-way sync, though depth varies by integration.",
+          "Upflow integrates with QuickBooks, Xero, NetSuite, Sage, and Stripe, plus a public API. Yonovo integrates with QuickBooks Online, Xero, Odoo, NetSuite, Sage Intacct, Stripe Billing, BILL, FreshBooks, Salesforce, HubSpot, SAP, and WhatsApp. Both support two-way sync, though depth varies by integration.",
       },
       {
         question: "How does pricing compare between Upflow and Yonovo?",
@@ -225,7 +225,7 @@ export const comparisons: Record<string, ComparisonData> = {
         heading: "Positioning and target customer",
         body: [
           "Chaser is a UK company that prices in GBP, leads with cash flow forecasting, and runs an active partner program for accountants and bookkeepers. Its customer base is SMB-heavy, with a concentration in the Xero ecosystem, and it claims more than 10,000 users worldwide.",
-          "Yonovo was built for US-based businesses, prices in USD, and integrates broadly across [QuickBooks](/solutions/quickbooks), [Xero](/solutions/xero), [NetSuite](/solutions/netsuite), [Sage Intacct](/solutions/sage), [Odoo](/solutions/odoo), FreshBooks, Salesforce, HubSpot, and SAP. Customers span [manufacturing](/industries/manufacturing), [wholesale and distribution](/industries/wholesale-distribution), [professional services](/industries/professional-services), and more. Both platforms sit in the same corner of the market: [B2B debt collection software](/debt-collection-software) that chases a client's own invoices rather than outsourcing them.",
+          "Yonovo was built for US-based businesses, prices in USD, and integrates broadly across [QuickBooks](/solutions/quickbooks), [Xero](/solutions/xero), [NetSuite](/solutions/netsuite), [Sage Intacct](/solutions/sage), [Odoo](/solutions/odoo), Stripe Billing, BILL, FreshBooks, Salesforce, HubSpot, SAP, and WhatsApp. Customers span [manufacturing](/industries/manufacturing), [wholesale and distribution](/industries/wholesale-distribution), [professional services](/industries/professional-services), and more. Both platforms sit in the same corner of the market: [B2B debt collection software](/debt-collection-software) that chases a client's own invoices rather than outsourcing them.",
         ],
       },
       {
@@ -252,7 +252,7 @@ export const comparisons: Record<string, ComparisonData> = {
       {
         heading: "Integrations",
         body: [
-          "Both cover the major accounting systems. Chaser integrates with Xero, QuickBooks Online, Sage (50, 200, Intacct), SAP, Microsoft Dynamics 365, AccountsIQ, Odoo, and NetSuite, plus CRMs like HubSpot, Salesforce, and Pipedrive; its Xero integration is the most often cited strength. Yonovo integrates with [QuickBooks Online](/solutions/quickbooks), [Xero](/solutions/xero), [Odoo](/solutions/odoo), [NetSuite](/solutions/netsuite), [Sage Intacct](/solutions/sage), FreshBooks, Salesforce, HubSpot, and SAP, with particular strength for QuickBooks-centric US businesses and teams running Salesforce or HubSpot as the invoicing source of record.",
+          "Both cover the major accounting systems. Chaser integrates with Xero, QuickBooks Online, Sage (50, 200, Intacct), SAP, Microsoft Dynamics 365, AccountsIQ, Odoo, and NetSuite, plus CRMs like HubSpot, Salesforce, and Pipedrive; its Xero integration is the most often cited strength. Yonovo integrates with [QuickBooks Online](/solutions/quickbooks), [Xero](/solutions/xero), [Odoo](/solutions/odoo), [NetSuite](/solutions/netsuite), [Sage Intacct](/solutions/sage), Stripe Billing, BILL, FreshBooks, Salesforce, HubSpot, SAP, and WhatsApp, with particular strength for QuickBooks-centric US businesses and teams running Salesforce or HubSpot as the invoicing source of record.",
         ],
       },
     ],
@@ -296,7 +296,7 @@ export const comparisons: Record<string, ComparisonData> = {
       {
         question: "Which accounting systems do Yonovo and Chaser integrate with?",
         answer:
-          "Chaser integrates with Xero, QuickBooks Online, Sage (50, 200, Intacct), SAP, Microsoft Dynamics 365, AccountsIQ, Odoo, and NetSuite, and is particularly strong on Xero. Yonovo integrates with QuickBooks Online, Xero, Odoo, NetSuite, Sage Intacct, FreshBooks, Salesforce, HubSpot, and SAP, and is particularly strong on QuickBooks, Salesforce, HubSpot, and SAP.",
+          "Chaser integrates with Xero, QuickBooks Online, Sage (50, 200, Intacct), SAP, Microsoft Dynamics 365, AccountsIQ, Odoo, and NetSuite, and is particularly strong on Xero. Yonovo integrates with QuickBooks Online, Xero, Odoo, NetSuite, Sage Intacct, Stripe Billing, BILL, FreshBooks, Salesforce, HubSpot, SAP, and WhatsApp, and is particularly strong on QuickBooks, Salesforce, HubSpot, and SAP.",
       },
       {
         question: "How does Chaser pricing compare to Yonovo pricing?",
@@ -384,7 +384,7 @@ export const comparisons: Record<string, ComparisonData> = {
       {
         heading: "Integrations",
         body: [
-          "Invoiced emphasizes deep ERP and CRM integration and global, multi-currency payment support, which is a genuine strength for enterprises operating across regions. Yonovo integrates with [QuickBooks Online](/solutions/quickbooks), [Xero](/solutions/xero), [Odoo](/solutions/odoo), [NetSuite](/solutions/netsuite), [Sage Intacct](/solutions/sage), FreshBooks, Salesforce, HubSpot, and SAP, with real-time two-way sync and a check before every reminder so paid invoices are not chased.",
+          "Invoiced emphasizes deep ERP and CRM integration and global, multi-currency payment support, which is a genuine strength for enterprises operating across regions. Yonovo integrates with [QuickBooks Online](/solutions/quickbooks), [Xero](/solutions/xero), [Odoo](/solutions/odoo), [NetSuite](/solutions/netsuite), [Sage Intacct](/solutions/sage), Stripe Billing, BILL, FreshBooks, Salesforce, HubSpot, SAP, and WhatsApp, with real-time two-way sync and a check before every reminder so paid invoices are not chased.",
         ],
       },
     ],
@@ -480,7 +480,7 @@ export const comparisons: Record<string, ComparisonData> = {
         { feature: "Collections channels", yonovo: "Email, SMS, AI voice, WhatsApp", competitor: "Email, auto-pay reminders" },
         { feature: "AI voice calls", yonovo: true, competitor: false },
         { feature: "Built-in accounts payable & spend", yonovo: false, competitor: true },
-        { feature: "Accounting integrations", yonovo: "QuickBooks Online, Xero, NetSuite, Sage Intacct, Odoo, FreshBooks, Salesforce, HubSpot, SAP", competitor: "QuickBooks, Xero, NetSuite, Sage Intacct, MS Dynamics" },
+        { feature: "Accounting integrations", yonovo: "QuickBooks Online, Xero, NetSuite, Sage Intacct, Odoo, Stripe Billing, BILL, FreshBooks, Salesforce, HubSpot, SAP, and WhatsApp", competitor: "QuickBooks, Xero, NetSuite, Sage Intacct, MS Dynamics" },
       ],
     },
     sections: [
@@ -508,7 +508,7 @@ export const comparisons: Record<string, ComparisonData> = {
       {
         heading: "Integrations",
         body: [
-          "Both cover the major accounting systems with two-way sync. Bill.com syncs with QuickBooks, Xero, NetSuite, Sage Intacct, and Microsoft Dynamics. Yonovo integrates with [QuickBooks Online](/solutions/quickbooks), [Xero](/solutions/xero), [NetSuite](/solutions/netsuite), [Sage Intacct](/solutions/sage), [Odoo](/solutions/odoo), FreshBooks, Salesforce, HubSpot, and SAP, with a check before every reminder so paid invoices are not chased. If you already use QuickBooks, both will sync cleanly, and Yonovo offers [two-way sync with QuickBooks](/solutions/quickbooks) so payments and status changes flow back automatically.",
+          "Both cover the major accounting systems with two-way sync. Bill.com syncs with QuickBooks, Xero, NetSuite, Sage Intacct, and Microsoft Dynamics. Yonovo integrates with [QuickBooks Online](/solutions/quickbooks), [Xero](/solutions/xero), [NetSuite](/solutions/netsuite), [Sage Intacct](/solutions/sage), [Odoo](/solutions/odoo), Stripe Billing, BILL, FreshBooks, Salesforce, HubSpot, SAP, and WhatsApp, with a check before every reminder so paid invoices are not chased. If you already use QuickBooks, both will sync cleanly, and Yonovo offers [two-way sync with QuickBooks](/solutions/quickbooks) so payments and status changes flow back automatically.",
         ],
       },
     ],
@@ -555,7 +555,7 @@ export const comparisons: Record<string, ComparisonData> = {
       {
         question: "Which accounting systems do Yonovo and Bill.com integrate with?",
         answer:
-          "Both connect to the major systems. Bill.com offers two-way sync with QuickBooks, Xero, NetSuite, Sage Intacct, and Microsoft Dynamics. Yonovo integrates with QuickBooks Online, Xero, NetSuite, Sage Intacct, Odoo, FreshBooks, Salesforce, HubSpot, and SAP.",
+          "Both connect to the major systems. Bill.com offers two-way sync with QuickBooks, Xero, NetSuite, Sage Intacct, and Microsoft Dynamics. Yonovo integrates with QuickBooks Online, Xero, NetSuite, Sage Intacct, Odoo, Stripe Billing, BILL, FreshBooks, Salesforce, HubSpot, SAP, and WhatsApp.",
       },
       {
         question: "Can I use Yonovo and Bill.com together?",

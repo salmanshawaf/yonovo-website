@@ -58,7 +58,7 @@ export const industries: Record<string, IndustryData> = {
       badge: "Wholesale & Distribution",
       headline: "Collect faster, keep every account",
       description:
-        "Yonovo automates your accounts receivable with personalized follow ups across email, SMS, and voice. Built for the long payment cycles and high-value relationships of wholesale distribution.",
+        "Yonovo automates your accounts receivable with personalized follow ups across email, SMS, voice, and WhatsApp. Built for the long payment cycles and high-value relationships of wholesale distribution.",
       cta: "Book Demo",
       reply: {
         customer: "Westfield Retail Group",
@@ -108,7 +108,7 @@ export const industries: Record<string, IndustryData> = {
           icon: "send",
           title: "Multichannel outreach",
           description:
-            "Reach buyers where they respond. Email, SMS, and AI-powered voice calls with automatic escalation based on your rules.",
+            "Reach buyers where they respond. Email, SMS, WhatsApp, and AI-powered voice calls with automatic escalation based on your rules.",
         },
         {
           icon: "shield",
@@ -160,7 +160,7 @@ export const industries: Record<string, IndustryData> = {
         {
           title: "Yonovo collects for you",
           description:
-            "Personalized follow ups go out automatically across email, SMS, and voice. Every interaction is logged and visible to your team.",
+            "Personalized follow ups go out automatically across email, SMS, voice, and WhatsApp. Every interaction is logged and visible to your team.",
         },
         {
           title: "Review and improve",
@@ -193,7 +193,7 @@ export const industries: Record<string, IndustryData> = {
       {
         question: "How does Yonovo help wholesale distributors collect faster?",
         answer:
-          "Yonovo automates your entire accounts receivable workflow by sending personalized follow ups by email, SMS, and AI-powered voice calls based on each buyer's payment history and behavior. You reduce DSO without adding headcount.",
+          "Yonovo automates your entire accounts receivable workflow by sending personalized follow ups by email, SMS, WhatsApp, and AI-powered voice calls based on each buyer's payment history and behavior. You reduce DSO without adding headcount.",
       },
       {
         question: "Can I set different rules for different account tiers?",
@@ -213,7 +213,7 @@ export const industries: Record<string, IndustryData> = {
       {
         question: "What accounting platforms does Yonovo integrate with?",
         answer:
-          "Yonovo integrates with QuickBooks Online, Xero, Odoo, NetSuite, Sage, FreshBooks, Salesforce, HubSpot, SAP, and WhatsApp. Your invoices, customers, and aging data sync automatically so there's no manual setup required.",
+          "Yonovo integrates with QuickBooks Online, Xero, NetSuite, Sage Intacct, Odoo, Stripe Billing, BILL, FreshBooks, Salesforce, HubSpot, SAP, and WhatsApp. Your invoices, customers, and aging data sync automatically so there's no manual setup required.",
       },
       {
         question: "How is Yonovo different from a traditional collections agency?",
@@ -239,7 +239,7 @@ export const industries: Record<string, IndustryData> = {
       badge: "Manufacturing",
       headline: "Get paid, protect your contracts",
       description:
-        "Yonovo automates your accounts receivable with personalized follow ups across email, SMS, and voice. Built for the extended payment cycles and high-value contracts of manufacturing.",
+        "Yonovo automates your accounts receivable with personalized follow ups across email, SMS, voice, and WhatsApp. Built for the extended payment cycles and high-value contracts of manufacturing.",
       cta: "Book Demo",
       reply: {
         customer: "Corbin Industrial",
@@ -289,7 +289,7 @@ export const industries: Record<string, IndustryData> = {
           icon: "send",
           title: "Multichannel outreach",
           description:
-            "Reach customers where they respond. Email, SMS, and AI-powered voice calls with automatic escalation based on your rules.",
+            "Reach customers where they respond. Email, SMS, WhatsApp, and AI-powered voice calls with automatic escalation based on your rules.",
         },
         {
           icon: "shield",
@@ -341,7 +341,7 @@ export const industries: Record<string, IndustryData> = {
         {
           title: "Yonovo collects for you",
           description:
-            "Personalized follow ups go out automatically across email, SMS, and voice. Every interaction is logged and visible to your team.",
+            "Personalized follow ups go out automatically across email, SMS, voice, and WhatsApp. Every interaction is logged and visible to your team.",
         },
         {
           title: "Review and improve",
@@ -374,7 +374,7 @@ export const industries: Record<string, IndustryData> = {
       {
         question: "How does Yonovo help manufacturers collect faster?",
         answer:
-          "Yonovo automates your entire accounts receivable workflow by sending personalized follow ups via email, SMS, and AI-powered voice calls based on each customer's payment history and behavior. You reduce DSO without adding headcount.",
+          "Yonovo automates your entire accounts receivable workflow by sending personalized follow ups via email, SMS, WhatsApp, and AI-powered voice calls based on each customer's payment history and behavior. You reduce DSO without adding headcount.",
       },
       {
         question: "Can I set different rules for different accounts or contract types?",
@@ -394,7 +394,7 @@ export const industries: Record<string, IndustryData> = {
       {
         question: "What accounting platforms does Yonovo integrate with?",
         answer:
-          "Yonovo integrates with QuickBooks Online, Xero, Odoo, NetSuite, Sage, FreshBooks, Salesforce, HubSpot, SAP, and WhatsApp. Your invoices, customers, and aging data sync automatically so there's no manual setup required.",
+          "Yonovo integrates with QuickBooks Online, Xero, NetSuite, Sage Intacct, Odoo, Stripe Billing, BILL, FreshBooks, Salesforce, HubSpot, SAP, and WhatsApp. Your invoices, customers, and aging data sync automatically so there's no manual setup required.",
       },
       {
         question: "How is Yonovo different from a traditional collections agency?",
@@ -414,13 +414,13 @@ export const industries: Record<string, IndustryData> = {
     meta: {
       title: "AR Automation for Professional Services",
       description:
-        "Automate AR for professional services firms. Collect overdue invoices via email, SMS, and voice without risking client relationships.",
+        "Automate AR for professional services firms. Collect overdue invoices via email, SMS, voice, and WhatsApp without risking client relationships.",
     },
     hero: {
       badge: "Professional Services",
       headline: "Get paid faster, keep every client",
       description:
-        "Yonovo automates your accounts receivable with personalized follow ups across email, SMS, and voice. Built for the project-based billing and long client relationships of professional services.",
+        "Yonovo automates your accounts receivable with personalized follow ups across email, SMS, voice, and WhatsApp. Built for the project-based billing and long client relationships of professional services.",
       cta: "Book Demo",
       reply: {
         customer: "Halstead & Finch",
@@ -470,7 +470,7 @@ export const industries: Record<string, IndustryData> = {
           icon: "send",
           title: "Multichannel outreach",
           description:
-            "Reach clients where they respond. Email, SMS, and AI-powered voice calls with automatic escalation based on your rules.",
+            "Reach clients where they respond. Email, SMS, WhatsApp, and AI-powered voice calls with automatic escalation based on your rules.",
         },
         {
           icon: "shield",
@@ -522,7 +522,7 @@ export const industries: Record<string, IndustryData> = {
         {
           title: "Yonovo collects for you",
           description:
-            "Personalized follow ups go out automatically across email, SMS, and voice. Every interaction is logged and visible to your team.",
+            "Personalized follow ups go out automatically across email, SMS, voice, and WhatsApp. Every interaction is logged and visible to your team.",
         },
         {
           title: "Review and improve",
@@ -555,7 +555,7 @@ export const industries: Record<string, IndustryData> = {
       {
         question: "How does Yonovo help professional services firms collect faster?",
         answer:
-          "Yonovo automates your entire accounts receivable workflow by sending personalized follow ups via email, SMS, and AI-powered voice calls based on each client's payment history and behavior. You reduce DSO without adding headcount.",
+          "Yonovo automates your entire accounts receivable workflow by sending personalized follow ups via email, SMS, WhatsApp, and AI-powered voice calls based on each client's payment history and behavior. You reduce DSO without adding headcount.",
       },
       {
         question: "Can I set different rules for different clients or engagement types?",
@@ -575,7 +575,7 @@ export const industries: Record<string, IndustryData> = {
       {
         question: "What accounting platforms does Yonovo integrate with?",
         answer:
-          "Yonovo integrates with QuickBooks Online, Xero, Odoo, NetSuite, Sage, FreshBooks, Salesforce, HubSpot, SAP, and WhatsApp. Your invoices, clients, and aging data sync automatically so there's no manual setup required.",
+          "Yonovo integrates with QuickBooks Online, Xero, NetSuite, Sage Intacct, Odoo, Stripe Billing, BILL, FreshBooks, Salesforce, HubSpot, SAP, and WhatsApp. Your invoices, clients, and aging data sync automatically so there's no manual setup required.",
       },
       {
         question: "How is Yonovo different from a traditional collections agency?",
@@ -595,13 +595,13 @@ export const industries: Record<string, IndustryData> = {
     meta: {
       title: "AR Automation for Property Management",
       description:
-        "Automate AR for property management. Collect rent and fees on time via email, SMS, and voice without straining tenant relationships.",
+        "Automate AR for property management. Collect rent and fees on time via email, SMS, voice, and WhatsApp without straining tenant relationships.",
     },
     hero: {
       badge: "Property Management",
       headline: "Collect on time, retain every tenant",
       description:
-        "Yonovo automates your accounts receivable with personalized follow ups across email, SMS, and voice. Built for the recurring billing and tenant relationships of property management.",
+        "Yonovo automates your accounts receivable with personalized follow ups across email, SMS, voice, and WhatsApp. Built for the recurring billing and tenant relationships of property management.",
       cta: "Book Demo",
       reply: {
         customer: "Brookline Dental Group",
@@ -651,7 +651,7 @@ export const industries: Record<string, IndustryData> = {
           icon: "send",
           title: "Multichannel outreach",
           description:
-            "Reach tenants where they respond. Email, SMS, and AI-powered voice calls with automatic escalation based on your rules.",
+            "Reach tenants where they respond. Email, SMS, WhatsApp, and AI-powered voice calls with automatic escalation based on your rules.",
         },
         {
           icon: "shield",
@@ -703,7 +703,7 @@ export const industries: Record<string, IndustryData> = {
         {
           title: "Yonovo collects for you",
           description:
-            "Personalized follow ups go out automatically across email, SMS, and voice. Every interaction is logged and visible to your team.",
+            "Personalized follow ups go out automatically across email, SMS, voice, and WhatsApp. Every interaction is logged and visible to your team.",
         },
         {
           title: "Review and improve",
@@ -736,7 +736,7 @@ export const industries: Record<string, IndustryData> = {
       {
         question: "How does Yonovo help property managers collect faster?",
         answer:
-          "Yonovo automates your entire accounts receivable workflow by sending personalized follow ups via email, SMS, and AI-powered voice calls based on each tenant's payment history and behavior. You improve collection rates without adding headcount.",
+          "Yonovo automates your entire accounts receivable workflow by sending personalized follow ups via email, SMS, WhatsApp, and AI-powered voice calls based on each tenant's payment history and behavior. You improve collection rates without adding headcount.",
       },
       {
         question: "Can I set different rules for different properties or tenant types?",
@@ -756,7 +756,7 @@ export const industries: Record<string, IndustryData> = {
       {
         question: "What accounting platforms does Yonovo integrate with?",
         answer:
-          "Yonovo integrates with QuickBooks Online, Xero, Odoo, NetSuite, Sage, FreshBooks, Salesforce, HubSpot, SAP, and WhatsApp. Your tenants, balances, and aging data sync automatically so there's no manual setup required.",
+          "Yonovo integrates with QuickBooks Online, Xero, NetSuite, Sage Intacct, Odoo, Stripe Billing, BILL, FreshBooks, Salesforce, HubSpot, SAP, and WhatsApp. Your tenants, balances, and aging data sync automatically so there's no manual setup required.",
       },
       {
         question: "How is Yonovo different from a traditional collections agency?",
@@ -776,13 +776,13 @@ export const industries: Record<string, IndustryData> = {
     meta: {
       title: "AR Automation for Gyms & Fitness",
       description:
-        "Automate AR for gyms and fitness businesses. Recover failed payments and collect past-due dues via email, SMS, and voice.",
+        "Automate AR for gyms and fitness businesses. Recover failed payments and collect past-due dues via email, SMS, voice, and WhatsApp.",
     },
     hero: {
       badge: "Gyms & Fitness",
       headline: "Recover payments, keep every member",
       description:
-        "Yonovo automates your accounts receivable with personalized follow ups across email, SMS, and voice. Built for the recurring billing and member relationships of gyms and fitness businesses.",
+        "Yonovo automates your accounts receivable with personalized follow ups across email, SMS, voice, and WhatsApp. Built for the recurring billing and member relationships of gyms and fitness businesses.",
       cta: "Book Demo",
       reply: {
         customer: "Northgate Health Partners",
@@ -832,7 +832,7 @@ export const industries: Record<string, IndustryData> = {
           icon: "send",
           title: "Multichannel outreach",
           description:
-            "Reach members where they respond. Email, SMS, and AI-powered voice calls with automatic escalation based on your rules.",
+            "Reach members where they respond. Email, SMS, WhatsApp, and AI-powered voice calls with automatic escalation based on your rules.",
         },
         {
           icon: "shield",
@@ -884,7 +884,7 @@ export const industries: Record<string, IndustryData> = {
         {
           title: "Yonovo collects for you",
           description:
-            "Personalized follow ups go out automatically across email, SMS, and voice. Every interaction is logged and visible to your team.",
+            "Personalized follow ups go out automatically across email, SMS, voice, and WhatsApp. Every interaction is logged and visible to your team.",
         },
         {
           title: "Review and improve",
@@ -917,7 +917,7 @@ export const industries: Record<string, IndustryData> = {
       {
         question: "How does Yonovo help gyms recover failed payments?",
         answer:
-          "Yonovo automates your entire accounts receivable workflow by sending personalized follow ups via email, SMS, and AI-powered voice calls based on each member's payment history and behavior. You recover more revenue without adding staff.",
+          "Yonovo automates your entire accounts receivable workflow by sending personalized follow ups via email, SMS, WhatsApp, and AI-powered voice calls based on each member's payment history and behavior. You recover more revenue without adding staff.",
       },
       {
         question: "Can I set different rules for different membership types?",
@@ -937,7 +937,7 @@ export const industries: Record<string, IndustryData> = {
       {
         question: "What accounting platforms does Yonovo integrate with?",
         answer:
-          "Yonovo integrates with QuickBooks Online, Xero, Odoo, NetSuite, Sage, FreshBooks, Salesforce, HubSpot, SAP, and WhatsApp. Your members, balances, and aging data sync automatically so there's no manual setup required.",
+          "Yonovo integrates with QuickBooks Online, Xero, NetSuite, Sage Intacct, Odoo, Stripe Billing, BILL, FreshBooks, Salesforce, HubSpot, SAP, and WhatsApp. Your members, balances, and aging data sync automatically so there's no manual setup required.",
       },
       {
         question: "How is Yonovo different from a traditional collections agency?",
@@ -957,13 +957,13 @@ export const industries: Record<string, IndustryData> = {
     meta: {
       title: "AR Automation for Software & Tech",
       description:
-        "Automate AR for software and tech companies. Recover failed subscription payments and collect enterprise invoices via email, SMS, and voice.",
+        "Automate AR for software and tech companies. Recover failed subscription payments and collect enterprise invoices via email, SMS, voice, and WhatsApp.",
     },
     hero: {
       badge: "Software & Tech",
       headline: "Recover revenue without losing customers",
       description:
-        "Yonovo automates your accounts receivable with personalized follow ups across email, SMS, and voice. Built for the recurring billing, enterprise contracts, and global customer base of software and tech companies.",
+        "Yonovo automates your accounts receivable with personalized follow ups across email, SMS, voice, and WhatsApp. Built for the recurring billing, enterprise contracts, and global customer base of software and tech companies.",
       cta: "Book Demo",
       reply: {
         customer: "Vantiq Systems",
@@ -1013,7 +1013,7 @@ export const industries: Record<string, IndustryData> = {
           icon: "send",
           title: "Multichannel outreach",
           description:
-            "Reach customers where they respond. Email, SMS, and AI-powered voice calls with automatic escalation based on your rules.",
+            "Reach customers where they respond. Email, SMS, WhatsApp, and AI-powered voice calls with automatic escalation based on your rules.",
         },
         {
           icon: "shield",
@@ -1065,7 +1065,7 @@ export const industries: Record<string, IndustryData> = {
         {
           title: "Yonovo collects for you",
           description:
-            "Personalized follow ups go out automatically across email, SMS, and voice. Every interaction is logged and visible to your team.",
+            "Personalized follow ups go out automatically across email, SMS, voice, and WhatsApp. Every interaction is logged and visible to your team.",
         },
         {
           title: "Review and improve",
@@ -1098,7 +1098,7 @@ export const industries: Record<string, IndustryData> = {
       {
         question: "How does Yonovo help software and tech companies collect faster?",
         answer:
-          "Yonovo automates your entire accounts receivable workflow by sending personalized follow ups via email, SMS, and AI-powered voice calls based on each customer's payment history and behavior. You recover more failed payments and reduce DSO without adding headcount.",
+          "Yonovo automates your entire accounts receivable workflow by sending personalized follow ups via email, SMS, WhatsApp, and AI-powered voice calls based on each customer's payment history and behavior. You recover more failed payments and reduce DSO without adding headcount.",
       },
       {
         question: "Can Yonovo handle subscription dunning and failed card payments?",
@@ -1123,7 +1123,7 @@ export const industries: Record<string, IndustryData> = {
       {
         question: "What accounting and billing platforms does Yonovo integrate with?",
         answer:
-          "Yonovo integrates with QuickBooks Online, Xero, Odoo, NetSuite, Sage, FreshBooks, Salesforce, HubSpot, SAP, and WhatsApp. Your customers, invoices, and aging data sync automatically so there is no manual setup required.",
+          "Yonovo integrates with QuickBooks Online, Xero, NetSuite, Sage Intacct, Odoo, Stripe Billing, BILL, FreshBooks, Salesforce, HubSpot, SAP, and WhatsApp. Your customers, invoices, and aging data sync automatically so there is no manual setup required.",
       },
       {
         question: "How is Yonovo different from a traditional collections agency?",

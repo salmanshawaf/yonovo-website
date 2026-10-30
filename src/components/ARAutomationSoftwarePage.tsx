@@ -56,7 +56,7 @@ const vendorRows: VendorRow[] = [
     vendor: "Yonovo",
     bestFor: "SMB and mid market teams that want collections run for them",
     channels: "Email, SMS, phone, WhatsApp",
-    integrations: "QuickBooks Online, Xero, NetSuite, Sage Intacct, Odoo, Stripe Billing, BILL",
+    integrations: "QuickBooks Online, Xero, NetSuite, Sage Intacct, Odoo, Stripe Billing, BILL, FreshBooks, Salesforce, HubSpot, SAP, and WhatsApp",
     setup: "About one day",
     pricing: "Custom quote, sized to your company",
     pricingPublic: false,
@@ -132,7 +132,7 @@ const howItWorksSteps = [
   {
     number: 1,
     title: "Connect your accounting system",
-    text: "QuickBooks Online, Xero, NetSuite, Sage Intacct, Odoo, Stripe Billing, or BILL. The connection takes minutes, not a project plan.",
+    text: "QuickBooks Online, Xero, NetSuite, Sage Intacct, Odoo, Stripe Billing, BILL, FreshBooks, Salesforce, HubSpot, SAP, or WhatsApp. The connection takes minutes, not a project plan.",
   },
   {
     number: 2,
@@ -161,7 +161,7 @@ const howItWorksSteps = [
   },
 ];
 
-const integrations = [
+const integrations: { name: string; href?: string; icon: string }[] = [
   { name: "QuickBooks Online", href: "/solutions/quickbooks", icon: "/logos/quickbooks-icon.png" },
   { name: "Xero", href: "/solutions/xero", icon: "/logos/xero.png" },
   { name: "NetSuite", href: "/solutions/netsuite", icon: "/logos/netsuite-icon.svg" },
@@ -169,6 +169,11 @@ const integrations = [
   { name: "Odoo", href: "/solutions/odoo", icon: "/logos/odoo-icon.svg" },
   { name: "Stripe Billing", href: "/solutions/stripe", icon: "/logos/stripe-icon.svg" },
   { name: "BILL", href: "/solutions/bill", icon: "/logos/bill-icon.svg" },
+  { name: "FreshBooks", icon: "/logos/freshbooks-icon.png" },
+  { name: "Salesforce", icon: "/logos/salesforce-icon.webp" },
+  { name: "HubSpot", icon: "/logos/hubspot-icon.png" },
+  { name: "SAP", icon: "/logos/sap-icon.webp" },
+  { name: "WhatsApp", icon: "/logos/whatsapp-icon.png" },
 ];
 
 const tdgStats = [
@@ -212,7 +217,7 @@ export const faqs = [
   {
     question: "Does AR automation work with my existing accounting system?",
     answer:
-      "It should. Yonovo integrates with QuickBooks Online, Xero, NetSuite, Sage Intacct, Odoo, Stripe Billing, and BILL. It syncs invoices, customers, and aging, and writes payment status back so your ledger stays the source of truth.",
+      "It should. Yonovo integrates with QuickBooks Online, Xero, NetSuite, Sage Intacct, Odoo, Stripe Billing, BILL, FreshBooks, Salesforce, HubSpot, SAP, and WhatsApp. It syncs invoices, customers, and aging, and writes payment status back so your ledger stays the source of truth.",
   },
   {
     question: "Do I need AR automation if I only send 50 invoices a month?",
@@ -325,7 +330,7 @@ export default function ARAutomationSoftwarePage() {
             </h2>
             <div className="rounded-2xl border border-border bg-surface p-6 md:p-10">
               <p className="text-lg text-foreground leading-relaxed md:text-xl">
-                Accounts receivable automation software connects to a company&apos;s accounting system and takes over the manual work of collecting payment on invoices. It tracks which invoices are due or overdue, sends payment reminders on a schedule across channels like email, SMS, and phone, escalates accounts that need human attention, and records payments as they arrive. The goal is to shorten days sales outstanding, cut manual collection work, and keep cash flowing without adding headcount.
+                Accounts receivable automation software connects to a company&apos;s accounting system and takes over the manual work of collecting payment on invoices. It tracks which invoices are due or overdue, sends payment reminders on a schedule across channels like email, SMS, phone, and WhatsApp, escalates accounts that need human attention, and records payments as they arrive. The goal is to shorten days sales outstanding, cut manual collection work, and keep cash flowing without adding headcount.
               </p>
             </div>
           </div>
@@ -622,22 +627,30 @@ export default function ARAutomationSoftwarePage() {
                 Works with the books you already keep
               </h2>
               <p className="text-base text-secondary leading-normal tracking-tight md:text-xl">
-                Yonovo connects to seven accounting and billing systems. Pick yours to see exactly how the integration works.
+                Yonovo connects to QuickBooks Online, Xero, NetSuite, Sage Intacct, Odoo, Stripe Billing, BILL, FreshBooks, Salesforce, HubSpot, SAP, and WhatsApp.
               </p>
             </div>
-            <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-7">
-              {integrations.map((item) => (
-                <Link
-                  key={item.name}
-                  href={item.href}
-                  className="group flex flex-col items-center gap-3 rounded-2xl border border-border bg-background p-6 text-center transition-shadow hover:shadow-md"
-                >
-                  <Image src={item.icon} alt={item.name} width={40} height={40} className="h-10 w-10 object-contain" />
-                  <span className="font-medium text-sm text-foreground group-hover:text-brand-blue transition-colors">
-                    {item.name}
-                  </span>
-                </Link>
-              ))}
+            <div id="integrations" className="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-6">
+              {integrations.map((item) => {
+                const card = (
+                  <>
+                    <Image src={item.icon} alt={item.name} width={40} height={40} className="h-10 w-10 object-contain" />
+                    <span className="font-medium text-sm text-foreground group-hover:text-brand-blue transition-colors">
+                      {item.name}
+                    </span>
+                  </>
+                );
+                const className = "group flex flex-col items-center gap-3 rounded-2xl border border-border bg-background p-6 text-center transition-shadow hover:shadow-md";
+                return item.href ? (
+                  <Link key={item.name} href={item.href} className={className}>
+                    {card}
+                  </Link>
+                ) : (
+                  <div key={item.name} className={className}>
+                    {card}
+                  </div>
+                );
+              })}
             </div>
           </div>
         </div>

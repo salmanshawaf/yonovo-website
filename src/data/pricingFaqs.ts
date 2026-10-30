@@ -1,3 +1,5 @@
+import { YONOVO_INTEGRATION_LIST } from "@/lib/site-config";
+
 /** Visible FAQ copy on /pricing. Shared with FAQPage structured data. */
 export const pricingFaqs: { question: string; answer: string }[] = [
   {
@@ -13,7 +15,7 @@ export const pricingFaqs: { question: string; answer: string }[] = [
   {
     question: "What integrations do you support?",
     answer:
-      "Yonovo integrates with QuickBooks Online, Xero, Odoo, Sage, FreshBooks, NetSuite, Salesforce, HubSpot, SAP, and WhatsApp.",
+      `Yonovo integrates with ${YONOVO_INTEGRATION_LIST}.`,
   },
   {
     question: "How long does setup take?",

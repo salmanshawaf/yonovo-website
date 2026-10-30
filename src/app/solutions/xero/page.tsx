@@ -9,7 +9,7 @@ import XeroPage, { faqs } from "@/components/XeroPage";
 export const metadata: Metadata = {
   title: "Xero AR Automation | Automate Collections for Xero",
   description:
-    "Automate accounts receivable for Xero. Sync invoices, send follow-ups via email, SMS, and voice, and reduce DSO. Go live in one day.",
+    "Automate accounts receivable for Xero. Sync invoices, send follow-ups via email, SMS, voice, and WhatsApp, and reduce DSO. Go live in one day.",
   alternates: {
     canonical: `${SITE_URL}/solutions/xero`,
   },
@@ -17,7 +17,7 @@ export const metadata: Metadata = {
     type: "website",
     title: `Xero AR Automation | Automate Collections for Xero | ${SITE_NAME}`,
     description:
-      "Automate accounts receivable for Xero. Sync invoices, send follow-ups via email, SMS, and voice, and reduce DSO.",
+      "Automate accounts receivable for Xero. Sync invoices, send follow-ups via email, SMS, voice, and WhatsApp, and reduce DSO.",
     url: `${SITE_URL}/solutions/xero`,
     siteName: SITE_NAME,
     images: [{ url: "/og-default.png", width: 1200, height: 630, alt: "Xero AR Automation | Automate Collections for Xero" }],
@@ -27,7 +27,7 @@ export const metadata: Metadata = {
     images: ["/og-default.png"],
     title: `Xero AR Automation | ${SITE_NAME}`,
     description:
-      "Automate accounts receivable for Xero. Sync invoices, send follow-ups via email, SMS, and voice, and reduce DSO.",
+      "Automate accounts receivable for Xero. Sync invoices, send follow-ups via email, SMS, voice, and WhatsApp, and reduce DSO.",
   },
 };
 
@@ -36,7 +36,7 @@ export default function Page() {
     <>
       <JsonLd data={[
         breadcrumbSchema([{ name: "Home", href: "/" }, { name: "Xero" }]),
-        softwareApplicationSchema({ integrationName: "Xero", description: "Automate accounts receivable for Xero. Sync invoices, send follow-ups via email, SMS, and voice, and reduce DSO. Go live in one day.", url: "/solutions/xero" }),
+        softwareApplicationSchema({ integrationName: "Xero", description: "Automate accounts receivable for Xero. Sync invoices, send follow-ups via email, SMS, voice, and WhatsApp, and reduce DSO. Go live in one day.", url: "/solutions/xero" }),
         faqSchema(faqs),
       ]} />
       <NavbarWrapper defaultMode="dark" />

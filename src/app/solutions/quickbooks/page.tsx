@@ -9,7 +9,7 @@ import QuickBooksPage, { faqs } from "@/components/QuickBooksPage";
 export const metadata: Metadata = {
   title: "QuickBooks Online AR Automation",
   description:
-    "Automate accounts receivable for QuickBooks Online. AI-powered follow-ups via email, SMS, and voice. Go live in one day and reduce DSO.",
+    "Automate accounts receivable for QuickBooks Online. AI-powered follow-ups via email, SMS, voice, and WhatsApp. Go live in one day and reduce DSO.",
   alternates: {
     canonical: `${SITE_URL}/solutions/quickbooks`,
   },
@@ -17,7 +17,7 @@ export const metadata: Metadata = {
     type: "website",
     title: `QuickBooks Online AR Automation | ${SITE_NAME}`,
     description:
-      "Automate accounts receivable for QuickBooks Online. AI-powered follow-ups via email, SMS, and voice. Go live in one day.",
+      "Automate accounts receivable for QuickBooks Online. AI-powered follow-ups via email, SMS, voice, and WhatsApp. Go live in one day.",
     url: `${SITE_URL}/solutions/quickbooks`,
     siteName: SITE_NAME,
     images: [{ url: "/og-default.png", width: 1200, height: 630, alt: "QuickBooks Online AR Automation" }],
@@ -27,7 +27,7 @@ export const metadata: Metadata = {
     images: ["/og-default.png"],
     title: `QuickBooks Online AR Automation | ${SITE_NAME}`,
     description:
-      "Automate accounts receivable for QuickBooks Online. AI-powered follow-ups via email, SMS, and voice.",
+      "Automate accounts receivable for QuickBooks Online. AI-powered follow-ups via email, SMS, voice, and WhatsApp.",
   },
 };
 
@@ -36,7 +36,7 @@ export default function Page() {
     <>
       <JsonLd data={[
         breadcrumbSchema([{ name: "Home", href: "/" }, { name: "QuickBooks Online" }]),
-        softwareApplicationSchema({ integrationName: "QuickBooks Online", description: "Automate accounts receivable for QuickBooks Online. AI-powered follow-ups via email, SMS, and voice. Go live in one day and reduce DSO.", url: "/solutions/quickbooks" }),
+        softwareApplicationSchema({ integrationName: "QuickBooks Online", description: "Automate accounts receivable for QuickBooks Online. AI-powered follow-ups via email, SMS, voice, and WhatsApp. Go live in one day and reduce DSO.", url: "/solutions/quickbooks" }),
         faqSchema(faqs),
       ]} />
       <NavbarWrapper defaultMode="dark" />

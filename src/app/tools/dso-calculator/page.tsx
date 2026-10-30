@@ -154,7 +154,7 @@ export default function DSOCalculatorPage() {
               Stop chasing payments by hand
             </h2>
             <p className="max-w-xl text-base text-white/70 md:text-lg">
-              Yonovo follows up on every overdue invoice across email, SMS, and voice, so you collect faster and bring your DSO down without adding headcount.
+              Yonovo follows up on every overdue invoice across email, SMS, voice, and WhatsApp, so you collect faster and bring your DSO down without adding headcount.
             </p>
             <Link href="/book-demo">
               <Button variant="brand" size="lg" className="font-medium">

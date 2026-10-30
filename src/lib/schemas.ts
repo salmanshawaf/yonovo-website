@@ -1,4 +1,4 @@
-import { SITE_URL, SITE_NAME } from "./site-config";
+import { SITE_URL, SITE_NAME, YONOVO_INTEGRATION_LIST } from "./site-config";
 
 /**
  * Shared JSON-LD schema generators for structured data across the site.
@@ -17,7 +17,7 @@ export function organizationSchema() {
     url: SITE_URL,
     logo: `${SITE_URL}/yonovo-logo.png`,
     description:
-      "Yonovo is accounts receivable automation software that helps finance teams collect payments faster across email, SMS, and voice while keeping customer relationships intact.",
+      `Yonovo is accounts receivable automation software that helps finance teams collect payments faster across email, SMS, voice, and WhatsApp. It integrates with ${YONOVO_INTEGRATION_LIST}.`,
     foundingDate: "2024",
     sameAs: [
       "https://www.linkedin.com/company/yonovoai",
@@ -40,7 +40,7 @@ export function webSiteSchema() {
     name: SITE_NAME,
     url: SITE_URL,
     description:
-      "Accounts receivable automation software. Yonovo follows up on unpaid invoices by email, SMS, and voice.",
+      "Accounts receivable automation software. Yonovo follows up on unpaid invoices by email, SMS, voice, and WhatsApp.",
     publisher: {
       "@type": "Organization",
       name: SITE_NAME,
@@ -50,7 +50,7 @@ export function webSiteSchema() {
 }
 
 // ── SoftwareApplication for the homepage product ──
-// Description matches the homepage: email, SMS, and voice. No price, rating, or review count.
+// Description matches the homepage: email, SMS, voice, and WhatsApp. No price, rating, or review count.
 
 export function homeProductSchema() {
   return {
@@ -61,7 +61,7 @@ export function homeProductSchema() {
     operatingSystem: "Web",
     url: SITE_URL,
     description:
-      "Yonovo is accounts receivable automation software that follows up on unpaid invoices by email, SMS, and voice so finance teams spend less time chasing payments.",
+      `Yonovo is accounts receivable automation software that follows up on unpaid invoices by email, SMS, voice, and WhatsApp. It integrates with ${YONOVO_INTEGRATION_LIST}.`,
     publisher: {
       "@type": "Organization",
       name: SITE_NAME,
@@ -219,6 +219,10 @@ export function softwareApplicationSchema(opts: {
       name: SITE_NAME,
       url: SITE_URL,
     },
+    featureList: [
+      "Follow-ups by email, SMS, voice, and WhatsApp",
+      `Integrations: ${YONOVO_INTEGRATION_LIST}`,
+    ],
   };
 }
 

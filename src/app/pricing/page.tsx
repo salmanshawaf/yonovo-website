@@ -8,7 +8,7 @@ import PricingPage from "@/components/PricingPage";
 import { pricingFaqs } from "@/data/pricingFaqs";
 
 const DESCRIPTION =
-  "Accounts receivable automation pricing sized to your company. Discover is analytics and benchmarking. Grow and Scale add automation. Custom quote.";
+  "Take control of your accounts receivable. Plans from free analytics to full automation across email, SMS, voice, and WhatsApp.";
 
 export const metadata: Metadata = {
   title: "Accounts Receivable Automation Pricing",

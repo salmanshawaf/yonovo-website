@@ -64,7 +64,7 @@ const timelineSteps = [
   },
   {
     number: 3,
-    text: "When an invoice goes overdue, Yonovo follows up by email, SMS, and AI-powered phone calls, with the BILL payment link included so customers can pay from the reminder.",
+    text: "When an invoice goes overdue, Yonovo follows up by email, SMS, WhatsApp, and AI-powered phone calls, with the BILL payment link included so customers can pay from the reminder.",
     illustration: StepFollowUpIllustration,
   },
   {
@@ -310,7 +310,7 @@ export default function BillPage() {
                     </svg>
                   ),
                   title: "Multi-channel",
-                  desc: "Reach customers across email, SMS, and phone so no single ignored channel holds up a payment.",
+                  desc: "Reach customers across email, SMS, phone, and WhatsApp so no single ignored channel holds up a payment.",
                 },
                 {
                   icon: (

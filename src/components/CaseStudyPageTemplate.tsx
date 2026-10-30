@@ -323,7 +323,7 @@ export default function CaseStudyPageTemplate({
           ? [integrationSolutionMap[data.profile.integration]]
           : []),
         { label: "Best AR Automation Software (2026)", href: "/blog/best-ar-automation-software", description: "Side-by-side comparison of 10 AR platforms on features, pricing, and setup time." },
-        { label: "Pricing", href: "/pricing", description: "Plans from free analytics to full automation across email, SMS, and voice." },
+        { label: "Pricing", href: "/pricing", description: "Plans from free analytics to full automation across email, SMS, voice, and WhatsApp." },
       ]} />
 
       {/* ── CTA ── */}

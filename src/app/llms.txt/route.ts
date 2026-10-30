@@ -1,7 +1,7 @@
 import { getAllPosts } from "@/lib/blog";
 import { industries } from "@/data/industries";
 import { caseStudies } from "@/data/caseStudies";
-import { SITE_URL } from "@/lib/site-config";
+import { SITE_URL, YONOVO_INTEGRATION_LIST } from "@/lib/site-config";
 
 // How many of the most recent blog posts to surface in llms.txt.
 // Capped to keep the file high-signal; the full archive lives at /blog.
@@ -41,7 +41,7 @@ const INTEGRATIONS: { slug: string; name: string; description: string }[] = [
     slug: "netsuite",
     name: "NetSuite Integration",
     description:
-      "Automate AR for NetSuite finance teams with personalized follow-ups across email, SMS, and voice.",
+      "Automate AR for NetSuite finance teams with personalized follow-ups across email, SMS, voice, and WhatsApp.",
   },
   {
     slug: "odoo",
@@ -59,13 +59,13 @@ const INTEGRATIONS: { slug: string; name: string; description: string }[] = [
     slug: "stripe",
     name: "Stripe Billing Integration",
     description:
-      "Automate accounts receivable for Stripe Billing with AI-powered follow-ups via email, SMS, and voice.",
+      "Automate accounts receivable for Stripe Billing with AI-powered follow-ups via email, SMS, voice, and WhatsApp.",
   },
   {
     slug: "bill",
     name: "BILL (Bill.com) Integration",
     description:
-      "Automate accounts receivable for BILL, formerly Bill.com, with AI-powered follow-ups via email, SMS, and voice, plus pay-now links.",
+      "Automate accounts receivable for BILL, formerly Bill.com, with AI-powered follow-ups via email, SMS, voice, and WhatsApp, plus pay-now links.",
   },
 ];
 
@@ -130,9 +130,9 @@ export async function GET() {
 
 > Yonovo is accounts receivable automation software for finance teams, including CFOs, controllers, and heads of finance at B2B companies in the United States and Canada. It connects to the accounting system and follows up on unpaid invoices so companies collect faster without sending accounts to a collection agency.
 
-Yonovo covers the collections side of invoice-to-cash: reminders, dunning sequences, escalation, and days sales outstanding (DSO). It does not publish a dollar price. Plans are Discover (analytics and benchmarking), Grow (up to $10M ARR), and Scale ($10M to $50M ARR). Quotes are custom.
+Yonovo covers the collections side of invoice-to-cash: reminders, dunning sequences, escalation, and days sales outstanding (DSO). It does not publish a dollar price. Plans are Discover (analytics and benchmarking, including free analytics), Grow (up to $10M ARR), and Scale ($10M to $50M ARR). Quotes are custom.
 
-Channels named in product copy: email, SMS, and voice (phone). The accounts receivable automation, collections, debt collection, and dunning pages also name WhatsApp. The homepage logo wall also shows FreshBooks, Salesforce, HubSpot, SAP, and WhatsApp. Integration pages describe QuickBooks Online, Xero, NetSuite, Sage, Odoo, Stripe Billing, and BILL.
+Follow-ups go out by email, SMS, voice, and WhatsApp. Yonovo integrates with ${YONOVO_INTEGRATION_LIST}.
 
 ## Product
 ${productLinks}

@@ -60,9 +60,10 @@ export default function TermsOfServicePage() {
           <p>
             Yonovo provides a SaaS-based accounts receivable automation platform
             that helps businesses collect outstanding invoices through
-            personalized, automated follow-ups across email, SMS, and voice.
-            Our platform integrates with accounting software such as QuickBooks
-            and Xero to sync invoice and customer data. The Services are
+            personalized, automated follow-ups across email, SMS, voice, and WhatsApp.
+            Our platform integrates with QuickBooks Online, Xero, NetSuite, Sage
+            Intacct, Odoo, Stripe Billing, BILL, FreshBooks, Salesforce, HubSpot,
+            SAP, and WhatsApp to sync invoice and customer data. The Services are
             designed for business use and are not intended for personal, family,
             or household purposes.
           </p>
@@ -139,8 +140,9 @@ export default function TermsOfServicePage() {
             <strong>Integrations</strong>
           </p>
           <p>
-            Our Services may integrate with third-party platforms such as
-            QuickBooks, Xero, and other accounting or business software. Your
+            Our Services integrate with QuickBooks Online, Xero, NetSuite, Sage
+            Intacct, Odoo, Stripe Billing, BILL, FreshBooks, Salesforce, HubSpot,
+            SAP, and WhatsApp. Your
             use of these integrations is subject to the respective third
             party&apos;s terms of service and privacy policy. Yonovo is not
             responsible for the availability, accuracy, or practices of any

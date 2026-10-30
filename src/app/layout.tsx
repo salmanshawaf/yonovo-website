@@ -19,7 +19,7 @@ export const metadata: Metadata = {
     template: `%s | ${SITE_NAME}`,
   },
   description:
-    "Accounts receivable automation for finance teams. Yonovo follows up on unpaid invoices by email, SMS, and voice so you get paid faster.",
+    "Accounts receivable automation for finance teams. Yonovo follows up on unpaid invoices by email, SMS, voice, and WhatsApp so you get paid faster.",
   // Site-wide defaults. Pages that set their own openGraph/twitter inherit these
   // fields (e.g. images) unless they override them — gives every page a valid
   // og:image / twitter:image without repeating it on each route.
