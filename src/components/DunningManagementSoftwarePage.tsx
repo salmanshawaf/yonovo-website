@@ -378,6 +378,8 @@ export default function DunningManagementSoftwarePage() {
         { label: "Accounts Receivable Automation Software", href: "/accounts-receivable-automation-software", description: "The full category guide: what AR automation does and how ten platforms compare." },
         { label: "Accounts Receivable Collections Software", href: "/ar-collections-software", description: "The day by day collections workflow underneath the dunning stages." },
         { label: "Accounts Receivable Statistics", href: "/accounts-receivable-statistics", description: "Verified figures on late payments, DSO, and collections effort, every one linked to its original source." },
+        { label: "DSO Calculator", href: "/tools/dso-calculator", description: "Calculate days sales outstanding and the working capital a lower DSO frees up." },
+        { label: "How to Reduce DSO", href: "/blog/how-to-reduce-dso", description: "Seven ways finance teams shorten days sales outstanding and free up cash." },
         { label: "Dunning Letters: Meaning, Templates, and Timing", href: "/blog/dunning-letter", description: "Copy ready dunning letters for every stage, plus legal considerations." },
         { label: "Invoice Reminder Best Practices", href: "/blog/invoice-reminder-best-practices", description: "The day level timing and tone rules behind an effective sequence." },
         { label: "Yonovo for QuickBooks", href: "/solutions/quickbooks", description: "Dunning that runs straight from your QuickBooks ledger." },

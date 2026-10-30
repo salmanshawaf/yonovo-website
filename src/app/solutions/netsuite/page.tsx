@@ -35,8 +35,8 @@ export default function Page() {
   return (
     <>
       <JsonLd data={[
-        breadcrumbSchema([{ name: "Home", href: "/" }, { name: "Solutions", href: "/solutions/netsuite" }, { name: "NetSuite" }]),
-        softwareApplicationSchema({ integrationName: "NetSuite", description: "Automate accounts receivable for NetSuite. Sync invoices across subsidiaries, send multi-channel follow-ups.", url: "/solutions/netsuite" }),
+        breadcrumbSchema([{ name: "Home", href: "/" }, { name: "NetSuite" }]),
+        softwareApplicationSchema({ integrationName: "NetSuite", description: "Automate accounts receivable for NetSuite. Sync invoices across subsidiaries, send multi-channel follow-ups, and reduce DSO. Go live in one day.", url: "/solutions/netsuite" }),
         faqSchema(faqs),
       ]} />
       <NavbarWrapper defaultMode="dark" />

@@ -3,23 +3,36 @@ import NavbarWrapper from "@/components/NavbarWrapper";
 import Footer from "@/components/Footer";
 import ChangelogSocialBanner from "@/components/changelog/ChangelogSocialBanner";
 import ChangelogListingClient from "@/components/changelog/ChangelogListingClient";
+import JsonLd from "@/components/JsonLd";
 import { getAllEntries, entryToMeta } from "@/lib/changelog";
 import { renderMdxToHtml } from "@/lib/changelog-render";
+import { breadcrumbSchema, collectionPageSchema } from "@/lib/schemas";
+import { SITE_URL, SITE_NAME } from "@/lib/site-config";
+
+const DESCRIPTION =
+  "Yonovo changelog: product updates for accounts receivable automation, collections, and integrations.";
+const PAGE_URL = `${SITE_URL}/changelog`;
+/** First screen of /changelog. Matches ENTRIES_PER_PAGE in ChangelogListingClient. */
+const VISIBLE_ENTRIES = 5;
 
 export const metadata: Metadata = {
   title: { absolute: "Changelog | Yonovo" },
-  description:
-    "See what's new at Yonovo. Product updates, new features, and improvements to help you collect payments faster.",
+  description: DESCRIPTION,
   openGraph: {
     title: "Changelog | Yonovo",
-    description:
-      "See what's new at Yonovo. Product updates, new features, and improvements to help you collect payments faster.",
-    url: "https://www.yonovo.com/changelog",
+    description: DESCRIPTION,
+    url: PAGE_URL,
     type: "website",
-    images: [{ url: "/og-default.png", width: 1200, height: 630, alt: "Yonovo" }],
+    images: [{ url: "/og-default.png", width: 1200, height: 630, alt: SITE_NAME }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Changelog | Yonovo",
+    description: DESCRIPTION,
+    images: ["/og-default.png"],
   },
   alternates: {
-    canonical: "https://www.yonovo.com/changelog",
+    canonical: PAGE_URL,
   },
 };
 
@@ -32,8 +45,24 @@ export default async function ChangelogPage() {
     }))
   );
 
+  const visible = entries.slice(0, VISIBLE_ENTRIES);
+
   return (
     <>
+      <JsonLd
+        data={[
+          breadcrumbSchema([{ name: "Home", href: "/" }, { name: "Changelog" }]),
+          collectionPageSchema({
+            name: `Changelog | ${SITE_NAME}`,
+            description: DESCRIPTION,
+            url: PAGE_URL,
+            items: visible.map((entry) => ({
+              name: entry.frontmatter.title,
+              url: `${SITE_URL}/changelog/${entry.frontmatter.slug}`,
+            })),
+          }),
+        ]}
+      />
       <NavbarWrapper defaultMode="light" />
       <main className="min-h-screen pt-16 bg-background">
         <div className="mx-auto w-full max-w-5xl px-4 md:px-20">

@@ -9,7 +9,7 @@ import ARCollectionsSoftwarePage, { faqs } from "@/components/ARCollectionsSoftw
 const PAGE_URL = `${SITE_URL}/ar-collections-software`;
 const TITLE = "Accounts Receivable Collections Software";
 const DESCRIPTION =
-  "The full collections workflow: aging buckets, reminder timing before and after the due date, when to switch channels, when to escalate, and how Yonovo runs it for you.";
+  "AR collections software for aging buckets, reminder timing, channel switches, and escalation. See how Yonovo runs the workflow.";
 
 export const metadata: Metadata = {
   title: TITLE,

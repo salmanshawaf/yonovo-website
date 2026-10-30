@@ -7,6 +7,23 @@ import { SITE_URL } from "@/lib/site-config";
 // Capped to keep the file high-signal; the full archive lives at /blog.
 const MAX_BLOG_POSTS = 15;
 
+// Evergreen guides worth citing even when they fall out of the recent list.
+const KEY_GUIDE_SLUGS = [
+  "what-is-ar-automation",
+  "how-to-reduce-dso",
+  "invoice-reminder-best-practices",
+  "dunning-letter",
+  "cash-collections-formula",
+  "best-ar-automation-software",
+];
+
+const COMPARISONS: { slug: string; name: string }[] = [
+  { slug: "yonovo-vs-upflow", name: "Yonovo vs Upflow" },
+  { slug: "yonovo-vs-chaser", name: "Yonovo vs Chaser" },
+  { slug: "yonovo-vs-invoiced", name: "Yonovo vs Invoiced" },
+  { slug: "yonovo-vs-bill-com", name: "Yonovo vs Bill.com" },
+];
+
 const INTEGRATIONS: { slug: string; name: string; description: string }[] = [
   {
     slug: "quickbooks",
@@ -53,7 +70,12 @@ const INTEGRATIONS: { slug: string; name: string; description: string }[] = [
 ];
 
 export async function GET() {
-  const posts = getAllPosts().slice(0, MAX_BLOG_POSTS);
+  const allPosts = getAllPosts();
+  const posts = allPosts.slice(0, MAX_BLOG_POSTS);
+  const keyGuides = KEY_GUIDE_SLUGS.flatMap((slug) => {
+    const post = allPosts.find((p) => p.frontmatter.slug === slug);
+    return post ? [post] : [];
+  });
 
   const productLinks = [
     `- [Yonovo Homepage](${SITE_URL}): Overview of the Yonovo accounts receivable automation platform.`,
@@ -93,12 +115,33 @@ export async function GET() {
     )
     .join("\n");
 
+  const guideLinks = keyGuides
+    .map(
+      (p) =>
+        `- [${p.frontmatter.title}](${SITE_URL}/blog/${p.frontmatter.slug}): ${p.frontmatter.description}`,
+    )
+    .join("\n");
+
+  const comparisonLinks = COMPARISONS.map(
+    (c) => `- [${c.name}](${SITE_URL}/${c.slug}): Side-by-side comparison of Yonovo and ${c.name.replace("Yonovo vs ", "")} for accounts receivable automation.`,
+  ).join("\n");
+
   const content = `# Yonovo
 
-> Yonovo is an accounts receivable automation platform that helps finance teams collect payments faster while keeping customer relationships intact. It automates personalized follow-ups across email, SMS, and voice, and integrates with QuickBooks, Xero, NetSuite, Odoo, and Sage.
+> Yonovo is accounts receivable automation software for finance teams, including CFOs, controllers, and heads of finance at B2B companies in the United States and Canada. It connects to the accounting system and follows up on unpaid invoices so companies collect faster without sending accounts to a collection agency.
+
+Yonovo covers the collections side of invoice-to-cash: reminders, dunning sequences, escalation, and days sales outstanding (DSO). It does not publish a dollar price. Plans are Discover (analytics and benchmarking), Grow (up to $10M ARR), and Scale ($10M to $50M ARR). Quotes are custom.
+
+Channels named in product copy: email, SMS, and voice (phone). The accounts receivable automation, collections, debt collection, and dunning pages also name WhatsApp. The homepage logo wall also shows FreshBooks, Salesforce, HubSpot, SAP, and WhatsApp. Integration pages describe QuickBooks Online, Xero, NetSuite, Sage, Odoo, Stripe Billing, and BILL.
 
 ## Product
 ${productLinks}
+
+## Comparisons
+${comparisonLinks}
+
+## Guides
+${guideLinks}
 
 ## Integrations
 ${integrationLinks}

@@ -9,7 +9,7 @@ import { STATS, STAT_COUNT, STATS_YEAR, LAST_UPDATED } from "@/data/arStatistics
 
 const PAGE_URL = `${SITE_URL}/accounts-receivable-statistics`;
 const TITLE = `Accounts Receivable Statistics (${STATS_YEAR})`;
-const DESCRIPTION = `${STAT_COUNT} accounts receivable statistics for ${STATS_YEAR} covering late payments, DSO, collections cost, automation adoption, cash flow, and small business impact. Every figure links to its original source.`;
+const DESCRIPTION = `${STAT_COUNT} accounts receivable statistics for ${STATS_YEAR} on late payments, DSO, collections cost, and cash flow. Every figure links to its source.`;
 
 export const metadata: Metadata = {
   title: TITLE,

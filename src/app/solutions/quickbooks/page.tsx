@@ -35,8 +35,8 @@ export default function Page() {
   return (
     <>
       <JsonLd data={[
-        breadcrumbSchema([{ name: "Home", href: "/" }, { name: "Solutions", href: "/solutions/quickbooks" }, { name: "QuickBooks" }]),
-        softwareApplicationSchema({ integrationName: "QuickBooks Online", description: "Automate accounts receivable for QuickBooks Online. AI-powered follow-ups via email, SMS, voice, and WhatsApp.", url: "/solutions/quickbooks" }),
+        breadcrumbSchema([{ name: "Home", href: "/" }, { name: "QuickBooks Online" }]),
+        softwareApplicationSchema({ integrationName: "QuickBooks Online", description: "Automate accounts receivable for QuickBooks Online. AI-powered follow-ups via email, SMS, and voice. Go live in one day and reduce DSO.", url: "/solutions/quickbooks" }),
         faqSchema(faqs),
       ]} />
       <NavbarWrapper defaultMode="dark" />

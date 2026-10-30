@@ -7,7 +7,7 @@ import { SITE_URL, SITE_NAME } from "./site-config";
 export function generateArticleJsonLd(post: BlogPost) {
   return {
     "@context": "https://schema.org",
-    "@type": "Article",
+    "@type": "BlogPosting",
     headline: post.frontmatter.title,
     description: post.frontmatter.description,
     // All pages, including blog posts, share the flagship social card.
@@ -30,9 +30,7 @@ export function generateArticleJsonLd(post: BlogPost) {
       },
     },
     datePublished: post.frontmatter.publishedAt,
-    ...(post.frontmatter.updatedAt && {
-      dateModified: post.frontmatter.updatedAt,
-    }),
+    dateModified: post.frontmatter.updatedAt || post.frontmatter.publishedAt,
     mainEntityOfPage: `${SITE_URL}/blog/${post.frontmatter.slug}`,
     inLanguage: "en",
     articleSection: post.frontmatter.category,
@@ -168,14 +166,24 @@ export function generateBlogPostMetadata(post: BlogPost): Metadata {
   };
 }
 
+const CATEGORY_DESCRIPTIONS: Record<string, string> = {
+  guides:
+    "Accounts receivable guides on collections automation, DSO reduction, and invoice follow-ups.",
+  insights:
+    "Insights on accounts receivable automation, cash flow, and how finance teams collect faster.",
+  comparisons:
+    "Comparisons of accounts receivable automation and AR collections software for finance teams.",
+};
+
 export function generateBlogListingMetadata(category?: string): Metadata {
   const title = category
-    ? `${category.charAt(0).toUpperCase() + category.slice(1).replace(/-/g, " ")} | Blog | Yonovo`
-    : "Blog | Yonovo";
+    ? `${category.charAt(0).toUpperCase() + category.slice(1).replace(/-/g, " ")} | AR Blog | Yonovo`
+    : "Accounts Receivable Blog | Yonovo";
 
   const description = category
-    ? `Expert ${category.replace(/-/g, " ")} articles on accounts receivable automation, collections, and finance operations from the Yonovo team.`
-    : "Expert insights on AR automation, collections strategies, and finance operations to help your team collect faster and improve cash flow.";
+    ? CATEGORY_DESCRIPTIONS[category] ??
+      `Articles on accounts receivable automation, collections, and finance operations from the Yonovo team.`
+    : "Guides on accounts receivable automation, AR collections, DSO reduction, and getting paid faster.";
 
   return {
     // `absolute` bypasses the root layout's "%s | Yonovo" template; `title`

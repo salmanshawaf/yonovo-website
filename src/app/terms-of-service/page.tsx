@@ -1,11 +1,29 @@
 import type { Metadata } from "next";
 import NavbarWrapper from "@/components/NavbarWrapper";
 import Footer from "@/components/Footer";
+import { SITE_URL, SITE_NAME } from "@/lib/site-config";
+
+const DESCRIPTION =
+  "Yonovo Terms of Service. Review the terms for using our accounts receivable automation platform.";
 
 export const metadata: Metadata = {
   title: "Terms of Service",
-  description:
-    "Yonovo Terms of Service. Review the terms and conditions for using our accounts receivable automation platform.",
+  description: DESCRIPTION,
+  alternates: { canonical: `${SITE_URL}/terms-of-service` },
+  openGraph: {
+    type: "website",
+    title: `Terms of Service | ${SITE_NAME}`,
+    description: DESCRIPTION,
+    url: `${SITE_URL}/terms-of-service`,
+    siteName: SITE_NAME,
+    images: [{ url: "/og-default.png", width: 1200, height: 630, alt: SITE_NAME }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: `Terms of Service | ${SITE_NAME}`,
+    description: DESCRIPTION,
+    images: ["/og-default.png"],
+  },
 };
 
 export default function TermsOfServicePage() {

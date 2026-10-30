@@ -35,8 +35,8 @@ export default function Page() {
   return (
     <>
       <JsonLd data={[
-        breadcrumbSchema([{ name: "Home", href: "/" }, { name: "Solutions", href: "/solutions/odoo" }, { name: "Odoo" }]),
-        softwareApplicationSchema({ integrationName: "Odoo", description: "Automate accounts receivable for Odoo Community, Enterprise, and Online. Multi-channel follow-ups via email, SMS, voice, and WhatsApp.", url: "/solutions/odoo" }),
+        breadcrumbSchema([{ name: "Home", href: "/" }, { name: "Odoo" }]),
+        softwareApplicationSchema({ integrationName: "Odoo", description: "Automate accounts receivable for Odoo Community, Enterprise, and Online. Multi-channel follow-ups via email, SMS, and voice. Go live in one day.", url: "/solutions/odoo" }),
         faqSchema(faqs),
       ]} />
       <NavbarWrapper defaultMode="dark" />

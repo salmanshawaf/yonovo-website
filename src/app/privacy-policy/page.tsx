@@ -1,11 +1,29 @@
 import type { Metadata } from "next";
 import NavbarWrapper from "@/components/NavbarWrapper";
 import Footer from "@/components/Footer";
+import { SITE_URL, SITE_NAME } from "@/lib/site-config";
+
+const DESCRIPTION =
+  "Yonovo Privacy Policy. Learn how we collect, use, and protect your data.";
 
 export const metadata: Metadata = {
   title: "Privacy Policy",
-  description:
-    "Yonovo Privacy Policy. Learn how we collect, use, and protect your data.",
+  description: DESCRIPTION,
+  alternates: { canonical: `${SITE_URL}/privacy-policy` },
+  openGraph: {
+    type: "website",
+    title: `Privacy Policy | ${SITE_NAME}`,
+    description: DESCRIPTION,
+    url: `${SITE_URL}/privacy-policy`,
+    siteName: SITE_NAME,
+    images: [{ url: "/og-default.png", width: 1200, height: 630, alt: SITE_NAME }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: `Privacy Policy | ${SITE_NAME}`,
+    description: DESCRIPTION,
+    images: ["/og-default.png"],
+  },
 };
 
 export default function PrivacyPolicyPage() {

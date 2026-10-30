@@ -16,10 +16,12 @@ type Category = {
 type Props = {
   posts: BlogPostMeta[];
   categories: Category[];
+  /** Category slug for /blog/category/[slug]. Defaults to the full archive. */
+  initialCategory?: string;
 };
 
-export default function BlogListingClient({ posts, categories }: Props) {
-  const [activeCategory, setActiveCategory] = useState<string>("all");
+export default function BlogListingClient({ posts, categories, initialCategory = "all" }: Props) {
+  const [activeCategory, setActiveCategory] = useState<string>(initialCategory);
   const [page, setPage] = useState(1);
 
   const handleCategoryChange = useCallback((slug: string) => {

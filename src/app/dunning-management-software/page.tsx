@@ -9,7 +9,7 @@ import DunningManagementSoftwarePage, { faqs } from "@/components/DunningManagem
 const PAGE_URL = `${SITE_URL}/dunning-management-software`;
 const TITLE = "Dunning Management Software";
 const DESCRIPTION =
-  "What dunning is, what a dunning sequence should contain stage by stage, and how Yonovo runs dunning that adapts to each customer instead of blasting the same template.";
+  "Dunning management software sends a payment reminder sequence that adapts to each customer. See the stages and how Yonovo runs them.";
 
 export const metadata: Metadata = {
   title: TITLE,

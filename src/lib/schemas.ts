@@ -17,7 +17,7 @@ export function organizationSchema() {
     url: SITE_URL,
     logo: `${SITE_URL}/yonovo-logo.png`,
     description:
-      "Yonovo is an AI-powered accounts receivable automation platform that helps finance teams collect payments faster across email, SMS, voice, and WhatsApp while keeping customer relationships intact.",
+      "Yonovo is accounts receivable automation software that helps finance teams collect payments faster across email, SMS, and voice while keeping customer relationships intact.",
     foundingDate: "2024",
     sameAs: [
       "https://www.linkedin.com/company/yonovoai",
@@ -30,7 +30,8 @@ export function organizationSchema() {
   };
 }
 
-// ── WebSite with SearchAction (homepage) ──
+// ── WebSite (site-wide) ──
+// No SearchAction: the marketing site has no site search.
 
 export function webSiteSchema() {
   return {
@@ -39,10 +40,125 @@ export function webSiteSchema() {
     name: SITE_NAME,
     url: SITE_URL,
     description:
-      "AI-powered accounts receivable automation. Automate invoice follow-ups across email, SMS, voice, and WhatsApp.",
+      "Accounts receivable automation software. Yonovo follows up on unpaid invoices by email, SMS, and voice.",
     publisher: {
       "@type": "Organization",
       name: SITE_NAME,
+      url: SITE_URL,
+    },
+  };
+}
+
+// ── SoftwareApplication for the homepage product ──
+// Description matches the homepage: email, SMS, and voice. No price, rating, or review count.
+
+export function homeProductSchema() {
+  return {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    name: SITE_NAME,
+    applicationCategory: "BusinessApplication",
+    operatingSystem: "Web",
+    url: SITE_URL,
+    description:
+      "Yonovo is accounts receivable automation software that follows up on unpaid invoices by email, SMS, and voice so finance teams spend less time chasing payments.",
+    publisher: {
+      "@type": "Organization",
+      name: SITE_NAME,
+      url: SITE_URL,
+    },
+  };
+}
+
+// ── WebPage (pages that are not an article, product, or collection) ──
+
+export function webPageSchema(opts: { name: string; description: string; url: string }) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    name: opts.name,
+    description: opts.description,
+    url: opts.url,
+    isPartOf: {
+      "@type": "WebSite",
+      name: SITE_NAME,
+      url: SITE_URL,
+    },
+    publisher: {
+      "@type": "Organization",
+      name: SITE_NAME,
+      url: SITE_URL,
+    },
+  };
+}
+
+// ── Collection / blog index ──
+
+export function collectionPageSchema(opts: {
+  type?: "CollectionPage" | "Blog";
+  name: string;
+  description: string;
+  url: string;
+  items: { name: string; url: string }[];
+}) {
+  return {
+    "@context": "https://schema.org",
+    "@type": opts.type ?? "CollectionPage",
+    name: opts.name,
+    description: opts.description,
+    url: opts.url,
+    isPartOf: {
+      "@type": "WebSite",
+      name: SITE_NAME,
+      url: SITE_URL,
+    },
+    mainEntity: {
+      "@type": "ItemList",
+      itemListElement: opts.items.map((item, i) => ({
+        "@type": "ListItem",
+        position: i + 1,
+        name: item.name,
+        url: item.url,
+      })),
+    },
+  };
+}
+
+// ── Case study Article ──
+// Publisher is Yonovo. The customer is the subject (`about`), not the author.
+
+export function caseStudyArticleSchema(opts: {
+  headline: string;
+  description: string;
+  url: string;
+  datePublished: string;
+  companyName: string;
+}) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline: opts.headline,
+    description: opts.description,
+    datePublished: opts.datePublished,
+    dateModified: opts.datePublished,
+    mainEntityOfPage: opts.url,
+    author: {
+      "@type": "Organization",
+      name: SITE_NAME,
+      url: SITE_URL,
+    },
+    publisher: {
+      "@type": "Organization",
+      name: SITE_NAME,
+      url: SITE_URL,
+      logo: {
+        "@type": "ImageObject",
+        url: `${SITE_URL}/yonovo-logo.png`,
+      },
+    },
+    about: {
+      "@type": "Organization",
+      name: opts.companyName,
     },
   };
 }
@@ -101,17 +217,8 @@ export function softwareApplicationSchema(opts: {
     publisher: {
       "@type": "Organization",
       name: SITE_NAME,
+      url: SITE_URL,
     },
-    featureList: [
-      "Automated payment reminders",
-      "Multi-channel follow-ups (email, SMS, voice, WhatsApp)",
-      "AI-powered collection strategies",
-      "Customer risk scoring",
-      "Escalation workflows",
-      "Real-time AR dashboard",
-      "Payment portal for customers",
-      "DSO reduction tracking",
-    ],
   };
 }
 
@@ -129,44 +236,35 @@ export function pricingSchema() {
     applicationCategory: "BusinessApplication",
     operatingSystem: "Web",
     description:
-      "AI-powered accounts receivable automation platform. Automate invoice follow-ups across email, SMS, voice, and WhatsApp.",
+      "Accounts receivable automation plans sized to company revenue. Discover is analytics and benchmarking. Grow and Scale add collections automation. Pricing is a custom quote.",
     url: `${SITE_URL}/pricing`,
-    image: `${SITE_URL}/yonovo-logo.png`,
     publisher: {
       "@type": "Organization",
       name: SITE_NAME,
+      url: SITE_URL,
     },
     offers: [
       {
         "@type": "Offer",
         name: "Discover",
-        description: "AR analytics and benchmarking for teams getting started.",
+        description:
+          "Deep analytics tool for data discovery and benchmarking against your peers. For finance teams exploring AR health for the first time.",
         url: `${SITE_URL}/pricing`,
       },
       {
         "@type": "Offer",
         name: "Grow",
         description:
-          "Automation for startups establishing best practices. Built for $0–$10M ARR businesses.",
+          "Insight and automation to ensure effective cash flow and protect business resources as you establish your company. Built for $0-$10M ARR.",
         url: `${SITE_URL}/pricing`,
       },
       {
         "@type": "Offer",
         name: "Scale",
         description:
-          "Best-in-class automation for rapid growth. Built for $10M–$50M ARR businesses.",
+          "Build the foundations for rapid growth through best in class financial practices, to scale your business without scaling your team. Built for $10M-$50M ARR.",
         url: `${SITE_URL}/pricing`,
       },
-    ],
-    featureList: [
-      "Automated payment reminders",
-      "Multi-channel follow-ups (email, SMS, voice, WhatsApp)",
-      "AI-powered collection strategies",
-      "Customer risk scoring",
-      "Escalation workflows",
-      "Real-time AR dashboard",
-      "Payment portal for customers",
-      "DSO reduction tracking",
     ],
   };
 }

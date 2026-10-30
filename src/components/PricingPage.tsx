@@ -7,6 +7,7 @@ import Button from "@/components/Button";
 import FAQAccordion from "@/components/FAQAccordion";
 import CTASection from "@/components/sections/CTASection";
 import TestimonialsSection from "@/components/sections/TestimonialsSection";
+import { pricingFaqs } from "@/data/pricingFaqs";
 
 /* ── Data ── */
 
@@ -44,34 +45,6 @@ const logos = [
   { name: "SBC", src: "/logos/sbc.png", width: 200, className: "h-[80px] lg:h-[95px]" },
 ];
 
-const faqItems = [
-  {
-    question: "How does Yonovo pricing work?",
-    answer:
-      "Our pricing is adapted to your company's size and needs. Pricing is custom based on your annual revenue, number of customers, and the features you need. Book a demo and we'll put together a personalized quote.",
-  },
-  {
-    question: "How do I get started?",
-    answer:
-      "Book a demo with our team. We'll walk you through Yonovo on your real invoices, recommend the right plan for your size, and get you set up. Most teams are live within a day.",
-  },
-  {
-    question: "What integrations do you support?",
-    answer:
-      "Yonovo integrates with QuickBooks Online, Xero, Odoo, Sage, FreshBooks, NetSuite, Salesforce, HubSpot, SAP, and WhatsApp.",
-  },
-  {
-    question: "How long does setup take?",
-    answer:
-      "Most teams are up and running within a day. Connect your accounting software and Yonovo starts managing follow-ups immediately.",
-  },
-  {
-    question: "Can I change plans later?",
-    answer:
-      "Absolutely. You can upgrade or adjust your plan at any time as your business grows. Our team will help you find the right fit.",
-  },
-];
-
 /* ── Helpers ── */
 
 function formatCurrency(value: number): string {
@@ -105,8 +78,12 @@ export default function PricingPage() {
             <h1 className="max-w-[850px] text-balance font-medium text-[42px] tracking-tight text-foreground md:text-7xl">
               Pricing adapted to your needs.
             </h1>
-            <p className="text-lg text-muted">
-              Take control of your accounts receivable today, and unlock your owed cash reserves.
+            <p className="max-w-3xl text-lg text-muted">
+              Take control of your accounts receivable today, and unlock your owed cash reserves. Plans are sized to your company: Discover is analytics and benchmarking, and Grow and Scale add{" "}
+              <Link href="/accounts-receivable-automation-software" className="text-foreground underline underline-offset-2">
+                accounts receivable automation
+              </Link>
+              . Pricing is a custom quote.
             </p>
 
           </div>
@@ -316,7 +293,7 @@ export default function PricingPage() {
           <h2 className="font-medium text-4xl text-foreground leading-tight tracking-tight md:text-[54px] mb-8 md:mb-12">
             FAQs
           </h2>
-          <FAQAccordion items={faqItems} />
+          <FAQAccordion items={pricingFaqs} />
         </div>
       </section>
 

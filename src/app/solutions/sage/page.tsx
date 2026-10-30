@@ -35,8 +35,8 @@ export default function Page() {
   return (
     <>
       <JsonLd data={[
-        breadcrumbSchema([{ name: "Home", href: "/" }, { name: "Solutions", href: "/solutions/sage" }, { name: "Sage" }]),
-        softwareApplicationSchema({ integrationName: "Sage", description: "Automate accounts receivable for Sage. Sync invoices, send follow-ups via email, SMS, voice, and WhatsApp.", url: "/solutions/sage" }),
+        breadcrumbSchema([{ name: "Home", href: "/" }, { name: "Sage" }]),
+        softwareApplicationSchema({ integrationName: "Sage", description: "Automate accounts receivable for Sage. Sync invoices, send follow-ups via email, SMS, and voice, and reduce DSO. Go live in one day.", url: "/solutions/sage" }),
         faqSchema(faqs),
       ]} />
       <NavbarWrapper defaultMode="dark" />

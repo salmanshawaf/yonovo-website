@@ -3,18 +3,51 @@ import NavbarWrapper from "@/components/NavbarWrapper";
 import Footer from "@/components/Footer";
 import Link from "next/link";
 import { jobs } from "@/data/jobs";
-import { SITE_URL } from "@/lib/site-config";
+import { SITE_URL, SITE_NAME } from "@/lib/site-config";
+import JsonLd from "@/components/JsonLd";
+import { breadcrumbSchema, collectionPageSchema } from "@/lib/schemas";
+
+const DESCRIPTION =
+  "Careers at Yonovo. Open roles building accounts receivable automation for finance teams.";
+const PAGE_URL = `${SITE_URL}/careers`;
 
 export const metadata: Metadata = {
   title: "Careers",
-  description:
-    "Join the Yonovo team. See open roles and help us automate accounts receivable for businesses everywhere.",
-  alternates: { canonical: `${SITE_URL}/careers` },
+  description: DESCRIPTION,
+  alternates: { canonical: PAGE_URL },
+  openGraph: {
+    type: "website",
+    title: `Careers | ${SITE_NAME}`,
+    description: DESCRIPTION,
+    url: PAGE_URL,
+    siteName: SITE_NAME,
+    images: [{ url: "/og-default.png", width: 1200, height: 630, alt: SITE_NAME }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: `Careers | ${SITE_NAME}`,
+    description: DESCRIPTION,
+    images: ["/og-default.png"],
+  },
 };
 
 export default function CareersPage() {
   return (
     <>
+      <JsonLd
+        data={[
+          breadcrumbSchema([{ name: "Home", href: "/" }, { name: "Careers" }]),
+          collectionPageSchema({
+            name: `Careers | ${SITE_NAME}`,
+            description: DESCRIPTION,
+            url: PAGE_URL,
+            items: jobs.map((job) => ({
+              name: job.title,
+              url: `${SITE_URL}/careers/${job.slug}`,
+            })),
+          }),
+        ]}
+      />
       <NavbarWrapper defaultMode="light" />
       <main className="flex flex-col pt-[var(--navbar-height)] bg-background">
         <section className="mx-auto flex w-full max-w-3xl flex-col px-6 pt-32 pb-24">

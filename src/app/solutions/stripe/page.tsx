@@ -35,8 +35,8 @@ export default function Page() {
   return (
     <>
       <JsonLd data={[
-        breadcrumbSchema([{ name: "Home", href: "/" }, { name: "Solutions", href: "/solutions/stripe" }, { name: "Stripe Billing" }]),
-        softwareApplicationSchema({ integrationName: "Stripe Billing", description: "Automate accounts receivable for Stripe Billing. AI-powered follow-ups via email, SMS, voice, and WhatsApp.", url: "/solutions/stripe" }),
+        breadcrumbSchema([{ name: "Home", href: "/" }, { name: "Stripe Billing" }]),
+        softwareApplicationSchema({ integrationName: "Stripe Billing", description: "Automate accounts receivable for Stripe Billing. AI-powered follow-ups via email, SMS, and voice. Go live in one day and reduce DSO.", url: "/solutions/stripe" }),
         faqSchema(faqs),
       ]} />
       <NavbarWrapper defaultMode="dark" />

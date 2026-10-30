@@ -659,6 +659,8 @@ export default function ARAutomationSoftwarePage() {
         { label: "Accounts Receivable Collections Software", href: "/ar-collections-software", description: "The collections workflow day by day, from aging buckets to escalation." },
         { label: "Dunning Management Software", href: "/dunning-management-software", description: "The written reminder layer of collections, stage by stage." },
         { label: "Accounts Receivable Statistics", href: "/accounts-receivable-statistics", description: "Verified figures on late payments, DSO, and collections effort, every one linked to its original source." },
+        { label: "How to Reduce DSO", href: "/blog/how-to-reduce-dso", description: "Seven ways finance teams shorten days sales outstanding and free up cash." },
+        { label: "DSO Calculator", href: "/tools/dso-calculator", description: "Turn your receivables and credit sales into a DSO figure and the cash a lower DSO frees up." },
         { label: "Best AR Automation Software: 15 Platforms Compared", href: "/blog/best-ar-automation-software", description: "The deep dive behind the table above, with a full profile of every platform." },
         { label: "What Is AR Automation?", href: "/blog/what-is-ar-automation", description: "A plain language introduction to the category and how the pieces fit together." },
         { label: "Yonovo vs Upflow", href: "/yonovo-vs-upflow", description: "Side by side on onboarding, pricing, channels, and best fit." },

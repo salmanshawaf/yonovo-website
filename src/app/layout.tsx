@@ -3,6 +3,8 @@ import { Inter } from "next/font/google";
 import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { SITE_URL, SITE_NAME } from "@/lib/site-config";
+import { organizationSchema, webSiteSchema } from "@/lib/schemas";
+import JsonLd from "@/components/JsonLd";
 import "./globals.css";
 
 const inter = Inter({
@@ -17,7 +19,7 @@ export const metadata: Metadata = {
     template: `%s | ${SITE_NAME}`,
   },
   description:
-    "Automate invoice follow-ups across email, SMS, and voice. Yonovo connects to your accounting system and handles collections so your team can focus on growth.",
+    "Accounts receivable automation for finance teams. Yonovo follows up on unpaid invoices by email, SMS, and voice so you get paid faster.",
   // Site-wide defaults. Pages that set their own openGraph/twitter inherit these
   // fields (e.g. images) unless they override them — gives every page a valid
   // og:image / twitter:image without repeating it on each route.
@@ -94,6 +96,7 @@ gtag('config', 'G-BK8T7VN9WM');`,
         />
       </head>
       <body className={`${inter.variable} antialiased`}>
+        <JsonLd data={[organizationSchema(), webSiteSchema()]} />
         {children}
         <Analytics />
         <SpeedInsights />

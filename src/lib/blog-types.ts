@@ -1,3 +1,6 @@
+/** Matches the first page of cards rendered on /blog and /blog/category/*. */
+export const BLOG_LISTING_PAGE_SIZE = 9;
+
 export type Author = {
   id: string;
   name: string;
