@@ -15,7 +15,7 @@ export default function ReceivableTurnover() {
         <Formula>Net credit sales / Average accounts receivable</Formula>
         <P>
           Average accounts receivable is the beginning balance plus the ending balance, divided by two. Ending receivables alone will do if you label them as ending. Cash sales do not belong in the numerator. They were never a receivable, so they inflate the ratio.{" "}
-          <a href="https://en.wikipedia.org/wiki/Receivable_turnover_ratio" className={textLink} target="_blank" rel="noopener noreferrer">
+          <a href="https://en.wikipedia.org/wiki/Receivables_turnover_ratio" className={textLink} target="_blank" rel="noopener noreferrer">
             The receivable turnover ratio
           </a>{" "}
           is the rate. Days sales outstanding is the day count: days in the period divided by turnover.

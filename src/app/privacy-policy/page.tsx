@@ -4,7 +4,7 @@ import Footer from "@/components/Footer";
 import { SITE_URL, SITE_NAME } from "@/lib/site-config";
 
 const DESCRIPTION =
-  "Yonovo Privacy Policy. Learn how we collect, use, and protect your data.";
+  "Yonovo privacy policy: what personal data and accounts receivable information we collect, how we use it, who we share it with, and how we protect it.";
 
 export const metadata: Metadata = {
   title: "Privacy Policy",

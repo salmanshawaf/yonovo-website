@@ -166,13 +166,16 @@ export function generateBlogPostMetadata(post: BlogPost): Metadata {
   };
 }
 
+export const BLOG_INDEX_DESCRIPTION =
+  "Guides on accounts receivable automation, AR collections, DSO reduction, invoice follow-ups, and how finance teams get paid faster with Yonovo.";
+
 const CATEGORY_DESCRIPTIONS: Record<string, string> = {
   guides:
-    "Accounts receivable guides on collections automation, DSO reduction, and invoice follow-ups.",
+    "Practical accounts receivable guides on collections automation, DSO reduction, invoice follow-ups, and how B2B finance teams get paid faster.",
   insights:
-    "Insights on accounts receivable automation, cash flow, and how finance teams collect faster.",
+    "Insights on accounts receivable automation, cash flow, days sales outstanding, and how finance teams collect unpaid invoices faster with Yonovo.",
   comparisons:
-    "Comparisons of accounts receivable automation and AR collections software for finance teams.",
+    "Side-by-side comparisons of accounts receivable automation and AR collections software for finance teams choosing the right collections platform.",
 };
 
 export function generateBlogListingMetadata(category?: string): Metadata {
@@ -183,7 +186,7 @@ export function generateBlogListingMetadata(category?: string): Metadata {
   const description = category
     ? CATEGORY_DESCRIPTIONS[category] ??
       `Articles on accounts receivable automation, collections, and finance operations from the Yonovo team.`
-    : "Guides on accounts receivable automation, AR collections, DSO reduction, and getting paid faster.";
+    : BLOG_INDEX_DESCRIPTION;
 
   return {
     // `absolute` bypasses the root layout's "%s | Yonovo" template; `title`

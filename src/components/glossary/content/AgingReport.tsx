@@ -35,7 +35,7 @@ export default function AgingReport() {
         <P>
           Age changes the odds.{" "}
           <a
-            href="https://commercialcollectionagenciesofamerica.com/resources/Documents/CollectabilityOverTime.pdf"
+            href="https://www.nacmcommercialservices.org/wp-content/uploads/2024/10/Collection-Statistics-final.pdf"
             className={textLink}
             target="_blank"
             rel="noopener noreferrer"

@@ -8,7 +8,7 @@ import { SITE_URL, SITE_NAME } from "@/lib/site-config";
 
 const TITLE = "Book an AR Automation Demo";
 const DESCRIPTION =
-  "Book a discovery call to see how Yonovo automates accounts receivable so your team can collect faster.";
+  "Book a discovery call to see how Yonovo automates accounts receivable follow-ups by email, SMS, phone, and WhatsApp, so you get paid faster.";
 const PAGE_URL = `${SITE_URL}/book-demo`;
 
 export const metadata: Metadata = {

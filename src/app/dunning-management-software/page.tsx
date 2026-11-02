@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { SITE_URL, SITE_NAME } from "@/lib/site-config";
-import { breadcrumbSchema, faqSchema } from "@/lib/schemas";
+import { breadcrumbSchema, discoverOffer, faqSchema } from "@/lib/schemas";
 import JsonLd from "@/components/JsonLd";
 import NavbarWrapper from "@/components/NavbarWrapper";
 import Footer from "@/components/Footer";
@@ -44,6 +44,7 @@ const softwareSchema = {
   url: PAGE_URL,
   description:
     "Yonovo is dunning management software that runs escalating payment reminder sequences across email, SMS, phone, and WhatsApp, pausing for disputes and adapting to each customer.",
+  offers: discoverOffer(),
   publisher: {
     "@type": "Organization",
     name: SITE_NAME,
