@@ -59,7 +59,7 @@ export const caseStudies: Record<string, CaseStudyData> = {
     meta: {
       title: "TDG Inc. | Yonovo Case Study",
       description:
-        "How TDG Inc. reduced manual follow-ups by 80% and started collecting faster than ever with Yonovo.",
+        "How wholesale distributor TDG Inc. cut manual follow-ups by 80% in 90 days and reduced DSO by 15 days with Yonovo accounts receivable automation.",
     },
     card: {
       industry: "Wholesale & Distribution",

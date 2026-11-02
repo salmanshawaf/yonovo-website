@@ -12,7 +12,8 @@
     "seo:links": "linkinator http://localhost:3000 --recurse --silent",
     "seo:lh": "lhci autorun",
     "perf:baseline": "node scripts/perf-baseline.mjs",
-    "check:blog-links": "node scripts/check-blog-links.mjs"
+    "check:blog-links": "node scripts/check-blog-links.mjs",
+    "indexnow": "node scripts/indexnow.mjs"
   },
   "dependencies": {
     "@calcom/embed-react": "^1.5.3",

@@ -10,7 +10,7 @@ import { breadcrumbSchema, collectionPageSchema } from "@/lib/schemas";
 import { SITE_URL, SITE_NAME } from "@/lib/site-config";
 
 const DESCRIPTION =
-  "Yonovo changelog: product updates for accounts receivable automation, collections, and integrations.";
+  "Yonovo changelog: product updates for accounts receivable automation, collections workflows, accounting integrations, and invoice follow-up.";
 const PAGE_URL = `${SITE_URL}/changelog`;
 /** First screen of /changelog. Matches ENTRIES_PER_PAGE in ChangelogListingClient. */
 const VISIBLE_ENTRIES = 5;

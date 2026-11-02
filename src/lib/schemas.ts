@@ -50,8 +50,26 @@ export function webSiteSchema() {
   };
 }
 
+// Google's Software App rich result requires offers.price. Discover includes
+// free analytics ("Plans from free analytics" on /pricing). Grow and Scale are
+// a custom quote, so this is the lowest published price, not a claim that
+// every plan costs nothing. No aggregateRating: the only public score is a
+// third-party G2 rating, and marking that up on our own site is the
+// self-serving review pattern Google tells sites not to use.
+export function discoverOffer() {
+  return {
+    "@type": "Offer",
+    name: "Discover",
+    price: 0,
+    priceCurrency: "USD",
+    url: `${SITE_URL}/pricing`,
+    description:
+      "Discover includes free analytics and benchmarking. Grow and Scale add collections automation and are a custom quote.",
+  };
+}
+
 // ── SoftwareApplication for the homepage product ──
-// Description matches the homepage: email, SMS, voice, and WhatsApp. No price, rating, or review count.
+// Description matches the homepage: email, SMS, voice, and WhatsApp.
 
 export function homeProductSchema() {
   return {
@@ -63,6 +81,7 @@ export function homeProductSchema() {
     url: SITE_URL,
     description:
       `Yonovo is accounts receivable automation software that follows up on unpaid invoices by email, SMS, voice, and WhatsApp. It integrates with ${YONOVO_INTEGRATION_LIST}.`,
+    offers: discoverOffer(),
     publisher: {
       "@type": "Organization",
       name: SITE_NAME,
@@ -210,11 +229,7 @@ export function softwareApplicationSchema(opts: {
     operatingSystem: "Web",
     description: opts.description,
     url: `${SITE_URL}${opts.url}`,
-    offers: {
-      "@type": "Offer",
-      description: "Custom pricing. Book a demo.",
-      url: `${SITE_URL}/pricing`,
-    },
+    offers: discoverOffer(),
     publisher: {
       "@type": "Organization",
       name: SITE_NAME,
@@ -310,28 +325,8 @@ export function pricingSchema() {
       name: SITE_NAME,
       url: SITE_URL,
     },
-    offers: [
-      {
-        "@type": "Offer",
-        name: "Discover",
-        description:
-          "Deep analytics tool for data discovery and benchmarking against your peers. For finance teams exploring AR health for the first time.",
-        url: `${SITE_URL}/pricing`,
-      },
-      {
-        "@type": "Offer",
-        name: "Grow",
-        description:
-          "Insight and automation to ensure effective cash flow and protect business resources as you establish your company. Built for $0-$10M ARR.",
-        url: `${SITE_URL}/pricing`,
-      },
-      {
-        "@type": "Offer",
-        name: "Scale",
-        description:
-          "Build the foundations for rapid growth through best in class financial practices, to scale your business without scaling your team. Built for $10M-$50M ARR.",
-        url: `${SITE_URL}/pricing`,
-      },
-    ],
+    // One Offer with a real price. Separate Grow and Scale offers had no
+    // price, which fails Google's Software App rich result check.
+    offers: discoverOffer(),
   };
 }

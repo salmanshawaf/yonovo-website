@@ -21,7 +21,7 @@ export default function AverageCollectionPeriod() {
             Days sales outstanding
           </a>{" "}
           is the name most finance teams use for this day count.{" "}
-          <a href="https://en.wikipedia.org/wiki/Receivable_turnover_ratio" className={textLink} target="_blank" rel="noopener noreferrer">
+          <a href="https://en.wikipedia.org/wiki/Receivables_turnover_ratio" className={textLink} target="_blank" rel="noopener noreferrer">
             Receivable turnover
           </a>{" "}
           is the rate form of the same math.

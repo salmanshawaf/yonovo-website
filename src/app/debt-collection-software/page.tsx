@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { SITE_URL, SITE_NAME } from "@/lib/site-config";
-import { breadcrumbSchema, faqSchema } from "@/lib/schemas";
+import { breadcrumbSchema, discoverOffer, faqSchema } from "@/lib/schemas";
 import JsonLd from "@/components/JsonLd";
 import NavbarWrapper from "@/components/NavbarWrapper";
 import Footer from "@/components/Footer";
@@ -44,6 +44,7 @@ const softwareSchema = {
   url: PAGE_URL,
   description:
     "Yonovo is debt collection software for businesses collecting their own unpaid B2B invoices, following up across email, SMS, phone, and WhatsApp under the client's own brand.",
+  offers: discoverOffer(),
   publisher: {
     "@type": "Organization",
     name: SITE_NAME,

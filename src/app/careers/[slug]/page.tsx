@@ -24,14 +24,15 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const url = `${SITE_URL}/careers/${job.slug}`;
   const title = `${job.shortTitle} | Careers at ${SITE_NAME}`;
   const ogImage = "/og-default.png";
+  const description = job.metaDescription ?? job.summary;
   return {
     title: { absolute: title },
-    description: job.summary,
+    description,
     alternates: { canonical: url },
     openGraph: {
       type: "website",
       title,
-      description: job.summary,
+      description,
       url,
       siteName: SITE_NAME,
       images: [{ url: ogImage, width: 1200, height: 630, alt: title }],
@@ -39,7 +40,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     twitter: {
       card: "summary_large_image",
       title,
-      description: job.summary,
+      description,
       images: [ogImage],
     },
   };

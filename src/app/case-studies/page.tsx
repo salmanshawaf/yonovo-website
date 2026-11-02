@@ -13,7 +13,7 @@ import { caseStudies } from "@/data/caseStudies";
 import { getAllPosts } from "@/lib/blog";
 
 const DESCRIPTION =
-  "Case studies on accounts receivable automation: how finance teams collect faster and reduce DSO with Yonovo.";
+  "Case studies on accounts receivable automation: how finance teams collect faster, cut manual follow-ups, and reduce days sales outstanding with Yonovo.";
 
 export const metadata: Metadata = {
   title: "Case Studies",

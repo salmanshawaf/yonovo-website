@@ -4,7 +4,7 @@ import Footer from "@/components/Footer";
 import { SITE_URL, SITE_NAME } from "@/lib/site-config";
 
 const DESCRIPTION =
-  "Yonovo Terms of Service. Review the terms for using our accounts receivable automation platform.";
+  "Yonovo terms of service for the accounts receivable automation platform, covering accounts, acceptable use, billing, and customer responsibilities.";
 
 export const metadata: Metadata = {
   title: "Terms of Service",

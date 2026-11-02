@@ -409,7 +409,7 @@ export default function ARCollectionsSoftwarePage() {
               </div>
               <p className="max-w-3xl text-base text-secondary leading-normal tracking-tight">
                 The clock is not neutral. The probability of collecting a delinquent account falls to 68.9 percent at three months past due and 51.3 percent at six months, per{" "}
-                <a href="https://commercialcollectionagenciesofamerica.com/resources/Documents/CollectabilityOverTime.pdf" target="_blank" rel="noopener noreferrer" className="text-brand-blue underline underline-offset-2">Commercial Collection Agencies of America</a>. Every week of delay costs real money, which you can put a number on with our{" "}
+                <a href="https://www.nacmcommercialservices.org/wp-content/uploads/2024/10/Collection-Statistics-final.pdf" target="_blank" rel="noopener noreferrer" className="text-brand-blue underline underline-offset-2">Commercial Collection Agencies of America</a>. Every week of delay costs real money, which you can put a number on with our{" "}
                 <Link href="/tools/dso-calculator" className="text-brand-blue underline underline-offset-2">DSO calculator</Link>.
               </p>
             </div>

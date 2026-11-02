@@ -8,7 +8,7 @@ import JsonLd from "@/components/JsonLd";
 import { breadcrumbSchema, collectionPageSchema } from "@/lib/schemas";
 
 const DESCRIPTION =
-  "Careers at Yonovo. Open roles building accounts receivable automation for finance teams.";
+  "Careers at Yonovo. Open roles on the team building accounts receivable automation that helps finance teams collect unpaid B2B invoices faster.";
 const PAGE_URL = `${SITE_URL}/careers`;
 
 export const metadata: Metadata = {

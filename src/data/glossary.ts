@@ -319,7 +319,7 @@ export const glossaryTerms: GlossaryTerm[] = [
     h1: "Collection Letter",
     seoTitle: "Collection Letter: Meaning and Samples",
     description:
-      "A collection letter is a written demand for a past due B2B invoice. What to include, plus two samples.",
+      "A B2B collection letter is a written demand for a past due invoice. See what a collection letter includes, plus two samples you can adapt for AR.",
     breadcrumb: "Collection Letter",
     keywords: [
       "collection letter",

@@ -136,7 +136,9 @@ export const STATS: Stat[] = [
     headline: "68.9% is the probability of collecting a delinquent account at three months past due, falling to 51.3% at six months and 21.4% at one year",
     takeaway: "Every month an overdue invoice sits, real money evaporates. The case for chasing early is not urgency theater, it is arithmetic.",
     sourceName: "Commercial Collection Agencies of America",
-    sourceUrl: "https://commercialcollectionagenciesofamerica.com/resources/Documents/CollectabilityOverTime.pdf",
+    // Same CCA survey PDF. The copy on commercialcollectionagenciesofamerica.com
+    // returns 403 to crawlers; this NACM-hosted file is the crawlable original.
+    sourceUrl: "https://www.nacmcommercialservices.org/wp-content/uploads/2024/10/Collection-Statistics-final.pdf",
     sourceYear: "2023",
     section: "dso-and-aging",
   },

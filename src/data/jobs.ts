@@ -27,6 +27,8 @@ export type Job = {
   /** ISO date after which Google should stop showing the listing. */
   validThrough: string;
   summary: string;
+  /** Meta description when `summary` is too short for search snippets. */
+  metaDescription?: string;
   hook: string;
   salary: { currency: string; min: number; max: number; base: string; ote: string };
   applyEmail: string;
@@ -47,6 +49,8 @@ export const jobs: Job[] = [
     validThrough: "2027-01-31",
     summary:
       "Our first sales hire. A cold calling role booking qualified meetings with finance leaders for the founders.",
+    metaDescription:
+      "Founding SDR at Yonovo. A full-time remote cold calling role booking qualified meetings with finance leaders for accounts receivable automation.",
     hook: "We need someone who loves the phone, not someone who tolerates it. If 150 dials a day sounds like a good time, keep reading.",
     salary: { currency: "CAD", min: 60000, max: 75000, base: "$60K to $75K CAD", ote: "$95K to $115K CAD" },
     applyEmail: "salman@yonovo.com",

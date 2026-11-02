@@ -5,13 +5,10 @@ import Footer from "@/components/Footer";
 import BlogListingClient from "@/components/blog/BlogListingClient";
 import JsonLd from "@/components/JsonLd";
 import { getAllPosts, postToMeta, BLOG_CATEGORIES } from "@/lib/blog";
-import { generateBlogListingMetadata } from "@/lib/blog-metadata";
+import { BLOG_INDEX_DESCRIPTION, generateBlogListingMetadata } from "@/lib/blog-metadata";
 import { breadcrumbSchema, collectionPageSchema } from "@/lib/schemas";
 import { BLOG_LISTING_PAGE_SIZE } from "@/lib/blog-types";
 import { SITE_URL } from "@/lib/site-config";
-
-const BLOG_DESCRIPTION =
-  "Guides on accounts receivable automation, AR collections, DSO reduction, and getting paid faster.";
 
 export const metadata: Metadata = generateBlogListingMetadata();
 
@@ -28,7 +25,7 @@ export default function BlogPage() {
           collectionPageSchema({
             type: "Blog",
             name: "Accounts Receivable Blog",
-            description: BLOG_DESCRIPTION,
+            description: BLOG_INDEX_DESCRIPTION,
             url: `${SITE_URL}/blog`,
             items: visible.map((post) => ({
               name: post.frontmatter.title,
