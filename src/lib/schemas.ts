@@ -22,6 +22,11 @@ export function organizationSchema() {
     foundingDate: "2024",
     sameAs: [
       "https://www.linkedin.com/company/yonovoai",
+      "https://www.g2.com/products/yonovo/reviews",
+      "https://www.capterra.com/p/10042105/Yonovo/",
+      "https://www.getapp.com/all-software/a/yonovo/",
+      "https://www.softwareadvice.com/product/549022-Yonovo/",
+      "https://ie.trustpilot.com/review/yonovo.com",
     ],
     contactPoint: {
       "@type": "ContactPoint",
